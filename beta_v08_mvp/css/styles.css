@@ -3075,8 +3075,9 @@ input[type=passcode] {
 }
 
 #passcode-enter-box {
-  height: 15%;
-  width: 25%;
+  height: 12.5%;
+  width: 20%;
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -3088,7 +3089,7 @@ input[type=passcode] {
 #passcode-title {
   color: var(--logintext);
   width: 100%;
-  font-size: 20px;
+  font-size: 17.5px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -3099,15 +3100,46 @@ input[type=passcode] {
 
 #passcode-input {
   color: var(--logintext);
-  font-size: 30px;
+  font-size: 25px;
   background-color: var(--inputbackground);
   display: flex;
   align-items: center;
   vertical-align: middle;
   text-align: center;
-  height: 6vh;
-  line-height: 6vh;
+  height: 5vh;
+  line-height: 5vh;
+  width: 85%;
   border: solid var(--text) 1px;
   border-radius: 10px;
+  box-sizing: border-box;
+}
+
+#WIP-message {
+  color: #dddddd;
+  font-size: 12px;
+  text-align: justify;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top:0;
+  left:0;
+  height: 80vh;
+  width: 17vw;
+  padding-left: 1.25%;
+  padding-right: 2%;
+  box-sizing: border-box;
+  /* border: solid red 1px; */
+}
+
+
+#current-version {
+  color: #dddddd;
+  text-align: right;
+  position: absolute;
+  bottom:0;
+  right:0;
+  width: 7.5vw;
+  padding: 0.25%;
   box-sizing: border-box;
 }
