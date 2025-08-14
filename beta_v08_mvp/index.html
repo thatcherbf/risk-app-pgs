@@ -28,6 +28,12 @@
 
     </div>
 
+    <div id="WIP-box">
+      <div id="WIP-text-1">Currently being updated...</div>
+      <div id="WIP-text-2"><br><em>The previous live version did not route biological sex to the correct third algorithm in the stack.</em></div>
+      <div id="WIP-text-3"><em>This resulted in a systematic overestimation of risk among women.</em></div>
+    </div>
+
     <div class = "top-box">
       <div class = "logo">
         <img src = "media/logo.png" alt="Logo" id="logo">
@@ -399,16 +405,21 @@
                     <rect id="clipRect" x="0" y="400" width="400" height="0" />
                   </clipPath>
 
-                  <radialGradient id="myGradient" cx="50%" cy="50%" r="50%">
+                  <radialGradient id="arteryGradient" cx="50%" cy="50%" r="50%">
                     <stop offset="75%" stop-color="rgba(255, 171, 171, 1)" />
                     <stop offset="100%" stop-color="rgba(235, 107, 100, 1)" />
                   </radialGradient>
+                  <linearGradient id="plaqueGradient" x1="0%" x2="0%" y1="100%" y2="0%">
+                    <stop offset="30%" stop-color="#ffd36c" />
+                    <stop offset="50%" stop-color="#e39f64" />
+                    <stop offset="75%" stop-color="#c56a55" />
+                  </linearGradient>
                 </defs>
 
                 <!-- Group with clip applied -->
                 <g clip-path="url(#fillClip)">
                   <!-- Yellow fill circle -->
-                  <circle class="yellow-fill" cx="200" cy="150" r="100" />
+                  <circle class="yellow-fill" cx="200" cy="150" r="100" fill="url(#plaqueGradient)"/>
                   <!-- Blue line -->
                   <!-- <line id="blueLine" class="blue-line" x1="0" x2="400" y1="400" y2="400" /> -->
                   <line id="blueLine" class="blue-line" x1="50" x2="350" y1="400" y2="400" />
@@ -418,7 +429,7 @@
 
                 <!-- Outer circles (drawn after fill so they're always on top) -->
                 <circle class="circle-border" cx="200" cy="150" r="100" />
-                <circle class="circle-outline" cx="200" cy="150" r="100" stroke="url(#myGradient)"/>
+                <circle class="circle-outline" cx="200" cy="150" r="100" stroke="url(#arteryGradient)"/>
 
                 <!-- Reference lines group -->
                 <g id="refLines"></g>
@@ -470,16 +481,21 @@
                     <rect id="clipRect-2" x="0" y="400" width="400" height="0" />
                   </clipPath>
 
-                  <radialGradient id="myGradient-2" cx="50%" cy="50%" r="50%">
+                  <radialGradient id="arteryGradient-2" cx="50%" cy="50%" r="50%">
                     <stop offset="75%" stop-color="rgba(255, 171, 171, 1)" />
                     <stop offset="100%" stop-color="rgba(235, 107, 100, 1)" />
                   </radialGradient>
+                  <linearGradient id="plaqueGradient-2" x1="0%" x2="0%" y1="100%" y2="0%">
+                    <stop offset="30%" stop-color="#ffd36c" />
+                    <stop offset="50%" stop-color="#e39f64" />
+                    <stop offset="75%" stop-color="#c56a55" />
+                  </linearGradient>
                 </defs>
 
                 <!-- Group with clip applied -->
                 <g clip-path="url(#fillClip-2)">
                   <!-- Yellow fill circle -->
-                  <circle class="yellow-fill" cx="200" cy="150" r="100" />
+                  <circle class="yellow-fill" cx="200" cy="150" r="100" fill="url(#plaqueGradient-2)"/>
                   <!-- Blue line -->
                   <!-- <line id="blueLine" class="blue-line" x1="0" x2="400" y1="400" y2="400" /> -->
                   <line id="blueLine-2" class="blue-line" x1="50" x2="350" y1="400" y2="400" />
@@ -489,7 +505,7 @@
 
                 <!-- Outer circles (drawn after fill so they're always on top) -->
                 <circle class="circle-border" cx="200" cy="150" r="100" />
-                <circle class="circle-outline" cx="200" cy="150" r="100" stroke="url(#myGradient-2)"/>
+                <circle class="circle-outline" cx="200" cy="150" r="100" stroke="url(#arteryGradient-2)"/>
 
                 <!-- Reference lines group -->
                 <g id="refLines-2"></g>

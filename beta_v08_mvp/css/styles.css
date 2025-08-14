@@ -1012,7 +1012,7 @@ svg {
 }
 
 .yellow-fill {
-  fill: #ffd36c; 
+  /* fill: #ffd36c;  */
 }
 
 .blue-line {
@@ -3142,4 +3142,37 @@ input[type=passcode] {
   width: 7.5vw;
   padding: 0.25%;
   box-sizing: border-box;
+}
+
+#WIP-box {
+  background-color: white;
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* visibility: hidden; */
+}
+
+#WIP-text-1 {
+  color: var(--logintext);
+  font-size: 30px;
+}
+
+#WIP-text-2 {
+  color: var(--logintext);
+  font-size: 15px;
+}
+
+#WIP-text-3 {
+  color: var(--logintext);
+  font-size: 15px;
 }
