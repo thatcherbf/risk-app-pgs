@@ -312,10 +312,6 @@
               <div id="lifetime-risk-value">00.0%</div>                
             </div>  
             <div id="lifetime-risk-postamble"><em></em></div>
-            <!-- </div> -->
-            <!-- <div class="lifetime-health-score">
-              <div id="lifetime-health">Cardiovascular Health Score (CHS):</div>
-            </div> -->
           </div>
 
           <div class="lifetime-graph-box">
@@ -328,13 +324,11 @@
         <div class="lifetime-col2">
 
           <div class="lifetime-health-box">
-            <!-- <div class="lifetime-health-score"> -->
             <div id="lifetime-health-score-title">Cardiovascular Health Score:</div>
             <div id="lifetime-health-score-value-box">
               <div id="lifetime-health-score-value">00.0</div>
             </div>
             <div id="lifetime-health-score-value-postamble"><em>Optimal Cardiovascular Health Score: 100</em></div>
-            <!-- </div> -->
           </div>
 
           <div id="lifetime-health-score-bar-box">
@@ -342,37 +336,7 @@
             <div id="lifetime-health-score-postamble">(Cardiovascular Health Scores are measured from 0-100.)</div>                
           </div>  
 
-          <div class="lifetime-graph-plaque-box">
-            <div id="lifetime-plaque-threshold-title">Your cumulative plaque threshold(s):</div>
-            <div id="lifetime-plaque-exposure-current">Your current cumulative LDL exposure:<div id="current-LDL-exposure-value"></div></div>
-            <div id="lifetime-plaque-threshold-Graph"></div>
-            
-            <ul id="lifetime-plaque-threshold-box">
-              <div>Your thresholds to stay below:</div>
-              <li>
-                <div id="lifetime-plaque-threshold-1" class="plaque-threshold-item">
-                    <div>1%</div> <div>risk:</div> 
-                    <div id="plaque-1-value"></div>
-                </div>
-              </li>
-              <li>
-                <div id="lifetime-plaque-threshold-5" class="plaque-threshold-item">
-                    <div>5%</div> <div>risk:</div> 
-                    <div id="plaque-5-value"></div>
-                </div>
-              </li>
-              <li>
-                <div id="lifetime-plaque-threshold-10" class="plaque-threshold-item">
-                    <div>10%</div> <div>risk:</div> 
-                    <div id="plaque-10-value"></div>
-                </div>
-              </li>
-            </ul>
-            <div id="lifetime-plaque-threshold-bar-Graph"></div>
-          </div>
-
         </div>
-        <button class="plaque-button" type="button" id="lifetime-plaque-btn"> Click here to see your Personal Plaque Threshold </button>        
       </div>
     </div>
 
@@ -405,17 +369,46 @@
                     <rect id="clipRect" x="0" y="400" width="400" height="0" />
                   </clipPath>
 
-                  <radialGradient id="myGradient" cx="50%" cy="50%" r="50%">
-                    <stop offset="75%" stop-color="rgba(255, 171, 171, 1)" />
-                    <stop offset="100%" stop-color="rgba(235, 107, 100, 1)" />
+                  <radialGradient id="arteryGradient" cx="50%" cy="50%" r="50%">
+                    <stop offset="75%" stop-color="rgb(255, 171, 171)" />
+                    <stop offset="87.5%" stop-color="rgb(247, 139, 136)" />
+                    <stop offset="100%" stop-color="rgb(235, 107, 100)" />
                   </radialGradient>
+
+                  <linearGradient id="plaqueGradient" x1="0%" x2="0%" y1="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ffd36c" stop-opacity="0.0" />
+                    <stop offset="30%" stop-color="#ffd36c" stop-opacity="0.25" />
+                    <stop offset="40%" stop-color="#e39f64" stop-opacity="0.5" />
+                    <stop offset="75%" stop-color="#c56a55" stop-opacity="0.8" />
+                  </linearGradient>
+
+                  <linearGradient id="plaqueGradient-t" x1="0%" x2="0%" y1="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ffd36c" stop-opacity="0.0" />
+                    <stop offset="30%" stop-color="#ffd36c" stop-opacity="0.25" />
+                    <stop offset="40%" stop-color="#e39f64" stop-opacity="0.5" />
+                    <stop offset="50%" stop-color="#cd7a59" stop-opacity="0.6" />
+                    <stop offset="70%" stop-color="#c4432d" stop-opacity="0.8" />
+                  </linearGradient>
+                  
                 </defs>
 
                 <!-- Group with clip applied -->
                 <g clip-path="url(#fillClip)">
+                  <filter id="plaque-hue" x="0" y="0" width="100%" height="100%">
+                    <feImage href="media/plaque-texture-l.png" result="tex" />
+                    <feColorMatrix in="tex" type="matrix"
+                      values="
+                        0.8  0    0    0    0
+                        0    0.8  0    0    0
+                        0    0    0.8  0    0
+                        0    0    0    0.75 0" result="coloredTex"/>
+                    <feBlend in="SourceGraphic" in2="coloredTex" mode="overlay"/>
+                  </filter>
+
                   <!-- Yellow fill circle -->
-                  <circle class="yellow-fill" cx="200" cy="150" r="100" />
-                  <!-- Blue line -->
+                  <!-- <circle class="yellow-fill" cx="200" cy="150" r="100" fill="url(#plaqueGradient)" filter="url(#blend-overlay)" /> -->
+                  <circle class="yellow-fill" cx="200" cy="150" r="100" fill="url(#plaqueGradient-t)" filter="url(#plaque-hue)" />
+
                   <!-- <line id="blueLine" class="blue-line" x1="0" x2="400" y1="400" y2="400" /> -->
                   <line id="blueLine" class="blue-line" x1="50" x2="350" y1="400" y2="400" />
                 </g>
@@ -424,7 +417,7 @@
 
                 <!-- Outer circles (drawn after fill so they're always on top) -->
                 <circle class="circle-border" cx="200" cy="150" r="100" />
-                <circle class="circle-outline" cx="200" cy="150" r="100" stroke="url(#myGradient)"/>
+                <circle class="circle-outline" cx="200" cy="150" r="100" stroke="url(#arteryGradient)"/>
 
                 <!-- Reference lines group -->
                 <g id="refLines"></g>
@@ -476,16 +469,37 @@
                     <rect id="clipRect-2" x="0" y="400" width="400" height="0" />
                   </clipPath>
 
-                  <radialGradient id="myGradient-2" cx="50%" cy="50%" r="50%">
-                    <stop offset="75%" stop-color="rgba(255, 171, 171, 1)" />
-                    <stop offset="100%" stop-color="rgba(235, 107, 100, 1)" />
+                  <radialGradient id="arteryGradient-2" cx="50%" cy="50%" r="50%">
+                    <stop offset="75%" stop-color="rgb(255, 171, 171)" />
+                    <stop offset="87.5%" stop-color="rgb(247, 139, 136)" />
+                    <stop offset="100%" stop-color="rgb(235, 107, 100)" />
                   </radialGradient>
+
+                  <linearGradient id="plaqueGradient-t-2" x1="0%" x2="0%" y1="100%" y2="0%">
+                    <stop offset="0%" stop-color="#ffd36c" stop-opacity="0.0" />
+                    <stop offset="30%" stop-color="#ffd36c" stop-opacity="0.25" />
+                    <stop offset="40%" stop-color="#e39f64" stop-opacity="0.5" />
+                    <stop offset="50%" stop-color="#cd7a59" stop-opacity="0.6" />
+                    <stop offset="70%" stop-color="#c4432d" stop-opacity="0.8" />
+                  </linearGradient>
+
                 </defs>
 
                 <!-- Group with clip applied -->
                 <g clip-path="url(#fillClip-2)">
+                  <filter id="plaque-hue-2" x="0" y="0" width="100%" height="100%">
+                    <feImage href="media/plaque-texture-l.png" result="tex" />
+                    <feColorMatrix in="tex" type="matrix"
+                      values="
+                        0.8  0    0    0    0
+                        0    0.8  0    0    0
+                        0    0    0.8  0    0
+                        0    0    0    0.75 0" result="coloredTex"/>
+                    <feBlend in="SourceGraphic" in2="coloredTex" mode="overlay"/>
+                  </filter>
+
                   <!-- Yellow fill circle -->
-                  <circle class="yellow-fill" cx="200" cy="150" r="100" />
+                  <circle class="yellow-fill" cx="200" cy="150" r="100" fill="url(#plaqueGradient-t-2)" filter="url(#plaque-hue-2)" />
                   <!-- Blue line -->
                   <!-- <line id="blueLine" class="blue-line" x1="0" x2="400" y1="400" y2="400" /> -->
                   <line id="blueLine-2" class="blue-line" x1="50" x2="350" y1="400" y2="400" />
@@ -495,7 +509,7 @@
 
                 <!-- Outer circles (drawn after fill so they're always on top) -->
                 <circle class="circle-border" cx="200" cy="150" r="100" />
-                <circle class="circle-outline" cx="200" cy="150" r="100" stroke="url(#myGradient-2)"/>
+                <circle class="circle-outline" cx="200" cy="150" r="100" stroke="url(#arteryGradient-2)"/>
 
                 <!-- Reference lines group -->
                 <g id="refLines-2"></g>
@@ -545,37 +559,7 @@
         </div>
 
         <div class="treatment-col1">
-          <div class="treatment-risk-box">
-            <div class="risk-before-treatment-box">
-              <div id="risk-before-treatment">
-                <span>Your risk up to age 80 <strong id="red-text">WITHOUT treatment:</strong></span>
-              </div>
-              <div id="risk-before-treatment-value-box">
-                <!-- <div id="risk-before-treatment-value">00.0%</div>                 -->
-              </div>                  
-            </div>
-            <div class="risk-after-treatment-box">
-              <div class="risk-after-treatment-box-col-1">
-                <div id="risk-after-treatment">
-                  <span>Your risk <strong id="red-text">WITH treatment:</strong></span>
-                </div>
-                <div id="risk-after-treatment-value-box">
-                  <!-- <div id="risk-after-treatment-value">00.0%</div>                 -->
-                </div>                    
-              </div>
-              <div class="risk-after-treatment-box-col-2">
-                <div id="treatment-risk-reduction">Risk Reduction:<br><br></div>
-                <div class="treatment-risk-reduction-box">
-                   <div id="treatment-absolute-risk-reduction">Absolute:
-                      <div id="treatment-absolute-risk-reduction-value">0</div>
-                   </div>
-                   <!-- <div id="treatment-proportional-risk-reduction">Proportional:
-                      <div id="treatment-proportional-risk-reduction-value">0</div>
-                   </div> -->
-                </div>                    
-              </div>
-            </div>
-          </div>
+          
           <div class="treatment-risks-box">
             <div id="treatment-risks-box-title">Reduced Lifetime Risk</div>
             <div id="risk-transition-box">
@@ -584,9 +568,7 @@
               <div id="risk-after-treatment-value">00.0%</div>                
             </div>
 
-            <!-- <div id="treatment-proportional-risk-reduction"> -->
             <div id="treatment-proportional-risk-reduction-value"></div>
-            <!-- </div> -->
           </div>
           <div class="treatment-graph-box">
             <div id="treatment-Graph-tooltip">(You can see your risk with and without treatment at any age by holding the cursor over the line below)</div>
@@ -622,9 +604,6 @@
           </div>
           <div id="healthy-years-value-postamble-1"><em><b>Benefit COMPOUNDS</b> over time - so the earlier you start, the faster benefit grows.</em></div>
         </div>
-        <div id="treatment-bottom-options">
-          <button class="plaque-button" type="button" id="treatment-plaque-btn"> See your Personal Plaque Threshold </button>        
-        </div>        
       </div>
     </div>
 
@@ -657,37 +636,6 @@
 
         <div id="personalization-reminder">Please enter a number in the field above to access the rest of this page.</div>
         <div class="personalization-col1">
-          <div class="personalization-risk-box">
-            <div class="personalization-risk-before-treatment-box">
-              <div id="personalization-risk-before-treatment">
-                <span>Your risk up to age 80 <strong id="red-text">WITHOUT treatment:</strong></span>
-              </div>
-              <div id="personalization-risk-before-treatment-value-box">
-                <!-- <div id="risk-before-treatment-value">00.0%</div>                 -->
-              </div>                  
-            </div>
-            <div class="personalization-risk-after-treatment-box">
-              <div class="personalization-risk-after-treatment-box-col-1">
-                <div id="personalization-risk-after-treatment">
-                  <span>Your risk <strong id="red-text">WITH treatment:</strong></span>
-                </div>
-                <div id="personalization-risk-after-treatment-value-box">
-                  <!-- <div id="risk-after-treatment-value">00.0%</div>                 -->
-                </div>                    
-              </div>
-              <div class="personalization-risk-after-treatment-box-col-2">
-                <div id="personalization-risk-reduction">Risk Reduction:<br><br></div>
-                <div class="personalization-risk-reduction-box">
-                   <div id="personalization-absolute-risk-reduction">Absolute:
-                      <div id="personalization-absolute-risk-reduction-value">0</div>
-                   </div>
-                   <!-- <div id="treatment-proportional-risk-reduction">Proportional:
-                      <div id="treatment-proportional-risk-reduction-value">0</div>
-                   </div> -->
-                </div>                    
-              </div>
-            </div>
-          </div>
           <div class="personalization-risks-box">
             <div id="personalization-treatment-risks-box-title">Reduced Lifetime Risk</div>
             <div id="personalization-risk-transition-box">
@@ -696,9 +644,7 @@
               <div id="personalization-risk-after-treatment-value">00.0%</div>                
             </div>
 
-            <!-- <div id="treatment-proportional-risk-reduction"> -->
             <div id="personalization-proportional-risk-reduction-value">test</div>
-            <!-- </div> -->
           </div>
           <div class="personalization-graph-box">
             <div id="personalization-Graph-tooltip">(You can see your risk with and without treatment at any age by holding the cursor over the line below)</div>
@@ -733,22 +679,18 @@
           </div>
           <div id="personalization-healthy-years-value-postamble-1"><em><b>Benefit COMPOUNDS</b> over time - so the earlier you start, the faster benefit grows.</em></div>
         </div>
-        <div id="personalization-bottom-options">
-          <button class="plaque-button" type="button" id="personalization-plaque-btn"> See your Personal Plaque Threshold </button>        
-        </div>        
       </div>
     </div>
 
     <div id="WIP-message">
       <!-- <div id="WIP-message-block"> -->
         <em>
-          * Please note, this very early beta version (v0.84) of the MVP is for illustrative purposes only to test content presentation. It includes some simplifying assumptions and closed form approximations for computational efficiency. The MVP will be tested and updated several times per day to refine performance, add additional functionality, and update each algorithm in the stack for consistency, latency, and computational efficiency. As a result, there will be periods of time when this site is not available as we execute back testing and updates. Each updated version of the MVP will be labeled as Beta v(X).(Y)</div>
+          * Please note, this very early beta version (v0.86) of the MVP is for illustrative purposes only to test content presentation. It includes some simplifying assumptions and closed form approximations for computational efficiency. The MVP will be tested and updated several times per day to refine performance, add additional functionality, and update each algorithm in the stack for consistency, latency, and computational efficiency. As a result, there will be periods of time when this site is not available as we execute back testing and updates. Each updated version of the MVP will be labeled as Beta v(X).(Y)</div>
         </em>
       <!-- </div> -->
-    <div id="current-version">(Beta v0.84)</div>
+    <div id="current-version">(Beta v0.86)</div>
     
     <div class="footer">
-      <!-- <p>Copyright © TBFerence & CKFerence 2023. All rights reserved.</p> -->
       <p>Copyright © TBFerence 2025. All rights reserved.</p>
     </div>
     <div class = "debug-box"></div>

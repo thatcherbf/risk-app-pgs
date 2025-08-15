@@ -988,7 +988,6 @@ svg {
 
 .circle-border {
   fill: none;
-  /* stroke: rgb(80, 80, 80); */
   stroke: rgb(176, 73, 68); 
   stroke-width: 34px; 
 }
@@ -1012,7 +1011,7 @@ svg {
 }
 
 .yellow-fill {
-  fill: #ffd36c; 
+  /* fill: #ffd36c;  */
 }
 
 .blue-line {
@@ -3132,7 +3131,6 @@ input[type=passcode] {
   /* border: solid red 1px; */
 }
 
-
 #current-version {
   color: #dddddd;
   text-align: right;
@@ -3160,6 +3158,7 @@ input[type=passcode] {
   justify-content: center;
   flex-direction: column;
   /* visibility: hidden; */
+  display:none;
 }
 
 #WIP-text-1 {
