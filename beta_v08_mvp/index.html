@@ -159,26 +159,6 @@
             </div>
           </div>
 
-          <div class="input-items" id = "LDL-items">
-            <div class = "label-box">
-              <p class="input-label"> 
-                LDL 
-              </p>
-            </div>
-
-            <div class="textfield-box">
-              <input type="number" class="textfield-box-input" id="LDL-input" name="LDL-input" placeholder="Range: 75 - 200">
-              <div class="units-box">
-                <label>
-                  <input type="radio" id = "mgdL2" class = "LDL-radio" name="chol-units-2" checked="checked" value=0><span>mg/dL</span>
-                </label>
-                <label>
-                  <input type="radio" id = "mmolL2" class = "LDL-radio" name="chol-units-2" value=1><span>mmol/L</span>
-                </label>
-              </div>      
-            </div>
-          </div>
-
           <div class="input-items" id = "TC-items">
             <div class = "label-box">
               <p class="input-label"> 
@@ -193,6 +173,26 @@
                 </label>
                 <label>
                   <input type="radio" id = "mmolL1" class = "TC-radio" name="chol-units-1" value=1><span>mmol/L</span>
+                </label>
+              </div>      
+            </div>
+          </div>
+
+          <div class="input-items" id = "LDL-items">
+            <div class = "label-box">
+              <p class="input-label"> 
+                LDL <span>(Low-Density Lipoprotein)</span>
+              </p>
+            </div>
+
+            <div class="textfield-box">
+              <input type="number" class="textfield-box-input" id="LDL-input" name="LDL-input" placeholder="Range: 75 - 200">
+              <div class="units-box">
+                <label>
+                  <input type="radio" id = "mgdL2" class = "LDL-radio" name="chol-units-2" checked="checked" value=0><span>mg/dL</span>
+                </label>
+                <label>
+                  <input type="radio" id = "mmolL2" class = "LDL-radio" name="chol-units-2" value=1><span>mmol/L</span>
                 </label>
               </div>      
             </div>
@@ -243,7 +243,7 @@
           <div class="input-items" id = "SBP-items">
             <div class = "label-box">
               <p class="input-label"> 
-                Systolic Blood Pressure (SBP)
+                SBP <span>(Systolic Blood Pressure)</span>
               </p>
             </div>
             <div class="textfield-box">
@@ -255,11 +255,11 @@
           <div class="input-items" id = "DBP-items">
             <div class = "label-box">
               <p class="input-label"> 
-                Diastolic Blood Pressure (DBP)
+                DBP (Diastolic Blood Pressure)
               </p>
             </div>
             <div class="textfield-box">
-              <input type="number" class="textfield-box-input" id="DBP-input" name="DBP-input">
+              <input type="number" class="textfield-box-input" id="DBP-input" name="DBP-input" placeholder="Range: 50 - 100">
               <div class="unit-label">mmHg</div>
             </div>
           </div>
@@ -321,7 +321,7 @@
               </p>
             </div>
             <div class="textfield-box">
-              <input type="number" class="textfield-box-input" id="wCirc-input" name="wCirc-input" disabled>
+              <input type="number" class="textfield-box-input" id="wCirc-input" name="wCirc-input">
               <div class="units-box">
                 <label>
                   <input type="radio" name="wCirc-units" checked="checked" value=0><span>in</span>

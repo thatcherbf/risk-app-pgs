@@ -4758,6 +4758,21 @@ svg {
   box-sizing: border-box;
 }
 
+#LDL-items .label-box p,
+#SBP-items .label-box p
+{
+  font-weight: 800;
+  font-size: 15px;
+}
+
+#LDL-items .label-box p span,
+#SBP-items .label-box p span
+{
+  margin-left: 5px;
+  font-weight: 400;
+  font-size: 13px;
+}
+
 #famhx-items .label-box .input-label {
   font-size: 12.25px !important;
 }
