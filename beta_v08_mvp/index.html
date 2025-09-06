@@ -34,6 +34,34 @@
   </head>
 
   <body oncontextmenu="return false">
+    
+    <!-- <script>
+      window.addEventListener("load", () => {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const ratio = (width / height).toFixed(2);
+
+        // Media queries you care about
+        const queries = [
+          "(max-width: 800px) and (orientation: landscape)",
+          "(max-height: 600px) and (orientation: landscape)",
+          "(max-width: 800px) and (orientation: portrait)",
+          "(min-aspect-ratio: 16/10)",
+          "(max-aspect-ratio: 16/10)"
+        ];
+
+        // Test each query
+        const matches = queries
+          .filter(q => window.matchMedia(q).matches)
+          .join("\n");
+
+        alert(
+          `Width: ${width}px\nHeight: ${height}px\nAspect ratio: ${ratio}\n\nActive media queries:\n${matches || "none"}`
+        );
+      });
+    </script> -->
+
+    <div class="container">
     <div class="bg-layer" id="bg1"></div>
 
     <div id = "login-box">
@@ -201,7 +229,7 @@
           <div class="input-items" id = "HDL-items">
             <div class = "label-box">
               <p class="input-label"> 
-                HDL 
+                HDL
               </p>
             </div>
             <div class="textfield-box">
@@ -220,7 +248,7 @@
           <div class="input-items" id = "nHDL-items">
             <div class = "label-box">
               <p class="input-label"> 
-                Non-HDL 
+                Non-HDL Cholesterol
               </p>
             </div>
             <div class="textfield-box">
@@ -663,7 +691,7 @@
 
             <div id="plaque-gauge-1">
 
-              <svg width="300" height="150" viewBox="0 0 400 250" role="img">
+              <svg width="300" height="150" viewBox="0 20 400 250" role="img">
                 <defs>
                   <!-- Clip path for both yellow fill and blue line -->
                   <clipPath id="fillClip">
@@ -798,7 +826,7 @@
 
             <div id="plaque-gauge-2">
 
-              <svg width="300" height="150" viewBox="0 0 400 250" role="img">
+              <svg width="300" height="150" viewBox="0 20 400 250" role="img">
                 <defs>
                   <!-- Clip path for both yellow fill and blue line -->
                   <clipPath id="fillClip-2">
@@ -1105,7 +1133,7 @@
 
               <div id="future-plaque-gauge">
 
-                <svg width="300" height="150" viewBox="0 -20 400 250" role="img">
+                <svg width="300" height="150" viewBox="0 25 400 250" role="img">
                   <defs>
                     <!-- Clip path for both yellow fill and blue line -->
                     <clipPath id="future-fillClip">
@@ -1324,7 +1352,7 @@
 
               <div id="benefit-future-plaque-gauge">
 
-                <svg width="300" height="150" viewBox="0 -20 400 250" role="img">
+                <svg width="300" height="150" viewBox="0 25 400 250" role="img">
                   <defs>
                     <!-- Clip path for both yellow fill and blue line -->
                     <clipPath id="benefit-future-fillClip">
@@ -1503,14 +1531,14 @@
     <div id="WIP-message">
       <!-- <div id="WIP-message-block"> -->
         <em>
-          * Please note, this very early beta version (v1.42) 
+          * Please note, this very early beta version (v1.42.5) 
           of the MVP is for illustrative purposes only. 
           It includes simplifying assumptions and closed 
           form approximations for computational efficiency. 
         </em>
       <!-- </div> -->
     </div>
-    <div id="current-version">(Beta v1.42)</div>
+    <div id="current-version">(Beta v1.42.5)</div>
     
     <div class="footer">
       <p>Copyright © TBFerence 2025. All rights reserved.</p>
@@ -1530,6 +1558,6 @@
         <span id="color-lower">#ff0000</span>
       </div>
     </div>
-
+</div>
 </body>
 </html>
