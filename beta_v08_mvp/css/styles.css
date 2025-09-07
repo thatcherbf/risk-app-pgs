@@ -4675,6 +4675,10 @@ svg {
   box-sizing: border-box;
 }
 
+#BMI-input, #nHDL-input {
+  pointer-events: none;  
+}
+
 .textfield-box-input::placeholder {
   color: rgba(255, 255, 255, 0.75);
   font-size: calc(1rem * 12/14);
