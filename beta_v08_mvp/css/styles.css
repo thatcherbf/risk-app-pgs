@@ -44,7 +44,7 @@ body {
   font-weight: 300;
   font-size: calc(1rem * 14/14);
   accent-color: var(--accentblue);
-  background-color: #1b65aa;
+  background-color: #096ec6;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -85,7 +85,7 @@ label {
 
 label {
   width: 100%;
-  cursor: default;
+  /* cursor: default; */
 }
 
 input {
@@ -119,14 +119,24 @@ select {
   padding: 2px;
 }
 
+.top-bar {
+  height: 5vh;
+  width: 100vw;
+  display: inline-flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
 .top-box {
-  position: relative;
+  position: absolute;
   background-color: rgba(255, 255, 255, 0.125);
   /* backdrop-filter: blur(5px);  */
 
   width: 76%;
-  margin-left: 12%;
-  margin-right: 12%;
+  /* margin-left: 12%;
+  margin-right: 12%; */
   height: 5vh;
   border-radius: 0 0 10px 10px;
   overflow: hidden;
@@ -792,6 +802,12 @@ svg {
   margin: 0 auto;
   box-sizing: border-box;
 }
+
+/* #plaque-gauge-1 svg text,
+#plaque-gauge-2 svg text
+{
+  font-size: 1.5rem;
+} */
 
 #plaque-box-slider-1 {
   height: 20%;
@@ -2443,6 +2459,7 @@ svg {
   box-sizing: border-box;
 }
 
+#bot-input,
 #healthscore-bot-input,
 #benefit-bot-input
 {
@@ -2462,6 +2479,7 @@ svg {
   cursor: default;
 }
 
+#bot-input::placeholder,
 #healthscore-bot-input::placeholder,
 #benefit-bot-input::placeholder
 {
@@ -2683,7 +2701,7 @@ svg {
   white-space: nowrap;
 
   box-sizing: border-box;
-  transition: all 0.5s ease;
+  /* transition: all 0.5s ease; */
   
   /* border: solid red 1px; */
 }
@@ -2781,17 +2799,18 @@ svg {
 }
 
 #dial-label {
-  height: 84.5%;
+  height: 90%;
   aspect-ratio: 1/1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: monospace;
+  /* font-family: monospace; */
   white-space: pre-wrap;
   word-wrap: break-word;
   border-radius: 50%;
   box-sizing: border-box;
+  cursor: grab !important;
 }
 
 .label {
@@ -2801,6 +2820,7 @@ svg {
   font-weight: 400;
   font-family: sans-serif;
   z-index: 2;
+  cursor: grab !important;
 }
 
 #col2-receptacle {
@@ -2952,7 +2972,7 @@ svg {
   bottom: 15%;
   left: 7.5%;
   right: 7.5%;
-  font-size: calc(1rem * 16/14);
+  font-size: calc(1rem * 15/14);
   /* padding-bottom: 1%; */
   /* margin-top: 3%; */
   display: flex;
@@ -2999,7 +3019,7 @@ svg {
 }
 
 #dial-boxes-plaque-threshold-personalized-guidance span:nth-of-type(1) {
-  font-size: calc(1rem * 20/14);
+  font-size: calc(1rem * 18/14);
 }
 
 .dial-boxes-col3 {
@@ -3102,8 +3122,7 @@ svg {
   box-sizing: border-box;
 }
 
-#dial-boxes-risk-transition-box-row1,
-#dial-clone-risk-transition-box-row1 {
+#dial-boxes-risk-transition-box-row1 {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
@@ -3121,33 +3140,9 @@ svg {
   transform: translateY(-0.1em); /* tiny tweak if needed */
 }
 
-#dial-clone-risk-transition-box span{
-  font-weight: 100;
-  font-size: calc(1rem * 15/14);
-
-  line-height: 1;           /* reset to avoid weird baselines */
-  flex: 0 0 auto;
-  transform: translateY(-0.1em); /* tiny tweak if needed */
-}
-
 #dial-boxes-risk-before-treatment-value {
   color: white;
   font-size: calc(1rem * 24/14);
-  font-weight: 300;
-
-  justify-content: left;
-  vertical-align: middle;
-  display: flex;
-
-  line-height: 1;  /* helps avoid extra spacing from default line-height */
-  width: 5ch;        /* set width to fit the widest possible value, e.g. "100.0%" */
-  text-align: right;
-  box-sizing: border-box;
-}
-
-#dial-clone-risk-before-treatment-value {
-  color: white;
-  font-size: calc(1rem * 15/14);
   font-weight: 300;
 
   justify-content: left;
@@ -3175,32 +3170,8 @@ svg {
   box-sizing: border-box;
 }
 
-#dial-clone-risk-after-treatment-value {
-  color: white;
-  font-size: calc(1rem * 15/14);
-  font-weight: 300;
-
-  justify-content: right;
-  vertical-align: middle;
-  display: flex;
-
-  line-height: 1;  /* helps avoid extra spacing from default line-height */
-  width: 5ch;        /* set width to fit the widest possible value, e.g. "100.0%" */
-  text-align: left;
-  box-sizing: border-box;
-}
-
 #dial-boxes-risk-reduction-value {
   font-size: calc(1rem * 17/14);
-  font-weight: 300;
-  height: calc(100% * 1/3);
-  width: 100%;
-  text-align: center;
-  align-items: flex-start;
-}
-
-#dial-clone-risk-reduction-value {
-  font-size: calc(1rem * 10/14);
   font-weight: 300;
   height: calc(100% * 1/3);
   width: 100%;
@@ -3359,6 +3330,934 @@ svg {
   border-radius: 50%;
   box-sizing: border-box;
   visibility: hidden;
+}
+
+.outer-box-healthscore-dial-boxes {
+  height: 95vh;
+  width: 100vw;
+  display: inline-flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-content: center;
+  display: none;
+}
+
+.healthscore-dial-boxes-box {
+  background-color: rgba(255, 255, 255, 0.125);
+  /* backdrop-filter: blur(5px);  */
+  position: absolute;
+  height: 88.5vh;
+
+  width: 76%;
+  margin-top: 0.75%;
+  margin-bottom: 0.75%;
+
+  display: inline-flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  overflow: hidden;
+
+  border: solid white 1px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.healthscore-dial-boxes-col1 {
+  height: 100%;
+  width: 30%;
+  display: inline-flex;
+  flex-flow: wrap;
+
+  border-right: solid white 0.5px; 
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-current-levels {
+  height: 30%;
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+#healthscore-current-levels-list {
+  height: 100%;
+  width: 100%;
+  
+  color: white;
+  font-size: calc(1rem * 15/14);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  column-gap: 0.1rem;
+  row-gap: 0.1rem;
+
+  visibility: hidden;
+
+  box-sizing: border-box;
+}
+
+#healthscore-current-levels-list-age,
+#healthscore-current-levels-list-ldl,
+#healthscore-current-levels-list-sbp
+{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(1rem * 12/14);
+  text-align: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#healthscore-current-levels-list-age span,
+#healthscore-current-levels-list-ldl span,
+#healthscore-current-levels-list-sbp span
+{
+  color: white;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  font-size: calc(1rem * 30/14);
+  font-weight: 500;
+}
+
+#healthscore-current-levels-list-weight,
+#healthscore-current-levels-list-bmi,
+#healthscore-current-levels-list-lpa
+{
+  display: flex;
+  flex-direction: column;
+  font-size: calc(1rem * 12/14);
+  text-align: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#healthscore-current-levels-list-weight span,
+#healthscore-current-levels-list-bmi span,
+#healthscore-current-levels-list-lpa span
+{
+  color: white;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  font-size: calc(1rem * 20/14);
+  font-weight: 500;
+}
+
+#healthscore-current-levels-list-curldl,
+#healthscore-current-levels-list-cumldl,
+#healthscore-current-levels-list-tcumldl
+{
+  display: flex;
+  flex-direction: column;
+  font-size: calc(1rem * 10/14);
+  text-align: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#healthscore-current-levels-list-curldl span,
+#healthscore-current-levels-list-cumldl span,
+#healthscore-current-levels-list-tcumldl span
+{
+  color: white;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  font-size: calc(1rem * 20/14);
+  font-weight: 500;
+}
+
+#healthscore-dial-boxes-bot-option {
+  height: 35%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  border-top: solid white 1px; 
+  border-bottom: solid white 1px; 
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-bot-1 {
+  color: white;
+
+  height: 22.5%;
+  width: 100%;
+  padding: 0 5% 0 5%;
+
+  font-size: calc(1rem * 15/14);
+  font-weight: 800;
+  user-select: none;
+  display: flex;
+
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-bot-2 {
+  font-size: calc(1rem * 12.5/14);
+  user-select: none;
+  color: white;
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  text-align: left;
+  padding: 0 5% 0 5%;
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-plaque-threshold-box {
+  position: relative;
+  user-select: none;
+
+  height: 35%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#healthscore-future-plaque-gauge-title {
+  position: absolute;
+  top: 0;
+  height: 20%;
+  color: white;
+  font-size: calc(1rem * 15/14);
+  font-weight: 500; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#healthscore-future-plaque-gauge-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  visibility: hidden;
+}
+
+#healthscore-future-plaque-gauge {
+  position: absolute;
+
+  top: 10%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+
+  /* width: 400px; */
+  /* height: 250px; */
+  display: flex;
+  justify-content: center; 
+
+  box-sizing: border-box;
+  /* border: solid red 1px; */
+}
+
+#healthscore-future-plaque-gauge svg {
+  width: 90%;
+  height: auto;
+  max-height: 100%;
+  display: block;
+
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#healthscore-future-refLabels text {
+  text-rendering: geometricPrecision;
+}
+
+.healthscore-dial-boxes-col2 {
+  z-index: 1;
+  height: 100%;
+  width: 40%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: solid white 0.5px;
+  border-right: solid white 0.5px;
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-col2-row1 {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  user-select: none;
+
+  /* border: solid red 1px; */
+}
+
+#healthscore-dial-boxes-box-page-title {
+  height: 50%;
+  width: 100%;
+  display: flex;
+
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-box-page-title-1 {
+  height: 100%;
+  width: 90%;
+  font-size: calc(1rem * 25/14);
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  color: white;
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-box-page-title-2 {
+  width: 100%;
+  font-size: calc(1rem * 15/14);
+  font-weight: 400;
+  align-items: center;
+  text-align: center;
+  color: white;
+  display: none;
+}
+
+#healthscore-dial-boxes-box-page-explanation {
+  height: 50%;
+  width: 100%;
+
+  padding-left: 2.0%;
+  padding-right: 2.0%;
+
+  font-size: calc(1rem * 12/14);
+  /* align-items: start; */
+  text-align: center;
+  /* display: flex;
+  justify-content: start;
+  flex-direction: column; */
+
+  display: block;
+
+  color: white; 
+  white-space: nowrap;
+
+  box-sizing: border-box;
+  /* transition: all 0.5s ease; */
+  
+  /* border: solid red 1px; */
+}
+
+#healthscore-dial-boxes-box-page-explanation em {
+  font-size: calc(1rem * 10.5/14);
+}
+
+#healthscore-dial-boxes-col2-row2 {
+  position: relative; 
+  height: 45%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+
+  /* border: solid red 1px; */
+}
+
+#healthscore-matrix-l,
+#healthscore-matrix-r
+{
+  position: absolute;
+  z-index: -1;
+  user-select: none;
+  /* height: fit-content; */
+  /* object-fit: cover; */
+  opacity: 0;
+
+  width: 20%;
+  /* height: 85%; */
+  top: 8.65%;
+  bottom: 8.65%;
+
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+  padding: 1.25% 1.25% 1.25% 1.25%;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  transition: all 0.5s ease;
+}
+
+#healthscore-matrix-l {
+  left: 0;
+}
+
+#healthscore-matrix-r {
+  right: 0;
+}
+
+#healthscore-dial-box span {
+  position: absolute;
+  color: white;
+  font-size: calc(1rem * 20/14);
+  font-weight: 400;
+  top: 100%;
+}
+
+#healthscore-dial-box {
+  position: relative;
+  height: 100%;
+
+  aspect-ratio: 1/1;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  user-select: none;
+
+  /* border: solid red 1px; */
+}
+
+#healthscore-dial-image {
+  height: 95%;
+  aspect-ratio: 1 / 1;   /* keeps it square */
+  object-fit: contain;
+  transform: rotate(0deg);
+  pointer-events: none; /* so drag events go to container */
+  user-drag: none;      /* Safari */
+  -webkit-user-drag: none; /* Safari/WebKit */
+
+  transition: filter 0.5s ease;
+}
+
+#healthscore-dial-label:hover {
+  cursor: grab;
+}
+
+#healthscore-dial-label {
+  height: 89.5%;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-family: monospace; */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.healthscore-label {
+  position: absolute;
+  color: white; 
+  font-size: calc(1rem * 45/14);
+  font-weight: 400;
+  font-family: sans-serif;
+  z-index: 2;
+}
+
+#healthscore-dial-boxes-col2-row3 {
+  height: 40%;
+  width: 100%;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+#healthscore-dial-boxes-plaque-threshold-progress-bar-wrapper {
+  /* margin-top: 5%; */
+  position: relative;
+  height: 27.5%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: filter 0.5s ease;
+}
+
+#healthscore-dial-boxes-plaque-threshold-progress-bar {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.0);
+  /* height: 80%; */
+  /* width: 60%; */
+
+  top: 60%;
+  bottom: 5%;
+  left: 15%;
+  right: 15%;
+
+  border: solid white 1px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#healthscore-progress-tick {
+  position: absolute;
+  width: 2px;
+  background-color: var(--accentblue);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  visibility: hidden;
+}
+
+#healthscore-dial-boxes-plaque-threshold-progress{
+  position: relative;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  background: 
+    url('../media/progress-bar.png');
+  
+  background-size: 
+    110%;
+
+  background-blend-mode: screen;
+  background-position: center;
+
+  clip-path: inset(0 0% 0 0);
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#healthscore-dial-boxes-plaque-threshold-wrapper {
+  padding-top: 2%;
+  /* height: 25%; */
+  width: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-plaque-threshold-progress-value-a {
+  /* height: 30%; */
+  width: 100%;
+
+  font-size: calc(1rem * 12.5/14);
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-plaque-threshold-progress-value {
+  /* height: 70%; */
+  width: 100%;
+  font-size: calc(1rem * 12.5/14);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-plaque-threshold-progress-value span {
+  width: 100%;
+  font-weight: 400;
+  font-size: calc(1rem * 20/14);
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-plaque-threshold-personalized-guidance-wrapper{
+  position: relative;
+  /* height: 55%; */
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  /* border: solid orange 1px; */
+}
+
+#healthscore-dial-boxes-plaque-threshold-personalized-guidance {
+  position: absolute;
+  /* height: 90%; */
+  /* width: 80%; */
+  top: 12.5%;
+  bottom: 15%;
+  left: 7.5%;
+  right: 7.5%;
+  font-size: calc(1rem * 15/14);
+  /* padding-bottom: 1%; */
+  /* margin-top: 3%; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: opacity 0.5s ease;
+
+  /* opacity: 1 !important;
+  visibility: visible !important; */
+}
+
+#healthscore-dial-boxes-plaque-threshold-personalized-guidance::before {
+  content: "";
+  position: absolute;
+  inset: 0; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  border-radius: inherit; 
+  background: 
+    radial-gradient(
+      #57b4ff 25%,
+      #0f9aff 75%,
+      #005fff 100%
+    );
+
+  opacity: 0.75;
+  z-index: 0;
+}
+
+#healthscore-dial-boxes-plaque-threshold-personalized-guidance > * {
+  position: relative;
+  z-index: 1; /* Text/content stays above */
+}
+
+#healthscore-dial-boxes-plaque-threshold-personalized-guidance span {
+  font-weight: 600;
+}
+
+#healthscore-dial-boxes-plaque-threshold-personalized-guidance span:nth-of-type(1) {
+  font-size: calc(1rem * 18/14);
+}
+
+.healthscore-dial-boxes-col3 {
+  height: 100%;
+  width: 30%;
+  display: inline-flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-left: solid white 0.5px; 
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+.healthscore-dial-boxes-graph-box {
+  position: relative;
+  /* height: 60%; */
+  flex: 3;
+  width: 100%;
+  display: flex;
+
+  justify-content: start;
+  flex-direction: column;
+
+  user-select: none;
+
+  border-style: solid;
+  border-color: white;
+  border-width: 0 0 0.5px 0; 
+  
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+#healthscore-dial-boxes-graph-box-title {
+  color: white;
+
+  /* height: 20%; */
+  height: 13.5%;
+
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: calc(1rem * 20/14);
+  font-weight: 400;
+  box-sizing: border-box;  
+  transition: all 0.125s ease;
+
+  /* border: solid red 1px; */
+}
+
+#healthscore-dial-boxes-graph-title {
+  color: white;
+  height: 3.5%; 
+  font-size: calc(1rem * 13.5/14);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: all 0.125s ease;
+}
+
+#healthscore-dial-boxes-risk-transition-box {
+  position:absolute;
+  color: white;
+  height: 16.5%;
+
+  top: 17.5%;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;       /* stack children vertically */
+  align-items: center;          /* center top row horizontally */
+  
+  visibility: hidden;
+  box-sizing: border-box;
+
+  /* border: solid red 1px; */
+}
+
+#healthscore-dial-boxes-risk-transition-box-row1 {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% * 2/3);
+  width: 100%;
+}
+
+#healthscore-dial-boxes-risk-transition-box span {
+  font-weight: 100;
+  font-size: calc(1rem * 25/14);
+
+  line-height: 1;           /* reset to avoid weird baselines */
+  flex: 0 0 auto;
+  transform: translateY(-0.1em); /* tiny tweak if needed */
+}
+
+#healthscore-dial-boxes-risk-before-treatment-value {
+  color: white;
+  font-size: calc(1rem * 24/14);
+  font-weight: 300;
+
+  justify-content: left;
+  vertical-align: middle;
+  display: flex;
+
+  line-height: 1;  /* helps avoid extra spacing from default line-height */
+  width: 5ch;        /* set width to fit the widest possible value, e.g. "100.0%" */
+  text-align: right;
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-risk-after-treatment-value {
+  color: white;
+  font-size: calc(1rem * 24/14);
+  font-weight: 300;
+
+  justify-content: right;
+  vertical-align: middle;
+  display: flex;
+
+  line-height: 1;  /* helps avoid extra spacing from default line-height */
+  width: 5ch;        /* set width to fit the widest possible value, e.g. "100.0%" */
+  text-align: left;
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-risk-reduction-value {
+  font-size: calc(1rem * 17/14);
+  font-weight: 300;
+  height: calc(100% * 1/3);
+  width: 100%;
+  text-align: center;
+  align-items: flex-start;
+}
+
+#healthscore-dial-boxes-graph-wrapper {
+  position: absolute;
+
+  top: 25%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /* height: 77.5%;
+  width: 100%; */
+
+  box-sizing: border-box;
+  display: flex;
+  align-items: end;
+}
+
+#healthscore-dial-boxes-Graph {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* height: 85%; */
+  /* width: 100%; */
+  box-sizing: border-box;
+  /* margin-bottom: 2.5%; */
+  /* border: solid red 1px; */
+}
+
+.healthscore-dial-boxes-healthy-years-box {
+  position: relative;
+  /* height: 44%; */
+  flex: 1;
+  width: 100%;
+  display: inline-flex;
+  justify-content: start;
+  vertical-align: middle;
+  align-items: center;
+
+  flex-direction: column;
+
+  border-style: solid;
+  border-color: white;
+  border-width: 0.5px 0 0.5px 0; 
+  
+  box-sizing: border-box;
+  user-select: none;
+}
+
+#healthscore-dial-boxes-healthy-years-title {
+  color: white;
+  height: 30%;
+  width: 95%;
+  font-size: calc(1rem * 15/14);
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-healthy-years {
+  /* border: solid white 2.5px; */
+  background: 
+    radial-gradient(
+      #57b4ff 15%, /*25%,*/
+      #0f9aff 45%, /*75%,*/
+      #005fff 80% /*100%*/
+    );
+  /* backdrop-filter: blur(5px);  */
+  color: white;
+  height: 62.5%;
+  aspect-ratio: 1 / 1;
+  font-size: calc(1rem * 32/14);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  box-sizing: border-box;
+  user-select: none;
+  visibility: hidden;
+}
+
+.healthscore-dial-boxes-bar-box {
+  position: relative;
+  /* height: 40%; */
+  flex: 2;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: flex-start;
+
+  border-style: solid;
+  border-color: white;
+  border-width: 0.5px 0 0 0; 
+  
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-bar-title {
+  color: white;
+  height: 15%;
+  width: 95%;
+  font-size: calc(1rem * 15/14);
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-bar {
+  position: absolute;
+  /* height: 95%; */
+  /* width: 95%; */
+  /* margin-top: 2.5%; */
+  /* margin-bottom: 2.5%; */
+  /* margin-left: 2.5%; */
+  /* margin-right: 2.5%; */
+  top: 5%;
+  bottom: 10px;
+  left: 2.5%;
+  right: 2.5%;
+  box-sizing: border-box;
 }
 
 .outer-box-benefit-dial-boxes {
@@ -3706,7 +4605,7 @@ svg {
   white-space: nowrap;
 
   box-sizing: border-box;
-  transition: all 0.5s ease;
+  /* transition: all 0.5s ease; */
   
   /* border: solid red 1px; */
 }
@@ -3771,17 +4670,6 @@ svg {
   color: rgba(255, 255, 255, 1);
 }
 
-/* #benefit-dial-box span {
-  position: absolute;
-  color: white;
-  font-family: monospace;
-  font-size: calc(1rem * 20/14);
-  font-weight: 300;
-  top: 47.5%;
-  right: 37.5%;
-  z-index: -2;
-} */
-
 #benefit-dial-box {
   position: relative;
   height: 100%;
@@ -3799,7 +4687,7 @@ svg {
 }
 
 #benefit-dial-image {
-  height: 100%;
+  width: 100%;
   aspect-ratio: 1 / 1;   /* keeps it square */
   object-fit: cover;
   transform: rotate(0deg);
@@ -3815,7 +4703,7 @@ svg {
 }
 
 #benefit-dial-label {
-  height: 92.5%;
+  height: 95%;
   aspect-ratio: 1/1;
   display: flex;
   flex-direction: row;
@@ -3838,6 +4726,7 @@ svg {
   align-items: center;
   justify-content: center;
   /* font-family: monospace; */
+  /* font-size: 90%; */
   white-space: pre-wrap;
   word-wrap: break-word;
   border-radius: 50%;
@@ -3849,7 +4738,7 @@ svg {
 .benefit-label {
   position: absolute;
   color: transparent; 
-  font-size: calc(1rem * 40/14);
+  font-size: calc(1rem * 37.5/14);
   font-weight: 400;
   font-family: sans-serif;
   z-index: 2;
@@ -4119,7 +5008,7 @@ svg {
   bottom: 15%;
   left: 7.5%;
   right: 7.5%;
-  font-size: calc(1rem * 16/14);
+  font-size: calc(1rem * 15/14);
   /* padding-bottom: 1%; */
   /* margin-top: 3%; */
   display: flex;
@@ -4166,7 +5055,7 @@ svg {
 }
 
 #benefit-dial-boxes-plaque-threshold-personalized-guidance span:nth-of-type(1) {
-  font-size: calc(1rem * 20/14);
+  font-size: calc(1rem * 18/14);
 }
 
 .benefit-dial-boxes-col3 {
@@ -4647,9 +5536,39 @@ svg {
 }
 
 .textfield-box {
+  position: relative;
   display: inline-flex;
   justify-content: right;
   box-sizing: border-box;
+}
+
+.input-items:has(.textfield-box-input.outofbounds) > .outofbounds-message
+{
+  opacity: 1;
+}
+
+.outofbounds-message {
+  background-color: rgba(255, 255, 255, 0.125);
+  backdrop-filter: blur(5px); 
+  color: white;
+  font-style: italic;
+  font-size: 80%;
+  position: absolute;
+  height: 2rem;
+  left: 25%;
+  right: 7.5%;
+  top: 1ch;
+  z-index: 2;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+  border: solid rgba(255, 255, 255, 0.25) 1px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .textfield-box-input {
@@ -4673,6 +5592,13 @@ svg {
   border-radius: 5px 0 0 5px;
   border-right: 0;
   box-sizing: border-box;
+
+  transition: border 0.5s ease;
+}
+
+.textfield-box-input.outofbounds {
+  border: solid red 1px;
+  background-color: rgba(255, 0, 0, 0.125)
 }
 
 #BMI-input, #nHDL-input {
@@ -5099,7 +6025,10 @@ svg {
   border: solid white 1px;
   border-radius: 5px;
   box-sizing: border-box;
-  transition: all 0.5s ease;
+  transition: 
+    opacity 0.5s ease,
+    border 0.5s ease,
+    color 0.5s ease;
 }
 
 #calculate-risk:disabled {
@@ -5376,150 +6305,7 @@ input[type=text] {
   font-weight: 100 !important;
 }
 
-
-
-@media (max-aspect-ratio: 5/4) {
-  .textfield-box-input {
-    flex:2 !important;
-  }
-  .unit-label {
-    flex:1 !important;
-  }
-  .units-box {
-    flex:1 !important;
-  }
-}
-
-@media (min-height: 700px) and (min-aspect-ratio: 1.9) {
-  html {
-    font-size: 0.9rem !important; 
-  }
-
-  em {
-    font-size: 0.9rem !important; 
-  }
-
-  #future-plaque-gauge,
-  #benefit-future-plaque-gauge
-  {
-    top: 17.5%;
-    bottom: 5%;
-  }
-
-  #dial-boxes-plaque-threshold-personalized-guidance,
-  #benefit-dial-boxes-plaque-threshold-personalized-guidance
-  {
-    top: 10%;
-    bottom: 12.5%;
-  }
-
-  #dial-box {
-    height: 95% !important;
-    aspect-ratio: 1/1;
-    /* border: solid red 1px; */
-  }
-
-  #benefit-dial-box {
-    height: 90% !important;
-    aspect-ratio: 1/1;
-    /* border: solid orange 1px; */
-  }
-
-  #dial-image {
-    height: 90%;
-    aspect-ratio: 1/1;
-    object-fit: contain;
-    /* border: solid red 1px; */
-  }
-
-  #benefit-dial-image {
-    height: 90%;
-    aspect-ratio: 1/1;
-    object-fit: contain;
-    /* border: solid red 1px; */
-  }
-
-  #dial-label {
-    height: 85%;
-    aspect-ratio: 1/1;
-    /* border: solid red 1px; */
-  }
-
-  #benefit-dial-label {
-    height: 85%;
-    aspect-ratio: 1/1;
-    /* border: solid red 1px; */
-  }
-
-  #matrix-l,
-  #matrix-r
-  {
-    font-size: 80%;
-    padding: 0 1.25% 0 1.25%;
-    height:20em;
-    /* height: 85%; */
-    top: calc((100% - 20em)/2);
-    bottom: calc((100% - 20em)/2);
-    /* border: solid red 1px; */
-  }
-
-  #benefit-matrix-l,
-  #benefit-matrix-r
-  {
-    font-size: 80%;
-    padding: 0 1.25% 0 1.25%;
-    height:18em;
-    /* height: 85%; */
-    top: calc((100% - 18em)/2);
-    bottom: calc((100% - 18em)/2);
-    /* border: solid red 1px; */
-  }
-}
-
-@media (max-height: 700px) and (min-aspect-ratio: 2) {
-  html {
-    font-size: 0.75rem !important; 
-  }
-}
-
-@media (max-height: 700px) and (min-aspect-ratio: 16/9) and (max-aspect-ratio: 1.7) {
-
-  html {
-    font-size: 0.55rem !important; 
-  }
-
-  #plaque-gauge-1,
-  #plaque-gauge-2
-  {
-    top: 10%;
-  }
-}
-
-@media (min-aspect-ratio: 16/9) {
-  html {
-    /* display: none; */
-  }
-
-  .inputs,
-  .lifetime-box,
-  .plaque-box,
-  .treatment-box,
-  .dial-boxes-box,
-  .benefit-dial-boxes-box
-  {
-    height: 88.5vh;
-    aspect-ratio: 16 / 9 !important;
-  }
-
-  .top-box {
-    aspect-ratio: 16 / 9 !important;
-    left:0;
-    right:0;
-  }
-
-}
-
-
+/* Device Capability Queries */
 @media (max-width: 800px) and (orientation: landscape) {
   html {
     font-size: clamp(5px, calc(3px + (5 * (100vw - 300px) / 500)), 10px);
@@ -5534,15 +6320,16 @@ input[type=text] {
   .plaque-box,
   .treatment-box,
   .dial-boxes-box,
+  .healthscore-dial-boxes-box,
   .benefit-dial-boxes-box
   {
-    width: 82.5vw !important;
+    width: 82.5vw;
   }
 
   .top-box {
-    width: 82.5vw !important;
+    width: 82.5vw;
     margin-left: calc((100-82.5)/2vw);
-    margin-right: 10%;
+    /* margin-right: 10%; */
   }
 
   #WIP-message {
@@ -5555,188 +6342,45 @@ input[type=text] {
   #plaque-gauge-2
   {
     height: 250px;
-    aspect-ratio: 1/1 !important;
+    aspect-ratio: 1/1;
     transform: translateY(-20px); /* moves it up 20px */
   }
 
 }
 
-@media (max-height: 700px) and (orientation: landscape) and (min-aspect-ratio: 16/10) {
+@media (max-width: 800px) and (orientation: portrait) {
   html {
-    /* font-size: clamp(
-      4px, 
-      calc(6px + (6 * (100vh - 125px) / 600)), 
-      14px); */
-    font-size: calc(
-      clamp(
-        4px, 
-        calc(6px + (6 * (100vh - 125px) / 600)), 
-        14px) * 0.975
-      );
+    font-size: clamp(
+      2px, 
+      calc(2px + (4 * (100vw - 200px) / 400)), 
+      10px
+    );
   }
-/* 
+}
+
+@media (min-width: 800px) and (orientation: portrait) {
+  html {
+    font-size: clamp(
+      4px, 
+      calc(4px + (3 * (100vh - 500px) / 300)), 
+      10px);
+  }
   label {
-    font-size: 1rem !important;
-  } */
-
-  #plaque-gauge-1,
-  #plaque-gauge-2
-  {
-    /* height: fit-content; */
-    inset: 0;
-    /* border: solid red 1px; */
-  }
-  
-  #plaque-box-slider-1-title,
-  #plaque-box-slider-2-title
-  {
-    white-space: nowrap;
-  }
-
-  #future-plaque-gauge,
-  #benefit-future-plaque-gauge
-  {
-    inset: 10% 0 0 0;
-    /* border: solid red 1px; */
-  }
-
-}
-
-@media (max-height: 700px) and (orientation: landscape) and (max-aspect-ratio: 16/10) {
-  html {
-    font-size: clamp(
-      4px, 
-      calc(4px + (4 * (100vh - 200px) / 400)), 
-      10px);
-  }
-
-
-  #plaque-gauge-1,
-  #plaque-gauge-2
-  {
-    height: 250px;
-    aspect-ratio: 1/1 !important;
-    transform: translateY(-20px); /* moves it up 20px */
-  }
-
-  #plaque-box-slider-1-title,
-  #plaque-box-slider-2-title
-  {
-    white-space: nowrap;
-  }
-
-  .inputs,
-  .lifetime-box,
-  .plaque-box,
-  .treatment-box,
-  .dial-boxes-box,
-  .benefit-dial-boxes-box
-  {
-    width: 80vw !important;
-  }
-
-  .top-box {
-    width: 80vw !important;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-
-    #WIP-message {
-      width: 10vw;
-    }
-
-  .two-option-box,
-  .textfield-box 
-  {
-    height: clamp(25px, 4vh, 50px);
-  }
-}
-
-@media (max-height: 600px) and (orientation: landscape) and (max-aspect-ratio: 16/10) {
-  html {
-    font-size: clamp(
-      4px, 
-      calc(4px + (4 * (100vh - 200px) / 400)), 
-      10px);
-  }
-
-  #plaque-box-slider-1-title,
-  #plaque-box-slider-2-title
-  {
-    white-space: nowrap;
-  }
-
-
-  #plaque-gauge-1,
-  #plaque-gauge-2
-  {
-    height: 250px;
-    aspect-ratio: 1/1 !important;
-    transform: translateY(-20px); /* moves it up 20px */
-  }
-
-  .inputs,
-  .lifetime-box,
-  .plaque-box,
-  .treatment-box,
-  .dial-boxes-box,
-  .benefit-dial-boxes-box
-  {
-    width: 80vw !important;
-  }
-
-  .top-box {
-    width: 80vw !important;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-
-  #WIP-message {
-    width: 10vw;
     font-size: 0.75rem;
   }
-
 }
 
-@media (min-height: 800px) and (min-width: 800px) and (max-aspect-ratio: 6/5) {
-  html {
-    
-    font-size: clamp(
-      4px, 
-      calc(4px + (4 * (100vh - 250px) / 400)), 
-      10px);
+/* Aspect Ratio Queries */
+@media (max-aspect-ratio: 5/4) {
+  .textfield-box-input {
+    flex:2;
   }
-}
-
-@media (max-height: 600px) and (max-aspect-ratio: 6/5) {
-  html {
-    font-size: clamp(
-      4px, 
-      calc(4px + (4 * (100vh - 300px) / 400)), 
-      10px);
+  .unit-label {
+    flex:1;
   }
-
-  .inputs,
-  .lifetime-box,
-  .plaque-box,
-  .treatment-box,
-  .dial-boxes-box,
-  .benefit-dial-boxes-box
-  {
-    width: 85vw !important;
+  .units-box {
+    flex:1;
   }
-
-  .top-box {
-    width: 85vw !important;
-    margin-left: 7.5%;
-    margin-right: 7.5%;
-  }
-
-  #WIP-message {
-    width: 7.5vw;
-    font-size: 0.75rem;
-  }
-
 }
 
 @media (max-width: 850px) and (max-aspect-ratio: 4/3) {
@@ -5780,64 +6424,27 @@ input[type=text] {
   }
 }
 
-@media (max-width: 800px) and (orientation: portrait) {
-  html {
-    font-size: clamp(
-      2px, 
-      calc(2px + (4 * (100vw - 200px) / 400)), 
-      10px
-    );
-  }
-}
-
-@media (min-width: 800px) and (orientation: portrait) {
-  html {
-    font-size: clamp(
-      4px, 
-      calc(4px + (3 * (100vh - 500px) / 300)), 
-      10px);
-  }
-  label {
-    font-size: 0.75rem;
-  }
-}
-
-@media (min-width: 800px) and (min-height: 800px) and (min-aspect-ratio: 1/1) and (max-aspect-ratio: 6/5) {
-  html {
-    font-size: clamp(5px, calc(3px + (3 * (100vw - 300px) / 300)), 10px);
-  }
-
-  label {
-    font-size: 0.75rem;
-  }
-}
-
-@media (min-height: 925px) and (min-width: 925px) and (min-aspect-ratio: 1) and (orientation: landscape) {
-  html {
-    font-size: 1.25rem !important;
-  }
-}
-
 @media (min-aspect-ratio:8/9) and (max-aspect-ratio:9/8) {
   .inputs,
   .lifetime-box,
   .plaque-box,
   .treatment-box,
   .dial-boxes-box,
+  .healthscore-dial-boxes-box,
   .benefit-dial-boxes-box
   {
-    width: 97.5vw !important;
+    width: 97.5vw;
   }
 
   .top-box {
-    width: 97.5vw !important;
-    margin-left: 1.25%;
-    margin-right: 1.25%;
+    width: 97.5vw;
+    /* margin-left: 1.25%;
+    margin-right: 1.25%; */
   }
 
   #WIP-message {
-    top: 0 !important;
-    bottom: 0 !important;
+    top: 0;
+    bottom: 0;
     height: 100vh;
     width: 25vw;
     padding-left: 1.25%;
@@ -5856,12 +6463,12 @@ input[type=text] {
   #plaque-gauge-1, 
   #plaque-gauge-2 
   {
-    top: 15% !important;
-    bottom: 15% !important;
-    left: 15% !important;
-    right: 15% !important;
+    top: 15%;
+    bottom: 15%;
+    left: 15%;
+    right: 15%;
 
-    /* width: 100% !important; */
+    /* width: 100%; */
 
     /* border: solid red 1px; */
   }
@@ -5876,7 +6483,7 @@ input[type=text] {
   #plaque-gauge-1 svg text, 
   #plaque-gauge-2 svg text 
   {
-    font-size: 1.2rem !important;
+    font-size: 1.2rem;
   }
 
   #dial-image {
@@ -5913,7 +6520,7 @@ input[type=text] {
   #future-plaque-gauge,
   #benefit-future-plaque-gauge
   {
-    inset: 0 !important;
+    inset: 0;
     /* border: solid red 1px; */
     width: 120%;
   }
@@ -5921,15 +6528,284 @@ input[type=text] {
 
 }
 
-@media (min-height: 925px) {
+@media (min-aspect-ratio: 16/9) and (max-height: 625px) {
   html {
-    font-size: clamp(0.5rem, 0.7rem, 0.9rem) !important;
+    font-size: clamp(11px, 0.65rem, 18px);
+  }
+}
+
+@media (min-aspect-ratio: 16/9) and (min-height: 625px) {
+  html {
+    font-size: clamp(13px, 1.2vw, 14px);
+    /* display: none; */
+  }
+
+  .inputs,
+  .lifetime-box,
+  .plaque-box,
+  .treatment-box,
+  .dial-boxes-box,
+  .healthscore-dial-boxes-box,
+  .benefit-dial-boxes-box
+  {
+    height: 88.5vh;
+    aspect-ratio: 16 / 9;
+  }
+
+  .top-box {
+    aspect-ratio: 16 / 9;
+    /* left:0;
+    right:0; */
   }
 
   #plaque-gauge-1 svg text,
   #plaque-gauge-2 svg text
   {
-    font-size: 1rem !important;
+    font-size: clamp(15px, 85%, 18px);
+  }
+
+  #benefit-dial-box {
+    height: 100%;
+    /* border: solid red 1px; */
+  }
+
+  #benefit-dial-image {
+    height: 95%;
+  }
+
+  .benefit-label-skin {
+    font-size: 4.5vh;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) and (min-height: 800px) {
+  html {
+    font-size: clamp(14px, calc(0.85vw + 0.15vh), 16px);
+  }
+}
+
+@media (max-height: 600px) and (max-aspect-ratio: 6/5) {
+  html {
+    font-size: clamp(
+      4px, 
+      calc(4px + (4 * (100vh - 300px) / 400)), 
+      10px);
+  }
+
+  .inputs,
+  .lifetime-box,
+  .plaque-box,
+  .treatment-box,
+  .dial-boxes-box,
+  .healthscore-dial-boxes-box,
+  .benefit-dial-boxes-box
+  {
+    width: 85vw;
+  }
+
+  .top-box {
+    width: 85vw;
+    /* margin-left: 7.5%;
+    margin-right: 7.5%; */
+  }
+
+  #WIP-message {
+    width: 7.5vw;
+    font-size: 0.75rem;
+  }
+
+}
+
+@media (min-height: 700px) and (min-aspect-ratio: 1.9) {
+  html {
+    font-size: 0.9rem; 
+  }
+
+  em {
+    font-size: 0.9rem;
+  }
+
+  #future-plaque-gauge,
+  #benefit-future-plaque-gauge
+  {
+    top: 17.5%;
+    bottom: 5%;
+  }
+
+  #dial-boxes-plaque-threshold-personalized-guidance,
+  #benefit-dial-boxes-plaque-threshold-personalized-guidance
+  {
+    top: 10%;
+    bottom: 12.5%;
+  }
+
+  #dial-box {
+    height: 95%;
+    aspect-ratio: 1/1;
+    /* border: solid red 1px; */
+  }
+
+  #benefit-dial-box {
+    height: 90%;
+    aspect-ratio: 1/1;
+    /* border: solid orange 1px; */
+  }
+
+  #dial-image {
+    height: 90%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    /* border: solid red 1px; */
+  }
+
+  #benefit-dial-image {
+    height: 90%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    /* border: solid red 1px; */
+  }
+
+  #dial-label {
+    height: 85%;
+    aspect-ratio: 1/1;
+    /* border: solid red 1px; */
+  }
+
+  #dial-label-skin {
+    font-size: 0.8rem;
+  }
+
+  #benefit-dial-label {
+    height: 85%;
+    aspect-ratio: 1/1;
+    /* border: solid red 1px; */
+  }
+
+  #matrix-l,
+  #matrix-r
+  {
+    font-size: 80%;
+    padding: 0 1.25% 0 1.25%;
+    height:20em;
+    /* height: 85%; */
+    top: calc((100% - 20em)/2);
+    bottom: calc((100% - 20em)/2);
+    /* border: solid red 1px; */
+  }
+
+  #benefit-matrix-l,
+  #benefit-matrix-r
+  {
+    font-size: 80%;
+    padding: 0 1.25% 0 1.25%;
+    height:18em;
+    /* height: 85%; */
+    top: calc((100% - 18em)/2);
+    bottom: calc((100% - 18em)/2);
+    /* border: solid red 1px; */
+  }
+}
+
+@media (max-height: 700px) and (min-aspect-ratio: 2) {
+  html {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-aspect-ratio: 3) and (min-height: 700px) {
+  html {
+    font-size: clamp(16px, 1vw, 18px);
+  }
+
+  #plaque-gauge-1, 
+  #plaque-gauge-2 
+  {
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+
+    /* width: clamp(500px, 50%, 100%); */
+    /* aspect-ratio: 1/1; */
+
+    /* height:110%;
+    object-fit: contain; */
+
+    /* border: solid red 1px; */
+  }
+
+  #plaque-gauge-1 svg, 
+  #plaque-gauge-2 svg
+  {
+    height: 100%;
+    width: 100%;
+    /* border: solid red 1px; */
+    /* border: solid red 1px; */
+  } 
+
+  #future-plaque-gauge,
+  #benefit-future-plaque-gauge
+  {
+    top: 20%;
+    bottom: 5%;
+    left: 5%;
+    right: 5%;
+    /* border: solid red 1px; */
+  }
+
+  .mic {
+    height: 45%;
+    width: auto;
+  }
+
+  .benefit-dial-boxes-col1 > div {
+    height: calc(100% * (1/3));
+    flex-wrap: wrap;
+  }
+
+  #dial-boxes-bot-1,
+  #benefit-dial-boxes-bot-1
+  {
+    flex: 2;
+    /* border: solid red 1px; */
+  }
+
+  .bot-input-box {
+    flex: 3;
+    /* border: solid red 1px; */
+  }
+
+  .bot-input-box input {
+    height: 80%;
+  }
+
+  #dial-boxes-bot-2,
+  #benefit-dial-boxes-bot-2
+  {
+    font-size: 0.99rem;
+    flex: 8;
+    /* border: solid red 1px; */
+  }
+
+  #dial-boxes-plaque-threshold-personalized-guidance,
+  #benefit-dial-boxes-plaque-threshold-personalized-guidance
+  {
+    font-size: 90%;
+    left: 25%;
+    right: 25%;
+  }
+}
+
+/* Height/Width Breakpoints */
+@media (min-height: 925px) {
+  html {
+    font-size: clamp(0.75vw, 0.95vw, 16px);
+  }
+
+  #plaque-gauge-1 svg text,
+  #plaque-gauge-2 svg text
+  {
+    font-size: 90%;
   }
 
   #future-plaque-gauge,
@@ -6002,95 +6878,348 @@ input[type=text] {
   }
 
   .footer {
-    font-size: 75% !important;
+    font-size: 75%;
   }
 
   #current-version {
-    font-size: 75% !important;
+    font-size: 75%;
   }
 }
 
-
-@media (min-aspect-ratio: 3) {
+@media (min-width: 1600px) and (min-height: 1000px) {
   html {
-    font-size: 0.8rem !important;
+    font-size: clamp(14px, 0.995vw, 30px);
   }
 
-  #plaque-gauge-1, 
-  #plaque-gauge-2 
+  #plaque-gauge-1 svg text,
+  #plaque-gauge-2 svg text
   {
-    top: 10% !important;
-    bottom: 0% !important;
-    left: 0% !important;
-    right: 0% !important;
+    font-size: clamp(0.5rem, 14px, 1rem);
+  }
+}
 
-    width: 100% !important;
-    aspect-ratio: 1/1;
+/* Combined Constraints */
+@media (max-height: 700px) and (min-aspect-ratio: 16/9) and (max-aspect-ratio: 1.7) {
 
-    /* border: solid red 1px; */
+  html {
+    font-size: 0.55rem; 
   }
 
-  #plaque-gauge-1 svg, 
-  #plaque-gauge-2 svg
+  #plaque-gauge-1,
+  #plaque-gauge-2
   {
-    height: 100%;
-    width: 100%;
+    top: 10%;
+  }
+}
+
+@media (max-height: 700px) and (orientation: landscape) and (min-aspect-ratio: 16/10) {
+  html {
+    /* font-size: clamp(
+      4px, 
+      calc(6px + (6 * (100vh - 125px) / 600)), 
+      14px); */
+    font-size: calc(
+      clamp(
+        4px, 
+        calc(6px + (6 * (100vh - 125px) / 600)), 
+        14px) * 0.975
+      );
+  }
+/* 
+  label {
+    font-size: 1rem;
+  } */
+
+  #plaque-gauge-1,
+  #plaque-gauge-2
+  {
+    /* height: fit-content; */
+    inset: 0;
     /* border: solid red 1px; */
-  } 
+  }
+  
+  #plaque-box-slider-1-title,
+  #plaque-box-slider-2-title
+  {
+    white-space: nowrap;
+  }
 
   #future-plaque-gauge,
   #benefit-future-plaque-gauge
   {
-    top: 20%;
-    bottom: 5%;
-    left: 5%;
-    right: 5%;
+    inset: 10% 0 0 0;
     /* border: solid red 1px; */
   }
 
-  .mic {
-    height: 45%;
-    width: auto;
+}
+
+@media (max-height: 700px) and (orientation: landscape) and (max-aspect-ratio: 16/10) {
+  html {
+    font-size: clamp(
+      4px, 
+      calc(4px + (4 * (100vh - 200px) / 400)), 
+      10px);
   }
 
-  .benefit-dial-boxes-col1 > div {
-    height: calc(100% * (1/3));
-    flex-wrap: wrap;
-  }
 
-  #dial-boxes-bot-1,
-  #benefit-dial-boxes-bot-1
+  #plaque-gauge-1,
+  #plaque-gauge-2
   {
-    flex: 2;
-    /* border: solid red 1px; */
+    height: 250px;
+    aspect-ratio: 1/1;
+    transform: translateY(-20px); /* moves it up 20px */
   }
 
-  .bot-input-box {
-    flex: 3;
-    /* border: solid red 1px; */
-  }
-
-  .bot-input-box input {
-    height: 80% !important;
-  }
-
-  #dial-boxes-bot-2,
-  #benefit-dial-boxes-bot-2
+  #plaque-box-slider-1-title,
+  #plaque-box-slider-2-title
   {
-    font-size: 0.99rem !important;
-    flex: 8;
-    /* border: solid red 1px; */
+    white-space: nowrap;
   }
 
-  #dial-boxes-plaque-threshold-personalized-guidance,
-  #benefit-dial-boxes-plaque-threshold-personalized-guidance
+  .inputs,
+  .lifetime-box,
+  .plaque-box,
+  .treatment-box,
+  .dial-boxes-box,
+  .healthscore-dial-boxes-box,
+  .benefit-dial-boxes-box
   {
-    font-size: 90%;
-    left: 25%;
-    right: 25%;
+    width: 80vw;
+  }
+
+  .top-box {
+    width: 80vw;
+    /* margin-left: 10%;
+    margin-right: 10%; */
+  }
+
+    #WIP-message {
+      width: 10vw;
+    }
+
+  .two-option-box,
+  .textfield-box 
+  {
+    height: clamp(25px, 4vh, 50px);
   }
 }
 
+@media (max-height: 600px) and (orientation: landscape) and (max-aspect-ratio: 16/10) {
+  html {
+    font-size: clamp(
+      4px, 
+      calc(4px + (4 * (100vh - 200px) / 400)), 
+      10px);
+  }
+
+  #plaque-box-slider-1-title,
+  #plaque-box-slider-2-title
+  {
+    white-space: nowrap;
+  }
+
+
+  #plaque-gauge-1,
+  #plaque-gauge-2
+  {
+    height: 250px;
+    aspect-ratio: 1/1;
+    transform: translateY(-20px); /* moves it up 20px */
+  }
+
+  .inputs,
+  .lifetime-box,
+  .plaque-box,
+  .treatment-box,
+  .dial-boxes-box,
+  .healthscore-dial-boxes-box,
+  .benefit-dial-boxes-box
+  {
+    width: 80vw;
+  }
+
+  .top-box {
+    width: 80vw;
+    /* margin-left: 10%;
+    margin-right: 10%; */
+  }
+
+  #WIP-message {
+    width: 10vw;
+    font-size: 0.75rem;
+  }
+
+}
+
+@media (min-height: 800px) and (min-width: 800px) and (max-aspect-ratio: 6/5) {
+  html {
+    
+    font-size: clamp(
+      4px, 
+      calc(4px + (4 * (100vh - 250px) / 400)), 
+      10px);
+  }
+}
+
+
+@media (min-width: 1600px) and (min-height: 1000px) and (max-aspect-ratio: 6/5) {
+  html {
+    /* font-size: clamp(14px, calc(0.875vw + 0.18vh), 30px); */
+    font-size: clamp(14px, calc(14px + (14 * (100vw - 1440px) / 1440)), 30px);
+  }
+
+  #plaque-gauge-1 svg text,
+  #plaque-gauge-2 svg text
+  {
+    font-size: 0.65rem;
+  }
+}
+
+@media (min-width: 800px) and (min-height: 800px) and (min-aspect-ratio: 1/1) and (max-aspect-ratio: 6/5) {
+  html {
+    font-size: clamp(5px, calc(3px + (3 * (100vw - 300px) / 300)), 10px);
+  }
+
+  label {
+    font-size: 0.75rem;
+  }
+}
+
+@media (min-height: 925px) and (min-width: 925px) and (min-aspect-ratio: 1) and (orientation: landscape) {
+  html {
+    font-size: clamp(11.5px, calc(0.85vw + 0.1vh), 14px);
+  }
+}
+
+@media (pointer: coarse) and (hover: none) { /*and (min-width:300000px) {*/
+  .container {
+    position: fixed;
+    top: 2.5vh;
+    bottom: 5vh;
+    left: 2.5vh;
+    right: 2.5vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .top-bar {
+    width: 100%;
+    position: relative;
+  }
+
+  .top-box {
+    border: solid white 1px;
+    width: 80%;
+    border-radius: 10px;
+  }
+
+  .outer-box-profile,
+  .outer-box-lifetime,
+  .outer-box-plaque,
+  .outer-box-treatment,
+  .outer-box-dial-boxes,
+  .outer-box-healthscore-dial-boxes,
+  .outer-box-benefit-dial-boxes
+  {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    align-items: center;
+  }
+
+  .inputs,
+  .lifetime-box,
+  .plaque-box,
+  .treatment-box,
+  .dial-boxes-box,
+  .healthscore-dial-boxes-box,
+  .benefit-dial-boxes-box
+  {
+    width: 80%;
+    height: 95%;
+  }
+
+  .inputs-col1-lower {
+    border-radius: 10px 0 0 0;
+    border-bottom: none;
+  }
+
+  .inputs-col2-lower {
+    border-bottom: none;
+  }
+
+  .inputs-col3-lower {
+    border-radius: 0 10px 0 0;
+    border-bottom: none;
+  }
+
+  .button-box {
+    align-items: flex-start;
+  }
+
+  #calculate-risk {
+    height: 100%;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+  }
+
+  #calculate-risk:disabled {
+    opacity: 1.0;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* .inputs:has(#calculate-risk:disabled) > .inputs-col1-lower {
+    border: solid white 1px;
+    border-radius: 10px 0 0 10px;
+  } */
+
+  /* .inputs:has(#calculate-risk:disabled) > .inputs-col2-lower {
+    border: solid white 1px;
+    border-left: none;
+    border-right: none;
+  } */
+
+  /* .inputs:has(#calculate-risk:disabled) > .inputs-col3-lower {
+    border: solid white 1px;
+    border-radius: 0 10px 10px 0;
+    border-left: none;
+  } */
+
+  #current-version {
+    position: fixed;
+    right: 1%;
+    bottom: 1%;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 1%;
+  }
+
+  #WIP-message {
+    position: fixed;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 0.9rem;
+    top: 0;
+    bottom: 92.5%;
+    height: 25%;
+    width: 10%;
+    padding: 2.5vh 1.0% 1.0% 1.0%;
+  }
+
+  .textfield-box-input {
+    flex:2;
+  }
+  .unit-label {
+    flex:1.25;
+  }
+  .units-box {
+    flex:1.25;
+  }
+}
 
 /* * {
   visibility: visible !important;
