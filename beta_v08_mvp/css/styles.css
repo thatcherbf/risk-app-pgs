@@ -4543,8 +4543,10 @@ svg {
   box-sizing: border-box;
 }
 
-#benefit-future-refLabels text {
+/* #benefit-future-refLabels text { */
+#benefit-future-plaque-gauge svg text {
   text-rendering: geometricPrecision;
+  font-size: calc(1rem * 25/14);
 }
 
 .benefit-dial-boxes-col2 {
@@ -6099,6 +6101,7 @@ input[type=text] {
   box-sizing: border-box;
   display: inline-flex;
   /* visibility: hidden; */
+  display: none;
 }
 
 #branding-box {
