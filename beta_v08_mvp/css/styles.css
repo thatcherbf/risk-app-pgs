@@ -2611,8 +2611,9 @@ svg {
   z-index: 3;
 }
 
-#future-refLabels text {
+#future-plaque-gauge svg text {
   text-rendering: geometricPrecision;
+  font-size: calc(1rem * 20/14);
 }
 
 .dial-boxes-col2 {
@@ -3581,8 +3582,9 @@ svg {
   box-sizing: border-box;
 }
 
-#healthscore-future-refLabels text {
+#healthscore-future-plaque-gauge svg text {
   text-rendering: geometricPrecision;
+  font-size: calc(1rem * 20/14);
 }
 
 .healthscore-dial-boxes-col2 {
@@ -4546,7 +4548,7 @@ svg {
 /* #benefit-future-refLabels text { */
 #benefit-future-plaque-gauge svg text {
   text-rendering: geometricPrecision;
-  font-size: calc(1rem * 25/14);
+  font-size: calc(1rem * 20/14);
 }
 
 .benefit-dial-boxes-col2 {
@@ -4749,6 +4751,7 @@ svg {
   justify-content: center;
   /* font-family: monospace; */
   /* font-size: 90%; */
+  font-size: calc(1rem * 32/14);
   white-space: pre-wrap;
   word-wrap: break-word;
   border-radius: 50%;
@@ -4760,7 +4763,7 @@ svg {
 .benefit-label {
   position: absolute;
   color: transparent; 
-  font-size: calc(1rem * 37.5/14);
+  /* font-size: calc(1rem * 37.5/14); */
   font-weight: 400;
   font-family: sans-serif;
   z-index: 2;
@@ -4769,7 +4772,7 @@ svg {
 .benefit-label-skin {
   position: absolute;
   color: white; 
-  font-size: calc(1rem * 31.5/14);
+  font-size: calc(1rem * 25/14);
   font-weight: 400;
   font-family: sans-serif;
   z-index: 2;
