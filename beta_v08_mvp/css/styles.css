@@ -6101,7 +6101,6 @@ input[type=text] {
   box-sizing: border-box;
   display: inline-flex;
   /* visibility: hidden; */
-  display: none;
 }
 
 #branding-box {
