@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    
+    <title>Precision Health Platform siRNA</title>   
+    <link rel="icon" type="image/png" href="favicon.ico"> 
+    
+    <!-- Preconnect to Google Fonts for faster handshake -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload font CSS -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap" rel="stylesheet"> -->
+    <!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'> -->
+
+    <!-- Fallback if JS disabled -->
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- <link rel="preload" href="media/background.jpg" as="image"> -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style data="thumbs" type="text/css"></style>
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+    <script src="https://cdn.plot.ly/plotly-3.1.0.min.js"></script>
+  </head>
+
+  <body oncontextmenu="return false">
+    <div class="bg-layer" id="bg1">
+      <div id="bg-decoration-1"></div>
+      <div id="bg-decoration-2"></div>
+    </div>
+
+    <div class="container">
+      <div id = "login-box">
+
+        <div id="branding-box">
+          <img src="media/branding_background.png" alt="branding" id="branding">
+        </div>   
+
+        <div id="context-screen">
+          <div id="passcode-enter-box">
+            <div id="passcode-title">Please enter your passcode:</div>
+            <input type="password" id="passcode-input">
+          </div>
+        </div>
+
+      </div>
+
+      <div id="WIP-box">
+        <div id="WIP-text-1">Currently being updated...</div>
+        <div id="WIP-text-2"><br><em>The previous live version did not route biological sex to the correct third algorithm in the stack.</em></div>
+        <div id="WIP-text-3"><em>This resulted in a systematic overestimation of risk among women.</em></div>
+      </div>
+
+      <div class="top-bar">
+        <div class = "top-box">
+          <div class = "logo">
+            <div id="logo-k">
+              <img src = "media/klotho/klotho logo.svg" alt="Logo" id="logo-k-1">
+
+              <div id="logo-k-p2">
+                <img src = "media/klotho/klotho.svg" alt="Logo" id="logo-k-2">
+                <img src = "media/klotho/klotho subtitle.svg" alt="Logo" id="logo-k-3">
+              </div>
+              
+            </div>
+            <img src = "media/logo-w.png" alt="Logo" id="logo1">
+          </div>
+          <div class = "navigation-button-box">
+            <div class="divider"></div>
+
+            <div class="navbar-button-wrapper">
+              <button class="navbar-button active" type="button" id="landing-btn"> 
+                <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 8 16" fill="none">
+                  <polygon points="3,4 3,12 13,8"/>
+                </svg>
+                Landing 
+              </button>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="navbar-button-wrapper">
+              <!-- <button class="navbar-button active" type="button" id="profile-btn">  -->
+              <button class="navbar-button" type="button" id="profile-btn"> 
+                <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <line x1="1.33" y1="4" x2="14.67" y2="4"/>
+                  <line x1="1.33" y1="6.67" x2="14.67" y2="6.67"/>
+                  <line x1="1.33" y1="9.33" x2="14.67" y2="9.33"/>
+                  <line x1="1.33" y1="12" x2="14.67" y2="12"/>
+                </svg>
+                Profile 
+              </button>
+            </div>
+
+            <div class="divider"></div>
+            
+            <div class="navbar-button-wrapper">
+              <button class="navbar-button" type="button" id="lifetime-risk-btn"> 
+                <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <!-- Top-left square -->
+                  <rect x="1.33" y="1.33" width="5" height="5" rx="1.67"/>
+                  
+                  <!-- Top-right square -->
+                  <rect x="9.67" y="1.33" width="5" height="5" rx="1.67"/>
+                  
+                  <!-- Bottom-left square -->
+                  <rect x="1.33" y="9.67" width="5" height="5" rx="1.67"/>
+                  
+                  <!-- Plus sign (bottom-right) -->
+                  <line x1="12.17" y1="9.67" x2="12.17" y2="14.67"/>
+                  <line x1="9.67" y1="12.17" x2="14.67" y2="12.17"/>
+                </svg>
+                Lifetime Risk 
+              </button>
+            </div>
+
+            <!-- <div class="divider"></div> -->
+            
+            <!-- <div class="navbar-button-wrapper">
+              <button class="navbar-button" type="button" id="plaque-btn"> 
+                <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <line x1="3.25" y1="9.5" x2="12.25" y2="9.5"/>
+                  <circle cx="8" cy="8" r="8" stroke="currentColor" stroke-width="1.5"/>                  
+                  <circle cx="8" cy="8" r="5" stroke="currentColor" stroke-width="1.5"/>                  
+                </svg>
+                Personal Plaque Threshold 
+              </button>
+            </div> -->
+                    
+            <div class="divider"></div>
+            
+            <div class="navbar-button-wrapper">
+              <button class="navbar-button" type="button" id="treatment-options-btn"> 
+                <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <!-- Envelope rectangle -->
+                  <rect x="3.33" y="3.33" width="13.33" height="13.33" rx="1.67" stroke="currentColor" stroke-width="1.5"/>
+                  
+                  <!-- Envelope flap -->
+                  <polyline points="3.33,10 8.67,13.33 11.33,13.33 16.67,10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                Benefit from Yearly siRNA 
+              </button>
+            </div>
+            
+            <div class="divider"></div>
+
+            <!-- <div class="navbar-button-wrapper dropdown"> -->
+              <!-- <div class="navbar-button dropdown">  -->
+                <!-- <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"> -->
+                  <!-- Outer circle (gray background) -->
+                  <!-- <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" opacity="0.25"/> -->
+                  
+                  <!-- Progress arc (colored) -->
+                  <!-- <path d="M8 1  -->
+                          <!-- A7 7 0 0 1 15 8"  -->
+                        <!-- stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/> -->
+                <!-- </svg> -->
+                <!-- Dials  -->
+                <!-- <span id="pointer-dropdown">⌄</span> -->
+              <!-- </div>         -->
+
+              <!-- <div class="dropdown-content"> -->
+                <!-- <div class="navbar-button-wrapper"> -->
+                  <!-- <button class="navbar-button" type="button" id="benefit-dial-boxes-btn">  -->
+                    <!-- <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"> -->
+                      <!-- Outer circle (gray background) -->
+                      <!-- <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" opacity="0.25"/> -->
+                      
+                      <!-- Progress arc (colored) -->
+                      <!-- <path d="M8 1  -->
+                              <!-- A7 7 0 0 1 15 8"  -->
+                            <!-- stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/> -->
+                    <!-- </svg> -->
+                    <!-- Benefit Dial  -->
+                  <!-- </button> -->
+                <!-- </div> -->
+
+                <!-- <div class="divider"></div> -->
+
+                <div class="navbar-button-wrapper">
+                  <button class="navbar-button" type="button" id="dial-boxes-btn"> 
+                    <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <!-- Outer circle (gray background) -->
+                      <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" opacity="0.25"/>
+                      
+                      <!-- Progress arc (colored) -->
+                      <path d="M8 1 
+                              A7 7 0 0 1 15 8" 
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    Healthspan Dial 
+                  </button>
+                </div>
+
+                <!-- <div class="divider"></div> -->
+
+                <!-- <div class="navbar-button-wrapper"> -->
+                  <!-- <button class="navbar-button" type="button" id="healthscore-dial-boxes-btn">  -->
+                    <!-- <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"> -->
+                      <!-- Outer circle (gray background) -->
+                      <!-- <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" opacity="0.25"/> -->
+                      
+                      <!-- Progress arc (colored) -->
+                      <!-- <path d="M8 1  -->
+                              <!-- A7 7 0 0 1 15 8"  -->
+                            <!-- stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/> -->
+                    <!-- </svg> -->
+                    <!-- Health Score Dial  -->
+                  <!-- </button> -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <!-- </div> -->
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-box-landing">
+        <div class="landing-box">
+          <div id="landing-explanation">
+            <p>SIMPLIFY CONTROL</p>
+            <p>Your partner for extending the healthy lifepsan</p>
+            <p>Understand your cardiovascular health with ease - powered by Klotho.</p>
+            <img src="media/network-4k.png" id="landing-net">
+          </div>
+          
+          <div id="landing-input-side">
+            <div class="slide-ticker">
+              <div class="ticker active" id="ticker1"></div>
+              <div class="ticker" id="ticker2"></div>
+              <div class="ticker" id="ticker3"></div>
+              <div class="ticker" id="ticker4"></div>
+              <div class="ticker" id="ticker5"></div>
+              <div class="ticker" id="ticker6"></div>
+              <div class="ticker" id="ticker7"></div>
+              <div class="ticker" id="ticker8"></div>
+              <div class="ticker" id="ticker9"></div>
+            </div>
+
+            <div class="landing-slide" id="landing-slide-1">
+              <p>Klotho Health</p>
+              <p>What is your sex?</p>
+              <p>For accuracy, please select the biological sex you were assigned at birth.</p>
+              <div class="landing-input-box" id="landing-sex-box">
+
+                <div class="landing-two-option-box">
+                  <label>
+                    <input type="radio" name="landing-sex-value" checked="checked" value=1>
+                    <span>
+                      <img src="media/klotho/male.svg" id="landing-sex-box-male">
+                      <span>Male</span>
+                    </span>
+                  </label>
+                  <label>
+                    <input type="radio" name="landing-sex-value" value=0>
+                    <span>
+                      <img src="media/klotho/female.svg" id="landing-sex-box-female">
+                      <span>Female</span>
+                    </span>
+                  </label>
+                </div>  
+
+              </div>
+              <div class="landing-button-box">
+                <button class="landing-button" type="button" id="continue-slide-1">Continue</button>
+              </div>
+            </div>
+
+            <div class="landing-slide" id="landing-slide-2">
+              <p>Klotho Health</p>
+              <p>What is your date of birth?</p>
+              <p style="visibility: hidden;">--</p>
+              <div class="landing-input-box" id="landing-age-box">
+                <div class="landing-textfield-box">
+                  <div id='landing-age-oob' class="landing-outofbounds-message"><span>(Date must make you between <span>30</span> and <span>75</span> years old.)</span></div>
+                  <input type="number" class="landing-textfield-box-input" id="landing-dob-day-input" name="landing-dob-day-input" placeholder="dd" min="1" max="31"> 
+                  <input type="number" class="landing-textfield-box-input" id="landing-dob-month-input" name="landing-dob-month-input" placeholder="mm" min="1" max="12"> 
+                  <input type="number" class="landing-textfield-box-input" id="landing-dob-year-input" name="landing-dob-year-input" placeholder="yyyy"> 
+                </div>
+              </div>
+              <div class="landing-button-box">
+                <button class="landing-button" type="button" id="continue-slide-2">Continue</button>
+              </div>
+            </div>
+            
+            <div class="landing-slide" id="landing-slide-3">
+              <p>Klotho Health</p>
+              <p>What are your lipid levels?</p>
+              <p style="visibility: hidden;">--</p>
+              <div class="landing-input-box" id="landing-chol-box">
+                <div class="landing-textfield-box" id="landing-textfield-box-chol">
+                  <div class="landing-chol-input" id="landing-chol-input-TC">
+                    <label for="landing-TC-input">Total Cholesterol</label>
+                    <div id='landing-TC-oob' class="landing-outofbounds-message"><span>(Please enter a value between <span>100</span> and <span>300</span>.)</span></div>
+                    <!-- <div class="landing-chol-input-box"> -->
+                    <input type="number" class="landing-textfield-box-input" id="landing-TC-input" name="landing-TC-input" max="300" min="100" placeholder="Range: 100 - 300">
+                    <div class="landing-unit-label">mg/dL</div>
+                    <!-- </div> -->
+                  </div>
+                  <div class="landing-chol-input" id="landing-chol-input-LDL">
+                    <label for="landing-LDL-input">Low-Density Lipoprotein (LDL)</label>
+                    <div id='landing-LDL-oob' class="landing-outofbounds-message"><span>(Please enter a value between <span>75</span> and <span>200</span>.)</span></div>
+                    <!-- <div class="landing-chol-input-box"> -->
+                    <input type="number" class="landing-textfield-box-input" id="landing-LDL-input" name="landing-LDL-input" max="200" min="75" placeholder="Range: 75 - 200">
+                    <div class="landing-unit-label">mg/dL</div>
+                    <!-- </div> -->
+                  </div>
+                  <div class="landing-chol-input" id="landing-chol-input-HDL">
+                    <label for="landing-HDL-input">HDL</label>
+                    <div id='landing-HDL-oob' class="landing-outofbounds-message"><span>(Please enter a value between <span>25</span> and <span>100</span>.)</span></div>
+                    <!-- <div class="landing-chol-input-box"> -->
+                    <input type="number" class="landing-textfield-box-input" id="landing-HDL-input" name="landing-HDL-input" max="100" min="25" placeholder="Range: 25 - 100">
+                    <div class="landing-unit-label">mg/dL</div>
+                    <!-- </div> -->
+                  </div>
+                  <div class="landing-chol-input" id="landing-chol-input-nHDL">
+                    <label for="landing-nHDL-input">Non-HDL Cholesterol</label>
+                    <!-- <div class="landing-chol-input-box"> -->
+                    <input type="number" class="landing-textfield-box-input" id="landing-nHDL-input" name="landing-nHDL-input" readonly="readonly" tabindex="-1"> 
+                    <div class="landing-unit-label">mg/dL</div>
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="landing-button-box">
+                <button class="landing-button" type="button" id="continue-slide-3">Continue</button>
+              </div>              
+            </div>
+
+            <div class="landing-slide" id="landing-slide-4">
+              <p>Klotho Health</p>
+              <p>What is your blood pressure?</p>
+              <p style="visibility: hidden;">--</p>
+              <div class="landing-input-box" id="landing-age-box">
+                <div class="landing-textfield-box">
+                  <input type="number" class="landing-textfield-box-input" id="landing-SBP-input" name="landing-SBP-input" placeholder="Range: 90 - 200"> 
+                  <div class="landing-unit-label">mmHg</div>
+                </div>
+              </div>
+              <div class="landing-button-box">
+                <button class="landing-button" type="button" id="continue-slide-4">Continue</button>
+              </div>              
+            </div>
+
+            <div class="landing-slide" id="landing-slide-5">
+              <p>Klotho Health</p>
+              <p>What is your height and weight?</p>
+              <p>This is used to calculate your BMI.</p>
+              <div class="landing-input-box" id="landing-BMI-box">
+                <div id="landing-bmi-display">
+                  <span>Your BMI is calculated as:</span>
+                  <span><span id="landing-BMI-input">0</span> kg/m²</span>
+                </div>
+                <div class="landing-textfield-box" id="landing-textfield-box-bmi">
+                  <div class="landing-bmi-input" id="landing-bmi-input-height">
+                    <label for="landing-height-input">Height</label>
+                    <input type="number" class="landing-textfield-box-input" id="landing-height-input" name="landing-height-input">
+                    <div class="landing-unit-label">in</div>
+                  </div>
+                  <div class="landing-bmi-input" id="landing-bmi-input-weight">
+                    <label for="landing-weight-input">Weight</label>
+                    <input type="number" class="landing-textfield-box-input" id="landing-weight-input" name="landing-weight-input">
+                    <div class="landing-unit-label">lbs</div>
+                  </div>
+                </div>
+              </div>
+              <div class="landing-button-box">
+                <button class="landing-button" type="button" id="continue-slide-5">Continue</button>
+              </div>                            
+            </div>
+
+            <div class="landing-slide" id="landing-slide-6">
+              <p>Klotho Health</p>
+              <p>Do you have diabetes?</p>
+              <p style="visibility: hidden;">--</p>
+              <div class="landing-input-box" id="landing-diab-box">
+
+                <div class="landing-two-option-box">
+                  <label>
+                    <input type="radio" name="landing-diab-value" checked="checked" value=1>
+                    <span>
+                      <span>No</span>
+                    </span>
+                  </label>
+                  <label>
+                    <input type="radio" name="landing-diab-value" value=0>
+                    <span>
+                      <span>Yes</span>
+                    </span>
+                  </label>
+                </div>  
+
+              </div>
+              <div class="landing-button-box">
+                <button class="landing-button" type="button" id="continue-slide-6">Continue</button>
+              </div>
+            </div>
+
+            <div class="landing-slide" id="landing-slide-7">
+              <p>Klotho Health</p>
+              <p>Do you currently smoke?</p>
+              <p style="visibility: hidden;">--</p>
+              <div class="landing-input-box" id="landing-smoke-box">
+
+                <div class="landing-two-option-box">
+                  <label>
+                    <input type="radio" name="landing-smoke-value" checked="checked" value=1>
+                    <span>
+                      <span>No</span>
+                    </span>
+                  </label>
+                  <label>
+                    <input type="radio" name="landing-smoke-value" value=0>
+                    <span>
+                      <span>Yes</span>
+                    </span>
+                  </label>
+                </div>  
+
+              </div>
+              <div class="landing-button-box">
+                <button class="landing-button" type="button" id="continue-slide-7">Continue</button>
+              </div>              
+            </div>
+
+            <div class="landing-slide" id="landing-slide-8">
+              <p>Klotho Health</p>
+              <p>Have you ever smoked?</p>
+              <p style="visibility: hidden;">--</p>
+              <div class="landing-input-box" id="landing-fmrtob-box">
+
+                <div class="landing-two-option-box">
+                  <label>
+                    <input type="radio" name="landing-fmrtob-value" checked="checked" value=1>
+                    <span>
+                      <span>No</span>
+                    </span>
+                  </label>
+                  <label>
+                    <input type="radio" name="landing-fmrtob-value" value=0>
+                    <span>
+                      <span>Yes</span>
+                    </span>
+                  </label>
+                </div>  
+
+              </div>
+              <div class="landing-button-box">
+                <button class="landing-button" type="button" id="continue-slide-8">Continue</button>
+              </div>                            
+            </div>
+
+            <div class="landing-slide" id="landing-slide-9">
+              <p>Klotho Health</p>
+              <p>Has anyone in your family had a heart attack or stroke?</p>
+              <p style="visibility: hidden;">--</p>
+              <div class="landing-input-box" id="landing-famhx-box">
+
+                <div class="landing-two-option-box">
+                  <label>
+                    <input type="radio" name="landing-famhx-value" checked="checked" value=1>
+                    <span>
+                      <span>No</span>
+                    </span>
+                  </label>
+                  <label>
+                    <input type="radio" name="landing-famhx-value" value=0>
+                    <span>
+                      <span>Yes</span>
+                    </span>
+                  </label>
+                </div>  
+
+              </div>
+              <div class="landing-button-box">
+                <button class="landing-button" type="button" id="continue-slide-9">Calculate</button>
+              </div>                                          
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-box-profile">
+        <div class="inputs">
+          <div class="inputs-col-title">
+            <em>
+              Please enter the following information 
+              and then press calculate to see your current health trajectory
+              and receive personalized guidance on how to achieve your health
+              goals
+            </em>
+          </div>
+
+          <div id="inputs-upper">
+            <div class="inputs-col1">
+              
+              <div class="input-items" id = "sex-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Sex 
+                  </p>
+                </div>  
+                <div class="two-option-box">
+                  <label>
+                    <input type="radio" name="sex-value" checked="checked" value=1>
+                    <span>
+                      <img src="media/klotho/male.svg" id="sex-box-male">
+                      Male
+                    </span>
+                  </label>
+                  <label>
+                    <input type="radio" name="sex-value" value=0>
+                    <span>
+                      <img src="media/klotho/female.svg" id="sex-box-female">
+                      Female
+                    </span>
+                  </label>
+                </div>  
+              </div>
+              
+              <div class="input-items" id = "age-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Age 
+                  </p>
+                </div>
+                <div id='age-oob' class="outofbounds-message"><span>(Please enter a value between <span>30</span> and <span>75</span>.)</span></div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="age-input" name="age-input" min="30" max="75" placeholder="Range: 30-75">
+                  <div class="unit-label">years</div>
+                </div>
+              </div>
+
+              <div class="input-items" id = "TC-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Total Cholesterol 
+                  </p>
+                </div>
+                <div id='TC-oob' class="outofbounds-message"><span>(Please enter a value between <span>100</span> and <span>300</span>.)</span></div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="TC-input" name="TC-input" max="300" min="100" placeholder="Range: 100 - 300">
+                  <div class="units-box">
+                    <label>
+                      <input type="radio" id = "mgdL1" class = "TC-radio" name="chol-units-1" checked="checked" value=0><span>mg/dL</span>
+                    </label>
+                    <label>
+                      <input type="radio" id = "mmolL1" class = "TC-radio" name="chol-units-1" value=1><span>mmol/L</span>
+                    </label>
+                  </div>      
+                </div>
+              </div>
+
+              <div class="input-items" id = "LDL-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    LDL <span>(Low-Density Lipoprotein)</span>
+                  </p>
+                </div>
+                <div id='LDL-oob' class="outofbounds-message"><span>(Please enter a value between <span>75</span> and <span>200</span>.)</span></div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="LDL-input" name="LDL-input" max="200" min="75" placeholder="Range: 75 - 200">
+                  <div class="units-box">
+                    <label>
+                      <input type="radio" id = "mgdL2" class = "LDL-radio" name="chol-units-2" checked="checked" value=0><span>mg/dL</span>
+                    </label>
+                    <label>
+                      <input type="radio" id = "mmolL2" class = "LDL-radio" name="chol-units-2" value=1><span>mmol/L</span>
+                    </label>
+                  </div>      
+                </div>
+              </div>
+
+              <div class="input-items" id = "HDL-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    HDL
+                  </p>
+                </div>
+                <div id='HDL-oob' class="outofbounds-message"><span>(Please enter a value between <span>25</span> and <span>100</span>.)</span></div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="HDL-input" name="HDL-input" max="100" min="25" placeholder="Range: 25 - 100">
+                  <div class="units-box">
+                    <label>
+                      <input type="radio" id = "mgdL3" class = "HDL-radio" name="chol-units-3" checked="checked" value=0><span>mg/dL</span>
+                    </label>
+                    <label>
+                      <input type="radio" id = "mmolL3" class = "HDL-radio" name="chol-units-3" value=1><span>mmol/L</span>
+                    </label>
+                  </div>      
+                </div>
+              </div>
+
+              <div class="input-items" id = "nHDL-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Non-HDL Cholesterol
+                  </p>
+                </div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="nHDL-input" name="nHDL-input" readonly="readonly" tabindex="-1">
+                  <div class="units-box">
+                    <label>
+                      <input type="radio" id = "mgdL4" name="chol-units-4" checked="checked" value=0><span>mg/dL</span>
+                    </label>
+                    <label>
+                      <input type="radio" id = "mmolL4" name="chol-units-4" value=1><span>mmol/L</span>
+                    </label>
+                  </div>      
+                </div>
+              </div>  
+            
+            </div>
+
+            <div class="inputs-col2">
+
+              <div class="input-items" id = "SBP-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    SBP <span>(Systolic Blood Pressure)</span>
+                  </p>
+                </div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="SBP-input" name="SBP-input" placeholder="Range: 90 - 200">
+                  <div class="unit-label">mmHg</div>
+                </div>
+              </div>
+
+              <div class="input-items" id = "DBP-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    DBP (Diastolic Blood Pressure)
+                  </p>
+                </div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="DBP-input" name="DBP-input" placeholder="Range: 50 - 100">
+                  <div class="unit-label">mmHg</div>
+                </div>
+              </div>
+
+              <div class="input-items" id = "weight-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Weight 
+                  </p>
+                </div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="weight-input" name="weight-input">
+                  <div class="units-box">
+                    <label>
+                      <input type="radio" class = "weight-radio" name="weight-units" checked="checked" value=0><span>lbs</span>
+                    </label>
+                    <label>
+                      <input type="radio" class = "weight-radio" name="weight-units" value=1><span>kg</span>
+                    </label>
+                  </div>      
+                </div>
+              </div>
+
+              <div class="input-items" id = "height-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Height 
+                  </p>
+                </div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="height-input" name="height-input">
+                  <div class="units-box">
+                    <label>
+                      <input type="radio" class = "height-radio" name="height-units" checked="checked" value=0><span>in</span>
+                    </label>
+                    <label>
+                      <input type="radio" class = "height-radio" name="height-units" value=1><span>cm</span>
+                    </label>
+                  </div>      
+                </div>
+              </div>
+
+              <div class="input-items" id = "BMI-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Your BMI is calculated as: 
+                  </p>
+                </div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="BMI-input" name="BMI-input" readonly="readonly" tabindex="-1">
+                  <div class="unit-label">kg/m²</div>
+                </div>
+              </div>  
+
+              <div class="input-items" id = "wCirc-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Waist Circumference 
+                  </p>
+                </div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="wCirc-input" name="wCirc-input">
+                  <div class="units-box">
+                    <label>
+                      <input type="radio" name="wCirc-units" checked="checked" value=0><span>in</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="wCirc-units" value=1><span>cm</span>
+                    </label>
+                  </div>      
+                </div>
+              </div>
+
+            </div>
+
+            <div class="inputs-col3">
+
+              <div class="input-items" id = "famhx-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Do you have a family history of heart disease or stroke? 
+                  </p>
+                </div>  
+                <div class="two-option-box">
+                  <label>
+                    <input type="radio" name="famhx-value" checked="checked" value=0><span>No</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="famhx-value" value=1><span>Yes</span>
+                  </label>
+                </div>  
+              </div>
+
+              <div class="input-items" id = "diab-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Do you have diabetes? 
+                  </p>
+                </div>
+                <div class="two-option-box">
+                  <label>
+                    <input type="radio" name="diab-value" checked="checked" value=0><span>No</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="diab-value" value=1><span>Yes</span>
+                  </label>
+                </div>  
+              </div>
+
+              <div class="input-items" id = "smoke-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Do you currently smoke? 
+                  </p>
+                </div>
+                <div class="two-option-box">
+                  <label>
+                    <input type="radio" name="smoke-value" checked="checked" value=0><span>No</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="smoke-value" value=1><span>Yes</span>
+                  </label>
+                </div>  
+              </div>
+
+              <div class="input-items" id = "fmrtob-items">
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Have you ever smoked? 
+                  </p>
+                </div>  
+                <div class="two-option-box">
+                  <label>
+                    <input type="radio" name="fmrtob-value" checked="checked" value=0><span>No</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="fmrtob-value" value=1><span>Yes</span>
+                  </label>
+                </div>  
+              </div>
+
+              <div class="input-items comingsoon" id = "trtlp-items">
+                <div class = "coming-soon-message">Available in next update...</div>
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Are you taking lipid lowering therapy? 
+                  </p>
+                </div>  
+                <div class="two-option-box comingsoon">
+                  <label>
+                    <input type="radio" name="trtlp-value" checked="checked" value=0><span>No</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="trtlp-value" value=1><span>Yes</span>
+                  </label>
+                </div>  
+              </div>
+
+              <!-- <div class="input-items comingsoon" id = "trtlp-time-items">
+                <div class = "coming-soon-message">Available in next update...</div>
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    If yes, what age did you start?
+                  </p>
+                </div>
+                <div class="textfield-box comingsoon">
+                  <input type="number" class="textfield-box-input" id="trtlp-time-input" name="trtlp-time-input">
+                  <div class="unit-label">years</div>
+                </div>
+              </div> -->
+
+              <div class="input-items comingsoon" id = "trtbp-items">
+                <div class = "coming-soon-message">Available in next update...</div>
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Are you taking blood pressure lowering therapy? 
+                  </p>
+                </div>  
+                <div class="two-option-box comingsoon">
+                  <label>
+                    <input type="radio" name="trtbp-value" checked="checked" value=0><span>No</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="trtbp-value" value=1><span>Yes</span>
+                  </label>
+                </div>  
+              </div>
+
+              <!-- <div class="input-items comingsoon" id = "trtbp-time-items">
+                <div class = "coming-soon-message">Available in next update...</div>
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    If yes, what age did you start?
+                  </p>
+                </div>
+                <div class="textfield-box comingsoon">
+                  <input type="number" class="textfield-box-input" id="trtbp-time-input" name="trtbp-time-input">
+                  <div class="unit-label">years</div>
+                </div>
+              </div> -->
+
+            </div>
+          </div>
+
+          <div class="inputs-col-break">
+            <em>
+              If available, please enter:
+            </em>
+          </div>
+
+          <div id="inputs-lower">
+            <div class="inputs-col1-lower">
+
+              <div class="input-items comingsoon" id = "ApoB-items">
+                <div class = "coming-soon-message">Available in next update...</div>
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    ApoB 
+                    <!--<span class="if-available-message">(if available)</span>--> 
+                  </p>
+                </div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="ApoB-input" name="ApoB-input" disabled>
+                  <div class="unit-label">mg/dL</div>
+                </div>
+              </div>
+
+              <div class="input-items comingsoon" id = "lpa-items">
+                <div class = "coming-soon-message">Available in next update...</div>
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Lp(a) 
+                    <!--<span class="if-available-message">(if available)</span>--> 
+                  </p>
+                </div>
+                <div class="textfield-box">
+                  <input type="number" class="textfield-box-input" id="lpa-input" name="lpa-input" disabled>
+                  <div class="units-box">
+                    <label>
+                      <input type="radio" id = "lpa-mgdL" class = "lpa-radio" name="lpa-units" checked="checked" value=0><span>mg/dL</span>
+                    </label>
+                    <label>
+                      <input type="radio" id = "lpa-nmolL" class = "lpa-radio" name="lpa-units" value=1><span>nmol/L</span>
+                    </label>
+                  </div>      
+                </div>
+              </div>
+
+            </div>
+            
+            <div class="inputs-col2-lower">
+
+              <div class="input-items comingsoon" id = "PGS-items">
+                <div class = "coming-soon-message">Available in next update...</div>
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Polygenic Score 
+                    <!--<span class="if-available-message">(if available)</span>--> 
+                  </p>
+                </div>
+                <div class="textfield-box comingsoon">
+                  <input type="number" class="textfield-box-input" id="PGS-input" name="PGS-input" disabled>
+                  <div class="unit-label">percentile</div>
+                </div>
+              </div>
+
+              <div class="input-items comingsoon" id = "CRP-items">
+                <div class = "coming-soon-message">Available in next update...</div>
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    C-Reactive Protein 
+                    <!--<span class="if-available-message">(if available)</span>--> 
+                  </p>
+                </div>
+                <div class="textfield-box comingsoon">
+                  <input type="number" class="textfield-box-input" id="CRP-input" name="CRP-input" disabled>
+                  <div class="unit-label">mg/dL</div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="inputs-col3-lower">
+
+              <div class="input-items comingsoon" id = "hba1c-items">
+                <div class = "coming-soon-message">Available in next update...</div>
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    HbA1c 
+                    <!--<span class="if-available-message">(if available)</span>--> 
+                  </p>
+                </div>
+                <div class="textfield-box comingsoon">
+                  <input type="number" class="textfield-box-input" id="hba1c-input" name="hba1c-input" disabled>
+                  <div class="units-box">
+                    <label>
+                      <input type="radio" id = "hba1c-mmol" class = "hba1c-radio" name="hba1c-units" checked="checked" value=0><span>mmol</span>
+                    </label>
+                    <label>
+                      <input type="radio" id = "hba1c-percent" class = "hba1c-radio" name="hba1c-units" value=1><span>%</span>
+                    </label>
+                  </div>      
+                </div>
+              </div>
+
+              <div class="input-items comingsoon" id = "glucose-items">
+                <div class = "coming-soon-message">Available in next update...</div>
+                <div class = "label-box">
+                  <p class="input-label"> 
+                    Glucose 
+                    <!--<span class="if-available-message">(if available)</span>--> 
+                  </p>
+                </div>
+                <div class="textfield-box comingsoon">
+                  <input type="number" class="textfield-box-input" id="glucose-input" name="glucose-input" disabled>
+                  <div class="units-box">
+                    <label>
+                      <input type="radio" id = "glucose-mgdL" class = "glucose-radio" name="glucose-units" checked="checked" value=0><span>mg/dL</span>
+                    </label>
+                    <label>
+                      <input type="radio" id = "glucose-mmolL" class = "glucose-radio" name="glucose-units" value=1><span>mmol/L</span>
+                    </label>
+                  </div>      
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="button-box">
+            <button class="reset-fields" type="button" id="reset-fields"> Reset - Enter new information </button>
+            <button class="calculate-risk" type="button" id="calculate-risk" disabled> Calculate </button>
+          </div>        
+        </div>        
+      </div>
+
+      <div class="outer-box-lifetime">
+        <div class="lifetime-box">
+
+          <div id="lifetime-box-page-title">
+            <div id="lifetime-box-page-title-1">Your Current Cardiovascular Health</div>
+            <div id="lifetime-box-page-title-2">Based on your current health trajectory</div>
+          </div>
+
+          <div class="lifetime-col0">
+            <div id="lifetime-col0-plaque-box">
+              <p>Your Personal Plaque Threshold</p>
+              <p>See how rapidly your arterial wall plaque and injury are accumulating over time</p>
+
+              <div id="lifetime-gif-wrapper">
+                <video id="lifetime-plaque-gif" preload="auto">
+                  <source src="media/plaque.webm" type="video/webm">
+                  Your browser does not support WebM video.
+                </video>
+                <div id="lifetime-gif-wrapper-infotip">i</div>
+              </div>
+
+              <div id="full-lifetime-gif-wrapper">
+                <video id="full-lifetime-plaque-gif" preload="auto">
+                  <source src="media/plaque.webm" type="video/webm">
+                  Your browser does not support WebM video.
+                </video>
+              </div>
+
+              <div id="lifetime-slider-row">
+                <!-- <div id="lifetime-null-sliderValue"> -->
+                  <!-- Age: 45 -->
+                <!-- </div> -->
+                <input
+                  type="range"
+                  id="lifetime-exposureSlider"
+                  class="slider"
+                  min="45"
+                  max="80"
+                  step="1"
+                  value="45"
+                />
+                <div id="lifetime-sliderValue">
+                  Age: 45
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+          <div class="lifetime-col1">
+
+            <div class="lifetime-graph-box">
+              <div id="lifetime-Graph-tooltip">(You can see your risk at any age by holding the cursor over the line below)</div>
+              <div id="lifetime-Graph"></div>
+            </div>
+
+            <div class="lifetime-risk-box">
+              <!-- <div class="lifetime-risk-score"> -->
+              <div id="lifetime-risk">Cumulative Lifetime Risk of Heart Attack or Stroke:</div>
+              <div id="lifetime-risk-value-box">
+                <div id="lifetime-risk-value">00.0%</div>                
+              </div>  
+              <div id="lifetime-risk-postamble">
+                <!-- <em> -->
+                <!-- </em> -->
+              </div>
+            </div>
+
+          </div>
+
+          <div class="lifetime-col2">
+
+            <div id="lifetime-health-score-bar-box">
+              <div id="lifetime-health-score-bar"></div>                
+              <div id="lifetime-health-score-postamble">(Cardiovascular Health Scores are measured from 0-100.)</div>                
+            </div>  
+
+            <div class="lifetime-health-box">
+              <div id="lifetime-health-score-title">Cardiovascular Health Score:</div>
+              <div id="lifetime-health-score-value-box">
+                <div id="lifetime-health-score-value">00.0</div>
+              </div>
+              <div id="lifetime-health-score-value-postamble">Values can range between 1 and 100</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-box-plaque">
+        <div class="plaque-box">
+
+          <div id="plaque-box-page-title">
+            <div id="plaque-box-page-title-1">Your Personal Plaque Threshold for Heart Attack and Stroke</div>
+            <div id="plaque-box-page-title-2">(based on your current health trajectory)</div>
+          </div>
+
+          <div id="plaque-box-page-explanation">
+            <!-- <em> -->
+              Your Personal Plaque Threshold is the amount of 
+              plaque and artery wall injury that can build up 
+              in your arteries before your risk of having a 
+              heart attack or stroke starts to increase. 
+              We can use a yearly siRNA to lower your 
+              LDL and SBP by the amount you need to slow 
+              the progression of plaque growth and arterial injury 
+              enough to keep you below your Personal Plaque Threshold.
+            <!-- </em> -->
+          </div>
+
+          <div class="plaque-col1">
+            <div id="plaque-col1-title">
+              <p><em>
+                Use the slider below to see how rapidly 
+                your plaque and injury 
+                <span class="highlight">
+                  are accumulating within your arteries
+                  over time on your 
+                  current health trajectory
+                </span>
+              </em></p>
+            </div>
+            <div id="plaque-gauge-1-wrapper">
+
+              <div id="plaque-gauge-1">
+
+                <svg width="300" height="150" viewBox="0 20 400 250" role="img">
+                  <defs>
+                    <!-- Clip path for both yellow fill and blue line -->
+                    <clipPath id="fillClip">
+                      <rect id="clipRect" x="0" y="400" width="400" height="0" />
+                    </clipPath>
+
+                    <mask id="wiremeshMask-1" maskUnits="userSpaceOnUse">
+                      <!-- The image acts as the mask. 
+                            White/bright areas = visible, black/dark = hidden -->
+                      <image href="media/wiremesh-spiro.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
+                    </mask>
+
+                    <mask id="plaqueFillMask-1" maskUnits="userSpaceOnUse">
+                      <!-- The image acts as the mask. 
+                            White/bright areas = visible, black/dark = hidden -->
+                      <image href="media/plaque-fill-mask.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
+                    </mask>
+
+                    <radialGradient id="arteryGradient" cx="50%" cy="50%" r="50%">
+                      <stop offset="75%" stop-color="rgb(255, 171, 171)" />
+                      <stop offset="87.5%" stop-color="rgb(247, 139, 136)" />
+                      <stop offset="100%" stop-color="rgb(235, 107, 100)" />
+                    </radialGradient>
+
+                    <linearGradient id="plaqueGradient" x1="0%" x2="0%" y1="100%" y2="0%">
+                      <stop offset="0%" stop-color="#ffd36c" stop-opacity="0.0" />
+                      <stop offset="30%" stop-color="#ffd36c" stop-opacity="0.25" />
+                      <stop offset="40%" stop-color="#e39f64" stop-opacity="0.5" />
+                      <stop offset="75%" stop-color="#c56a55" stop-opacity="0.8" />
+                    </linearGradient>
+
+                    <linearGradient id="plaqueGradient-t" x1="0%" x2="0%" y1="100%" y2="0%">
+                      <!-- <stop offset="0%" stop-color="#ffd36c" stop-opacity="0.0" />
+                      <stop offset="30%" stop-color="#ffd36c" stop-opacity="0.25" />
+                      <stop offset="40%" stop-color="#e39f64" stop-opacity="0.5" />
+                      <stop offset="50%" stop-color="#cd7a59" stop-opacity="0.6" />
+                      <stop offset="70%" stop-color="#c4432d" stop-opacity="0.8" /> -->
+                      <stop offset="0%" stop-color="#00e5ff" />
+                      <stop offset="25%" stop-color="#00d3ff" />
+                      <stop offset="35%" stop-color="#00bfff" />
+                      <stop offset="40%" stop-color="#00abff" />
+                      <stop offset="45%" stop-color="#0094ff" />
+                      <stop offset="50%" stop-color="#007cff" />
+                      <stop offset="65%" stop-color="#0060ff" />
+                      <stop offset="75%" stop-color="#003cff" />
+                    </linearGradient>
+                    
+                  </defs>
+
+                  <!-- Reference lines group -->
+                  <g id="refLines"></g>
+
+                  <!-- Group with clip applied -->
+                  <g clip-path="url(#fillClip)">
+                    <filter id="plaque-hue" x="0" y="0" width="100%" height="100%">
+                      <!-- <feImage href="media/plaque-texture-l.png" result="tex" /> -->
+                      <!-- <feColorMatrix in="tex" type="matrix"
+                        values="
+                          0.8  0    0    0    0
+                          0    0.8  0    0    0
+                          0    0    0.8  0    0
+                          0    0    0    0.75 0" result="coloredTex"/>
+                      <feBlend in="SourceGraphic" in2="coloredTex" mode="overlay"/> -->
+                      <feImage href="media/future-plaque-texture-l.png" result="tex" />
+                      <feColorMatrix in="tex" type="matrix"
+                        values="
+                          0.9  0    0    0     0
+                          0    0.9  0    0     0
+                          0    0    0.9  0     0
+                          0    0    0    0.75  0" result="coloredTex"/>
+
+                      <feBlend in="SourceGraphic" in2="coloredTex" mode="overlay"/>
+                    </filter>
+
+                    <!-- Yellow fill circle -->
+                    <!-- <circle class="yellow-fill" cx="200" cy="150" r="100" fill="url(#plaqueGradient)" filter="url(#blend-overlay)" /> -->
+                    <circle class="yellow-fill" cx="200" cy="150" r="100" fill="url(#plaqueGradient-t)" filter="url(#plaque-hue)" mask="url(#plaqueFillMask-1)"/>
+
+                    <!-- <line id="blueLine" class="blue-line" x1="0" x2="400" y1="400" y2="400" /> -->
+                    <line id="blueLine" class="blue-line" x1="50" x2="350" y1="400" y2="400" />
+                  </g>
+
+                  <text id="blueLabel" class="blue-label" x="360" y="400" text-anchor="start" dominant-baseline="middle">0</text>
+
+                  <!-- Outer circles (drawn after fill so they're always on top) -->
+                  <circle class="circle-border" cx="200" cy="150" r="100" mask="url(#wiremeshMask-1)" />
+                  <!-- <circle class="circle-outline" cx="200" cy="150" r="100" stroke="url(#arteryGradient)"/> -->
+                  <circle class="future-circle-arterywall" cx="200" cy="150" r="115" mask="url(#circleStrokeMask)"/>
+
+
+                  <!-- Labels group -->
+                  <g id="refLabels"></g>
+                </svg>    
+
+              </div>
+            </div>
+            <div id="plaque-box-slider-1">
+              <div id="plaque-box-slider-1-title">Amount of Plaque and Arterial Wall Injury at any age without treatment</div>
+              <div id="slider-row">
+                <div id="null-sliderValue">
+                  Age: 45
+                </div>
+                <input
+                  type="range"
+                  id="exposureSlider"
+                  class="slider"
+                  min="45"
+                  max="80"
+                  step="1"
+                  value="45"
+                />
+                <div id="sliderValue">
+                  Age: 45
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="plaque-col2">
+            <div id="plaque-col1-title">
+              <p><em>
+                Use the slider below to see how much 
+                you can slow the accumulation of plaque and
+                arterial wall injury 
+                <span class="highlight">
+                  with a yearly siRNA to lower LDL and SBP starting now
+                </span>
+              </em></p>
+            </div>
+
+            <div id="plaque-gauge-2-wrapper">
+
+              <div id="plaque-gauge-2">
+
+                <svg width="300" height="150" viewBox="0 20 400 250" role="img">
+                  <defs>
+                    <!-- Clip path for both yellow fill and blue line -->
+                    <clipPath id="fillClip-2">
+                      <rect id="clipRect-2" x="0" y="400" width="400" height="0" />
+                    </clipPath>
+
+                    <mask id="wiremeshMask-2" maskUnits="userSpaceOnUse">
+                      <!-- The image acts as the mask. 
+                            White/bright areas = visible, black/dark = hidden -->
+                      <image href="media/wiremesh-spiro.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
+                    </mask>
+
+                    <mask id="plaqueFillMask-2" maskUnits="userSpaceOnUse">
+                      <!-- The image acts as the mask. 
+                            White/bright areas = visible, black/dark = hidden -->
+                      <image href="media/plaque-fill-mask.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
+                    </mask>
+
+                    <radialGradient id="arteryGradient-2" cx="50%" cy="50%" r="50%">
+                      <stop offset="75%" stop-color="rgb(255, 171, 171)" />
+                      <stop offset="87.5%" stop-color="rgb(247, 139, 136)" />
+                      <stop offset="100%" stop-color="rgb(235, 107, 100)" />
+                    </radialGradient>
+
+                    <linearGradient id="plaqueGradient-t-2" x1="0%" x2="0%" y1="100%" y2="0%">
+                      <!-- <stop offset="0%" stop-color="#ffd36c" stop-opacity="0.0" />
+                      <stop offset="30%" stop-color="#ffd36c" stop-opacity="0.25" />
+                      <stop offset="40%" stop-color="#e39f64" stop-opacity="0.5" />
+                      <stop offset="50%" stop-color="#cd7a59" stop-opacity="0.6" />
+                      <stop offset="70%" stop-color="#c4432d" stop-opacity="0.8" /> -->
+                      <stop offset="0%" stop-color="#00e5ff" />
+                      <stop offset="25%" stop-color="#00d3ff" />
+                      <stop offset="35%" stop-color="#00bfff" />
+                      <stop offset="40%" stop-color="#00abff" />
+                      <stop offset="45%" stop-color="#0094ff" />
+                      <stop offset="50%" stop-color="#007cff" />
+                      <stop offset="65%" stop-color="#0060ff" />
+                      <stop offset="75%" stop-color="#003cff" />
+                    </linearGradient>
+
+                  </defs>
+
+                  <!-- Reference lines group -->
+                  <g id="refLines-2"></g>
+
+                  <!-- Group with clip applied -->
+                  <g clip-path="url(#fillClip-2)">
+                    <filter id="plaque-hue-2" x="0" y="0" width="100%" height="100%">
+                      <!-- <feImage href="media/plaque-texture-l.png" result="tex" />
+                      <feColorMatrix in="tex" type="matrix"
+                        values="
+                          0.8  0    0    0    0
+                          0    0.8  0    0    0
+                          0    0    0.8  0    0
+                          0    0    0    0.75 0" result="coloredTex"/>
+                      <feBlend in="SourceGraphic" in2="coloredTex" mode="overlay"/> -->
+                      <feImage href="media/future-plaque-texture-l.png" result="tex" />
+                      <feColorMatrix in="tex" type="matrix"
+                        values="
+                          0.9  0    0    0     0
+                          0    0.9  0    0     0
+                          0    0    0.9  0     0
+                          0    0    0    0.75  0" result="coloredTex"/>
+
+                      <feBlend in="SourceGraphic" in2="coloredTex" mode="overlay"/>
+                    </filter>
+
+                    <!-- Yellow fill circle -->
+                    <circle class="yellow-fill" cx="200" cy="150" r="100" fill="url(#plaqueGradient-t-2)" filter="url(#plaque-hue-2)" mask="url(#plaqueFillMask-2)"/>
+
+                    <!-- <line id="blueLine" class="blue-line" x1="0" x2="400" y1="400" y2="400" /> -->
+                    <line id="blueLine-2" class="blue-line" x1="50" x2="350" y1="400" y2="400" />
+                  </g>
+
+                  <text id="blueLabel-2" class="blue-label" x="360" y="400" text-anchor="start" dominant-baseline="middle">0</text>
+
+                  <!-- Outer circles (drawn after fill so they're always on top) -->
+                  <circle class="circle-border" cx="200" cy="150" r="100" mask="url(#wiremeshMask-2)" />
+                  <!-- <circle class="circle-outline" cx="200" cy="150" r="100" stroke="url(#arteryGradient-2)"/> -->
+                  <circle class="future-circle-arterywall" cx="200" cy="150" r="115" mask="url(#circleStrokeMask)"/>
+
+                  <!-- Labels group -->
+                  <g id="refLabels-2"></g>
+                </svg>
+
+              </div>
+            </div>
+            <div id="plaque-box-slider-2">
+              <div id="plaque-box-slider-2-title">Amount of Plaque and Arterial Wall Injury at any age with yearly siRNA</div>
+              <div id="slider-row-2">
+                <div id="null-sliderValue-2">
+                  Age: 45
+                </div>
+                <input
+                  type="range"
+                  id="exposureSlider-2"
+                  class="slider"
+                  min="45"
+                  max="80"
+                  step="1"
+                  value="45"
+                />
+                <div id="sliderValue-2">
+                  Age: 45
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="outer-box-treatment">
+        <div class="treatment-box">
+
+          <div id="treatment-box-page-title">
+            <div id="treatment-box-page-title-1">Benefit from yearly siRNA to lower LDL and Blood Pressure</div>
+            <div id="treatment-box-page-title-2">Based on your current health trajectory and the age you start treatment</div>
+            <div id="treatment-age-options-wrapper">
+              <div id="start-medication-later">Enter the age you wish to start treatment:</div>
+              <input type="number" id="start-later-age-input">
+              <div id="start-medication-later-1">
+                <!-- <em> -->
+                  (you can compare the benefit of starting at different ages)
+                <!-- </em> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="treatment-col0">
+            <div id="treatment-col0-plaque-box">
+              <p>Your Personal Plaque Threshold</p>
+              <p>See how rapidly your arterial wall plaque and injury are 
+                accumulating over time, and compare it with how rapidly it 
+                accumulates with once yearly siRNA</p>
+
+              <div id="outer-treatment-gif-1">
+                <span>Current Health Trajectory</span>
+                <div id="treatment-gif-wrapper">
+                  <video id="treatment-plaque-gif" preload="auto">
+                    <source src="media/plaque.webm" type="video/webm">
+                    Your browser does not support WebM video.
+                  </video>
+                  <div id="treatment-gif-wrapper-infotip">i</div>
+                </div>
+              </div>
+
+              <div id="outer-treatment-gif-2">
+                <span>With once yearly siRNA</span>
+                <div id="treatment-gif-wrapper-2">
+                  <video id="treatment-plaque-gif-2" preload="auto">
+                    <source src="media/plaque.webm" type="video/webm">
+                    Your browser does not support WebM video.
+                  </video>
+                  <!-- <div id="treatment-gif-wrapper-infotip-2">i</div> -->
+                </div>
+              </div>
+
+              <div id="treatment-slider-row">
+                <!-- <div id="lifetime-null-sliderValue"> -->
+                  <!-- Age: 45 -->
+                <!-- </div> -->
+                <input
+                  type="range"
+                  id="treatment-exposureSlider"
+                  class="slider"
+                  min="45"
+                  max="80"
+                  step="1"
+                  value="45"
+                />
+                <div id="treatment-sliderValue">
+                  Age: 45
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="treatment-col1">
+
+            <div class="treatment-graph-box">
+              <div id="treatment-Graph-tooltip">(You can see your risk with and without treatment at any age by holding the cursor over the line below)</div>
+              <div id="treatment-Graph"></div>
+            </div>
+
+            <div class="treatment-risks-box">
+              <div id="treatment-risks-box-title">Reduced Lifetime Risk</div>
+              <div id="risk-transition-box">
+                <div id="risk-before-treatment-value">00.0%</div>   
+                <span style="font-weight: 800;"><b>→</b></span>             
+                <div id="risk-after-treatment-value">00.0%</div>                
+              </div>
+
+              <div id="treatment-proportional-risk-reduction-value"></div>
+            </div>
+
+          </div>
+
+          <div class="treatment-col2">
+
+            <div class="treatment-health-score-bar-box">
+              <div id="treatment-health-score-bar"></div>
+            </div>
+
+            <div class="treatment-treatments-box">
+
+              <div id="health-score-transition-title">Improved Cardiovascular Health Score</div>
+
+              <div id="health-score-transition-box">
+                <div id="health-score-before-treatment-value">00.0</div>   
+                <div id="health-score-after-treatment-value">00.0</div>                
+              </div>
+
+              <div class="healthy-years-gained-title"></div>
+
+              <div id="healthy-years-Graph"></div>
+            </div>
+
+          </div>
+
+          <div class="treatment-col3">
+            <div id="healthy-years-value-title">Number of Healthy Life Years Gained</div>
+            <div id="healthy-years-value-wrapper">
+              <div id="healthy-years-value"></div>
+              <div id="healthy-years-value-postamble">Extra years free of Cardiovascular Disease</div>
+            </div>
+            <div id="healthy-years-value-postamble-1">
+              <em>
+                <b>Benefit COMPOUNDS over time</b><br>
+                so the earlier you start, 
+                the faster benefit grows.
+              </em>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-box-personalization">
+        <!-- <div class="personalization-box">
+          <div id="personalization-box-title">
+            <div id="personalization-box-title-1">Personalized Guidance to Optimize Cardiovascular Health</div>
+            
+            <div id="target-goal-lines">
+              <div id="target-goal-input-box">
+                <div id="target-value-prompt">Please select your lifetime risk goal:</div>
+                <input type="number" id="target-value-input" name="target-value-input">  
+                <div id="target-value-prompt-1"><em>e.g. 5% (or 1 in 20 chance) of heart attack or stroke by age 80</em></div>
+              </div>
+
+              <div id="target-goal-results-box">
+                <div id="target-results-text">Age you should start yearly siRNA:</div>
+                <div id="target-results-value"></div>  
+                <div id="target-results-text-1">to achieve your cardiovascular health goal</div>
+              </div>
+            </div>
+
+            <div id="target-goal-explanation">
+              <em>
+                Unfortunately, you have accumulated too much plaque 
+                and injury to reach that goal. You can maximize benefit 
+                if you start now.
+              </em>
+            </div>
+
+          </div>
+
+          <div id="personalization-reminder">Please enter a number in the field above to access the rest of this page.</div>
+
+          <div class="personalization-col1">
+            <div class="personalization-risks-box">
+              <div id="personalization-treatment-risks-box-title">Reduced Lifetime Risk</div>
+              <div id="personalization-risk-transition-box">
+                <div id="personalization-risk-before-treatment-value">00.0%</div>   
+                <span style="font-weight: 800;"><b>→</b></span>             
+                <div id="personalization-risk-after-treatment-value">00.0%</div>                
+              </div>
+
+              <div id="personalization-proportional-risk-reduction-value">test</div>
+            </div>
+            <div class="personalization-graph-box">
+              <div id="personalization-Graph-tooltip">(You can see your risk with and without treatment at any age by holding the cursor over the line below)</div>
+              <div id="personalization-Graph"></div>
+            </div>
+          </div>
+
+          <div class="personalization-col2">
+            <div class="personalization-treatments-box">
+              <div id="personalization-treatments-title">Improved Cardiovascular Health Score</div>
+
+              <div id="personalization-health-score-transition-box">
+                <div id="personalization-health-score-before-treatment-value">00.0</div>   
+                <div id="personalization-health-score-after-treatment-value">00.0</div>                
+              </div>
+              <div class="personalization-healthy-years-gained-title"></div>
+
+              <div id="personalization-healthy-years-Graph"></div>
+            </div>
+
+            <div class="personalization-treatment-health-score-bar-box">
+              <div id="personalization-health-score-bar"></div>
+            </div>
+
+          </div>
+
+          <div class="personalization-col3">
+            <div id="personalization-healthy-years-value-title">Number of Healthy Life Years Gained</div>
+            <div id="personalization-healthy-years-value-wrapper">
+              <div id="personalization-healthy-years-value">0</div>
+              <div id="personalization-healthy-years-value-postamble">Extra years free of Cardiovascular Disease</div>
+            </div>
+            <div id="personalization-healthy-years-value-postamble-1">
+                <b>Benefit COMPOUNDS</b> 
+                over time - so the earlier you start, 
+                the faster benefit grows.
+            </div>
+          </div>
+        </div> -->
+      </div>
+
+      <div class="outer-box-dial-boxes">
+        <div class="dial-boxes-box">
+
+          <div id="dial-boxes-box-page-title">
+            <div id="dial-boxes-box-page-title-1">Healthspan Dial</div> 
+            <div id="dial-boxes-box-page-title-2">Based on your current health trajectory</div>
+
+            <div id="dial-boxes-box-page-explanation">
+              Turn the dial to <b>add as many years to your 
+              Healthspan</b> you wish
+              <!-- <br> -->
+              and be provided with 
+              <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it 
+              <!-- <br> -->
+              <em>
+                (limited only by the amount of plaque and artery injury 
+                that develops
+                <!-- <br> -->
+                before you start lowering LDL and SBP)
+              </em>
+            </div>
+
+          </div>
+
+          <div class="dial-boxes-col1">
+            <div id="dial-boxes-current-levels">
+              <div id="current-levels-list">
+
+                <div class="current-levels-list-item" id="current-levels-list-age">Age<span>0</span></div>
+                <div class="current-levels-list-item" id="current-levels-list-ldl">LDL<span>0</span></div>
+                <div class="current-levels-list-item" id="current-levels-list-sbp">SBP<span>0</span></div>
+
+                <div class="current-levels-list-item" id="current-levels-list-weight">Weight<span>0</span></div>
+                <div class="current-levels-list-item" id="current-levels-list-bmi">BMI<span>0</span></div>
+                <div class="current-levels-list-item" id="current-levels-list-lpa">Lp(a)<span>0</span></div>
+
+                <div class="current-levels-list-item" id="current-levels-list-curldl">Cumulative LDL<br>at current age<span>0</span></div>
+                <div class="current-levels-list-item" id="current-levels-list-tcumldl">Target Cumulative LDL<br>by age 80<span>0</span></div>
+                <div class="current-levels-list-item" id="current-levels-list-cumldl">Cumulative LDL<br>by age 80<span>0</span></div>
+
+              </div>
+              <!-- <dl id="current-levels-list"></dl> -->
+            </div>
+            <div id="dial-boxes-bot-option">
+              <div id="dial-boxes-bot-1">Do you have any questions?</div>
+
+              <div class="bot-input-box">
+                <input type="text" id="bot-input" placeholder="How can I help?" disabled>  
+                <img src="media/mic.png" class="mic">
+              </div>
+
+              <div id="dial-boxes-bot-2"><br>
+                Because our Deep Causal AI is trained on the biology 
+                of how cardiometabolic disease develops, and is the 
+                first to encode this biological cause and effect, we 
+                can explain the biological and clinical reasoning for all 
+                our recommendations and explain why you are at risk 
+                and how much you can benefit from lowering LDL 
+                and blood pressure.
+              </div>
+            </div>
+            <div id="dial-boxes-plaque-threshold-box">
+              <div id="future-plaque-gauge-wrapper">
+
+                <div id="future-plaque-gauge">
+
+                  <svg width="300" height="150" viewBox="0 25 400 250" role="img">
+                    <defs>
+                      <!-- Clip path for both yellow fill and blue line -->
+                      <clipPath id="future-fillClip">
+                        <rect id="future-clipRect" x="0" y="400" width="400" height="0" />
+                      </clipPath>
+
+                      <mask id="wiremeshMask" maskUnits="userSpaceOnUse">
+                        <!-- The image acts as the mask. 
+                              White/bright areas = visible, black/dark = hidden -->
+                        <image href="media/wiremesh-spiro.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
+                      </mask>
+
+                      <mask id="plaqueFillMask" maskUnits="userSpaceOnUse">
+                        <!-- The image acts as the mask. 
+                              White/bright areas = visible, black/dark = hidden -->
+                        <image href="media/plaque-fill-mask.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
+                      </mask>
+
+                      <linearGradient id="future-plaqueGradient-glow" x1="0%" x2="0%" y1="100%" y2="0%">
+                        
+                        <!-- <stop offset="0%" stop-color="#f1f6f8" />
+                        <stop offset="15%" stop-color="#bce2f7" />
+                        <stop offset="25%" stop-color="#8accfb" />
+                        <stop offset="35%" stop-color="#57b4ff" />
+                        <stop offset="55%" stop-color="#0f9aff" />
+                        <stop offset="65%" stop-color="#007eff" />
+                        <stop offset="75%" stop-color="#005fff" />
+                        <stop offset="85%" stop-color="#0039f5" /> -->
+                        <stop offset="0%" stop-color="#00e5ff" />
+                        <stop offset="25%" stop-color="#00d3ff" />
+                        <stop offset="35%" stop-color="#00bfff" />
+                        <stop offset="40%" stop-color="#00abff" />
+                        <stop offset="45%" stop-color="#0094ff" />
+                        <stop offset="50%" stop-color="#007cff" />
+                        <stop offset="65%" stop-color="#0060ff" />
+                        <stop offset="75%" stop-color="#003cff" />
+
+                      </linearGradient>
+                      
+                    </defs>
+
+                    <!-- Reference lines group -->
+                    <g id="future-refLines"></g>
+
+                    <!-- Group with clip applied -->
+                    <g clip-path="url(#future-fillClip)">
+                      <filter id="future-plaque-hue" x="0" y="0" width="100%" height="100%">
+                        <feImage href="media/future-plaque-texture-l.png" result="tex" />
+                        <feColorMatrix in="tex" type="matrix"
+                          values="
+                            0.9  0    0    0     0
+                            0    0.9  0    0     0
+                            0    0    0.9  0     0
+                            0    0    0    0.75  0" result="coloredTex"/>
+
+                        <feBlend in="SourceGraphic" in2="coloredTex" mode="overlay"/>
+                      </filter>
+
+                      <!-- Fill circle -->
+                      <circle class="future-gauge-fill" cx="200" cy="150" r="100"  fill="url(#future-plaqueGradient-glow)" filter="url(#future-plaque-hue)" mask="url(#plaqueFillMask)"/>
+
+                      <line id="future-blueLine" class="future-blue-line" x1="40" x2="350" y1="400" y2="400" />
+                    </g>
+
+                    <text id="future-blueLabel" class="future-blue-label" x="400" y="400" text-anchor="end" dominant-baseline="middle">0</text>
+                    <text id="future-whiteLabel" class="future-white-label" x="27.5" y="400" text-anchor="start" dominant-baseline="middle">0</text>
+
+                    <!-- Outer circles (drawn after fill so they're always on top) -->
+                    <circle class="future-circle-border" cx="200" cy="150" r="100" mask="url(#wiremeshMask)" />
+
+                    <circle class="future-circle-arterywall" cx="200" cy="150" r="115" filter="url(#future-arteryOverlay)" mask="url(#circleStrokeMask)"/>
+
+                    <!-- Labels group -->
+                    <g id="future-refLabels"></g>
+                  </svg>
+
+                </div>
+                <div id="future-plaque-gauge-title">Personal Plaque Threshold</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dial-boxes-col2">
+            <div id="dial-boxes-col2-row1">
+
+              <!-- <div id="dial-boxes-box-page-title"> -->
+                <!-- <div id="dial-boxes-box-page-title-1">Healthspan Dial</div>  -->
+                <!-- <div id="dial-boxes-box-page-title-2">(based on your current health trajectory)</div> -->
+              <!-- </div> -->
+
+              <!-- <div id="dial-boxes-box-page-explanation"><em>Please turn the dial to determine how you can achieve any level of cardiovascular health or any number of extra years of healthspan if you take a yearly siRNA to lower LDL and SBP limited by how much disease has already occurred before you start to lower LDL and SBP.</em></div> -->
+              <!-- <div id="dial-boxes-box-page-explanation">
+                Turn the dial to <b>add as many years to your 
+                Healthspan</b> you wish<br>and be provided with 
+                <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it 
+                <br>
+                <em>
+                  (limited only by the amount of plaque and artery injury 
+                  that develops<br>before you start lowering LDL and SBP)
+                </em>
+              </div> -->
+            </div>
+            <div id="dial-boxes-col2-row2">
+              <div id="matrix-l"></div>
+              <div id="dial-box">
+                  <!-- <img src="media/dial-v2.png" id="dial-image" alt="Dial"/> -->
+                  <img src="media/klotho/dial.png" id="dial-image" alt="Dial"/>
+                  <div class="label" id="dial-label">0</div>
+                  <span id="dial-bar">Extra years of Healthspan</span>
+              </div>
+              <div id="matrix-r"></div>
+            </div>
+            <div id="dial-boxes-col2-row3">
+
+              <div id="dial-boxes-plaque-threshold-progress-bar-wrapper">
+                <div id="dial-boxes-plaque-threshold-progress-bar">
+                  <div id="dial-boxes-plaque-threshold-progress"></div>
+                  <div id="progress-tick"></div>
+                </div>
+              </div>
+
+              <div id="dial-boxes-plaque-threshold-wrapper">
+                <div id="dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
+                <div id="dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years</div>
+              </div>
+
+              <div id="dial-boxes-plaque-threshold-personalized-guidance-wrapper">
+                <div id="dial-boxes-plaque-threshold-personalized-guidance">
+                  <p>
+                    <span>Personalized Guidance:</span>
+                    <!-- <br> -->
+                    You can add <span>0</span> years to your Healthspan
+                    <!-- <br> -->
+                    if you start <span>once yearly</span> siRNA at age <span>30</span>
+                    <!-- <br> -->
+                    to keep cumulative LDL below your target
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="dial-boxes-col3">
+            <div class="dial-boxes-graph-box">
+              <div id="dial-boxes-graph-box-title">Current Health Trajectory</div>
+              <div id="dial-boxes-graph-title"><span>Lifetime Risk of Heart Attack or Stroke</span></div>
+              <div id="dial-boxes-risk-transition-box">
+                <div id="dial-boxes-risk-transition-box-row1">
+                  <div id="dial-boxes-risk-before-treatment-value">00.0%</div>   
+                  <span><b>→</b></span>             
+                  <div id="dial-boxes-risk-after-treatment-value">00.0%</div>   
+                </div>
+                
+                <div id="dial-boxes-risk-reduction-value">00.0% lower risk</div>    
+              </div>
+              <div id="dial-boxes-graph-wrapper">
+                <div id="dial-boxes-Graph"></div>              
+              </div>
+            </div>
+
+            <div class="dial-boxes-healthy-years-box">
+              <div id="dial-boxes-healthy-years-title">Number of Healthy Life Years Gained</div>
+              <div id="dial-boxes-healthy-years">0</div>
+            </div>
+
+            <div class="dial-boxes-bar-box">
+              <div id="dial-boxes-bar-title">Cardiovascular Health Score</div>
+              <div id="dial-boxes-bar-shape">
+                <div id="bar-no-rx"></div>
+                <div id="bar-with-rx"></div>
+              </div>
+              <div id="dial-boxes-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-box-healthscore-dial-boxes">
+        <div class="healthscore-dial-boxes-box">
+          <div class="healthscore-dial-boxes-col1">
+            <div id="healthscore-dial-boxes-current-levels">
+              <div id="healthscore-current-levels-list">
+
+                <div class="current-levels-list-item" id="healthscore-current-levels-list-age">Age<span>0</span></div>
+                <div class="current-levels-list-item" id="healthscore-current-levels-list-ldl">LDL<span>0</span></div>
+                <div class="current-levels-list-item" id="healthscore-current-levels-list-sbp">SBP<span>0</span></div>
+
+                <div class="current-levels-list-item" id="healthscore-current-levels-list-weight">Weight<span>0</span></div>
+                <div class="current-levels-list-item" id="healthscore-current-levels-list-bmi">BMI<span>0</span></div>
+                <div class="current-levels-list-item" id="healthscore-current-levels-list-lpa">Lp(a)<span>0</span></div>
+
+                <div class="current-levels-list-item" id="healthscore-current-levels-list-curldl">Cumulative LDL<br>at current age<span>0</span></div>
+                <div class="current-levels-list-item" id="healthscore-current-levels-list-tcumldl">Target Cumulative LDL<br>by age 80<span>0</span></div>
+                <div class="current-levels-list-item" id="healthscore-current-levels-list-cumldl">Cumulative LDL<br>by age 80<span>0</span></div>
+
+              </div>
+              <!-- <dl id="current-levels-list"></dl> -->
+            </div>
+            <div id="healthscore-dial-boxes-bot-option">
+              <div id="healthscore-dial-boxes-bot-1">Do you have any questions?</div>
+
+              <div class="bot-input-box">
+                <input type="text" id="healthscore-bot-input" placeholder="How can I help?" disabled>  
+                <img src="media/mic.png" class="mic">
+              </div>
+
+              <div id="healthscore-dial-boxes-bot-2"><br>
+                Because our Deep Causal AI is trained on the biology 
+                of how cardiometabolic disease develops, and is the 
+                first to encode this biological cause and effect, we 
+                can explain the biological and clinical reasoning for all 
+                our recommendations and explain why you are at risk 
+                and how much you can benefit from lowering LDL 
+                and blood pressure.
+              </div>
+            </div>
+            <div id="healthscore-dial-boxes-plaque-threshold-box">
+              <div id="healthscore-future-plaque-gauge-wrapper">
+
+                <div id="healthscore-future-plaque-gauge">
+
+                  <svg width="300" height="150" viewBox="0 25 400 250" role="img">
+                    <defs>
+                      <!-- Clip path for both yellow fill and blue line -->
+                      <clipPath id="healthscore-future-fillClip">
+                        <rect id="healthscore-future-clipRect" x="0" y="400" width="400" height="0" />
+                      </clipPath>
+
+                      <mask id="healthscore-wiremeshMask" maskUnits="userSpaceOnUse">
+                        <!-- The image acts as the mask. 
+                              White/bright areas = visible, black/dark = hidden -->
+                        <image href="media/wiremesh-spiro.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
+                      </mask>
+
+                      <mask id="healthscore-plaqueFillMask" maskUnits="userSpaceOnUse">
+                        <!-- The image acts as the mask. 
+                              White/bright areas = visible, black/dark = hidden -->
+                        <image href="media/plaque-fill-mask.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
+                      </mask>
+
+                      <linearGradient id="healthscore-future-plaqueGradient-glow" x1="0%" x2="0%" y1="100%" y2="0%">
+                        
+                        <stop offset="0%" stop-color="#00e5ff" />
+                        <stop offset="25%" stop-color="#00d3ff" />
+                        <stop offset="35%" stop-color="#00bfff" />
+                        <stop offset="40%" stop-color="#00abff" />
+                        <stop offset="45%" stop-color="#0094ff" />
+                        <stop offset="50%" stop-color="#007cff" />
+                        <stop offset="65%" stop-color="#0060ff" />
+                        <stop offset="75%" stop-color="#003cff" />
+
+                      </linearGradient>
+                      
+                    </defs>
+
+                    <!-- Reference lines group -->
+                    <g id="healthscore-future-refLines"></g>
+
+                    <!-- Group with clip applied -->
+                    <g clip-path="url(#healthscore-future-fillClip)">
+                      <filter id="healthscore-future-plaque-hue" x="0" y="0" width="100%" height="100%">
+                        <feImage href="media/future-plaque-texture-l.png" result="tex" />
+                        <feColorMatrix in="tex" type="matrix"
+                          values="
+                            0.9  0    0    0     0
+                            0    0.9  0    0     0
+                            0    0    0.9  0     0
+                            0    0    0    0.75  0" result="coloredTex"/>
+
+                        <feBlend in="SourceGraphic" in2="coloredTex" mode="overlay"/>
+                      </filter>
+
+                      <!-- Fill circle -->
+                      <circle class="healthscore-future-gauge-fill" cx="200" cy="150" r="100"  fill="url(#healthscore-future-plaqueGradient-glow)" filter="url(#healthscore-future-plaque-hue)" mask="url(#healthscore-plaqueFillMask)"/>
+
+                      <line id="healthscore-future-blueLine" class="future-blue-line" x1="40" x2="350" y1="400" y2="400" />
+                    </g>
+
+                    <text id="healthscore-future-blueLabel" class="future-blue-label" x="400" y="400" text-anchor="end" dominant-baseline="middle">0</text>
+                    <text id="healthscore-future-whiteLabel" class="future-white-label" x="27.5" y="400" text-anchor="start" dominant-baseline="middle">0</text>
+
+                    <!-- Outer circles (drawn after fill so they're always on top) -->
+                    <circle class="future-circle-border" cx="200" cy="150" r="100" mask="url(#healthscore-wiremeshMask)" />
+
+                    <circle class="future-circle-arterywall" cx="200" cy="150" r="115" filter="url(#healthscore-future-arteryOverlay)" mask="url(#healthscore-circleStrokeMask)"/>
+
+                    <!-- Labels group -->
+                    <g id="healthscore-future-refLabels"></g>
+                  </svg>
+
+                </div>
+                <div id="healthscore-future-plaque-gauge-title">Personal Plaque Threshold</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="healthscore-dial-boxes-col2">
+            <div id="healthscore-dial-boxes-col2-row1">
+
+              <div id="healthscore-dial-boxes-box-page-title">
+                <div id="healthscore-dial-boxes-box-page-title-1">Cardiovascular Health Score Dial</div> <!--Trajectory</div>-->
+                <div id="healthscore-dial-boxes-box-page-title-2">(based on your current health trajectory)</div>
+              </div>
+
+              <!-- <div id="healthscore-dial-boxes-box-page-explanation"><em>Please turn the dial to determine how you can achieve any level of cardiovascular health or any number of extra years of healthspan if you take a yearly siRNA to lower LDL and SBP limited by how much disease has already occurred before you start to lower LDL and SBP.</em></div> -->
+              <div id="healthscore-dial-boxes-box-page-explanation">
+                Turn the dial to increase your <b>Cardiovascular Health Score</b> as much as you wish <br>
+                and be provided with 
+                <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it<br>
+                Like a credit score, your Cardiovascular Health Score changes over time. <br>
+                Monitor changes in your Cardiovascular Health Score using this platform
+                <!-- <br> -->
+                <!-- <em>
+                  (limited only by the amount of plaque and artery injury 
+                  that develops<br>before you start lowering LDL and SBP)
+                </em> -->
+              </div>
+            </div>
+            <div id="healthscore-dial-boxes-col2-row2">
+              <div id="healthscore-matrix-l"></div>
+              <div id="healthscore-dial-box">
+                  <img src="media/dial-v2-variant1.png" id="healthscore-dial-image" alt="Dial"/>
+                  <div class="healthscore-label" id="healthscore-dial-label">0</div>
+                  <div class="healthscore-label-skin" id="healthscore-dial-label-skin">000</div>
+                  <span id="healthscore-dial-bar">Cardiovascular Health Score</span>
+              </div>
+              <div id="healthscore-matrix-r"></div>
+            </div>
+            <div id="healthscore-dial-boxes-col2-row3">
+
+              <div id="healthscore-dial-boxes-plaque-threshold-progress-bar-wrapper">
+                <div id="healthscore-dial-boxes-plaque-threshold-progress-bar">
+                  <div id="healthscore-dial-boxes-plaque-threshold-progress"></div>
+                  <div id="healthscore-progress-tick"></div>
+                </div>
+              </div>
+
+              <div id="healthscore-dial-boxes-plaque-threshold-wrapper">
+                <div id="healthscore-dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
+                <div id="healthscore-dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years</div>
+              </div>
+
+              <div id="healthscore-dial-boxes-plaque-threshold-personalized-guidance-wrapper">
+                <div id="healthscore-dial-boxes-plaque-threshold-personalized-guidance">
+                  <p>
+                    <span>Personalized Guidance:</span><br>
+                    You can achieve a Health Score of <span>0</span> <br>
+                    if you start <span>once yearly</span> siRNA at age <span>30</span><br>
+                    to keep cumulative LDL below your target
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="healthscore-dial-boxes-col3">
+            <div class="healthscore-dial-boxes-graph-box">
+              <div id="healthscore-dial-boxes-graph-box-title">Current Health Trajectory</div>
+              <div id="healthscore-dial-boxes-graph-title"><span>Lifetime Risk of Heart Attack or Stroke</span></div>
+              <div id="healthscore-dial-boxes-risk-transition-box">
+                <div id="healthscore-dial-boxes-risk-transition-box-row1">
+                  <div id="healthscore-dial-boxes-risk-before-treatment-value">00.0%</div>   
+                  <span><b>→</b></span>             
+                  <div id="healthscore-dial-boxes-risk-after-treatment-value">00.0%</div>   
+                </div>
+                
+                <div id="healthscore-dial-boxes-risk-reduction-value">00.0% lower risk</div>    
+              </div>
+              <div id="healthscore-dial-boxes-graph-wrapper">
+                <div id="healthscore-dial-boxes-Graph"></div>              
+              </div>
+            </div>
+
+            <div class="healthscore-dial-boxes-healthy-years-box">
+              <div id="healthscore-dial-boxes-healthy-years-title">Number of Healthy Life Years Gained</div>
+              <div id="healthscore-dial-boxes-healthy-years">0</div>
+            </div>
+
+            <div class="healthscore-dial-boxes-bar-box">
+              <div id="healthscore-dial-boxes-bar-title">Cardiovascular Health Score</div>
+              <div id="healthscore-dial-boxes-bar"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="outer-box-benefit-dial-boxes">
+        <div class="benefit-dial-boxes-box">
+          <div class="benefit-dial-boxes-col1">
+            <div id="benefit-dial-boxes-current-levels">
+              <div id="benefit-current-levels-list">
+
+                <div class="current-levels-list-item" id="benefit-current-levels-list-age">Age<span>0</span></div>
+                <div class="current-levels-list-item" id="benefit-current-levels-list-ldl">LDL<span>0</span></div>
+                <div class="current-levels-list-item" id="benefit-current-levels-list-sbp">SBP<span>0</span></div>
+
+                <div class="current-levels-list-item" id="benefit-current-levels-list-weight">Weight<span>0</span></div>
+                <div class="current-levels-list-item" id="benefit-current-levels-list-bmi">BMI<span>0</span></div>
+                <div class="current-levels-list-item" id="benefit-current-levels-list-lpa">Lp(a)<span>0</span></div>
+
+                <div class="current-levels-list-item" id="benefit-current-levels-list-curldl">Cumulative LDL<br>at current age<span>0</span></div>
+                <div class="current-levels-list-item" id="benefit-current-levels-list-tcumldl">Target Cumulative LDL<br>by age 80<span>0</span></div>
+                <div class="current-levels-list-item" id="benefit-current-levels-list-cumldl">Cumulative LDL<br>by age 80<span>0</span></div>
+
+              </div>
+              <!-- <dl id="current-levels-list"></dl> -->
+            </div>
+            <div id="benefit-dial-boxes-bot-option">
+              <div id="benefit-dial-boxes-bot-1">Do you have any questions?</div>
+
+              <div class="bot-input-box">
+                <input type="text" id="benefit-bot-input" placeholder="How can I help?" disabled>  
+                <img src="media/mic.png" class="mic">
+              </div>
+
+              <div id="benefit-dial-boxes-bot-2"><br>
+                Because our Deep Causal AI is trained on the biology 
+                of how cardiometabolic disease develops, and is the 
+                first to encode this biological cause and effect, we 
+                can explain the biological and clinical reasoning for all 
+                our recommendations and explain why you are at risk 
+                and how much you can benefit from lowering LDL 
+                and blood pressure.
+              </div>
+            </div>
+            <div id="benefit-dial-boxes-plaque-threshold-box">
+              <div id="benefit-future-plaque-gauge-wrapper">
+
+                <div id="benefit-future-plaque-gauge">
+
+                  <svg width="300" height="150" viewBox="0 25 400 250" role="img">
+                    <defs>
+                      <!-- Clip path for both yellow fill and blue line -->
+                      <clipPath id="benefit-future-fillClip">
+                        <rect id="benefit-future-clipRect" x="0" y="400" width="400" height="0" />
+                      </clipPath>
+
+                      <mask id="benefit-wiremeshMask" maskUnits="userSpaceOnUse">
+                        <!-- The image acts as the mask. 
+                              White/bright areas = visible, black/dark = hidden -->
+                        <image href="media/wiremesh-spiro.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
+                      </mask>
+
+                      <mask id="benefit-plaqueFillMask" maskUnits="userSpaceOnUse">
+                        <!-- The image acts as the mask. 
+                              White/bright areas = visible, black/dark = hidden -->
+                        <image href="media/plaque-fill-mask.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
+                      </mask>
+
+                      <linearGradient id="benefit-future-plaqueGradient-glow" x1="0%" x2="0%" y1="100%" y2="0%">
+                        
+                        <stop offset="0%" stop-color="#00e5ff" />
+                        <stop offset="25%" stop-color="#00d3ff" />
+                        <stop offset="35%" stop-color="#00bfff" />
+                        <stop offset="40%" stop-color="#00abff" />
+                        <stop offset="45%" stop-color="#0094ff" />
+                        <stop offset="50%" stop-color="#007cff" />
+                        <stop offset="65%" stop-color="#0060ff" />
+                        <stop offset="75%" stop-color="#003cff" />
+
+                      </linearGradient>
+                      
+                    </defs>
+
+                    <!-- Reference lines group -->
+                    <g id="benefit-future-refLines"></g>
+
+                    <!-- Group with clip applied -->
+                    <g clip-path="url(#benefit-future-fillClip)">
+                      <filter id="benefit-future-plaque-hue" x="0" y="0" width="100%" height="100%">
+                        <feImage href="media/future-plaque-texture-l.png" result="tex" />
+                        <feColorMatrix in="tex" type="matrix"
+                          values="
+                            0.9  0    0    0     0
+                            0    0.9  0    0     0
+                            0    0    0.9  0     0
+                            0    0    0    0.75  0" result="coloredTex"/>
+
+                        <feBlend in="SourceGraphic" in2="coloredTex" mode="overlay"/>
+                      </filter>
+
+                      <!-- Fill circle -->
+                      <circle class="future-gauge-fill" cx="200" cy="150" r="100"  fill="url(#benefit-future-plaqueGradient-glow)" filter="url(#benefit-future-plaque-hue)" mask="url(#benefit-plaqueFillMask)"/>
+
+                      <line id="benefit-future-blueLine" class="future-blue-line" x1="40" x2="350" y1="400" y2="400" />
+                    </g>
+
+                    <text id="benefit-future-blueLabel" class="future-blue-label" x="400" y="400" text-anchor="end" dominant-baseline="middle">0</text>
+                    <text id="benefit-future-whiteLabel" class="future-white-label" x="27.5" y="400" text-anchor="start" dominant-baseline="middle">0</text>
+
+                    <!-- Outer circles (drawn after fill so they're always on top) -->
+                    <circle class="future-circle-border" cx="200" cy="150" r="100" mask="url(#benefit-wiremeshMask)" />
+
+                    <circle class="future-circle-arterywall" cx="200" cy="150" r="115" filter="url(#benefit-future-arteryOverlay)" mask="url(#benefit-circleStrokeMask)"/>
+
+                    <!-- Labels group -->
+                    <g id="benefit-future-refLabels"></g>
+                  </svg>
+
+                </div>
+                <div id="benefit-future-plaque-gauge-title">Personal Plaque Threshold</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="benefit-dial-boxes-col2">
+            <div id="benefit-dial-boxes-col2-row1">
+
+              <div id="benefit-dial-boxes-box-page-title">
+                <div id="benefit-dial-boxes-box-page-title-1">Benefit Dial</div> <!--Trajectory</div>-->
+                <div id="benefit-dial-boxes-box-page-title-2">(based on your current health trajectory)</div>
+              </div>
+
+              <!-- <div id="benefit-dial-boxes-box-page-explanation"><em>Please turn the dial to determine how you can achieve any level of cardiovascular health or any number of extra years of healthspan if you take a yearly siRNA to lower LDL and SBP limited by how much disease has already occurred before you start to lower LDL and SBP.</em></div> -->
+              <div id="benefit-dial-boxes-box-page-explanation">
+                Turn the dial to <b>lower the risk of heart attack or stroke</b> 
+                by as much as you wish<br> and be provided with 
+                <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it 
+                <br>
+                <em>
+                  (limited only by the amount of plaque and artery injury 
+                  that develops<br>before you start lowering LDL and SBP)
+                </em>
+              </div>
+            </div>
+            <div id="benefit-dial-boxes-col2-row2">
+              <div id="benefit-matrix-l"></div>
+              <div id="benefit-dial-box">
+                  <img src="media/dial-v2-variant2.png" id="benefit-dial-image" alt="Dial"/>
+                  <div class="benefit-label" id="benefit-dial-label">0</div>
+                  <div class="benefit-label-skin" id="benefit-dial-label-skin"><span>%</span>0.0<span>%</span></div>
+                  <!-- <span>%</span> -->
+              </div>
+              <div id="benefit-matrix-r"></div>
+            </div>
+
+            <div id="benefit-dial-boxes-col2-row2-5">
+              <span id="benefit-dial-bar">Current Lifetime Risk of Heart Attack or Stroke</span>
+              <div id="benefit-dial-boxes-risk-transition-box">
+                <!-- <div id="benefit-dial-boxes-risk-transition-box-row1"> -->
+                  <div id="benefit-dial-boxes-risk-before-treatment-value">00.0%</div>   
+                  <span><b>→</b></span>             
+                  <div id="benefit-dial-boxes-risk-after-treatment-value">00.0%</div>   
+                <!-- </div> -->
+                
+                <!-- <div id="benefit-dial-boxes-risk-reduction-value">00.0% lower risk</div>     -->
+              </div>
+            </div>
+
+            <div id="benefit-dial-boxes-col2-row3">
+
+              <div id="benefit-dial-boxes-plaque-threshold-progress-bar-wrapper">
+                <div id="benefit-dial-boxes-plaque-threshold-progress-bar">
+                  <div id="benefit-dial-boxes-plaque-threshold-progress"></div>
+                  <div id="benefit-progress-tick"></div>
+                </div>
+              </div>
+
+              <div id="benefit-dial-boxes-plaque-threshold-wrapper">
+                <div id="benefit-dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
+                <div id="benefit-dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years</div>
+              </div>
+
+              <div id="benefit-dial-boxes-plaque-threshold-personalized-guidance-wrapper">
+                <div id="benefit-dial-boxes-plaque-threshold-personalized-guidance">
+                  <p>
+                    <span>Personalized Guidance:</span><br>
+                    You can add <span>0</span> years to your Healthspan<br>
+                    if you start <span>once yearly</span> siRNA at age <span>30</span><br>
+                    to keep cumulative LDL below your target
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="benefit-dial-boxes-col3">
+            <div class="benefit-dial-boxes-graph-box">
+              <div id="benefit-dial-boxes-graph-box-title">Current Health Trajectory</div>
+              <span id="benefit-dial-boxes-graph-box-reduction">Current Lifetime Risk of Heart Attack or Stroke</span>
+
+              <div id="benefit-dial-boxes-graph-box-risk-transition-box">
+                  <div id="benefit-dial-boxes-graph-box-risk-before-treatment-value">00.0%</div>   
+                  <span><b>→</b></span>             
+                  <div id="benefit-dial-boxes-graph-box-risk-after-treatment-value">00.0%</div>   
+              </div>
+
+              <div id="benefit-dial-boxes-graph-wrapper">
+                <div id="benefit-dial-boxes-Graph"></div>              
+              </div>
+            </div>
+
+            <div class="benefit-dial-boxes-healthy-years-box">
+              <div id="benefit-dial-boxes-healthy-years-title">Extra years of Healthspan</div>
+              <div id="benefit-dial-boxes-healthy-years">0</div>
+            </div>
+
+            <div class="benefit-dial-boxes-bar-box">
+              <div id="benefit-dial-boxes-bar-title">Cardiovascular Health Score</div>
+              <div id="benefit-dial-boxes-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="WIP-message">
+        <!-- <div id="WIP-message-block"> -->
+          <em>
+            * Please note, this very early beta version (v1.6) 
+            of the MVP is for illustrative purposes only. 
+            It includes simplifying assumptions and closed 
+            form approximations for computational efficiency. 
+          </em>
+        <!-- </div> -->
+      </div>
+      <div id="current-version">(Beta v1.6)</div>
+      
+      <div class="footer">
+        <p>Copyright © TBFerence 2025. All rights reserved.</p>
+      </div>
+
+      <div class = "debug-box"></div>
+      <div id="color-overlay">
+        <h4>Select Color(s):</h4>
+        <div>
+          <p>Current Trajectory</p>
+          <input type="color" class = 'colorPicker' id="colorPicker-upper" value="#ff0000">
+          <span id="color-upper">#ff0000</span>
+        </div>
+        <div>
+          <p>With siRNA</p>
+          <input type="color" class = 'colorPicker' id="colorPicker-lower" value="#ff0000">
+          <span id="color-lower">#ff0000</span>
+        </div>
+      </div>
+    </div>
+
+     <!-- <script>
+      window.addEventListener("load", () => {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const ratio = (width / height).toFixed(2);
+
+        // Media queries you care about
+        const queries = [
+          "(max-width: 800px) and (orientation: landscape)",
+          "(max-height: 600px) and (orientation: landscape)",
+          "(max-width: 800px) and (orientation: portrait)",
+          "(min-aspect-ratio: 16/10)",
+          "(max-aspect-ratio: 16/10)"
+        ];
+
+        // Test each query
+        const matches = queries
+          .filter(q => window.matchMedia(q).matches)
+          .join("\n");
+
+        alert(
+          `Width: ${width}px\nHeight: ${height}px\nAspect ratio: ${ratio}\n\nActive media queries:\n${matches || "none"}`
+        );
+      });
+    </script> -->
+
+</body>
+</html>
