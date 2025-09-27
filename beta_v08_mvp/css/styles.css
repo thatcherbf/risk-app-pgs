@@ -6234,6 +6234,7 @@ input[type=text] {
 }
 
 #WIP-text-1 {
+  z-index: 400;
   color: var(--logintext);
   font-size: calc(1rem * 30/14);
 }
@@ -6251,7 +6252,7 @@ input[type=text] {
 #wipbranding-box {
   position: absolute;
   top: 0;
-  z-index: -1;
+  z-index: 399;
   height: 100%;
   width: 100%;
   display: flex;
