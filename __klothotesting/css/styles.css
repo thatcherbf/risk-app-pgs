@@ -7630,7 +7630,7 @@ input[type=text] {
 #WIP-box {
   background-color: white;
   position: absolute;
-  z-index: 4000;
+  z-index: 400;
   top: 0;
   bottom: 0;
   left: 0;
@@ -7659,6 +7659,25 @@ input[type=text] {
 #WIP-text-3 {
   color: var(--logintext);
   font-size: calc(1rem * 15/14);
+}
+
+#wipbranding-box {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wipbranding {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
 }
 
 .debug-box {
