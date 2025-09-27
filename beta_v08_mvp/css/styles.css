@@ -6103,7 +6103,7 @@ input[type=text] {
   width: 100vw;
   box-sizing: border-box;
   display: inline-flex;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 #branding-box {
