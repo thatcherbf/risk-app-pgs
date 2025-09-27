@@ -7630,7 +7630,7 @@ input[type=text] {
 #WIP-box {
   background-color: white;
   position: absolute;
-  z-index: 4;
+  z-index: 400;
   top: 0;
   bottom: 0;
   left: 0;
@@ -7643,7 +7643,7 @@ input[type=text] {
   justify-content: center;
   flex-direction: column;
   /* visibility: hidden; */
-  display:none;
+  /* display:none; */
 }
 
 #WIP-text-1 {
