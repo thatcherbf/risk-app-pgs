@@ -56,14 +56,10 @@
       </div>
 
       <div id="WIP-box">
-        <div id="wipbranding-box">
-          <img src="media/branding_background.png" alt="branding" id="wipbranding">
+        <div id="branding-box">
+          <!-- <img src="media/branding_background.png" alt="branding" id="branding"> -->
         </div>   
-        <div id="WIP-text-1">
-          <em><br>
-            Currently being updated ...
-          </em>
-        </div>
+        <div id="WIP-text-1">Currently being updated...</div>
         <!-- <div id="WIP-text-2"><br><em>The previous live version did not route biological sex to the correct third algorithm in the stack.</em></div>
         <div id="WIP-text-3"><em>This resulted in a systematic overestimation of risk among women.</em></div> -->
       </div>
@@ -161,38 +157,38 @@
             
             <div class="divider"></div>
 
-            <!-- <div class="navbar-button-wrapper dropdown"> -->
-              <!-- <div class="navbar-button dropdown">  -->
-                <!-- <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"> -->
-                  <!-- Outer circle (gray background) -->
-                  <!-- <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" opacity="0.25"/> -->
+            <div class="navbar-button-wrapper dropdown">
+              <div class="navbar-button dropdown" id="dropdown-button"> 
+                <!-- <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  Outer circle (gray background)
+                  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" opacity="0.25"/>
                   
-                  <!-- Progress arc (colored) -->
-                  <!-- <path d="M8 1  -->
-                          <!-- A7 7 0 0 1 15 8"  -->
-                        <!-- stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/> -->
-                <!-- </svg> -->
-                <!-- Dials  -->
-                <!-- <span id="pointer-dropdown">⌄</span> -->
-              <!-- </div>         -->
+                  Progress arc (colored)
+                  <path d="M8 1 
+                          A7 7 0 0 1 15 8" 
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg> -->
+                Personalized Guidance 
+                <span id="pointer-dropdown">⌄</span>
+              </div>        
 
-              <!-- <div class="dropdown-content"> -->
-                <!-- <div class="navbar-button-wrapper"> -->
-                  <!-- <button class="navbar-button" type="button" id="benefit-dial-boxes-btn">  -->
-                    <!-- <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"> -->
-                      <!-- Outer circle (gray background) -->
-                      <!-- <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" opacity="0.25"/> -->
+              <div class="dropdown-content">
+                <div class="navbar-button-wrapper">
+                  <button class="navbar-button" type="button" id="benefit-dial-boxes-btn"> 
+                    <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      Outer circle (gray background)
+                      <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" opacity="0.25"/>
                       
-                      <!-- Progress arc (colored) -->
-                      <!-- <path d="M8 1  -->
-                              <!-- A7 7 0 0 1 15 8"  -->
-                            <!-- stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/> -->
-                    <!-- </svg> -->
-                    <!-- Benefit Dial  -->
-                  <!-- </button> -->
-                <!-- </div> -->
+                      Progress arc (colored)
+                      <path d="M8 1 
+                              A7 7 0 0 1 15 8" 
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    Benefit Dial 
+                  </button>
+                </div>
 
-                <!-- <div class="divider"></div> -->
+                <div class="divider"></div>
 
                 <div class="navbar-button-wrapper">
                   <button class="navbar-button" type="button" id="dial-boxes-btn"> 
@@ -209,24 +205,24 @@
                   </button>
                 </div>
 
-                <!-- <div class="divider"></div> -->
+                <div class="divider"></div>
 
-                <!-- <div class="navbar-button-wrapper"> -->
-                  <!-- <button class="navbar-button" type="button" id="healthscore-dial-boxes-btn">  -->
-                    <!-- <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"> -->
-                      <!-- Outer circle (gray background) -->
-                      <!-- <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" opacity="0.25"/> -->
+                <div class="navbar-button-wrapper">
+                  <button class="navbar-button" type="button" id="healthscore-dial-boxes-btn"> 
+                    <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      Outer circle (gray background)
+                      <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" opacity="0.25"/>
                       
-                      <!-- Progress arc (colored) -->
-                      <!-- <path d="M8 1  -->
-                              <!-- A7 7 0 0 1 15 8"  -->
-                            <!-- stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/> -->
-                    <!-- </svg> -->
-                    <!-- Health Score Dial  -->
-                  <!-- </button> -->
-                <!-- </div> -->
-              <!-- </div> -->
-            <!-- </div> -->
+                      Progress arc (colored)
+                      <path d="M8 1 
+                              A7 7 0 0 1 15 8" 
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    Health Score Dial 
+                  </button>
+                </div>
+              </div>
+            </div>
             
           </div>
         </div>
@@ -1002,7 +998,7 @@
 
               <div id="lifetime-gif-wrapper">
                 <video id="lifetime-plaque-gif" preload="auto">
-                  <source src="media/plaque.webm" type="video/webm">
+                  <source src="media/slice_artery.webm" type="video/webm">
                   Your browser does not support WebM video.
                 </video>
                 <div id="lifetime-gif-wrapper-infotip">i</div>
@@ -1013,6 +1009,7 @@
                   <source src="media/plaque.webm" type="video/webm">
                   Your browser does not support WebM video.
                 </video>
+                <div id="webm-ticker"></div>
               </div>
 
               <div id="lifetime-slider-row">
@@ -1045,7 +1042,7 @@
 
             <div class="lifetime-risk-box">
               <!-- <div class="lifetime-risk-score"> -->
-              <div id="lifetime-risk">Cumulative Lifetime Risk of Heart Attack or Stroke:</div>
+              <div id="lifetime-risk">Cumulative Lifetime Risk of Heart Attack or Stroke</div>
               <div id="lifetime-risk-value-box">
                 <div id="lifetime-risk-value">00.0%</div>                
               </div>  
@@ -1065,7 +1062,7 @@
             </div>  
 
             <div class="lifetime-health-box">
-              <div id="lifetime-health-score-title">Cardiovascular Health Score:</div>
+              <div id="lifetime-health-score-title">Cardiovascular Health Score</div>
               <div id="lifetime-health-score-value-box">
                 <div id="lifetime-health-score-value">00.0</div>
               </div>
@@ -1389,7 +1386,7 @@
                 <span>Current Health Trajectory</span>
                 <div id="treatment-gif-wrapper">
                   <video id="treatment-plaque-gif" preload="auto">
-                    <source src="media/plaque.webm" type="video/webm">
+                    <source src="media/slice_artery.webm" type="video/webm">
                     Your browser does not support WebM video.
                   </video>
                   <div id="treatment-gif-wrapper-infotip">i</div>
@@ -1400,7 +1397,7 @@
                 <span>With once yearly siRNA</span>
                 <div id="treatment-gif-wrapper-2">
                   <video id="treatment-plaque-gif-2" preload="auto">
-                    <source src="media/plaque.webm" type="video/webm">
+                    <source src="media/slice_artery.webm" type="video/webm">
                     Your browser does not support WebM video.
                   </video>
                   <!-- <div id="treatment-gif-wrapper-infotip-2">i</div> -->
@@ -1435,15 +1432,25 @@
               <div id="treatment-Graph"></div>
             </div>
 
-            <div class="treatment-risks-box">
-              <div id="treatment-risks-box-title">Reduced Lifetime Risk</div>
-              <div id="risk-transition-box">
-                <div id="risk-before-treatment-value">00.0%</div>   
-                <span style="font-weight: 800;"><b>→</b></span>             
-                <div id="risk-after-treatment-value">00.0%</div>                
+            <div class="below-treatment-graph-box">
+              <div class="treatment-risks-box">
+                <div id="treatment-risks-box-title">Reduced Lifetime Risk</div>
+                <div id="risk-transition-box">
+                  <div id="risk-before-treatment-value">00.0%</div>   
+                  <span>→</span>             
+                  <div id="risk-after-treatment-value">00.0%</div>                
+                </div>
+
+                <div id="treatment-proportional-risk-reduction-value"></div>
               </div>
 
-              <div id="treatment-proportional-risk-reduction-value"></div>
+              <div id="healthy-years-wrapper">
+                <div id="healthy-years-value-title">Number of Healthy Life Years Gained</div>
+                <div id="healthy-years-value-wrapper">
+                  <div id="healthy-years-value">0</div>
+                </div>
+              </div>
+
             </div>
 
           </div>
@@ -1454,13 +1461,14 @@
               <div id="treatment-health-score-bar"></div>
             </div>
 
-            <div id="below-treatment-Graph-box">
+            <div id="below-treatment-bar-box">
               <div class="treatment-treatments-box">
 
                 <div id="health-score-transition-title">Improved Cardiovascular Health Score</div>
 
                 <div id="health-score-transition-box">
                   <div id="health-score-before-treatment-value">00.0</div>   
+                  <span>→</span>             
                   <div id="health-score-after-treatment-value">00.0</div>                
                 </div>
 
@@ -1469,13 +1477,13 @@
                 <div id="healthy-years-Graph"></div>
               </div>
               
-              <div id="healthy-years-wrapper">
-                <div id="healthy-years-value-title">Number of Healthy Life Years Gained</div>
-                <div id="healthy-years-value-wrapper">
-                  <div id="healthy-years-value">0</div>
+              <!-- <div id="healthy-years-wrapper"> -->
+                <!-- <div id="healthy-years-value-title">Number of Healthy Life Years Gained</div> -->
+                <!-- <div id="healthy-years-value-wrapper"> -->
+                  <!-- <div id="healthy-years-value">0</div> -->
                   <!-- <div id="healthy-years-value-postamble">Extra years free of Cardiovascular Disease</div> -->
-                </div>
-              </div>
+                <!-- </div> -->
+              <!-- </div> -->
 
             </div>
           </div>
@@ -1580,6 +1588,7 @@
       </div>
 
       <div class="outer-box-dial-boxes">
+        <!-- <button class="layout-btn" type="button" id="healthspan-layout-btn"> Layout 1 </button> -->
         <div class="dial-boxes-box">
 
           <div id="dial-boxes-box-page-title">
@@ -1592,7 +1601,7 @@
               <!-- <br> -->
               and be provided with 
               <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it 
-              <!-- <br> -->
+              <br>
               <em>
                 (limited only by the amount of plaque and artery injury 
                 that develops
@@ -1601,6 +1610,100 @@
               </em>
             </div>
 
+          </div>
+
+          <div class="dial-boxes-col2">
+            <div id="dial-boxes-col2-row1">
+
+              <!-- <div id="dial-boxes-box-page-title"> -->
+                <!-- <div id="dial-boxes-box-page-title-1">Healthspan Dial</div>  -->
+                <!-- <div id="dial-boxes-box-page-title-2">(based on your current health trajectory)</div> -->
+              <!-- </div> -->
+
+              <!-- <div id="dial-boxes-box-page-explanation"><em>Please turn the dial to determine how you can achieve any level of cardiovascular health or any number of extra years of healthspan if you take a yearly siRNA to lower LDL and SBP limited by how much disease has already occurred before you start to lower LDL and SBP.</em></div> -->
+              <!-- <div id="dial-boxes-box-page-explanation">
+                Turn the dial to <b>add as many years to your 
+                Healthspan</b> you wish<br>and be provided with 
+                <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it 
+                <br>
+                <em>
+                  (limited only by the amount of plaque and artery injury 
+                  that develops<br>before you start lowering LDL and SBP)
+                </em>
+              </div> -->
+            </div>
+            <div id="dial-boxes-col2-row2">
+              <div id="matrix-l"></div>
+              <div id="dial-box">
+                  <!-- <img src="media/dial-v2.png" id="dial-image" alt="Dial"/> -->
+                  <img src="media/klotho/dial.png" id="dial-image" alt="Dial"/>
+                  <div class="label" id="dial-label">0</div>
+                  <span id="dial-bar">Extra years of Healthspan</span>
+              </div>
+              <div id="matrix-r"></div>
+            </div>
+            <div id="dial-boxes-col2-row3">
+
+              <div id="dial-boxes-plaque-threshold-progress-bar-wrapper">
+                <div id="dial-boxes-plaque-threshold-progress-bar">
+                  <div id="dial-boxes-plaque-threshold-progress"></div>
+                  <div id="progress-tick"></div>
+                </div>
+              </div>
+
+              <div id="dial-boxes-plaque-threshold-wrapper">
+                <div id="dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
+                <div id="dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years</div>
+              </div>
+
+              <div id="dial-boxes-plaque-threshold-personalized-guidance-wrapper">
+                <div id="dial-boxes-plaque-threshold-personalized-guidance">
+                  <p>
+                    <span>Personalized Guidance:</span>
+                    <br>
+                    You can add <span>0</span> years to your Healthspan
+                    <br>
+                    if you start <span>once yearly</span> siRNA at age <span>30</span>
+                    <br>
+                    to keep cumulative LDL below your target
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="dial-boxes-col3">
+            <div class="dial-boxes-graph-box">
+              <div id="dial-boxes-graph-box-title">Current Health Trajectory</div>
+              <div id="dial-boxes-graph-title"><span>Lifetime Risk of Heart Attack or Stroke</span></div>
+              <div id="dial-boxes-risk-transition-box">
+                <div id="dial-boxes-risk-transition-box-row1">
+                  <div id="dial-boxes-risk-before-treatment-value">00.0%</div>   
+                  <span><b>→</b></span>             
+                  <div id="dial-boxes-risk-after-treatment-value">00.0%</div>   
+                </div>
+                
+                <div id="dial-boxes-risk-reduction-value">00.0% lower risk</div>    
+              </div>
+              <div id="dial-boxes-graph-wrapper">
+                <div id="dial-boxes-Graph"></div>              
+              </div>
+            </div>
+
+            <div class="dial-boxes-healthy-years-box">
+              <div id="dial-boxes-healthy-years-title">Number of Healthy Life Years Gained</div>
+              <div id="dial-boxes-healthy-years">0</div>
+            </div>
+
+            <div class="dial-boxes-bar-box">
+              <div id="dial-boxes-bar-title">Cardiovascular Health Score</div>
+              <div id="dial-boxes-bar-shape">
+                <div id="bar-no-rx"></div>
+                <div id="bar-with-rx"></div>
+              </div>
+              <div id="dial-boxes-bar"></div>
+            </div>
           </div>
 
           <div class="dial-boxes-col1">
@@ -1630,7 +1733,7 @@
                 <img src="media/mic.png" class="mic">
               </div>
 
-              <div id="dial-boxes-bot-2"><br>
+              <div id="dial-boxes-bot-2"><!--<br>-->
                 Because our Deep Causal AI is trained on the biology 
                 of how cardiometabolic disease develops, and is the 
                 first to encode this biological cause and effect, we 
@@ -1641,6 +1744,13 @@
               </div>
             </div>
             <div id="dial-boxes-plaque-threshold-box">
+              <div id="full-dial-boxes-gif-wrapper">
+                <video id="full-dial-boxes-plaque-gif" preload="auto">
+                  <source src="media/slice_artery.webm" type="video/webm">
+                  Your browser does not support WebM video.
+                </video>
+              </div>
+
               <div id="future-plaque-gauge-wrapper">
 
                 <div id="future-plaque-gauge">
@@ -1728,59 +1838,84 @@
             </div>
           </div>
 
-          <div class="dial-boxes-col2">
-            <div id="dial-boxes-col2-row1">
+        </div>
+      </div>
 
-              <!-- <div id="dial-boxes-box-page-title"> -->
-                <!-- <div id="dial-boxes-box-page-title-1">Healthspan Dial</div>  -->
-                <!-- <div id="dial-boxes-box-page-title-2">(based on your current health trajectory)</div> -->
+      <div class="outer-box-healthscore-dial-boxes">
+        <!-- <button class="layout-btn" type="button" id="healthscore-layout-btn"> Layout 1 </button> -->
+        <div class="healthscore-dial-boxes-box">
+
+          <div id="healthscore-dial-boxes-box-page-title">
+            <div id="healthscore-dial-boxes-box-page-title-1">Cardiovascular Health Score Dial</div> <!--Trajectory</div>-->
+            <div id="healthscore-dial-boxes-box-page-title-2">(based on your current health trajectory)</div>
+
+            <div id="healthscore-dial-boxes-box-page-explanation">
+              Turn the dial to increase your <b>Cardiovascular Health Score</b> as much as you wish <!--<br>-->
+              and be provided with 
+              <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it<br>
+              Like a credit score, your Cardiovascular Health Score changes over time. <!--<br>-->
+              Monitor changes in your Cardiovascular Health Score using this platform.
+              <!-- <br> -->
+              <!-- <em>
+                (limited only by the amount of plaque and artery injury 
+                that develops<br>before you start lowering LDL and SBP)
+              </em> -->
+            </div>
+          </div>
+
+          <div class="healthscore-dial-boxes-col2">
+            <div id="healthscore-dial-boxes-col2-row1">
+
+              <!-- <div id="healthscore-dial-boxes-box-page-title"> -->
+                <!-- <div id="healthscore-dial-boxes-box-page-title-1">Cardiovascular Health Score Dial</div> Trajectory</div> -->
+                <!-- <div id="healthscore-dial-boxes-box-page-title-2">(based on your current health trajectory)</div> -->
               <!-- </div> -->
 
-              <!-- <div id="dial-boxes-box-page-explanation"><em>Please turn the dial to determine how you can achieve any level of cardiovascular health or any number of extra years of healthspan if you take a yearly siRNA to lower LDL and SBP limited by how much disease has already occurred before you start to lower LDL and SBP.</em></div> -->
-              <!-- <div id="dial-boxes-box-page-explanation">
-                Turn the dial to <b>add as many years to your 
-                Healthspan</b> you wish<br>and be provided with 
-                <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it 
-                <br>
-                <em>
+              <!-- <div id="healthscore-dial-boxes-box-page-explanation"><em>Please turn the dial to determine how you can achieve any level of cardiovascular health or any number of extra years of healthspan if you take a yearly siRNA to lower LDL and SBP limited by how much disease has already occurred before you start to lower LDL and SBP.</em></div> -->
+              <!-- <div id="healthscore-dial-boxes-box-page-explanation"> -->
+                <!-- Turn the dial to increase your <b>Cardiovascular Health Score</b> as much as you wish <br> -->
+                <!-- and be provided with  -->
+                <!-- <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it<br> -->
+                <!-- Like a credit score, your Cardiovascular Health Score changes over time. <br> -->
+                <!-- Monitor changes in your Cardiovascular Health Score using this platform -->
+                <!-- <br> -->
+                <!-- <em>
                   (limited only by the amount of plaque and artery injury 
                   that develops<br>before you start lowering LDL and SBP)
-                </em>
-              </div> -->
+                </em> -->
+              <!-- </div> -->
             </div>
-            <div id="dial-boxes-col2-row2">
-              <div id="matrix-l"></div>
-              <div id="dial-box">
-                  <!-- <img src="media/dial-v2.png" id="dial-image" alt="Dial"/> -->
-                  <img src="media/klotho/dial.png" id="dial-image" alt="Dial"/>
-                  <div class="label" id="dial-label">0</div>
-                  <span id="dial-bar">Extra years of Healthspan</span>
+            <div id="healthscore-dial-boxes-col2-row2">
+              <div id="healthscore-matrix-l"></div>
+              <div id="healthscore-dial-box">
+                  <!-- <img src="media/dial-v2-variant1.png" id="healthscore-dial-image" alt="Dial"/> -->
+                  <img src="media/klotho/dial.png" id="healthscore-dial-image" alt="Dial"/>
+                  <div class="healthscore-label" id="healthscore-dial-label">0</div>
+                  <div class="healthscore-label-skin" id="healthscore-dial-label-skin">000</div>
+                  <span id="healthscore-dial-bar">Cardiovascular Health Score</span>
               </div>
-              <div id="matrix-r"></div>
+              <div id="healthscore-matrix-r"></div>
             </div>
-            <div id="dial-boxes-col2-row3">
+            <div id="healthscore-dial-boxes-col2-row3">
 
-              <div id="dial-boxes-plaque-threshold-progress-bar-wrapper">
-                <div id="dial-boxes-plaque-threshold-progress-bar">
-                  <div id="dial-boxes-plaque-threshold-progress"></div>
-                  <div id="progress-tick"></div>
+              <div id="healthscore-dial-boxes-plaque-threshold-progress-bar-wrapper">
+                <div id="healthscore-dial-boxes-plaque-threshold-progress-bar">
+                  <div id="healthscore-dial-boxes-plaque-threshold-progress"></div>
+                  <div id="healthscore-progress-tick"></div>
                 </div>
               </div>
 
-              <div id="dial-boxes-plaque-threshold-wrapper">
-                <div id="dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
-                <div id="dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years</div>
+              <div id="healthscore-dial-boxes-plaque-threshold-wrapper">
+                <div id="healthscore-dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
+                <div id="healthscore-dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years</div>
               </div>
 
-              <div id="dial-boxes-plaque-threshold-personalized-guidance-wrapper">
-                <div id="dial-boxes-plaque-threshold-personalized-guidance">
+              <div id="healthscore-dial-boxes-plaque-threshold-personalized-guidance-wrapper">
+                <div id="healthscore-dial-boxes-plaque-threshold-personalized-guidance">
                   <p>
-                    <span>Personalized Guidance:</span>
-                    <!-- <br> -->
-                    You can add <span>0</span> years to your Healthspan
-                    <!-- <br> -->
-                    if you start <span>once yearly</span> siRNA at age <span>30</span>
-                    <!-- <br> -->
+                    <span>Personalized Guidance:</span><br>
+                    You can achieve a Health Score of <span>0</span> <br>
+                    if you start <span>once yearly</span> siRNA at age <span>30</span><br>
                     to keep cumulative LDL below your target
                   </p>
                 </div>
@@ -1789,43 +1924,36 @@
             </div>
           </div>
 
-          <div class="dial-boxes-col3">
-            <div class="dial-boxes-graph-box">
-              <div id="dial-boxes-graph-box-title">Current Health Trajectory</div>
-              <div id="dial-boxes-graph-title"><span>Lifetime Risk of Heart Attack or Stroke</span></div>
-              <div id="dial-boxes-risk-transition-box">
-                <div id="dial-boxes-risk-transition-box-row1">
-                  <div id="dial-boxes-risk-before-treatment-value">00.0%</div>   
+          <div class="healthscore-dial-boxes-col3">
+            <div class="healthscore-dial-boxes-graph-box">
+              <div id="healthscore-dial-boxes-graph-box-title">Current Health Trajectory</div>
+              <div id="healthscore-dial-boxes-graph-title"><span>Lifetime Risk of Heart Attack or Stroke</span></div>
+              <div id="healthscore-dial-boxes-risk-transition-box">
+                <div id="healthscore-dial-boxes-risk-transition-box-row1">
+                  <div id="healthscore-dial-boxes-risk-before-treatment-value">00.0%</div>   
                   <span><b>→</b></span>             
-                  <div id="dial-boxes-risk-after-treatment-value">00.0%</div>   
+                  <div id="healthscore-dial-boxes-risk-after-treatment-value">00.0%</div>   
                 </div>
                 
-                <div id="dial-boxes-risk-reduction-value">00.0% lower risk</div>    
+                <div id="healthscore-dial-boxes-risk-reduction-value">00.0% lower risk</div>    
               </div>
-              <div id="dial-boxes-graph-wrapper">
-                <div id="dial-boxes-Graph"></div>              
+              <div id="healthscore-dial-boxes-graph-wrapper">
+                <div id="healthscore-dial-boxes-Graph"></div>              
               </div>
             </div>
 
-            <div class="dial-boxes-healthy-years-box">
-              <div id="dial-boxes-healthy-years-title">Number of Healthy Life Years Gained</div>
-              <div id="dial-boxes-healthy-years">0</div>
+            <div class="healthscore-dial-boxes-healthy-years-box">
+              <div id="healthscore-dial-boxes-healthy-years-title">Number of Healthy Life Years Gained</div>
+              <div id="healthscore-dial-boxes-healthy-years">0</div>
             </div>
 
-            <div class="dial-boxes-bar-box">
-              <div id="dial-boxes-bar-title">Cardiovascular Health Score</div>
-              <div id="dial-boxes-bar-shape">
-                <div id="bar-no-rx"></div>
-                <div id="bar-with-rx"></div>
-              </div>
-              <div id="dial-boxes-bar"></div>
+            <div class="healthscore-dial-boxes-bar-box">
+              <div id="healthscore-dial-boxes-bar-title">Cardiovascular Health Score</div>
+              <div id="healthscore-dial-boxes-bar"></div>
             </div>
+
           </div>
-        </div>
-      </div>
 
-      <div class="outer-box-healthscore-dial-boxes">
-        <div class="healthscore-dial-boxes-box">
           <div class="healthscore-dial-boxes-col1">
             <div id="healthscore-dial-boxes-current-levels">
               <div id="healthscore-current-levels-list">
@@ -1853,7 +1981,7 @@
                 <img src="media/mic.png" class="mic">
               </div>
 
-              <div id="healthscore-dial-boxes-bot-2"><br>
+              <div id="healthscore-dial-boxes-bot-2"><!--<br>-->
                 Because our Deep Causal AI is trained on the biology 
                 of how cardiometabolic disease develops, and is the 
                 first to encode this biological cause and effect, we 
@@ -1864,6 +1992,13 @@
               </div>
             </div>
             <div id="healthscore-dial-boxes-plaque-threshold-box">
+              <div id="full-healthscore-dial-boxes-gif-wrapper">
+                <video id="full-healthscore-dial-boxes-plaque-gif" preload="auto">
+                  <source src="media/slice_artery.webm" type="video/webm">
+                  Your browser does not support WebM video.
+                </video>
+              </div>
+
               <div id="healthscore-future-plaque-gauge-wrapper">
 
                 <div id="healthscore-future-plaque-gauge">
@@ -1943,57 +2078,97 @@
             </div>
           </div>
 
-          <div class="healthscore-dial-boxes-col2">
-            <div id="healthscore-dial-boxes-col2-row1">
+        </div>
+      </div>
 
-              <div id="healthscore-dial-boxes-box-page-title">
-                <div id="healthscore-dial-boxes-box-page-title-1">Cardiovascular Health Score Dial</div> <!--Trajectory</div>-->
-                <div id="healthscore-dial-boxes-box-page-title-2">(based on your current health trajectory)</div>
-              </div>
+      <div class="outer-box-benefit-dial-boxes">
+        <!-- <button class="layout-btn" type="button" id="benefit-layout-btn"> Layout 1 </button> -->
+        <div class="benefit-dial-boxes-box">
 
-              <!-- <div id="healthscore-dial-boxes-box-page-explanation"><em>Please turn the dial to determine how you can achieve any level of cardiovascular health or any number of extra years of healthspan if you take a yearly siRNA to lower LDL and SBP limited by how much disease has already occurred before you start to lower LDL and SBP.</em></div> -->
-              <div id="healthscore-dial-boxes-box-page-explanation">
-                Turn the dial to increase your <b>Cardiovascular Health Score</b> as much as you wish <br>
-                and be provided with 
-                <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it<br>
-                Like a credit score, your Cardiovascular Health Score changes over time. <br>
-                Monitor changes in your Cardiovascular Health Score using this platform
+          <div id="benefit-dial-boxes-box-page-title">
+            <div id="benefit-dial-boxes-box-page-title-1">Benefit Dial</div> <!--Trajectory</div>-->
+            <div id="benefit-dial-boxes-box-page-title-2">(based on your current health trajectory)</div>
+
+            <!-- <div id="benefit-dial-boxes-box-page-explanation"><em>Please turn the dial to determine how you can achieve any level of cardiovascular health or any number of extra years of healthspan if you take a yearly siRNA to lower LDL and SBP limited by how much disease has already occurred before you start to lower LDL and SBP.</em></div> -->
+            <div id="benefit-dial-boxes-box-page-explanation">
+              Turn the dial to <b>lower the risk of heart attack or stroke</b> 
+              by as much as you wish <!--<br>-->
+              and be provided with 
+              <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it 
+              <br>
+              <em>
+                (limited only by the amount of plaque and artery injury 
+                that develops
                 <!-- <br> -->
-                <!-- <em>
-                  (limited only by the amount of plaque and artery injury 
-                  that develops<br>before you start lowering LDL and SBP)
-                </em> -->
-              </div>
+                before you start lowering LDL and SBP)
+              </em>
             </div>
-            <div id="healthscore-dial-boxes-col2-row2">
-              <div id="healthscore-matrix-l"></div>
-              <div id="healthscore-dial-box">
-                  <img src="media/dial-v2-variant1.png" id="healthscore-dial-image" alt="Dial"/>
-                  <div class="healthscore-label" id="healthscore-dial-label">0</div>
-                  <div class="healthscore-label-skin" id="healthscore-dial-label-skin">000</div>
-                  <span id="healthscore-dial-bar">Cardiovascular Health Score</span>
-              </div>
-              <div id="healthscore-matrix-r"></div>
-            </div>
-            <div id="healthscore-dial-boxes-col2-row3">
+          </div>
 
-              <div id="healthscore-dial-boxes-plaque-threshold-progress-bar-wrapper">
-                <div id="healthscore-dial-boxes-plaque-threshold-progress-bar">
-                  <div id="healthscore-dial-boxes-plaque-threshold-progress"></div>
-                  <div id="healthscore-progress-tick"></div>
+          <div class="benefit-dial-boxes-col2">
+            <div id="benefit-dial-boxes-col2-row1">
+
+              <!-- <div id="benefit-dial-boxes-box-page-title"> -->
+                <!-- <div id="benefit-dial-boxes-box-page-title-1">Benefit Dial</div> Trajectory</div> -->
+                <!-- <div id="benefit-dial-boxes-box-page-title-2">(based on your current health trajectory)</div> -->
+              <!-- </div> -->
+
+              <!-- <div id="benefit-dial-boxes-box-page-explanation"><em>Please turn the dial to determine how you can achieve any level of cardiovascular health or any number of extra years of healthspan if you take a yearly siRNA to lower LDL and SBP limited by how much disease has already occurred before you start to lower LDL and SBP.</em></div> -->
+              <!-- <div id="benefit-dial-boxes-box-page-explanation"> -->
+                <!-- Turn the dial to <b>lower the risk of heart attack or stroke</b>  -->
+                <!-- by as much as you wish<br> and be provided with  -->
+                <!-- <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it  -->
+                <!-- <br> -->
+                <!-- <em> -->
+                  <!-- (limited only by the amount of plaque and artery injury  -->
+                  <!-- that develops<br>before you start lowering LDL and SBP) -->
+                <!-- </em> -->
+              <!-- </div> -->
+            </div>
+            <div id="benefit-dial-boxes-col2-row2">
+              <div id="benefit-matrix-l"></div>
+              <div id="benefit-dial-box">
+                  <!-- <img src="media/dial-v2-variant2.png" id="benefit-dial-image" alt="Dial"/> -->
+                  <img src="media/klotho/dial.png" id="benefit-dial-image" alt="Dial"/>
+                  <div class="benefit-label" id="benefit-dial-label">0</div>
+                  <div class="benefit-label-skin" id="benefit-dial-label-skin"><span>%</span>0.0<span>%</span></div>
+                  <!-- <span>%</span> -->
+              </div>
+              <div id="benefit-matrix-r"></div>
+            </div>
+
+            <div id="benefit-dial-boxes-col2-row2-5">
+              <span id="benefit-dial-bar">Current Lifetime Risk of Heart Attack or Stroke</span>
+              <div id="benefit-dial-boxes-risk-transition-box">
+                <!-- <div id="benefit-dial-boxes-risk-transition-box-row1"> -->
+                  <div id="benefit-dial-boxes-risk-before-treatment-value">00.0%</div>   
+                  <span><b>→</b></span>             
+                  <div id="benefit-dial-boxes-risk-after-treatment-value">00.0%</div>   
+                <!-- </div> -->
+                
+                <!-- <div id="benefit-dial-boxes-risk-reduction-value">00.0% lower risk</div>     -->
+              </div>
+            </div>
+
+            <div id="benefit-dial-boxes-col2-row3">
+
+              <div id="benefit-dial-boxes-plaque-threshold-progress-bar-wrapper">
+                <div id="benefit-dial-boxes-plaque-threshold-progress-bar">
+                  <div id="benefit-dial-boxes-plaque-threshold-progress"></div>
+                  <div id="benefit-progress-tick"></div>
                 </div>
               </div>
 
-              <div id="healthscore-dial-boxes-plaque-threshold-wrapper">
-                <div id="healthscore-dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
-                <div id="healthscore-dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years</div>
+              <div id="benefit-dial-boxes-plaque-threshold-wrapper">
+                <div id="benefit-dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
+                <div id="benefit-dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years</div>
               </div>
 
-              <div id="healthscore-dial-boxes-plaque-threshold-personalized-guidance-wrapper">
-                <div id="healthscore-dial-boxes-plaque-threshold-personalized-guidance">
+              <div id="benefit-dial-boxes-plaque-threshold-personalized-guidance-wrapper">
+                <div id="benefit-dial-boxes-plaque-threshold-personalized-guidance">
                   <p>
                     <span>Personalized Guidance:</span><br>
-                    You can achieve a Health Score of <span>0</span> <br>
+                    You can add <span>0</span> years to your Healthspan<br>
                     if you start <span>once yearly</span> siRNA at age <span>30</span><br>
                     to keep cumulative LDL below your target
                   </p>
@@ -2003,40 +2178,33 @@
             </div>
           </div>
 
-          <div class="healthscore-dial-boxes-col3">
-            <div class="healthscore-dial-boxes-graph-box">
-              <div id="healthscore-dial-boxes-graph-box-title">Current Health Trajectory</div>
-              <div id="healthscore-dial-boxes-graph-title"><span>Lifetime Risk of Heart Attack or Stroke</span></div>
-              <div id="healthscore-dial-boxes-risk-transition-box">
-                <div id="healthscore-dial-boxes-risk-transition-box-row1">
-                  <div id="healthscore-dial-boxes-risk-before-treatment-value">00.0%</div>   
+          <div class="benefit-dial-boxes-col3">
+            <div class="benefit-dial-boxes-graph-box">
+              <div id="benefit-dial-boxes-graph-box-title">Current Health Trajectory</div>
+              <span id="benefit-dial-boxes-graph-box-reduction">Current Lifetime Risk of Heart Attack or Stroke</span>
+
+              <div id="benefit-dial-boxes-graph-box-risk-transition-box">
+                  <div id="benefit-dial-boxes-graph-box-risk-before-treatment-value">00.0%</div>   
                   <span><b>→</b></span>             
-                  <div id="healthscore-dial-boxes-risk-after-treatment-value">00.0%</div>   
-                </div>
-                
-                <div id="healthscore-dial-boxes-risk-reduction-value">00.0% lower risk</div>    
+                  <div id="benefit-dial-boxes-graph-box-risk-after-treatment-value">00.0%</div>   
               </div>
-              <div id="healthscore-dial-boxes-graph-wrapper">
-                <div id="healthscore-dial-boxes-Graph"></div>              
+
+              <div id="benefit-dial-boxes-graph-wrapper">
+                <div id="benefit-dial-boxes-Graph"></div>              
               </div>
             </div>
 
-            <div class="healthscore-dial-boxes-healthy-years-box">
-              <div id="healthscore-dial-boxes-healthy-years-title">Number of Healthy Life Years Gained</div>
-              <div id="healthscore-dial-boxes-healthy-years">0</div>
+            <div class="benefit-dial-boxes-healthy-years-box">
+              <div id="benefit-dial-boxes-healthy-years-title">Extra years of Healthspan</div>
+              <div id="benefit-dial-boxes-healthy-years">0</div>
             </div>
 
-            <div class="healthscore-dial-boxes-bar-box">
-              <div id="healthscore-dial-boxes-bar-title">Cardiovascular Health Score</div>
-              <div id="healthscore-dial-boxes-bar"></div>
+            <div class="benefit-dial-boxes-bar-box">
+              <div id="benefit-dial-boxes-bar-title">Cardiovascular Health Score</div>
+              <div id="benefit-dial-boxes-bar"></div>
             </div>
-
           </div>
-        </div>
-      </div>
 
-      <div class="outer-box-benefit-dial-boxes">
-        <div class="benefit-dial-boxes-box">
           <div class="benefit-dial-boxes-col1">
             <div id="benefit-dial-boxes-current-levels">
               <div id="benefit-current-levels-list">
@@ -2064,7 +2232,7 @@
                 <img src="media/mic.png" class="mic">
               </div>
 
-              <div id="benefit-dial-boxes-bot-2"><br>
+              <div id="benefit-dial-boxes-bot-2"><!--<br>-->
                 Because our Deep Causal AI is trained on the biology 
                 of how cardiometabolic disease develops, and is the 
                 first to encode this biological cause and effect, we 
@@ -2075,6 +2243,13 @@
               </div>
             </div>
             <div id="benefit-dial-boxes-plaque-threshold-box">
+              <div id="full-benefit-dial-boxes-gif-wrapper">
+                <video id="full-benefit-dial-boxes-plaque-gif" preload="auto">
+                  <source src="media/slice_artery.webm" type="video/webm">
+                  Your browser does not support WebM video.
+                </video>
+              </div>
+
               <div id="benefit-future-plaque-gauge-wrapper">
 
                 <div id="benefit-future-plaque-gauge">
@@ -2154,104 +2329,6 @@
             </div>
           </div>
 
-          <div class="benefit-dial-boxes-col2">
-            <div id="benefit-dial-boxes-col2-row1">
-
-              <div id="benefit-dial-boxes-box-page-title">
-                <div id="benefit-dial-boxes-box-page-title-1">Benefit Dial</div> <!--Trajectory</div>-->
-                <div id="benefit-dial-boxes-box-page-title-2">(based on your current health trajectory)</div>
-              </div>
-
-              <!-- <div id="benefit-dial-boxes-box-page-explanation"><em>Please turn the dial to determine how you can achieve any level of cardiovascular health or any number of extra years of healthspan if you take a yearly siRNA to lower LDL and SBP limited by how much disease has already occurred before you start to lower LDL and SBP.</em></div> -->
-              <div id="benefit-dial-boxes-box-page-explanation">
-                Turn the dial to <b>lower the risk of heart attack or stroke</b> 
-                by as much as you wish<br> and be provided with 
-                <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it 
-                <br>
-                <em>
-                  (limited only by the amount of plaque and artery injury 
-                  that develops<br>before you start lowering LDL and SBP)
-                </em>
-              </div>
-            </div>
-            <div id="benefit-dial-boxes-col2-row2">
-              <div id="benefit-matrix-l"></div>
-              <div id="benefit-dial-box">
-                  <img src="media/dial-v2-variant2.png" id="benefit-dial-image" alt="Dial"/>
-                  <div class="benefit-label" id="benefit-dial-label">0</div>
-                  <div class="benefit-label-skin" id="benefit-dial-label-skin"><span>%</span>0.0<span>%</span></div>
-                  <!-- <span>%</span> -->
-              </div>
-              <div id="benefit-matrix-r"></div>
-            </div>
-
-            <div id="benefit-dial-boxes-col2-row2-5">
-              <span id="benefit-dial-bar">Current Lifetime Risk of Heart Attack or Stroke</span>
-              <div id="benefit-dial-boxes-risk-transition-box">
-                <!-- <div id="benefit-dial-boxes-risk-transition-box-row1"> -->
-                  <div id="benefit-dial-boxes-risk-before-treatment-value">00.0%</div>   
-                  <span><b>→</b></span>             
-                  <div id="benefit-dial-boxes-risk-after-treatment-value">00.0%</div>   
-                <!-- </div> -->
-                
-                <!-- <div id="benefit-dial-boxes-risk-reduction-value">00.0% lower risk</div>     -->
-              </div>
-            </div>
-
-            <div id="benefit-dial-boxes-col2-row3">
-
-              <div id="benefit-dial-boxes-plaque-threshold-progress-bar-wrapper">
-                <div id="benefit-dial-boxes-plaque-threshold-progress-bar">
-                  <div id="benefit-dial-boxes-plaque-threshold-progress"></div>
-                  <div id="benefit-progress-tick"></div>
-                </div>
-              </div>
-
-              <div id="benefit-dial-boxes-plaque-threshold-wrapper">
-                <div id="benefit-dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
-                <div id="benefit-dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years</div>
-              </div>
-
-              <div id="benefit-dial-boxes-plaque-threshold-personalized-guidance-wrapper">
-                <div id="benefit-dial-boxes-plaque-threshold-personalized-guidance">
-                  <p>
-                    <span>Personalized Guidance:</span><br>
-                    You can add <span>0</span> years to your Healthspan<br>
-                    if you start <span>once yearly</span> siRNA at age <span>30</span><br>
-                    to keep cumulative LDL below your target
-                  </p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="benefit-dial-boxes-col3">
-            <div class="benefit-dial-boxes-graph-box">
-              <div id="benefit-dial-boxes-graph-box-title">Current Health Trajectory</div>
-              <span id="benefit-dial-boxes-graph-box-reduction">Current Lifetime Risk of Heart Attack or Stroke</span>
-
-              <div id="benefit-dial-boxes-graph-box-risk-transition-box">
-                  <div id="benefit-dial-boxes-graph-box-risk-before-treatment-value">00.0%</div>   
-                  <span><b>→</b></span>             
-                  <div id="benefit-dial-boxes-graph-box-risk-after-treatment-value">00.0%</div>   
-              </div>
-
-              <div id="benefit-dial-boxes-graph-wrapper">
-                <div id="benefit-dial-boxes-Graph"></div>              
-              </div>
-            </div>
-
-            <div class="benefit-dial-boxes-healthy-years-box">
-              <div id="benefit-dial-boxes-healthy-years-title">Extra years of Healthspan</div>
-              <div id="benefit-dial-boxes-healthy-years">0</div>
-            </div>
-
-            <div class="benefit-dial-boxes-bar-box">
-              <div id="benefit-dial-boxes-bar-title">Cardiovascular Health Score</div>
-              <div id="benefit-dial-boxes-bar"></div>
-            </div>
-          </div>
         </div>
       </div>
 

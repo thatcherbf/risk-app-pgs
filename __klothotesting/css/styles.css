@@ -305,7 +305,7 @@ select {
   flex-grow: 1;
   flex-shrink: 0;
   height: 100%;
-  transition: all 0.0625s linear;
+  transition: all 0.0625s ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -318,9 +318,9 @@ select {
   justify-content: center;
 }
 
-.navbar-button-wrapper.dropdown {
+/* .navbar-button-wrapper.dropdown {
   
-}
+} */
 
 #pointer-dropdown {
   color: white;
@@ -349,6 +349,10 @@ select {
   visibility: visible;
 }
 
+#dropdown-button {
+  user-select: none;
+}
+
 .dropdown-content {
   background: rgba(0, 0, 0, 0.50);
   /* background: 
@@ -361,13 +365,13 @@ select {
   backdrop-filter: blur(10px);
   position: absolute;
   top: 100%;
-  left: -1rem;
-  right: -1rem;
+  /* left: -1rem;
+  right: -1rem; */
   display: inline-flex;
   justify-content: center;
   flex-direction: column;
   height: 300%;
-  /* width: 10%; */
+  width: 100%;
   visibility: hidden;
   /* border: solid white 1px; */
   box-sizing: border-box;
@@ -395,7 +399,7 @@ select {
   margin: 0 auto;
   text-align: center;
   font-size: calc(1rem * 12/14);
-  font-weight: 300;
+  font-weight: 200;
   font-synthesis: none;
   cursor: pointer;
   height: 50%;
@@ -420,6 +424,13 @@ select {
   background-color: white;
   color: var(--klotho-accent);
   text-decoration: none;
+}
+
+.navbar-button.dropdown.active {
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  user-select: none;
 }
 
 .button-icon {
@@ -590,16 +601,20 @@ select:focus {
 
 #lifetime-gif-wrapper video,
 #lifetime-gif-wrapper img {
-  /* transform: rotate(-15deg); */
-  /* translate: -35%; */
-  /* transform: rotate(-15deg) translateX(-25%); */
-  transform: translateY(2.5%) translateX(-35%);
-  /* width: 100%; */
-  height: 150%;
-  /* object-fit: cover; keeps video square */
+  transform: translateX(10%) translateY(2%);
+  width: 65%;
+}
+
+#webm-ticker {
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  right: 92.5%;
+  background-color: white;
 }
 
 #full-lifetime-gif-wrapper {
+  position: relative;
   background-color: rgba(255, 255, 255, 0.0625);
   height: 15%;
   width: 90%;
@@ -613,8 +628,8 @@ select:focus {
 
 #full-lifetime-gif-wrapper video,
 #full-lifetime-gif-wrapper img {
-  width: 90%;
-  transform: translateY(2.5%);
+  width: 87.5%;
+  transform: translateY(1.5%);
   object-fit: contain;
 }
 
@@ -697,7 +712,7 @@ select:focus {
   position: absolute;
   font-size: calc(1rem * 12/14);
   z-index: 10;
-  margin-top: 1.0%;
+  top: 2.5%;
   width: 85%;
   color: var(--klotho-offwhite);
   text-align: center;
@@ -740,13 +755,13 @@ select:focus {
 #lifetime-risk {
   color: white;
   height: 20%;
-  width: 97.5%;
-  /* text-align: center; */
+  width: 100%;
+  text-align: center;
   align-items: center;
 
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   font-size: calc(1rem * 20/14);
   font-weight: 200;
   box-sizing: border-box;
@@ -754,18 +769,18 @@ select:focus {
 }
 
 #lifetime-risk-value-box {
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   display: flex;
   align-items: center;
   height: 45%;
-  width: 75%;
+  width: 100%;
   font-size: calc(1rem * 20/14);
   box-sizing: border-box;
   /* border: solid green 1px; */
 }
 
 #lifetime-risk-value {
-  /* width: 100%; */
+  width: 100%;
 
   font-weight: 200;
   font-size: calc(1rem * 60/14);
@@ -783,15 +798,15 @@ select:focus {
 
 #lifetime-risk-postamble {
   height: 20%;
-  width: 75%;
+  width: 100%;
   font-size: calc(1rem * 12/14);
   font-weight: 200;
 
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   align-items: center;
-  /* text-align: center; */
+  text-align: center;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   color: var(--klotho-offwhite);
   box-sizing: border-box;
   /* border: solid orange 1px; */
@@ -879,13 +894,13 @@ select:focus {
 #lifetime-health-score-title {
   color: white;
   height: 20%;
-  /* width: 90%; */
-  /* text-align: center; */
+  width: 100%;
+  text-align: center;
   align-items: center;
 
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   font-size: calc(1rem * 20/14);
   font-weight: 200;
   box-sizing: border-box;
@@ -894,14 +909,15 @@ select:focus {
 #lifetime-health-score-value-box {
   display: flex;
   height: 45%;
-  width: 75%;
-  padding-left: 1.5rem;
+  width: 100%;
+  /* width: 75%; */
+  /* padding-left: 1.5rem; */
   font-size: calc(1rem * 20/14);
   box-sizing: border-box;
 }
 
 #lifetime-health-score-value {
-  /* width: 100%; */
+  width: 100%;
 
   font-weight: 200;
   font-size: calc(1rem * 60/14);
@@ -919,15 +935,15 @@ select:focus {
 
 #lifetime-health-score-value-postamble {
   height: 20%;
-  width: 75%;
+  width: 100%;
   font-size: calc(1rem * 12/14);
   font-weight: 200;
 
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   align-items: center;
-  /* text-align: center; */
+  text-align: center;
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   color: var(--klotho-offwhite);
 }
 
@@ -1236,7 +1252,7 @@ svg {
   width: 100%;
   padding-left: 10%;
   padding-right: 10%;
-  font-weight: 400;
+  font-weight: 200;
   font-size: calc(1rem * 15/14);
   display: flex;
   justify-content: center;
@@ -1252,7 +1268,7 @@ svg {
   width: 100%;
   padding-left: 10%;
   padding-right: 10%;
-  font-weight: 400;
+  font-weight: 200;
   font-size: calc(1rem * 15/14);
   display: flex;
   justify-content: center;
@@ -1301,7 +1317,7 @@ svg {
 #sliderValue {
   color: white;
   font-size: calc(1rem * 17.5/14);
-  font-weight: 600;
+  font-weight: 200;
   height: 100%;
   width: 15%;
   display: flex;
@@ -1315,7 +1331,7 @@ svg {
 #sliderValue-2 {
   color: white;
   font-size: calc(1rem * 17.5/14);
-  font-weight: 600;
+  font-weight: 200;
   height: 100%;
   width: 15%;
   display: flex;
@@ -1328,7 +1344,7 @@ svg {
 
 #null-sliderValue {
   font-size: calc(1rem * 17.5/14);
-  font-weight: 600;
+  font-weight: 200;
   height: 100%;
   width: 12.5%;
   display: flex;
@@ -1342,7 +1358,7 @@ svg {
 
 #null-sliderValue-2 {
   font-size: calc(1rem * 17.5/14);
-  font-weight: 600;
+  font-weight: 200;
   height: 100%;
   width: 12.5%;
   display: flex;
@@ -1467,11 +1483,15 @@ svg {
 #treatment-age-options-wrapper {
   position: absolute;
   right: 0;
+  /* height: 100%; */
+  top: 15%;
+  bottom: 15%;
   width: 30%;
   vertical-align: middle;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
   /* flex-flow: column; */
   flex-wrap: wrap;
   box-sizing: border-box;
@@ -1480,28 +1500,34 @@ svg {
 
 #start-medication-later {
   color: white;
+  width: 87.5%;
 
   font-size: calc(1rem * 15/14);
   font-weight: 200;
 
   display: flex;
-  justify-content: end;
-  padding-left: 0.75%;
+  justify-content: left;
+  /* padding-left: 0.75%; */
   vertical-align: middle;
   text-align: left;
 
+  /* border: solid white 1px; */
   box-sizing: border-box;
 }
 
 #start-later-age-input {
+  position: absolute;
+  right: 0;
+
   background-color: rgba(255, 255, 255, 0.125);
   /* backdrop-filter: blur(5px);  */
   color: white;
+  height: 65%;
   width: 12.5%;
 
-  margin-left: 1rem;
+  margin-left: 3rem;
 
-  font-size: calc(1rem * 15/14);
+  font-size: calc(1rem * 18/14);
   font-weight: 200;
 
   display: flex;
@@ -1510,19 +1536,20 @@ svg {
   vertical-align: middle;
   justify-content: center;
   border: solid white 1px;
-  border-radius: 5px;
+  border-radius: 20px;
   box-sizing: border-box;
 }
 
 #start-medication-later-1 {
   color: var(--klotho-offwhite);
+  width: 87.5%;
 
   font-size: calc(1rem * 12/14);
   font-weight: 200;
 
   display: flex;
-  justify-content: end;
-  padding-left: 0.75%;
+  justify-content: left;
+  /* padding-left: 0.75%; */
   vertical-align: middle;
   text-align: left;
   box-sizing: border-box;
@@ -1645,13 +1672,8 @@ svg {
 
 #treatment-gif-wrapper video,
 #treatment-gif-wrapper img {
-  /* transform: rotate(-15deg); */
-  /* translate: -35%; */
-  /* transform: rotate(-15deg) translateX(-25%); */
-  transform: translateY(2.5%) translateX(-35%);
-  /* width: 100%; */
-  height: 150%;
-  /* object-fit: cover; keeps video square */
+  transform: translateX(10%) translateY(2%);
+  width: 65%;
 }
 
 #outer-treatment-gif-2 {
@@ -1696,13 +1718,8 @@ svg {
 
 #treatment-gif-wrapper-2 video,
 #treatment-gif-wrapper-2 img {
-  /* transform: rotate(-15deg); */
-  /* translate: -35%; */
-  /* transform: rotate(-15deg) translateX(-25%); */
-  transform: translateY(2.5%) translateX(-35%);
-  /* width: 100%; */
-  height: 150%;
-  /* object-fit: cover; keeps video square */
+  transform: translateX(10%) translateY(2%);
+  width: 65%;
 }
 
 #treatment-slider-row {
@@ -1784,7 +1801,7 @@ svg {
   position: absolute;
   font-size: calc(1rem * 10/14);
   z-index: 10;
-  margin-top: 1.0%;
+  top: 2.5%;
   width: 95%;
   color: var(--klotho-offwhite);
   text-align: center;
@@ -1804,13 +1821,25 @@ svg {
   box-sizing: border-box;
 }
 
-.treatment-risks-box {
-  background: var(--lgradient3);
+.below-treatment-graph-box {
   height: 30%;
   width: 100%;
   display: flex;
+  flex-flow: row;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.treatment-risks-box {
+  background: var(--lgradient3);
+  /* height: 30%; */
+  height: 100%;
+  /* width: 100%; */
+  width: 65%;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: flex-start;
   align-items: flex-start;
   backdrop-filter: blur(60px); 
   border-radius: 20px;
@@ -1819,14 +1848,15 @@ svg {
 
 #treatment-risks-box-title {
   color: white;
-  height: 20%;
-  width: 97.5%;
-  /* text-align: center; */
+  /* height: 20%; */
+  height: 30%;
+  width: 100%;
+  text-align: center;
   align-items: center;
 
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   font-size: calc(1rem * 20/14);
   font-weight: 200;
   box-sizing: border-box;
@@ -1835,14 +1865,14 @@ svg {
 
 #risk-transition-box {
   color: white;
-  height: 45%;
+  height: 55%;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
-  font-size: calc(1rem * 40/14);
+  font-size: calc(1rem * 30/14);
   box-sizing: border-box;
   visibility: hidden;
   /* border: solid red 1px; */
@@ -1851,7 +1881,7 @@ svg {
 #risk-before-treatment-value {
   color: var(--graphnorx);
 
-  width: 35%;
+  width: 42.5%;
 
   display: flex;
   vertical-align: middle;
@@ -1859,15 +1889,16 @@ svg {
   text-align: center;
   justify-content: center;
   vertical-align: middle;
-  font-size: calc(1rem * 50/14);
+  font-size: calc(1rem * 45/14);
   font-weight: 200;
+  /* border: solid red 1px; */
   box-sizing: border-box;
 }
 
 #risk-after-treatment-value {
   color: var(--graphwithrx);
 
-  width: 35%;
+  width: 42.5%;
 
   display: flex;
   vertical-align: middle;
@@ -1875,17 +1906,18 @@ svg {
   text-align: center;
   justify-content: center;
   vertical-align: middle;
-  font-size: calc(1rem * 50/14);
+  font-size: calc(1rem * 45/14);
   font-weight: 200;
+  /* border: solid red 1px; */
   box-sizing: border-box;
 }
 
 #treatment-proportional-risk-reduction-value {
   color: white;
 
-  height: 22.5%;
+  height: 15%;
   width: 100%;  
-  font-size: calc(1rem * 20/14);
+  font-size: calc(1rem * 15/14);
   font-weight: 200;
 
   padding-bottom: 1%;
@@ -1895,6 +1927,77 @@ svg {
   text-align: center;
   align-items: center;
   box-sizing: border-box;  
+  /* border: solid red 1px; */
+}
+
+#healthy-years-wrapper {
+  background: var(--lgradient3);
+  height: 100%;
+  width: 32.5%;
+  display: flex;
+  flex-flow: column;
+  /* justify-content: center; */
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+#healthy-years-value-title {
+  color: white;
+  /* height: 40%; */
+  height: 30%;
+  width: 90%;
+  font-size: calc(1rem * 15/14);
+  font-weight: 200;
+  /* padding-left: 1.5rem; */
+  /* padding-right: 1.5rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  /* border: solid red 1px; */
+  box-sizing: border-box;
+}
+
+#healthy-years-value-wrapper {
+  color: white;
+  /* margin-top: 10%; */
+  /* height: 60%; */
+  height: 55%;
+  width: 100%;
+  font-size: calc(1rem * 60/14);
+  font-weight: 200;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  /* border: solid red 1px; */
+  box-sizing: border-box;
+}
+
+#healthy-years-value {
+  color: white;
+  height: 65%;
+  /* aspect-ratio: 1 / 1; */
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  font-size: calc(1rem * 60/14);
+  font-weight: 200;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  /* border: solid white 1px; */
+  box-sizing: border-box;
+}
+
+.plus-r {
+  font-size: calc(1rem * 40/14);
+  font-weight: 200;
 }
 
 #risk-before-treatment {
@@ -1970,7 +2073,7 @@ svg {
   display: flex;
   justify-content: center;
   font-size: calc(1rem * 20/14);
-  font-weight: 400;
+  font-weight: 200;
 
   box-sizing: border-box;
   color: white;
@@ -1984,7 +2087,7 @@ svg {
   flex-direction: column;
 
   font-size: calc(1rem * 20/14);
-  font-weight: 400;
+  font-weight: 200;
 
   box-sizing: border-box;
   visibility: hidden;
@@ -2002,7 +2105,7 @@ svg {
   box-sizing: border-box;
 }
 
-#below-treatment-Graph-box {
+#below-treatment-bar-box {
   height: 30%;
   width: 100%;
   display: flex;
@@ -2011,82 +2114,17 @@ svg {
   box-sizing: border-box;
 }
 
-#healthy-years-wrapper {
-  background: var(--lgradient2-2);
-  height: 100%;
-  width: 47.5%;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: flex-start;
-  border-radius: 20px;
-  box-sizing: border-box;
-}
-
-#healthy-years-value-title {
-  color: white;
-  height: 40%;
-  width: 100%;
-  font-size: calc(1rem * 16/14);
-  font-weight: 200;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  vertical-align: middle;
-  box-sizing: border-box;
-}
-
-#healthy-years-value-wrapper {
-  color: white;
-  /* margin-top: 10%; */
-  height: 60%;
-  width: 100%;
-  font-size: calc(1rem * 80/14);
-  font-weight: 200;
-  display: flex;
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* border: solid white 1px; */
-  box-sizing: border-box;
-}
-
-#healthy-years-value {
-  color: white;
-  height: 65%;
-  /* aspect-ratio: 1 / 1; */
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  font-size: calc(1rem * 80/14);
-  font-weight: 200;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  vertical-align: middle;
-  border-radius: 50%;
-  /* border: solid white 1px; */
-  box-sizing: border-box;
-}
-
-.plus-r {
-  font-size: calc(1rem * 40/14);
-  font-weight: 200;
-}
-
 .treatment-treatments-box {
   background: var(--lgradient4);
   /* height: 30%; */
-  /* width: 100%; */
   height: 100%;
-  width: 50%;
+  width: 100%;
+
   display: flex;
   flex-flow: column;
-  justify-content: center;
-  align-items: flex-start;
+  /* justify-content: center; */
+  justify-content: flex-start;
+  align-items: center;
   /* background-color: rgba(255, 255, 255, 0.125); */
   backdrop-filter: blur(60px); 
   border-radius: 20px;
@@ -2095,53 +2133,73 @@ svg {
 }
 
 #health-score-transition-title {
-  /* border: solid white 1px; */
   color: white;
-  height: 40%;
-  /* width: 90%; */
-  /* text-align: center; */
+  /* height: 40%; */
+  height: 30%;
+  width: 85%;
+  text-align: center;
   align-items: center;
 
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  /* padding-left: 1.5rem; */
+  /* padding-right: 1.5rem; */
   display: flex;
-  /* justify-content: center; */
-  font-size: calc(1rem * 16/14);
+  justify-content: center;
+  align-items: center;
+  /* font-size: calc(1rem * 20/14); */
+  font-size: calc(1rem * 17.5/14);
   font-weight: 200;
+  /* border: solid red 1px; */
   box-sizing: border-box;
 }
 
 #health-score-transition-box {
-  align-items: flex-start;
+  color: white;
+  align-items: center;
+  justify-content: center;
   display: flex;
-  height: 60%;
-  width: 75%;
-  padding-left: 1.5rem;
+  /* height: 60%; */
+  height: 55%;
+  width: 90%;
+  /* padding-left: 1.5rem; */
   /* padding-bottom: 2.5rem; */
-  font-size: calc(1rem * 20/14);
+  font-size: calc(1rem * 30/14);
+  /* border: solid red 1px; */
   box-sizing: border-box;
-  /* border: solid white 1px; */
+  visibility: hidden;
 }
 
 #health-score-before-treatment-value {
-  display: none;
+  color: var(--graphnorx);
+
+  width: 30%;
+
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  font-size: calc(1rem * 45/14);
+  font-weight: 200;
+  /* border: solid red 1px; */
+  box-sizing: border-box;
 }
 
 #health-score-after-treatment-value {
-  /* width: 100%; */
-
-  font-weight: 200;
-  font-size: calc(1rem * 60/14);
-
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-
   color: var(--graphwithrx);
 
+  width: 30%;
+
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  vertical-align: middle;
+  font-size: calc(1rem * 45/14);
+  font-weight: 200;
+  /* border: solid red 1px; */
   box-sizing: border-box;
-  visibility: hidden;
 }
 
 .treatment-health-score-bar-box {
@@ -2179,7 +2237,7 @@ svg {
   justify-content: center;
   font-size: calc(1rem * 20/14);
 
-  font-weight: 400;
+  font-weight: 200;
   box-sizing: border-box;
   display: none;
 }
@@ -2200,8 +2258,9 @@ svg {
   position: absolute;
   background-color: rgba(255, 255, 255, 0.125);
   /* backdrop-filter: blur(5px);  */
-  height: 80%;
-  width: 22.5%;
+  height: 0%;
+  width: 0%;
+  opacity: 0;
 
   display: inline-flex;
   flex-flow: column;
@@ -2269,7 +2328,7 @@ svg {
   height: 35%;
   width: 80%;
   font-size: calc(1rem * 16/14);
-  font-weight: 400;
+  font-weight: 200;
   text-align: center;
   align-items: center;
   display: flex;
@@ -2980,6 +3039,19 @@ svg {
 }
 /* --#------ OUTER TREATMENT BOX ------#-- */
 
+.layout-btn {
+  z-index: 9;
+  position: absolute;
+  color: white;
+  left: 0;
+  bottom: 0;
+  width: 5%;
+  border: solid var(--klotho-offwhite) 1px;
+  background-color: rgba(255, 255, 255, 0.125);
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
 /* --#--- OUTER HEALTHSPAN DIAL BOX ---#-- */
 .outer-box-dial-boxes {
   height: 92.5vh;
@@ -3051,7 +3123,7 @@ svg {
 
   font-size: calc(1rem * 12/14);
   /* align-items: start; */
-  text-align: center;
+  text-align: left;
   /* display: flex;
   justify-content: start;
   flex-direction: column; */
@@ -3059,7 +3131,7 @@ svg {
   display: block;
 
   color: var(--klotho-offwhite); 
-  white-space: nowrap;
+  /* white-space: nowrap; */
 
   box-sizing: border-box;
   /* transition: all 0.5s ease; */
@@ -3075,15 +3147,16 @@ svg {
   height: 87.5%;
   width: 30%;
   display: inline-flex;
-  flex-flow: wrap;
+  flex-flow: column;
+  justify-content: space-between;
 
-  /* border-right: solid white 0.5px;  */
+  /* border: solid white 0.5px;  */
   box-sizing: border-box;
 }
 
 #dial-boxes-current-levels {
   background: var(--lgradient1);
-  height: 30%;
+  height: 32.5%;
   width: 100%;
   box-sizing: border-box;
 
@@ -3194,7 +3267,7 @@ svg {
   text-align: center;
   justify-content: space-around;
   font-size: calc(1rem * 20/14);
-  font-weight: 500;
+  font-weight: 200;
 }
 
 #dial-boxes-bot-option {
@@ -3210,6 +3283,7 @@ svg {
   border-bottom: solid white 1px;  */
   border-radius: 20px;
   box-sizing: border-box;
+  /* border: solid white 1px;  */
 }
 
 #dial-boxes-bot-1 {
@@ -3266,20 +3340,21 @@ svg {
 }
 
 #dial-boxes-bot-2 {
+  /* border: solid white 1px;  */
   font-size: calc(1rem * 12/14);
   user-select: none;
   color: white;
   height: 60%;
   width: 100%;
   display: flex;
-  align-items: start;
+  align-items: center;
   text-align: left;
   padding: 0 5% 0 5%;
   box-sizing: border-box;
 }
 
 #dial-boxes-plaque-threshold-box {
-  background: var(--lgradient2);
+  background: var(--lgradient2-2);
   position: relative;
   user-select: none;
 
@@ -3292,6 +3367,29 @@ svg {
   align-items: center;
   border-radius: 20px;
   box-sizing: border-box;
+  /* border: solid white 1px;  */
+}
+
+#full-dial-boxes-gif-wrapper {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.0625);
+  height: 90%;
+  /* margin-top: 5%; */
+  /* margin-bottom: 5%; */
+  aspect-ratio: 1/1 !important;
+  border: solid var(--klotho-offwhite) 1px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#full-dial-boxes-gif-wrapper video,
+#full-dial-boxes-gif-wrapper img {
+  transform: translateX(10%) translateY(2%);
+  width: 65%;
 }
 
 #future-plaque-gauge-title {
@@ -3308,7 +3406,8 @@ svg {
 }
 
 #future-plaque-gauge-wrapper {
-  position: relative;
+  position: absolute;
+  opacity: 0;
   height: 100%;
   width: 100%;
   display: flex;
@@ -3404,6 +3503,23 @@ svg {
   font-size: calc(1rem * 20/14);
 }
 
+#dial-boxes-current-levels {
+  position: absolute;
+  opacity: 0;
+}
+
+#dial-boxes-bot-option {
+  height: 47.5%;
+}
+
+#dial-boxes-plaque-threshold-box {
+  height: 50%;
+}
+
+#dial-boxes-plaque-threshold-box div{
+  height: 75%;
+}
+
 .dial-boxes-col2 {
   background: var(--lgradient3);
   z-index: 1;
@@ -3426,7 +3542,7 @@ svg {
   box-sizing: border-box;
   user-select: none;
 
-  border: solid red 1px;
+  /* border: solid red 1px; */
 }
 
 #dial-boxes-col2-row2 {
@@ -3514,7 +3630,7 @@ svg {
 }
 
 #dial-label:hover {
-  cursor: grab !important;
+  cursor: grab;
 }
 
 #dial-label {
@@ -3529,7 +3645,7 @@ svg {
   word-wrap: break-word;
   border-radius: 50%;
   box-sizing: border-box;
-  cursor: grab !important;
+  cursor: grab;
 }
 
 .label {
@@ -3539,7 +3655,7 @@ svg {
   font-weight: 200;
   font-family: sans-serif;
   z-index: 2;
-  cursor: grab !important;
+  cursor: grab;
 }
 
 #col2-receptacle {
@@ -3594,8 +3710,8 @@ svg {
 
 #progress-tick {
   position: absolute;
-  width: 2px;
-  background-color: var(--accentblue);
+  width: 1px;
+  background-color: white;/*var(--accentblue);*/
   top: 0;
   bottom: 0;
   right: 0;
@@ -3689,19 +3805,19 @@ svg {
   /* width: 80%; */
   top: 12.5%;
   bottom: 15%;
-  /* left: 7.5%; */
-  /* right: 7.5%; */
+  left: 7.5%;
+  right: 7.5%;
   font-size: calc(1rem * 15/14);
   /* padding-bottom: 1%; */
   /* margin-top: 3%; */
   display: flex;
   flex-flow: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  text-align: left;
+  text-align: center;
   opacity: 0;
 
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
 
   border-radius: 10px;
   box-sizing: border-box;
@@ -3789,12 +3905,12 @@ svg {
 
   height: 11.5%;
 
-  padding-top: 1.75%;
-  padding-left: 1.5rem;
+  /* padding-top: 1.75%; */
+  /* padding-left: 1.5rem; */
   display: flex;
   flex-flow: row;
-  /* justify-content: center; */
-  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
 
   font-size: calc(1rem * 20/14);
   font-weight: 200;
@@ -3915,9 +4031,9 @@ svg {
   display: inline-flex;
   justify-content: center;
   vertical-align: middle;
-  align-items: flex-start;
+  /* align-items: flex-start; */
 
-  /* border-top: solid white 0.5px;  */
+  /* border: solid white 0.5px;  */
   
   border-radius: 20px;
   box-sizing: border-box;
@@ -3930,12 +4046,13 @@ svg {
   font-size: calc(1rem * 15/14);
   font-weight: 200;
   display: flex;
-  padding-left: 1.5rem;
-  /* justify-content: center; */
+  /* padding-left: 1.5rem; */
+  justify-content: center;
   align-items: center;
-  /* text-align: center; */
+  text-align: center;
   vertical-align: middle;
   box-sizing: border-box;
+  /* border: solid white 0.5px;  */
 }
 
 #dial-boxes-bar-shape {
@@ -4044,6 +4161,18 @@ svg {
   box-sizing: border-box;
   visibility: hidden;
 }
+
+.dial-boxes-col1 {
+  width: 30%; 
+}
+
+.dial-boxes-col2 {
+  width: 30%; 
+}
+
+.dial-boxes-col3 {
+  width: 37.5%; 
+}
 /* --#--- OUTER HEALTHSPAN DIAL BOX ---#-- */
 
 /* --#-- OUTER HEALTH SCORE DIAL BOX --#-- */
@@ -4058,37 +4187,99 @@ svg {
 }
 
 .healthscore-dial-boxes-box {
-  background-color: rgba(255, 255, 255, 0.125);
-  /* backdrop-filter: blur(5px);  */
   position: absolute;
-  height: 88.5vh;
+  
+  height: 87%;
+  width: 85%;
 
-  width: 76%;
-  margin-top: 0.75%;
-  margin-bottom: 0.75%;
+  /* margin-top: 0.5%; */
+  margin-bottom: 0.5%;
 
   display: inline-flex;
   flex-flow: wrap;
   justify-content: space-between;
   overflow: hidden;
-
-  border: solid white 1px;
-  border-radius: 10px;
+  /* border: solid white 1px; */
+  /* border-radius: 20px; */
   box-sizing: border-box;
 }
 
+#healthscore-dial-boxes-box-page-title {
+  /* background-color: rgba(255, 255, 255, 0.125); */
+  /* backdrop-filter: blur(5px);  */
+  height: 12.5%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  /* border-bottom: solid white 1px; */
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-box-page-title-1 {
+  /* width: 100%; */
+  font-size: calc(1rem * 24/14);
+  font-weight: 200;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+#healthscore-dial-boxes-box-page-title-2 {
+  /* width: 100%; */
+  font-size: calc(1rem * 14/14);
+  font-weight: 200;
+  align-items: center;
+  text-align: center;
+  color: var(--klotho-offwhite);
+  display: none;
+}
+
+#healthscore-dial-boxes-box-page-explanation {
+  /* height: 50%; */
+  /* width: 100%; */
+
+  /* padding-left: 2.0%; */
+  /* padding-right: 2.0%; */
+
+  font-size: calc(1rem * 12/14);
+  /* align-items: start; */
+  text-align: left;
+  /* display: flex;
+  justify-content: start;
+  flex-direction: column; */
+
+  display: block;
+
+  color: var(--klotho-offwhite); 
+  /* white-space: nowrap; */
+
+  box-sizing: border-box;
+  /* transition: all 0.5s ease; */
+  
+  /* border: solid red 1px; */
+}
+
+#healthscore-dial-boxes-box-page-explanation em {
+  font-size: calc(1rem * 10.5/14);
+}
+
 .healthscore-dial-boxes-col1 {
-  height: 100%;
+  height: 87.5%;
   width: 30%;
   display: inline-flex;
-  flex-flow: wrap;
+  flex-flow: column;
+  justify-content: space-between;
 
-  border-right: solid white 0.5px; 
+  /* border: solid white 0.5px;  */
   box-sizing: border-box;
 }
 
 #healthscore-dial-boxes-current-levels {
-  height: 30%;
+  background: var(--lgradient1);
+  height: 32.5%;
   width: 100%;
   box-sizing: border-box;
 
@@ -4097,6 +4288,7 @@ svg {
   justify-content: center;
   flex-direction: row;
   user-select: none;
+  border-radius: 20px;
   box-sizing: border-box;
 }
 
@@ -4141,7 +4333,7 @@ svg {
   text-align: center;
   justify-content: space-around;
   font-size: calc(1rem * 30/14);
-  font-weight: 500;
+  font-weight: 200;
 }
 
 #healthscore-current-levels-list-weight,
@@ -4167,7 +4359,7 @@ svg {
   text-align: center;
   justify-content: space-around;
   font-size: calc(1rem * 20/14);
-  font-weight: 500;
+  font-weight: 200;
 }
 
 #healthscore-current-levels-list-curldl,
@@ -4193,20 +4385,23 @@ svg {
   text-align: center;
   justify-content: space-around;
   font-size: calc(1rem * 20/14);
-  font-weight: 500;
+  font-weight: 200;
 }
 
 #healthscore-dial-boxes-bot-option {
-  height: 35%;
+  background: var(--lgradient2-2);
+  height: 30%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 
-  border-top: solid white 1px; 
-  border-bottom: solid white 1px; 
+  /* border-top: solid white 1px; 
+  border-bottom: solid white 1px;  */
+  border-radius: 20px;
   box-sizing: border-box;
+  /* border: solid white 1px;  */
 }
 
 #healthscore-dial-boxes-bot-1 {
@@ -4216,8 +4411,8 @@ svg {
   width: 100%;
   padding: 0 5% 0 5%;
 
-  font-size: calc(1rem * 15/14);
-  font-weight: 800;
+  font-size: calc(1rem * 14/14);
+  font-weight: 200;
   user-select: none;
   display: flex;
 
@@ -4226,19 +4421,21 @@ svg {
 }
 
 #healthscore-dial-boxes-bot-2 {
-  font-size: calc(1rem * 12.5/14);
+  /* border: solid white 1px;  */
+  font-size: calc(1rem * 12/14);
   user-select: none;
   color: white;
   height: 60%;
   width: 100%;
   display: flex;
-  align-items: start;
+  align-items: center;
   text-align: left;
   padding: 0 5% 0 5%;
   box-sizing: border-box;
 }
 
 #healthscore-dial-boxes-plaque-threshold-box {
+  background: var(--lgradient2-2);
   position: relative;
   user-select: none;
 
@@ -4249,7 +4446,31 @@ svg {
   flex-direction: column;
   overflow: hidden;
   align-items: center;
+  border-radius: 20px;
   box-sizing: border-box;
+  /* border: solid white 1px;  */
+}
+
+#full-healthscore-dial-boxes-gif-wrapper {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.0625);
+  height: 90%;
+  /* margin-top: 5%; */
+  /* margin-bottom: 5%; */
+  aspect-ratio: 1/1 !important;
+  border: solid var(--klotho-offwhite) 1px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#full-healthscore-dial-boxes-gif-wrapper video,
+#full-healthscore-dial-boxes-gif-wrapper img {
+  transform: translateX(10%) translateY(2%);
+  width: 65%;
 }
 
 #healthscore-future-plaque-gauge-title {
@@ -4258,7 +4479,7 @@ svg {
   height: 20%;
   color: white;
   font-size: calc(1rem * 15/14);
-  font-weight: 500; 
+  font-weight: 200; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4266,6 +4487,8 @@ svg {
 }
 
 #healthscore-future-plaque-gauge-wrapper {
+  position: absolute;
+  opacity: 0;
   height: 100%;
   width: 100%;
   display: flex;
@@ -4308,22 +4531,39 @@ svg {
   font-size: calc(1rem * 20/14);
 }
 
+#healthscore-dial-boxes-current-levels {
+  position: absolute;
+  opacity: 0;
+}
+
+#healthscore-dial-boxes-bot-option {
+  height: 47.5%;
+}
+
+#healthscore-dial-boxes-plaque-threshold-box {
+  height: 50%;
+}
+
+#healthscore-dial-boxes-plaque-threshold-box div{
+  height: 75%;
+}
+
 .healthscore-dial-boxes-col2 {
+  background: var(--lgradient3);
   z-index: 1;
-  height: 100%;
-  width: 40%;
+  height: 87.5%;
+  width: 37.5%;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  border-left: solid white 0.5px;
-  border-right: solid white 0.5px;
+  border-radius: 20px;
   box-sizing: border-box;
 }
 
 #healthscore-dial-boxes-col2-row1 {
   height: 15%;
   width: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -4333,72 +4573,9 @@ svg {
   /* border: solid red 1px; */
 }
 
-#healthscore-dial-boxes-box-page-title {
-  height: 50%;
-  width: 100%;
-  display: flex;
-
-  justify-content: center;
-
-  box-sizing: border-box;
-}
-
-#healthscore-dial-boxes-box-page-title-1 {
-  height: 100%;
-  width: 90%;
-  font-size: calc(1rem * 25/14);
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  color: white;
-  box-sizing: border-box;
-}
-
-#healthscore-dial-boxes-box-page-title-2 {
-  width: 100%;
-  font-size: calc(1rem * 15/14);
-  font-weight: 400;
-  align-items: center;
-  text-align: center;
-  color: white;
-  display: none;
-}
-
-#healthscore-dial-boxes-box-page-explanation {
-  height: 50%;
-  width: 100%;
-
-  padding-left: 2.0%;
-  padding-right: 2.0%;
-
-  font-size: calc(1rem * 12/14);
-  /* align-items: start; */
-  text-align: center;
-  /* display: flex;
-  justify-content: start;
-  flex-direction: column; */
-
-  display: block;
-
-  color: white; 
-  white-space: nowrap;
-
-  box-sizing: border-box;
-  /* transition: all 0.5s ease; */
-  
-  /* border: solid red 1px; */
-}
-
-#healthscore-dial-boxes-box-page-explanation em {
-  font-size: calc(1rem * 10.5/14);
-}
-
 #healthscore-dial-boxes-col2-row2 {
   position: relative; 
-  height: 45%;
+  height: 55%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -4448,7 +4625,7 @@ svg {
   position: absolute;
   color: white;
   font-size: calc(1rem * 20/14);
-  font-weight: 400;
+  font-weight: 200;
   top: 100%;
 }
 
@@ -4481,8 +4658,8 @@ svg {
 }
 
 #healthscore-dial-label:hover {
-  pointer-events: auto;
-  cursor: grab !important;
+  /* pointer-events: auto; */
+  cursor: grab;
 }
 
 #healthscore-dial-label {
@@ -4497,7 +4674,7 @@ svg {
   word-wrap: break-word;
   border-radius: 50%;
   box-sizing: border-box;
-  cursor: grab !important;
+  cursor: grab;
 }
 
 #healthscore-dial-label-skin {
@@ -4521,7 +4698,7 @@ svg {
   position: absolute;
   color: transparent; 
   font-size: calc(1rem * 37.5/14);
-  font-weight: 400;
+  font-weight: 200;
   font-family: sans-serif;
   z-index: 2;
 }
@@ -4530,13 +4707,13 @@ svg {
   position: absolute;
   color: white; 
   font-size: calc(1rem * 50/14);
-  font-weight: 400;
+  font-weight: 200;
   font-family: sans-serif;
   z-index: 2;
 }
 
 #healthscore-dial-boxes-col2-row3 {
-  height: 40%;
+  height: 45%;
   width: 100%;
   color: white;
 
@@ -4581,8 +4758,8 @@ svg {
 
 #healthscore-progress-tick {
   position: absolute;
-  width: 2px;
-  background-color: var(--accentblue);
+  width: 1px;
+  background-color: white;/*var(--accentblue);*/
   top: 0;
   bottom: 0;
   right: 0;
@@ -4596,14 +4773,14 @@ svg {
   height: 100%;
   width: 100%;
 
-  background: 
-    url('../media/progress-bar.png');
+  background-color: var(--klotho-accent); 
+    /* url('../media/progress-bar.png'); */
   
-  background-size: 
-    110%;
+  /* background-size:  */
+    /* 110%; */
 
-  background-blend-mode: screen;
-  background-position: center;
+  /* background-blend-mode: screen; */
+  /* background-position: center; */
 
   clip-path: inset(0 0% 0 0);
 
@@ -4651,7 +4828,7 @@ svg {
 
 #healthscore-dial-boxes-plaque-threshold-progress-value span {
   width: 100%;
-  font-weight: 400;
+  font-weight: 200;
   font-size: calc(1rem * 20/14);
   box-sizing: border-box;
 }
@@ -4682,14 +4859,19 @@ svg {
   /* padding-bottom: 1%; */
   /* margin-top: 3%; */
   display: flex;
-  flex-direction: row;
+  flex-flow: row;
   justify-content: center;
   align-items: center;
+  text-align: center;
   opacity: 0;
+
+  /* padding-left: 1.5rem; */
 
   border-radius: 10px;
   box-sizing: border-box;
   transition: opacity 0.5s ease;
+
+  /* border: solid red 1px; */
 
   /* opacity: 1 !important;
   visibility: visible !important; */
@@ -4704,12 +4886,12 @@ svg {
   object-fit: cover;
 
   border-radius: inherit; 
-  background: 
-    radial-gradient(
-      #57b4ff 25%,
-      #0f9aff 75%,
-      #005fff 100%
-    );
+  /* background:  */
+    /* radial-gradient( */
+      /* #57b4ff 25%, */
+      /* #0f9aff 75%, */
+      /* #005fff 100% */
+    /* ); */
 
   opacity: 0.75;
   z-index: 0;
@@ -4721,27 +4903,29 @@ svg {
 }
 
 #healthscore-dial-boxes-plaque-threshold-personalized-guidance span {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 #healthscore-dial-boxes-plaque-threshold-personalized-guidance span:nth-of-type(1) {
-  font-size: calc(1rem * 18/14);
+  font-size: calc(1rem * 16/14);
 }
 
 .healthscore-dial-boxes-col3 {
-  height: 100%;
+  height: 87.5%;
   width: 30%;
   display: inline-flex;
-  flex-flow: wrap;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  border-left: solid white 0.5px; 
+
+  /* border-left: solid white 0.5px;  */
+  gap: 0.5rem;
   box-sizing: border-box;
   transition: all 0.5s ease;
 }
 
 .healthscore-dial-boxes-graph-box {
+  background: var(--lgradient3);
   position: relative;
   /* height: 60%; */
   flex: 3;
@@ -4753,10 +4937,11 @@ svg {
 
   user-select: none;
 
-  border-style: solid;
-  border-color: white;
-  border-width: 0 0 0.5px 0; 
+  /* border-style: solid; */
+  /* border-color: white; */
+  /* border-width: 0 0 0.5px 0;  */
   
+  border-radius: 20px;
   box-sizing: border-box;
   transition: all 0.5s ease;
 }
@@ -4774,7 +4959,7 @@ svg {
   align-items: center;
 
   font-size: calc(1rem * 20/14);
-  font-weight: 400;
+  font-weight: 200;
   box-sizing: border-box;  
   transition: all 0.125s ease;
 
@@ -4785,7 +4970,7 @@ svg {
   color: white;
   height: 3.5%; 
   font-size: calc(1rem * 13.5/14);
-  font-weight: 600;
+  font-weight: 200;
   display: flex;
   align-items: center;
   text-align: center;
@@ -4795,7 +4980,7 @@ svg {
 }
 
 #healthscore-dial-boxes-risk-transition-box {
-  position:absolute;
+  position: absolute;
   color: white;
   height: 16.5%;
 
@@ -4834,7 +5019,7 @@ svg {
 #healthscore-dial-boxes-risk-before-treatment-value {
   color: white;
   font-size: calc(1rem * 24/14);
-  font-weight: 300;
+  font-weight: 200;
 
   justify-content: left;
   vertical-align: middle;
@@ -4849,7 +5034,7 @@ svg {
 #healthscore-dial-boxes-risk-after-treatment-value {
   color: white;
   font-size: calc(1rem * 24/14);
-  font-weight: 300;
+  font-weight: 200;
 
   justify-content: right;
   vertical-align: middle;
@@ -4863,7 +5048,7 @@ svg {
 
 #healthscore-dial-boxes-risk-reduction-value {
   font-size: calc(1rem * 17/14);
-  font-weight: 300;
+  font-weight: 200;
   height: calc(100% * 1/3);
   width: 100%;
   text-align: center;
@@ -4900,6 +5085,7 @@ svg {
 }
 
 .healthscore-dial-boxes-healthy-years-box {
+  background: var(--lgradient1);
   position: relative;
   /* height: 44%; */
   flex: 1;
@@ -4911,10 +5097,11 @@ svg {
 
   flex-direction: column;
 
-  border-style: solid;
-  border-color: white;
-  border-width: 0.5px 0 0.5px 0; 
+  /* border-style: solid; */
+  /* border-color: white; */
+  /* border-width: 0.5px 0 0.5px 0;  */
   
+  border-radius: 20px;
   box-sizing: border-box;
   user-select: none;
 }
@@ -4924,7 +5111,7 @@ svg {
   height: 30%;
   width: 95%;
   font-size: calc(1rem * 15/14);
-  font-weight: 400;
+  font-weight: 200;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4935,18 +5122,18 @@ svg {
 
 #healthscore-dial-boxes-healthy-years {
   /* border: solid white 2.5px; */
-  background: 
-    radial-gradient(
-      #57b4ff 15%, /*25%,*/
-      #0f9aff 45%, /*75%,*/
-      #005fff 80% /*100%*/
-    );
+  /* background:  */
+    /* radial-gradient( */
+      /* #57b4ff 15%, 25%, */
+      /* #0f9aff 45%, 75%, */
+      /* #005fff 80% 100% */
+    /* ); */
   /* backdrop-filter: blur(5px);  */
   color: white;
   height: 62.5%;
-  aspect-ratio: 1 / 1;
-  font-size: calc(1rem * 32/14);
-  font-weight: 400;
+  /* aspect-ratio: 1 / 1; */
+  font-size: calc(1rem * 40/14);
+  font-weight: 200;
   display: flex;
   align-items: center;
   text-align: center;
@@ -4959,6 +5146,7 @@ svg {
 }
 
 .healthscore-dial-boxes-bar-box {
+  background: var(--lgradient3);
   position: relative;
   /* height: 40%; */
   flex: 2;
@@ -4968,10 +5156,11 @@ svg {
   vertical-align: middle;
   align-items: flex-start;
 
-  border-style: solid;
-  border-color: white;
-  border-width: 0.5px 0 0 0; 
+  /* border-style: solid; */
+  /* border-color: white; */
+  /* border-width: 0.5px 0 0 0;  */
   
+  border-radius: 20px;
   box-sizing: border-box;
 }
 
@@ -4980,7 +5169,7 @@ svg {
   height: 15%;
   width: 95%;
   font-size: calc(1rem * 15/14);
-  font-weight: 400;
+  font-weight: 200;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -5003,6 +5192,18 @@ svg {
   right: 2.5%;
   box-sizing: border-box;
 }
+
+.healthscore-dial-boxes-col1 {
+  width: 30%; 
+}
+
+.healthscore-dial-boxes-col2 {
+  width: 30%; 
+}
+
+.healthscore-dial-boxes-col3 {
+  width: 37.5%; 
+}
 /* --#-- OUTER HEALTH SCORE DIAL BOX --#-- */
 
 /* --#---- OUTER BENEFIT DIAL BOX ----#-- */
@@ -5017,37 +5218,99 @@ svg {
 }
 
 .benefit-dial-boxes-box {
-  background-color: rgba(255, 255, 255, 0.125);
-  /* backdrop-filter: blur(5px);  */
   position: absolute;
-  height: 88.5vh;
+  
+  height: 87%;
+  width: 85%;
 
-  width: 76%;
-  margin-top: 0.75%;
-  margin-bottom: 0.75%;
+  /* margin-top: 0.5%; */
+  margin-bottom: 0.5%;
 
   display: inline-flex;
   flex-flow: wrap;
   justify-content: space-between;
   overflow: hidden;
-
-  border: solid white 1px;
-  border-radius: 10px;
+  /* border: solid white 1px; */
+  /* border-radius: 20px; */
   box-sizing: border-box;
 }
 
+#benefit-dial-boxes-box-page-title {
+  /* background-color: rgba(255, 255, 255, 0.125); */
+  /* backdrop-filter: blur(5px);  */
+  height: 12.5%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  /* border-bottom: solid white 1px; */
+  box-sizing: border-box;
+}
+
+#benefit-dial-boxes-box-page-title-1 {
+  /* width: 100%; */
+  font-size: calc(1rem * 24/14);
+  font-weight: 200;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+#benefit-dial-boxes-box-page-title-2 {
+  /* width: 100%; */
+  font-size: calc(1rem * 14/14);
+  font-weight: 200;
+  align-items: center;
+  text-align: center;
+  color: var(--klotho-offwhite);
+  display: none;
+}
+
+#benefit-dial-boxes-box-page-explanation {
+  /* height: 50%; */
+  /* width: 100%; */
+
+  /* padding-left: 2.0%; */
+  /* padding-right: 2.0%; */
+
+  font-size: calc(1rem * 12/14);
+  /* align-items: start; */
+  text-align: left;
+  /* display: flex;
+  justify-content: start;
+  flex-direction: column; */
+
+  display: block;
+
+  color: var(--klotho-offwhite); 
+  /* white-space: nowrap; */
+
+  box-sizing: border-box;
+  /* transition: all 0.5s ease; */
+  
+  /* border: solid red 1px; */
+}
+
+#benefit-dial-boxes-box-page-explanation em {
+  font-size: calc(1rem * 10.5/14);
+}
+
 .benefit-dial-boxes-col1 {
-  height: 100%;
+  height: 87.5%;
   width: 30%;
   display: inline-flex;
-  flex-flow: wrap;
+  flex-flow: column;
+  justify-content: space-between;
 
-  border-right: solid white 0.5px; 
+  /* border: solid white 0.5px;  */
   box-sizing: border-box;
 }
 
 #benefit-dial-boxes-current-levels {
-  height: 30%;
+  background: var(--lgradient1);
+  height: 32.5%;
   width: 100%;
   box-sizing: border-box;
 
@@ -5056,6 +5319,7 @@ svg {
   justify-content: center;
   flex-direction: row;
   user-select: none;
+  border-radius: 20px;
   box-sizing: border-box;
 }
 
@@ -5100,7 +5364,7 @@ svg {
   text-align: center;
   justify-content: space-around;
   font-size: calc(1rem * 30/14);
-  font-weight: 500;
+  font-weight: 200;
 }
 
 #benefit-current-levels-list-weight,
@@ -5126,7 +5390,7 @@ svg {
   text-align: center;
   justify-content: space-around;
   font-size: calc(1rem * 20/14);
-  font-weight: 500;
+  font-weight: 200;
 }
 
 #benefit-current-levels-list-curldl,
@@ -5152,20 +5416,23 @@ svg {
   text-align: center;
   justify-content: space-around;
   font-size: calc(1rem * 20/14);
-  font-weight: 500;
+  font-weight: 200;
 }
 
 #benefit-dial-boxes-bot-option {
-  height: 35%;
+  background: var(--lgradient2-2);
+  height: 30%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 
-  border-top: solid white 1px; 
-  border-bottom: solid white 1px; 
+  /* border-top: solid white 1px; 
+  border-bottom: solid white 1px;  */
+  border-radius: 20px;
   box-sizing: border-box;
+  /* border: solid white 1px;  */
 }
 
 #benefit-dial-boxes-bot-1 {
@@ -5175,8 +5442,8 @@ svg {
   width: 100%;
   padding: 0 5% 0 5%;
 
-  font-size: calc(1rem * 15/14);
-  font-weight: 800;
+  font-size: calc(1rem * 14/14);
+  font-weight: 200;
   user-select: none;
   display: flex;
 
@@ -5191,19 +5458,21 @@ svg {
 }
 
 #benefit-dial-boxes-bot-2 {
-  font-size: calc(1rem * 12.5/14);
+  /* border: solid white 1px;  */
+  font-size: calc(1rem * 12/14);
   user-select: none;
   color: white;
   height: 60%;
   width: 100%;
   display: flex;
-  align-items: start;
+  align-items: center;
   text-align: left;
   padding: 0 5% 0 5%;
   box-sizing: border-box;
 }
 
 #benefit-dial-boxes-plaque-threshold-box {
+  background: var(--lgradient2-2);
   position: relative;
   user-select: none;
 
@@ -5214,7 +5483,31 @@ svg {
   flex-direction: column;
   overflow: hidden;
   align-items: center;
+  border-radius: 20px;
   box-sizing: border-box;
+  /* border: solid white 1px;  */
+}
+
+#full-benefit-dial-boxes-gif-wrapper {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.0625);
+  height: 90%;
+  /* margin-top: 5%; */
+  /* margin-bottom: 5%; */
+  aspect-ratio: 1/1 !important;
+  border: solid var(--klotho-offwhite) 1px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#full-benefit-dial-boxes-gif-wrapper video,
+#full-benefit-dial-boxes-gif-wrapper img {
+  transform: translateX(10%) translateY(2%);
+  width: 65%;
 }
 
 #benefit-future-plaque-gauge-title {
@@ -5223,7 +5516,7 @@ svg {
   height: 20%;
   color: white;
   font-size: calc(1rem * 15/14);
-  font-weight: 500; 
+  font-weight: 200; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -5231,6 +5524,8 @@ svg {
 }
 
 #benefit-future-plaque-gauge-wrapper {
+  position: absolute;
+  opacity: 0;
   height: 100%;
   width: 100%;
   display: flex;
@@ -5274,22 +5569,39 @@ svg {
   font-size: calc(1rem * 20/14);
 }
 
+#benefit-dial-boxes-current-levels {
+  position: absolute;
+  opacity: 0;
+}
+
+#benefit-dial-boxes-bot-option {
+  height: 47.5%;
+}
+
+#benefit-dial-boxes-plaque-threshold-box {
+  height: 50%;
+}
+
+#benefit-dial-boxes-plaque-threshold-box div{
+  height: 75%;
+}
+
 .benefit-dial-boxes-col2 {
+  background: var(--lgradient3);
   z-index: 1;
-  height: 100%;
-  width: 40%;
+  height: 87.5%;
+  width: 37.5%;
   display: inline-flex;
   flex-direction: column;
-  justify-content: start;
-  border-left: solid white 0.5px;
-  border-right: solid white 0.5px;
+  justify-content: center;
+  border-radius: 20px;
   box-sizing: border-box;
 }
 
 #benefit-dial-boxes-col2-row1 {
-  height: 18%;
+  height: 15%;
   width: 100%;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -5299,72 +5611,9 @@ svg {
   /* border: solid red 1px; */
 }
 
-#benefit-dial-boxes-box-page-title {
-  height: 50%;
-  width: 100%;
-  display: flex;
-
-  justify-content: center;
-
-  box-sizing: border-box;
-}
-
-#benefit-dial-boxes-box-page-title-1 {
-  height: 100%;
-  width: 90%;
-  font-size: calc(1rem * 25/14);
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  color: white;
-  box-sizing: border-box;
-}
-
-#benefit-dial-boxes-box-page-title-2 {
-  width: 100%;
-  font-size: calc(1rem * 15/14);
-  font-weight: 400;
-  align-items: center;
-  text-align: center;
-  color: white;
-  display: none;
-}
-
-#benefit-dial-boxes-box-page-explanation {
-  height: 50%;
-  width: 100%;
-
-  padding-left: 2.0%;
-  padding-right: 2.0%;
-
-  font-size: calc(1rem * 12/14);
-  /* align-items: start; */
-  text-align: center;
-  /* display: flex;
-  justify-content: start;
-  flex-direction: column; */
-
-  display: block;
-
-  color: white; 
-  white-space: nowrap;
-
-  box-sizing: border-box;
-  /* transition: all 0.5s ease; */
-  
-  /* border: solid red 1px; */
-}
-
-#benefit-dial-boxes-box-page-explanation em {
-  font-size: calc(1rem * 10.5/14);
-}
-
 #benefit-dial-boxes-col2-row2 {
   position: relative; 
-  height: 37%;
+  height: 45%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -5447,7 +5696,7 @@ svg {
 }
 
 #benefit-dial-label:hover {
-  cursor: grab !important;
+  cursor: grab;
 }
 
 #benefit-dial-label {
@@ -5457,12 +5706,12 @@ svg {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-family: monospace;
+  /* font-family: monospace; */
   white-space: pre-wrap;
   word-wrap: break-word;
   border-radius: 50%;
   box-sizing: border-box;
-  cursor: grab !important;
+  cursor: grab;
 }
 
 #benefit-dial-label-skin {
@@ -5487,7 +5736,7 @@ svg {
   position: absolute;
   color: transparent; 
   /* font-size: calc(1rem * 37.5/14); */
-  font-weight: 400;
+  font-weight: 200;
   font-family: sans-serif;
   z-index: 2;
 }
@@ -5496,7 +5745,7 @@ svg {
   position: absolute;
   color: white; 
   font-size: calc(1rem * 25/14);
-  font-weight: 400;
+  font-weight: 200;
   font-family: sans-serif;
   z-index: 2;
 }
@@ -5535,6 +5784,7 @@ svg {
   text-align: center;
   box-sizing: border-box;
   user-select: none;
+  /* border: solid red 1px; */
 }
 
 #benefit-dial-bar {
@@ -5542,7 +5792,7 @@ svg {
   height: 25%;
   width: 100%;
   font-size: calc(1rem * 17/14);
-  font-weight: 400;
+  font-weight: 200;
   margin-bottom: 20px;
 }
 
@@ -5565,7 +5815,7 @@ svg {
 
 #benefit-dial-boxes-risk-transition-box span {
   font-size: calc(1rem * 14/14);
-  font-weight: 400;
+  font-weight: 200;
 
   line-height: 1;           /* reset to avoid weird baselines */
   flex: 0 0 auto;
@@ -5574,7 +5824,7 @@ svg {
 #benefit-dial-boxes-risk-before-treatment-value {
   color: white;
   font-size: calc(1rem * 18/14);
-  font-weight: 400;
+  font-weight: 200;
 
   justify-content: left;
   vertical-align: middle;
@@ -5589,7 +5839,7 @@ svg {
 #benefit-dial-boxes-risk-after-treatment-value {
   color: white;
   font-size: calc(1rem * 18/14);
-  font-weight: 400;
+  font-weight: 200;
 
   justify-content: center;
   vertical-align: middle;
@@ -5603,7 +5853,7 @@ svg {
 
 #benefit-dial-boxes-risk-reduction-value {
   font-size: calc(1rem * 17/14);
-  font-weight: 400;
+  font-weight: 200;
   height: calc(100% * 1/3);
   width: 100%;
   text-align: center;
@@ -5614,7 +5864,7 @@ svg {
 }
 
 #benefit-dial-boxes-col2-row3 {
-  height: 40%;
+  height: 50%;
   width: 100%;
   color: white;
 
@@ -5625,6 +5875,7 @@ svg {
   text-align: center;
   box-sizing: border-box;
   user-select: none;
+  /* border: solid red 1px; */
 }
 
 #benefit-dial-boxes-plaque-threshold-progress-bar-wrapper {
@@ -5659,8 +5910,8 @@ svg {
 
 #benefit-progress-tick {
   position: absolute;
-  width: 2px;
-  background-color: var(--accentblue);
+  width: 1px;
+  background-color: white;/*var(--accentblue);*/
   top: 0;
   bottom: 0;
   right: 0;
@@ -5674,14 +5925,14 @@ svg {
   height: 100%;
   width: 100%;
 
-  background: 
-    url('../media/progress-bar.png');
+  background-color: var(--klotho-accent); 
+    /* url('../media/progress-bar.png'); */
   
-  background-size: 
-    110%;
+  /* background-size:  */
+    /* 110%; */
 
-  background-blend-mode: screen;
-  background-position: center;
+  /* background-blend-mode: screen; */
+  /* background-position: center; */
 
   clip-path: inset(0 0% 0 0);
 
@@ -5729,7 +5980,7 @@ svg {
 
 #benefit-dial-boxes-plaque-threshold-progress-value span {
   width: 100%;
-  font-weight: 400;
+  font-weight: 200;
   font-size: calc(1rem * 20/14);
   box-sizing: border-box;
 }
@@ -5782,12 +6033,12 @@ svg {
   object-fit: cover;
 
   border-radius: inherit; 
-  background: 
-    radial-gradient(
-      #57b4ff 25%,
-      #0f9aff 75%,
-      #005fff 100%
-    );
+  /* background:  */
+    /* radial-gradient( */
+      /* #57b4ff 25%, */
+      /* #0f9aff 75%, */
+      /* #005fff 100% */
+    /* ); */
 
   opacity: 0.75;
   z-index: 0;
@@ -5799,27 +6050,29 @@ svg {
 }
 
 #benefit-dial-boxes-plaque-threshold-personalized-guidance span {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 #benefit-dial-boxes-plaque-threshold-personalized-guidance span:nth-of-type(1) {
-  font-size: calc(1rem * 18/14);
+  font-size: calc(1rem * 16/14);
 }
 
 .benefit-dial-boxes-col3 {
-  height: 100%;
+  height: 87.5%;
   width: 30%;
   display: inline-flex;
-  flex-flow: wrap;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  border-left: solid white 0.5px; 
+
+  /* border-left: solid white 0.5px;  */
+  gap: 0.5rem;
   box-sizing: border-box;
   transition: all 0.5s ease;
 }
 
 .benefit-dial-boxes-graph-box {
+  background: var(--lgradient3);
   position: relative;
   /* height: 60%; */
   flex: 3;
@@ -5831,10 +6084,11 @@ svg {
 
   user-select: none;
 
-  border-style: solid;
+  /* border-style: solid;
   border-color: white;
-  border-width: 0 0 0.5px 0; 
+  border-width: 0 0 0.5px 0;  */
   
+  border-radius: 20px;
   box-sizing: border-box;
   transition: all 0.5s ease;
 }
@@ -5852,7 +6106,7 @@ svg {
   align-items: center;
 
   font-size: calc(1rem * 20/14);
-  font-weight: 400;
+  font-weight: 200;
   box-sizing: border-box;  
   transition: all 0.125s ease;
 
@@ -5869,7 +6123,7 @@ svg {
   align-items: center;
 
   font-size: calc(1rem * 13.5/14);
-  font-weight: 600;
+  font-weight: 200;
   box-sizing: border-box;  
   transition: all 0.125s ease;
 
@@ -5882,7 +6136,7 @@ svg {
   /* height: 12.5%;  */
   height: 10%; 
   font-size: calc(1rem * 15/14);
-  font-weight: 400;
+  font-weight: 200;
   display: flex;
   align-items: center;
   text-align: center;
@@ -5896,7 +6150,7 @@ svg {
 
 #benefit-dial-boxes-graph-box-risk-transition-box span {
   font-size: calc(1rem * 14/14);
-  font-weight: 400;
+  font-weight: 200;
 
   line-height: 1;           /* reset to avoid weird baselines */
   flex: 0 0 auto;
@@ -5905,7 +6159,7 @@ svg {
 #benefit-dial-boxes-graph-box-risk-before-treatment-value {
   color: white;
   font-size: calc(1rem * 18/14);
-  font-weight: 400;
+  font-weight: 200;
 
   justify-content: left;
   vertical-align: middle;
@@ -5920,7 +6174,7 @@ svg {
 #benefit-dial-boxes-graph-box-risk-after-treatment-value {
   color: white;
   font-size: calc(1rem * 18/14);
-  font-weight: 400;
+  font-weight: 200;
 
   justify-content: right;
   vertical-align: middle;
@@ -5934,7 +6188,7 @@ svg {
 
 #benefit-dial-boxes-graph-box-risk-reduction-value {
   font-size: calc(1rem * 17/14);
-  font-weight: 400;
+  font-weight: 200;
   height: calc(100% * 1/3);
   width: 100%;
   text-align: center;
@@ -5974,6 +6228,7 @@ svg {
 }
 
 .benefit-dial-boxes-healthy-years-box {
+  background: var(--lgradient1);
   position: relative;
   /* height: 44%; */
   flex: 1;
@@ -5985,10 +6240,11 @@ svg {
 
   flex-direction: column;
 
-  border-style: solid;
+  /* border-style: solid;
   border-color: white;
-  border-width: 0.5px 0 0.5px 0; 
+  border-width: 0.5px 0 0.5px 0;  */
   
+  border-radius: 20px;
   box-sizing: border-box;
   user-select: none;
 }
@@ -5998,7 +6254,7 @@ svg {
   height: 30%;
   width: 95%;
   font-size: calc(1rem * 15/14);
-  font-weight: 400;
+  font-weight: 200;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6009,18 +6265,18 @@ svg {
 
 #benefit-dial-boxes-healthy-years {
   /* border: solid white 2.5px; */
-  background: 
-    radial-gradient(
-      #57b4ff 15%, /*25%,*/
-      #0f9aff 45%, /*75%,*/
-      #005fff 80% /*100%*/
-    );
+  /* background:  */
+    /* radial-gradient( */
+      /* #57b4ff 15%, 25%, */
+      /* #0f9aff 45%, 75%, */
+      /* #005fff 80% 100% */
+    /* ); */
   /* backdrop-filter: blur(5px);  */
   color: white;
   height: 62.5%;
-  aspect-ratio: 1 / 1;
-  font-size: calc(1rem * 32/14);
-  font-weight: 400;
+  /* aspect-ratio: 1 / 1; */
+  font-size: calc(1rem * 40/14);
+  font-weight: 200;
   display: flex;
   align-items: center;
   text-align: center;
@@ -6033,6 +6289,7 @@ svg {
 }
 
 .benefit-dial-boxes-bar-box {
+  background: var(--lgradient3);
   position: relative;
   /* height: 40%; */
   flex: 2;
@@ -6042,10 +6299,11 @@ svg {
   vertical-align: middle;
   align-items: flex-start;
 
-  border-style: solid;
+  /* border-style: solid;
   border-color: white;
-  border-width: 0.5px 0 0 0; 
+  border-width: 0.5px 0 0 0;  */
   
+  border-radius: 20px;
   box-sizing: border-box;
 }
 
@@ -6054,7 +6312,7 @@ svg {
   height: 15%;
   width: 95%;
   font-size: calc(1rem * 15/14);
-  font-weight: 400;
+  font-weight: 200;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6117,6 +6375,18 @@ svg {
   left: 2.5%;
   right: 2.5%;
   box-sizing: border-box;
+}
+
+.benefit-dial-boxes-col1 {
+  width: 30%; 
+}
+
+.benefit-dial-boxes-col2 {
+  width: 30%; 
+}
+
+.benefit-dial-boxes-col3 {
+  width: 37.5%; 
 }
 /* --#---- OUTER BENEFIT DIAL BOX ----#-- */
 
@@ -6437,7 +6707,7 @@ svg {
 }
 
 .landing-textfield-box-input.outofbounds {
-  border: solid red 1px;
+  /* border: solid red 1px; */
   background-color: rgba(255, 0, 0, 0.125)
 }
 
@@ -6454,7 +6724,7 @@ svg {
   line-height: 100%;
   /* width: 75%; */
   font-size: calc(1rem * 18/14);
-  font-weight: 400 !important;
+  font-weight: 200 !important;
 
   padding-top: 1% !important;
   padding-left: 5% !important;
@@ -6880,7 +7150,7 @@ svg {
 .inputs-col-break 
 {
   color: white;
-  font-weight: 400;
+  font-weight: 200;
   height: 4%;
   width: 100%;
   display: flex;
@@ -7044,7 +7314,7 @@ svg {
   height: 100%;
   line-height: 100%;
   font-size: calc(1rem * 14/14);
-  font-weight: 400 !important;
+  font-weight: 200 !important;
 
   padding-top: 1% !important;
   padding-left: 5% !important;
@@ -7059,7 +7329,7 @@ svg {
 }
 
 .textfield-box-input.outofbounds {
-  border: solid red 1px;
+  /* border: solid red 1px; */
   background-color: rgba(255, 0, 0, 0.125)
 }
 
@@ -7090,7 +7360,7 @@ svg {
 
   height: 100%;
   width: 100%;
-  font-weight: 400;
+  font-weight: 200;
   user-select: none;
 
   display: flex;
@@ -7106,7 +7376,7 @@ svg {
 #LDL-items .label-box p,
 #SBP-items .label-box p
 {
-  font-weight: 800;
+  font-weight: 400;
   font-size: calc(1rem * 13/14 * 15/13);
 }
 
@@ -7512,7 +7782,7 @@ input[type=text] {
   width: 100vw;
   box-sizing: border-box;
   display: inline-flex;
-  visibility: hidden;
+  /* visibility: hidden; */
   /* display: none; */
 }
 
@@ -7630,7 +7900,7 @@ input[type=text] {
 #WIP-box {
   background-color: white;
   position: absolute;
-  z-index: 400;
+  z-index: 4;
   top: 0;
   bottom: 0;
   left: 0;
@@ -7642,12 +7912,11 @@ input[type=text] {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* visibility: hidden; */
-  /* display:none; */
+  visibility: hidden;
+  display:none;
 }
 
 #WIP-text-1 {
-  z-index: 400;
   color: var(--logintext);
   font-size: calc(1rem * 30/14);
 }
@@ -7660,25 +7929,6 @@ input[type=text] {
 #WIP-text-3 {
   color: var(--logintext);
   font-size: calc(1rem * 15/14);
-}
-
-#wipbranding-box {
-  position: absolute;
-  top: 0;
-  z-index: 399;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#wipbranding {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
-  width: auto;
 }
 
 .debug-box {
@@ -7766,4 +8016,5 @@ input[type=text] {
 
 /* * {
   visibility: visible !important;
+  opacity: 1 !important;
 } */
