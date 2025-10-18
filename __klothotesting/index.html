@@ -210,10 +210,10 @@
                 <div class="navbar-button-wrapper">
                   <button class="navbar-button" type="button" id="healthscore-dial-boxes-btn"> 
                     <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      Outer circle (gray background)
+                      <!-- Outer circle (gray background) -->
                       <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" opacity="0.25"/>
                       
-                      Progress arc (colored)
+                      <!-- Progress arc (colored) -->
                       <path d="M8 1 
                               A7 7 0 0 1 15 8" 
                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -221,7 +221,24 @@
                     Health Score Dial 
                   </button>
                 </div>
+
               </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="navbar-button-wrapper">
+              <button class="navbar-button" type="button" id="bot-btn"> 
+                <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                  <circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="2" y1="8" x2="6" y2="8" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="10" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="8" y1="10" x2="8" y2="14" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                Assistant Bot
+              </button>
             </div>
             
           </div>
@@ -988,13 +1005,114 @@
 
           <div id="lifetime-box-page-title">
             <div id="lifetime-box-page-title-1">Your Current Cardiovascular Health</div>
-            <div id="lifetime-box-page-title-2">Based on your current health trajectory</div>
+            <div id="lifetime-box-page-title-2">Based on your current health trajectory. Turn the dial below to see your cumulative lifetime risk of cardiovascular disease at any age.</div>
+          </div>
+          
+          <!-- <div id="lifetime-col-right">
+
+            <div id="lifetime-col-right-row-1">
+              <div class="lifetime-graph-box">
+                <div id="lifetime-Graph-tooltip">(You can see your risk at any age by holding the cursor over the line below)</div>
+                <div id="lifetime-Graph"></div>
+              </div>
+              <div id="lifetime-health-score-bar-box">
+                <div id="lifetime-health-score-bar"></div>                
+                <div id="lifetime-health-score-postamble">(Cardiovascular Health Scores are measured from 0-100.)</div>                
+              </div>  
+            </div>
+
+            <div id="lifetime-col-right-row-2">
+              <div class="lifetime-risk-box">
+                <div id="lifetime-risk">Cumulative Lifetime Risk of Heart Attack or Stroke</div>
+                <div id="lifetime-risk-value-box">
+                  <div id="lifetime-risk-value">00.0%</div>                
+                </div>  
+                <div id="lifetime-risk-postamble"></div>
+              </div>
+
+              <div class="lifetime-health-box">
+                <div id="lifetime-health-score-title">Cardiovascular Health Score</div>
+                <div id="lifetime-health-score-value-box">
+                  <div id="lifetime-health-score-value">00.0</div>
+                </div>
+                <div id="lifetime-health-score-value-postamble">Values can range between 1 and 1000</div>
+              </div>
+            </div>
+
+          </div> -->
+
+          <div class="lifetime-col2">
+            <div id="lifetime-col2-row1">
+              <span id="lifetime-dial-bar">Turn the dial to see your risk at any age.</span>
+              <div id="lifetime-matrix-l">
+                <img src="media/klotho/arrow-anticlock.png">
+              </div>
+
+              <div id="lifetime-dial-box">
+                  <img src="media/klotho/knob.png" id="lifetime-dial-image" alt="Dial"/>
+                  <div class="label" id="lifetime-dial-label">0</div>
+                  <div id="lifetime-dial-unit-label">years old</div>
+              </div>
+
+              <div id="lifetime-matrix-r"></div>
+            </div>
+
+            <div id="lifetime-col2-row2">
+
+              <div id="lifetime-health-score-bar-box">
+                <div id="lifetime-health-score-bar"></div>                
+                <div id="lifetime-health-score-postamble">(Cardiovascular Health Scores are measured from 0-100.)</div>                
+              </div>  
+
+              <div class="lifetime-health-box">
+                <div id="lifetime-health-score-title">Cardiovascular Health Score<div class="infocircle">i</div></div>
+                <div id="lifetime-health-score-value-box">
+                  <div id="lifetime-health-score-value">00.0</div>
+                </div>
+
+                <div id="lifetime-health-score-80">
+                  At age 80: <span>00.0</span>
+                </div>
+
+                <div id="lifetime-health-score-value-postamble">(Values can range between 1 and 1000)</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="lifetime-col1">
+
+            <div class="lifetime-graph-box">
+              <div class="Graph-above">Lifetime Risk of MI or Stroke</div>
+              <div id="lifetime-Graph-tooltip">(You can see your risk at any age by holding the cursor over the line below)</div>
+              <div id="lifetime-Graph"></div>
+            </div>
+
+            <div class="lifetime-risk-box">
+              <div id="lifetime-risk">Cumulative Lifetime Risk of Heart Attack or Stroke</div>
+              <div id="lifetime-risk-value-box">
+                <div id="lifetime-risk-value">00.0%</div>
+              </div>  
+
+              <div id="lifetime-risk-value-box-80">
+                At age 80: <span>00.0%</span>
+              </div>
+
+              <div id="lifetime-risk-postamble"></div>
+            </div>
+
           </div>
 
           <div class="lifetime-col0">
             <div id="lifetime-col0-plaque-box">
-              <p>Your Personal Plaque Threshold</p>
-              <p>See how rapidly your arterial wall plaque and injury are accumulating over time</p>
+              <div id="lifetime-col0-plaque-box-title">
+                <p>Your Personal Plaque Threshold</p>
+                <p>See how rapidly your arterial wall plaque and injury are accumulating over time</p>
+              </div>
+
+              <div class="lifetime-col0-plaque-box-w">
+              </div>
 
               <div id="lifetime-gif-wrapper">
                 <video id="lifetime-plaque-gif" preload="auto">
@@ -1002,6 +1120,9 @@
                   Your browser does not support WebM video.
                 </video>
                 <div id="lifetime-gif-wrapper-infotip">i</div>
+              </div>
+
+              <div class="lifetime-col0-plaque-box-w">
               </div>
 
               <div id="full-lifetime-gif-wrapper">
@@ -1032,44 +1153,7 @@
 
             </div>
           </div>
-          
-          <div class="lifetime-col1">
 
-            <div class="lifetime-graph-box">
-              <div id="lifetime-Graph-tooltip">(You can see your risk at any age by holding the cursor over the line below)</div>
-              <div id="lifetime-Graph"></div>
-            </div>
-
-            <div class="lifetime-risk-box">
-              <!-- <div class="lifetime-risk-score"> -->
-              <div id="lifetime-risk">Cumulative Lifetime Risk of Heart Attack or Stroke</div>
-              <div id="lifetime-risk-value-box">
-                <div id="lifetime-risk-value">00.0%</div>                
-              </div>  
-              <div id="lifetime-risk-postamble">
-                <!-- <em> -->
-                <!-- </em> -->
-              </div>
-            </div>
-
-          </div>
-
-          <div class="lifetime-col2">
-
-            <div id="lifetime-health-score-bar-box">
-              <div id="lifetime-health-score-bar"></div>                
-              <div id="lifetime-health-score-postamble">(Cardiovascular Health Scores are measured from 0-100.)</div>                
-            </div>  
-
-            <div class="lifetime-health-box">
-              <div id="lifetime-health-score-title">Cardiovascular Health Score</div>
-              <div id="lifetime-health-score-value-box">
-                <div id="lifetime-health-score-value">00.0</div>
-              </div>
-              <div id="lifetime-health-score-value-postamble">Values can range between 1 and 1000</div>
-            </div>
-
-          </div>
         </div>
       </div>
 
@@ -1363,24 +1447,176 @@
 
           <div id="treatment-box-page-title">
             <div id="treatment-box-page-title-1">Benefit from yearly siRNA to lower LDL and Blood Pressure</div>
-            <div id="treatment-box-page-title-2">Based on your current health trajectory and the age you start treatment</div>
+            <div id="treatment-box-page-title-2">Based on your current health trajectory and the age you start treatment. Turn the dial below to see your cumulative lifetime risk of cardiovascular disease at any age, with and without treatment.</div>
             <div id="treatment-age-options-wrapper">
               <div id="start-medication-later">Enter the age you wish to start treatment:</div>
               <input type="number" id="start-later-age-input">
               <div id="start-medication-later-1">
-                <!-- <em> -->
                   (you can compare the benefit of starting at different ages)
-                <!-- </em> -->
               </div>
             </div>
           </div>
 
+          <!-- <div id="treatment-col-right">
+
+            <div id="treatment-col-right-row-1">
+
+              <div class="treatment-graph-box">
+                <div id="treatment-Graph-tooltip">(You can see your risk with and without treatment at any age by holding the cursor over the line below)</div>
+                <div id="treatment-Graph"></div>
+              </div>
+
+              <div class="treatment-health-score-bar-box">
+                <div id="treatment-health-score-bar"></div>
+              </div>
+
+            </div>
+
+            <div id="treatment-col-right-row-2">
+
+              <div class="below-treatment-graph-box">
+                <div class="treatment-risks-box">
+                  <div id="treatment-risks-box-title">Reduced<br>Lifetime Risk</div>
+                  <div id="risk-transition-box">
+                    <div id="risk-before-treatment-value">00.0%</div>   
+                    <span>→</span>             
+                    <div id="risk-after-treatment-value">00.0%</div>                
+                  </div>
+
+                  <div id="treatment-proportional-risk-reduction-value"></div>
+                </div>
+              </div>
+
+              <div id="below-treatment-bar-box">
+                <div class="treatment-treatments-box">
+
+                  <div id="health-score-transition-title">Improved<br>Cardiovascular Health Score</div>
+
+                  <div id="health-score-transition-box">
+                    <div id="health-score-before-treatment-value">00.0</div>   
+                    <span>→</span>             
+                    <div id="health-score-after-treatment-value">00.0</div>                
+                  </div>
+
+                  <div class="healthy-years-gained-title"></div>
+                  <div id="healthy-years-Graph"></div>
+                </div>
+              </div>
+
+              <div id="healthy-years-wrapper">
+                <div id="healthy-years-value-title">Number of Healthy Life Years Gained</div>
+                <div id="healthy-years-value-wrapper">
+                  <div id="healthy-years-value">0</div>
+                </div>
+              </div>
+
+            </div>
+
+          </div> -->
+
+          <div class="treatment-col2">
+
+            <div id="treatment-col2-row1">
+              <span id="treatment-dial-bar">Turn the dial to see your risk at any age.</span>
+              <div id="treatment-matrix-l">
+                <img src="media/klotho/arrow-anticlock.png">
+              </div>
+
+              <div id="treatment-dial-box">
+                  <img src="media/klotho/knob.png" id="treatment-dial-image" alt="Dial"/>
+                  <div class="label" id="treatment-dial-label">0</div>
+                  <div id="treatment-dial-unit-label">years old</div>
+              </div>
+
+              <div id="treatment-matrix-r"></div>
+            </div>
+
+            <div id="treatment-col2-row2">
+
+              <div class="treatment-health-score-bar-box">
+                <div id="treatment-health-score-bar"></div>
+              </div>
+
+              <div id="below-treatment-bar-box">
+                <div class="treatment-treatments-box">
+
+                  <div id="health-score-transition-title">Improved Cardiovascular Health Score<div class="infocircle">i</div></div>
+
+                  <div id="health-score-transition-box">
+                    <div id="health-score-before-treatment-value">00.0</div>   
+                    <span>→</span>             
+                    <div id="health-score-after-treatment-value">00.0</div>                
+                  </div>
+
+                  <div id="treatment-health-score-80">
+                    At age 80: <span>00.0</span> → <span>00.0</span>
+                  </div>
+
+                  <div id="treatment-health-score-value-postamble">(Values can range between 1 and 1000)</div>
+
+                  <div class="healthy-years-gained-title"></div>
+
+                  <div id="healthy-years-Graph"></div>
+                </div>
+                
+                <!-- <div id="healthy-years-wrapper"> -->
+                  <!-- <div id="healthy-years-value-title">Number of Healthy Life Years Gained</div> -->
+                  <!-- <div id="healthy-years-value-wrapper"> -->
+                    <!-- <div id="healthy-years-value">0</div> -->
+                    <!-- <div id="healthy-years-value-postamble">Extra years free of Cardiovascular Disease</div> -->
+                  <!-- </div> -->
+                <!-- </div> -->
+
+              </div>
+            </div>
+          </div>
+
+          <div class="treatment-col1">
+
+            <div class="treatment-graph-box">
+              <div class="Graph-above">Lifetime Risk of MI or Stroke With and Without siRNA</div>
+              <div id="treatment-Graph-tooltip">(You can see your risk with and without treatment at any age by holding the cursor over the line below)</div>
+              <div id="treatment-Graph"></div>
+            </div>
+
+            <div class="below-treatment-graph-box">
+              <div class="treatment-risks-box">
+                <div id="treatment-risks-box-title">Reduced Lifetime Risk</div>
+                <div id="risk-transition-box">
+                  <div id="risk-before-treatment-value">00.0%</div>   
+                  <span>→</span>             
+                  <div id="risk-after-treatment-value">00.0%</div>                
+                </div>
+
+                <div id="risk-transition-box-80">
+                  At age 80: <span>00.0%</span> → <span>00.0%</span>
+                </div>
+
+                <div id="treatment-proportional-risk-reduction-value"></div>
+              </div>
+
+              <div id="healthy-years-wrapper">
+                <div id="healthy-years-value-title">Number of Healthy Life Years Gained</div>
+                <div id="healthy-years-value-wrapper">
+                  <div id="healthy-years-value">0</div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
           <div class="treatment-col0">
             <div id="treatment-col0-plaque-box">
-              <p>Your Personal Plaque Threshold</p>
-              <p>See how rapidly your arterial wall plaque and injury are 
-                accumulating over time, and compare it with how rapidly it 
-                accumulates with once yearly siRNA</p>
+              <div id="treatment-col0-plaque-box-title">
+                <p>Your Personal Plaque Threshold</p>
+                <p>See how rapidly your arterial wall plaque and injury are 
+                  accumulating over time, and compare it with how rapidly it 
+                  accumulates with once yearly siRNA</p>
+              </div>
+
+              <div class="treatment-col0-plaque-box-w">
+              </div>
 
               <div id="outer-treatment-gif-1">
                 <span>Current Health Trajectory</span>
@@ -1404,6 +1640,9 @@
                 </div>
               </div>
 
+              <div class="treatment-col0-plaque-box-w">
+              </div>
+
               <div id="treatment-slider-row">
                 <!-- <div id="lifetime-null-sliderValue"> -->
                   <!-- Age: 45 -->
@@ -1425,83 +1664,20 @@
             </div>
           </div>
 
-          <div class="treatment-col1">
-
-            <div class="treatment-graph-box">
-              <div id="treatment-Graph-tooltip">(You can see your risk with and without treatment at any age by holding the cursor over the line below)</div>
-              <div id="treatment-Graph"></div>
-            </div>
-
-            <div class="below-treatment-graph-box">
-              <div class="treatment-risks-box">
-                <div id="treatment-risks-box-title">Reduced Lifetime Risk</div>
-                <div id="risk-transition-box">
-                  <div id="risk-before-treatment-value">00.0%</div>   
-                  <span>→</span>             
-                  <div id="risk-after-treatment-value">00.0%</div>                
-                </div>
-
-                <div id="treatment-proportional-risk-reduction-value"></div>
-              </div>
-
-              <div id="healthy-years-wrapper">
-                <div id="healthy-years-value-title">Number of Healthy Life Years Gained</div>
-                <div id="healthy-years-value-wrapper">
-                  <div id="healthy-years-value">0</div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="treatment-col2">
-
-            <div class="treatment-health-score-bar-box">
-              <div id="treatment-health-score-bar"></div>
-            </div>
-
-            <div id="below-treatment-bar-box">
-              <div class="treatment-treatments-box">
-
-                <div id="health-score-transition-title">Improved Cardiovascular Health Score</div>
-
-                <div id="health-score-transition-box">
-                  <div id="health-score-before-treatment-value">00.0</div>   
-                  <span>→</span>             
-                  <div id="health-score-after-treatment-value">00.0</div>                
-                </div>
-
-                <div class="healthy-years-gained-title"></div>
-
-                <div id="healthy-years-Graph"></div>
-              </div>
-              
-              <!-- <div id="healthy-years-wrapper"> -->
-                <!-- <div id="healthy-years-value-title">Number of Healthy Life Years Gained</div> -->
-                <!-- <div id="healthy-years-value-wrapper"> -->
-                  <!-- <div id="healthy-years-value">0</div> -->
-                  <!-- <div id="healthy-years-value-postamble">Extra years free of Cardiovascular Disease</div> -->
-                <!-- </div> -->
-              <!-- </div> -->
-
-            </div>
-          </div>
-
-          <div class="treatment-col3">
+          <!-- <div class="treatment-col3"> -->
             <!-- <div id="healthy-years-value-title">Number of Healthy Life Years Gained</div>
             <div id="healthy-years-value-wrapper">
               <div id="healthy-years-value"></div>
               <div id="healthy-years-value-postamble">Extra years free of Cardiovascular Disease</div>
             </div> -->
-            <div id="healthy-years-value-postamble-1">
+            <!-- <div id="healthy-years-value-postamble-1">
               <em>
                 <b>Benefit COMPOUNDS over time</b><br>
                 so the earlier you start, 
                 the faster benefit grows.
               </em>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
 
@@ -1633,16 +1809,21 @@
               </div> -->
             </div>
             <div id="dial-boxes-col2-row2">
+              <span id="dial-bar">Extra years of Healthspan</span>
               <div id="matrix-l"></div>
+
               <div id="dial-box">
                   <!-- <img src="media/dial-v2.png" id="dial-image" alt="Dial"/> -->
-                  <img src="media/klotho/dial.png" id="dial-image" alt="Dial"/>
+                  <img src="media/klotho/dialnew.png" id="dial-image" alt="Dial"/>
                   <div class="label" id="dial-label">0</div>
-                  <span id="dial-bar">Extra years of Healthspan</span>
               </div>
-              <div id="matrix-r"></div>
+
+              <div id="matrix-r">
+                <img src="media/klotho/arrow-clock.png">
+              </div>
             </div>
-            <div id="dial-boxes-col2-row3">
+
+            <!-- <div id="dial-boxes-col2-row3">
 
               <div id="dial-boxes-plaque-threshold-progress-bar-wrapper">
                 <div id="dial-boxes-plaque-threshold-progress-bar">
@@ -1670,12 +1851,165 @@
                 </div>
               </div>
 
+            </div> -->
+
+            <div class="dial-boxes-bar-box">
+              <div id="dial-boxes-bar-title">Cardiovascular Health Score<div class="infocircle">i</div></div>
+              <div id="dial-boxes-bar-shape">
+                <div id="bar-no-rx"></div>
+                <div id="bar-with-rx"></div>
+              </div>
+              <div id="dial-boxes-bar"></div>
             </div>
+
           </div>
+
+          <!-- <div id="dial-boxes-col-right">
+
+            <div id="dial-boxes-col-right-row-1">
+
+              <div class="dial-boxes-graph-box">
+                <div id="dial-boxes-graph-box-title">Current Health Trajectory</div>
+                <div id="dial-boxes-graph-title"><span>Lifetime Risk of Heart Attack or Stroke</span></div>
+                <div id="dial-boxes-risk-transition-box">
+                  <div id="dial-boxes-risk-transition-box-row1">
+                    <div id="dial-boxes-risk-before-treatment-value">00.0%</div>   
+                    <span><b>→</b></span>             
+                    <div id="dial-boxes-risk-after-treatment-value">00.0%</div>   
+                  </div>
+                  
+                  <div id="dial-boxes-risk-reduction-value">00.0% lower risk</div>    
+                </div>
+                <div id="dial-boxes-graph-wrapper">
+                  <div id="dial-boxes-Graph"></div>              
+                </div>
+              </div>
+
+            </div>
+
+            <div id="dial-boxes-col-right-row-2">
+              <div id="dial-boxes-current-levels">
+                <div id="current-levels-list">
+
+                  <div class="current-levels-list-item" id="current-levels-list-age">Age<span>0</span></div>
+                  <div class="current-levels-list-item" id="current-levels-list-ldl">LDL<span>0</span></div>
+                  <div class="current-levels-list-item" id="current-levels-list-sbp">SBP<span>0</span></div>
+
+                  <div class="current-levels-list-item" id="current-levels-list-weight">Weight<span>0</span></div>
+                  <div class="current-levels-list-item" id="current-levels-list-bmi">BMI<span>0</span></div>
+                  <div class="current-levels-list-item" id="current-levels-list-lpa">Lp(a)<span>0</span></div>
+
+                  <div class="current-levels-list-item" id="current-levels-list-curldl">Cumulative LDL<br>at current age<span>0</span></div>
+                  <div class="current-levels-list-item" id="current-levels-list-tcumldl">Target Cumulative LDL<br>by age 80<span>0</span></div>
+                  <div class="current-levels-list-item" id="current-levels-list-cumldl">Cumulative LDL<br>by age 80<span>0</span></div>
+
+                </div>
+              </div>
+
+              <div id="dial-boxes-plaque-threshold-box">
+                <div id="full-dial-boxes-gif-wrapper">
+                  <video id="full-dial-boxes-plaque-gif" preload="auto">
+                    <source src="media/slice_artery.webm" type="video/webm">
+                    Your browser does not support WebM video.
+                  </video>
+                </div>
+
+                <div id="future-plaque-gauge-wrapper">
+
+                  <div id="future-plaque-gauge">
+
+                    <svg width="300" height="150" viewBox="0 25 400 250" role="img">
+                      <defs>
+                        <clipPath id="future-fillClip">
+                          <rect id="future-clipRect" x="0" y="400" width="400" height="0" />
+                        </clipPath>
+
+                        <mask id="wiremeshMask" maskUnits="userSpaceOnUse">
+                          <image href="media/wiremesh-spiro.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
+                        </mask>
+
+                        <mask id="plaqueFillMask" maskUnits="userSpaceOnUse">
+                          <image href="media/plaque-fill-mask.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
+                        </mask>
+
+                        <linearGradient id="future-plaqueGradient-glow" x1="0%" x2="0%" y1="100%" y2="0%">                        
+                          <stop offset="0%" stop-color="#00e5ff" />
+                          <stop offset="25%" stop-color="#00d3ff" />
+                          <stop offset="35%" stop-color="#00bfff" />
+                          <stop offset="40%" stop-color="#00abff" />
+                          <stop offset="45%" stop-color="#0094ff" />
+                          <stop offset="50%" stop-color="#007cff" />
+                          <stop offset="65%" stop-color="#0060ff" />
+                          <stop offset="75%" stop-color="#003cff" />
+                        </linearGradient>
+                        
+                      </defs>
+
+                      <g id="future-refLines"></g>
+
+                      <g clip-path="url(#future-fillClip)">
+                        <filter id="future-plaque-hue" x="0" y="0" width="100%" height="100%">
+                          <feImage href="media/future-plaque-texture-l.png" result="tex" />
+                          <feColorMatrix in="tex" type="matrix"
+                            values="
+                              0.9  0    0    0     0
+                              0    0.9  0    0     0
+                              0    0    0.9  0     0
+                              0    0    0    0.75  0" result="coloredTex"/>
+
+                          <feBlend in="SourceGraphic" in2="coloredTex" mode="overlay"/>
+                        </filter>
+
+                        <circle class="future-gauge-fill" cx="200" cy="150" r="100"  fill="url(#future-plaqueGradient-glow)" filter="url(#future-plaque-hue)" mask="url(#plaqueFillMask)"/>
+
+                        <line id="future-blueLine" class="future-blue-line" x1="40" x2="350" y1="400" y2="400" />
+                      </g>
+
+                      <text id="future-blueLabel" class="future-blue-label" x="400" y="400" text-anchor="end" dominant-baseline="middle">0</text>
+                      <text id="future-whiteLabel" class="future-white-label" x="27.5" y="400" text-anchor="start" dominant-baseline="middle">0</text>
+
+                      <circle class="future-circle-border" cx="200" cy="150" r="100" mask="url(#wiremeshMask)" />
+
+                      <circle class="future-circle-arterywall" cx="200" cy="150" r="115" filter="url(#future-arteryOverlay)" mask="url(#circleStrokeMask)"/>
+
+                      <g id="future-refLabels"></g>
+                    </svg>
+
+                  </div>
+                  <div id="future-plaque-gauge-title">Personal Plaque Threshold</div>
+                </div>
+              </div>
+
+              <div class="dial-boxes-bar-box">
+                <div id="dial-boxes-bar-title">Cardiovascular Health Score</div>
+                <div id="dial-boxes-bar-shape">
+                  <div id="bar-no-rx"></div>
+                  <div id="bar-with-rx"></div>
+                </div>
+                <div id="dial-boxes-bar"></div>
+              </div>
+
+              <div class="dial-boxes-healthy-years-box">
+                <div id="dial-boxes-healthy-years-title">Number of Healthy Life Years Gained</div>
+                <div id="dial-boxes-healthy-years">0</div>
+              </div>
+
+            </div>
+
+          </div> -->
 
           <div class="dial-boxes-col3">
             <div class="dial-boxes-graph-box">
+
               <div id="dial-boxes-graph-box-title">Current Health Trajectory</div>
+              <div id="dial-boxes-graph-wrapper">
+                <div id="dial-boxes-Graph"></div>              
+              </div>
+
+            </div>
+
+            <div id="dial-boxes-below-graph-box">
+
               <div id="dial-boxes-graph-title"><span>Lifetime Risk of Heart Attack or Stroke</span></div>
               <div id="dial-boxes-risk-transition-box">
                 <div id="dial-boxes-risk-transition-box-row1">
@@ -1686,9 +2020,7 @@
                 
                 <div id="dial-boxes-risk-reduction-value">00.0% lower risk</div>    
               </div>
-              <div id="dial-boxes-graph-wrapper">
-                <div id="dial-boxes-Graph"></div>              
-              </div>
+
             </div>
 
             <div class="dial-boxes-healthy-years-box">
@@ -1696,14 +2028,15 @@
               <div id="dial-boxes-healthy-years">0</div>
             </div>
 
-            <div class="dial-boxes-bar-box">
+            <!-- <div class="dial-boxes-bar-box">
               <div id="dial-boxes-bar-title">Cardiovascular Health Score</div>
               <div id="dial-boxes-bar-shape">
                 <div id="bar-no-rx"></div>
                 <div id="bar-with-rx"></div>
               </div>
               <div id="dial-boxes-bar"></div>
-            </div>
+            </div> -->
+
           </div>
 
           <div class="dial-boxes-col1">
@@ -1723,9 +2056,9 @@
                 <div class="current-levels-list-item" id="current-levels-list-cumldl">Cumulative LDL<br>by age 80<span>0</span></div>
 
               </div>
-              <!-- <dl id="current-levels-list"></dl> -->
             </div>
-            <div id="dial-boxes-bot-option">
+
+            <!-- <div id="dial-boxes-bot-option">
               <div id="dial-boxes-bot-1">Do you have any questions?</div>
 
               <div class="bot-input-box">
@@ -1733,7 +2066,7 @@
                 <img src="media/mic.png" class="mic">
               </div>
 
-              <div id="dial-boxes-bot-2"><!--<br>-->
+              <div id="dial-boxes-bot-2">
                 Because our Deep Causal AI is trained on the biology 
                 of how cardiometabolic disease develops, and is the 
                 first to encode this biological cause and effect, we 
@@ -1742,8 +2075,15 @@
                 and how much you can benefit from lowering LDL 
                 and blood pressure.
               </div>
-            </div>
+            </div> -->
+            
             <div id="dial-boxes-plaque-threshold-box">
+
+              <div id="dial-boxes-plaque-threshold-wrapper">
+                <div id="dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
+                <div id="dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years<div class="infocircle">i</div></div>
+              </div>
+
               <div id="full-dial-boxes-gif-wrapper">
                 <video id="full-dial-boxes-plaque-gif" preload="auto">
                   <source src="media/slice_artery.webm" type="video/webm">
@@ -1757,33 +2097,19 @@
 
                   <svg width="300" height="150" viewBox="0 25 400 250" role="img">
                     <defs>
-                      <!-- Clip path for both yellow fill and blue line -->
                       <clipPath id="future-fillClip">
                         <rect id="future-clipRect" x="0" y="400" width="400" height="0" />
                       </clipPath>
 
                       <mask id="wiremeshMask" maskUnits="userSpaceOnUse">
-                        <!-- The image acts as the mask. 
-                              White/bright areas = visible, black/dark = hidden -->
                         <image href="media/wiremesh-spiro.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
                       </mask>
 
                       <mask id="plaqueFillMask" maskUnits="userSpaceOnUse">
-                        <!-- The image acts as the mask. 
-                              White/bright areas = visible, black/dark = hidden -->
                         <image href="media/plaque-fill-mask.png" x="85" y="35" width="230" height="230" preserveAspectRatio="xMidYMid meet"/>
                       </mask>
 
-                      <linearGradient id="future-plaqueGradient-glow" x1="0%" x2="0%" y1="100%" y2="0%">
-                        
-                        <!-- <stop offset="0%" stop-color="#f1f6f8" />
-                        <stop offset="15%" stop-color="#bce2f7" />
-                        <stop offset="25%" stop-color="#8accfb" />
-                        <stop offset="35%" stop-color="#57b4ff" />
-                        <stop offset="55%" stop-color="#0f9aff" />
-                        <stop offset="65%" stop-color="#007eff" />
-                        <stop offset="75%" stop-color="#005fff" />
-                        <stop offset="85%" stop-color="#0039f5" /> -->
+                      <linearGradient id="future-plaqueGradient-glow" x1="0%" x2="0%" y1="100%" y2="0%">                        
                         <stop offset="0%" stop-color="#00e5ff" />
                         <stop offset="25%" stop-color="#00d3ff" />
                         <stop offset="35%" stop-color="#00bfff" />
@@ -1792,15 +2118,12 @@
                         <stop offset="50%" stop-color="#007cff" />
                         <stop offset="65%" stop-color="#0060ff" />
                         <stop offset="75%" stop-color="#003cff" />
-
                       </linearGradient>
                       
                     </defs>
 
-                    <!-- Reference lines group -->
                     <g id="future-refLines"></g>
 
-                    <!-- Group with clip applied -->
                     <g clip-path="url(#future-fillClip)">
                       <filter id="future-plaque-hue" x="0" y="0" width="100%" height="100%">
                         <feImage href="media/future-plaque-texture-l.png" result="tex" />
@@ -1814,7 +2137,6 @@
                         <feBlend in="SourceGraphic" in2="coloredTex" mode="overlay"/>
                       </filter>
 
-                      <!-- Fill circle -->
                       <circle class="future-gauge-fill" cx="200" cy="150" r="100"  fill="url(#future-plaqueGradient-glow)" filter="url(#future-plaque-hue)" mask="url(#plaqueFillMask)"/>
 
                       <line id="future-blueLine" class="future-blue-line" x1="40" x2="350" y1="400" y2="400" />
@@ -1823,12 +2145,10 @@
                     <text id="future-blueLabel" class="future-blue-label" x="400" y="400" text-anchor="end" dominant-baseline="middle">0</text>
                     <text id="future-whiteLabel" class="future-white-label" x="27.5" y="400" text-anchor="start" dominant-baseline="middle">0</text>
 
-                    <!-- Outer circles (drawn after fill so they're always on top) -->
                     <circle class="future-circle-border" cx="200" cy="150" r="100" mask="url(#wiremeshMask)" />
 
                     <circle class="future-circle-arterywall" cx="200" cy="150" r="115" filter="url(#future-arteryOverlay)" mask="url(#circleStrokeMask)"/>
 
-                    <!-- Labels group -->
                     <g id="future-refLabels"></g>
                   </svg>
 
@@ -1836,6 +2156,41 @@
                 <div id="future-plaque-gauge-title">Personal Plaque Threshold</div>
               </div>
             </div>
+
+            <div id="dial-boxes-col2-row3">
+
+              <div id="dial-boxes-plaque-threshold-progress-bar-wrapper">
+                <div id="dial-boxes-plaque-threshold-progress-bar">
+                  <div id="dial-boxes-plaque-threshold-progress"></div>
+                  <div id="progress-tick"></div>
+                </div>
+              </div>
+
+              <!-- <div id="dial-boxes-plaque-threshold-wrapper">
+                <div id="dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
+                <div id="dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years</div>
+              </div> -->
+
+              <div id="dial-boxes-plaque-threshold-personalized-guidance-wrapper">
+                <div id="dial-boxes-plaque-threshold-personalized-guidance-title">
+                  Personalized Guidance:
+                </div>
+
+                <div id="dial-boxes-plaque-threshold-personalized-guidance">
+                  <p>
+                    <!-- <span>Personalized Guidance:</span> -->
+                    <!-- <br> -->
+                    You can add <span>0</span> years to your Healthspan
+                    <!-- <br> -->
+                    if you start <span>once yearly</span> siRNA at age <span>30</span>
+                    <!-- <br> -->
+                    to keep cumulative LDL below your target
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
           </div>
 
         </div>
@@ -1850,7 +2205,9 @@
             <div id="healthscore-dial-boxes-box-page-title-2">(based on your current health trajectory)</div>
 
             <div id="healthscore-dial-boxes-box-page-explanation">
-              Turn the dial to increase your <b>Cardiovascular Health Score</b> as much as you wish <!--<br>-->
+              Turn the dial to increase your 
+              <b>Cardiovascular Health Score</b> 
+              as much as you wish <!--<br>-->
               and be provided with 
               <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it<br>
               Like a credit score, your Cardiovascular Health Score changes over time. <!--<br>-->
@@ -1886,17 +2243,27 @@
               <!-- </div> -->
             </div>
             <div id="healthscore-dial-boxes-col2-row2">
+              <span id="healthscore-dial-bar">Cardiovascular Health Score<div class="infocircle">i</div></span>
               <div id="healthscore-matrix-l"></div>
+
               <div id="healthscore-dial-box">
                   <!-- <img src="media/dial-v2-variant1.png" id="healthscore-dial-image" alt="Dial"/> -->
-                  <img src="media/klotho/dial.png" id="healthscore-dial-image" alt="Dial"/>
+                  <img src="media/klotho/dialnew.png" id="healthscore-dial-image" alt="Dial"/>
                   <div class="healthscore-label" id="healthscore-dial-label">0</div>
                   <div class="healthscore-label-skin" id="healthscore-dial-label-skin">000</div>
-                  <span id="healthscore-dial-bar">Cardiovascular Health Score</span>
               </div>
-              <div id="healthscore-matrix-r"></div>
+
+              <div id="healthscore-matrix-r">
+                <img src="media/klotho/arrow-clock.png">
+              </div>
             </div>
-            <div id="healthscore-dial-boxes-col2-row3">
+
+            <div class="healthscore-dial-boxes-bar-box">
+              <div id="healthscore-dial-boxes-bar-title">Cardiovascular Health Score<div class="infocircle">i</div></div>
+              <div id="healthscore-dial-boxes-bar"></div>
+            </div>
+
+            <!-- <div id="healthscore-dial-boxes-col2-row3">
 
               <div id="healthscore-dial-boxes-plaque-threshold-progress-bar-wrapper">
                 <div id="healthscore-dial-boxes-plaque-threshold-progress-bar">
@@ -1921,36 +2288,51 @@
                 </div>
               </div>
 
-            </div>
+            </div> -->
           </div>
 
           <div class="healthscore-dial-boxes-col3">
             <div class="healthscore-dial-boxes-graph-box">
               <div id="healthscore-dial-boxes-graph-box-title">Current Health Trajectory</div>
-              <div id="healthscore-dial-boxes-graph-title"><span>Lifetime Risk of Heart Attack or Stroke</span></div>
-              <div id="healthscore-dial-boxes-risk-transition-box">
-                <div id="healthscore-dial-boxes-risk-transition-box-row1">
-                  <div id="healthscore-dial-boxes-risk-before-treatment-value">00.0%</div>   
-                  <span><b>→</b></span>             
-                  <div id="healthscore-dial-boxes-risk-after-treatment-value">00.0%</div>   
-                </div>
-                
-                <div id="healthscore-dial-boxes-risk-reduction-value">00.0% lower risk</div>    
-              </div>
               <div id="healthscore-dial-boxes-graph-wrapper">
                 <div id="healthscore-dial-boxes-Graph"></div>              
               </div>
             </div>
 
-            <div class="healthscore-dial-boxes-healthy-years-box">
-              <div id="healthscore-dial-boxes-healthy-years-title">Number of Healthy Life Years Gained</div>
-              <div id="healthscore-dial-boxes-healthy-years">0</div>
+            <div id="healthscore-dial-boxes-below-graph-box">
+              <div id="healthscore-dial-boxes-below-graph-box-1">              
+                <div id="healthscore-dial-boxes-graph-title"><span>Lifetime Risk of Heart Attack or Stroke</span></div>
+                <div id="healthscore-dial-boxes-risk-transition-box">
+                  <div id="healthscore-dial-boxes-risk-transition-box-row1">
+                    <div id="healthscore-dial-boxes-risk-before-treatment-value">00.0%</div>   
+                    <span><b>→</b></span>             
+                    <div id="healthscore-dial-boxes-risk-after-treatment-value">00.0%</div>   
+                  </div>
+                  
+                  <div id="healthscore-dial-boxes-risk-reduction-value">00.0% lower risk</div>    
+                </div>
+              </div>            
+
+              <div id="healthscore-dial-boxes-below-graph-box-2">              
+                <div class="healthscore-dial-boxes-healthy-years-box">
+                  <div id="healthscore-dial-boxes-healthy-years-title">
+                    <!-- Number of Healthy Life Years Gained -->
+                    Extra years of Healthspan
+                  </div>
+                  <div id="healthscore-dial-boxes-healthy-years">0</div>
+                </div>
+              </div>            
             </div>
 
-            <div class="healthscore-dial-boxes-bar-box">
+            <!-- <div class="healthscore-dial-boxes-healthy-years-box">
+              <div id="healthscore-dial-boxes-healthy-years-title">Number of Healthy Life Years Gained</div>
+              <div id="healthscore-dial-boxes-healthy-years">0</div>
+            </div> -->
+
+            <!-- <div class="healthscore-dial-boxes-bar-box">
               <div id="healthscore-dial-boxes-bar-title">Cardiovascular Health Score</div>
               <div id="healthscore-dial-boxes-bar"></div>
-            </div>
+            </div> -->
 
           </div>
 
@@ -1973,7 +2355,7 @@
               </div>
               <!-- <dl id="current-levels-list"></dl> -->
             </div>
-            <div id="healthscore-dial-boxes-bot-option">
+            <!-- <div id="healthscore-dial-boxes-bot-option">
               <div id="healthscore-dial-boxes-bot-1">Do you have any questions?</div>
 
               <div class="bot-input-box">
@@ -1981,7 +2363,7 @@
                 <img src="media/mic.png" class="mic">
               </div>
 
-              <div id="healthscore-dial-boxes-bot-2"><!--<br>-->
+              <div id="healthscore-dial-boxes-bot-2">
                 Because our Deep Causal AI is trained on the biology 
                 of how cardiometabolic disease develops, and is the 
                 first to encode this biological cause and effect, we 
@@ -1990,8 +2372,14 @@
                 and how much you can benefit from lowering LDL 
                 and blood pressure.
               </div>
-            </div>
+            </div> -->
             <div id="healthscore-dial-boxes-plaque-threshold-box">
+
+              <div id="healthscore-dial-boxes-plaque-threshold-wrapper">
+                <div id="healthscore-dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
+                <div id="healthscore-dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years<div class="infocircle">i</div></div>
+              </div>
+
               <div id="full-healthscore-dial-boxes-gif-wrapper">
                 <video id="full-healthscore-dial-boxes-plaque-gif" preload="auto">
                   <source src="media/slice_artery.webm" type="video/webm">
@@ -2076,6 +2464,40 @@
                 <div id="healthscore-future-plaque-gauge-title">Personal Plaque Threshold</div>
               </div>
             </div>
+
+            <div id="healthscore-dial-boxes-col2-row3">
+
+              <div id="healthscore-dial-boxes-plaque-threshold-progress-bar-wrapper">
+                <div id="healthscore-dial-boxes-plaque-threshold-progress-bar">
+                  <div id="healthscore-dial-boxes-plaque-threshold-progress"></div>
+                  <div id="healthscore-progress-tick"></div>
+                </div>
+              </div>
+
+              <!-- <div id="healthscore-dial-boxes-plaque-threshold-wrapper">
+                <div id="healthscore-dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
+                <div id="healthscore-dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years</div>
+              </div> -->
+
+              <div id="healthscore-dial-boxes-plaque-threshold-personalized-guidance-wrapper">
+                <div id="healthscore-dial-boxes-plaque-threshold-personalized-guidance-title">
+                  Personalized Guidance:
+                </div>
+
+                <div id="healthscore-dial-boxes-plaque-threshold-personalized-guidance">
+                  <p>
+                    <!-- <span>Personalized Guidance:</span><br> -->
+                    You can achieve a Health Score of <span>0</span> 
+                    <!-- <br> -->
+                    if you start <span>once yearly</span> siRNA at age <span>30</span>
+                    <!-- <br> -->
+                    to keep cumulative LDL below your target
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
           </div>
 
         </div>
@@ -2091,7 +2513,9 @@
 
             <!-- <div id="benefit-dial-boxes-box-page-explanation"><em>Please turn the dial to determine how you can achieve any level of cardiovascular health or any number of extra years of healthspan if you take a yearly siRNA to lower LDL and SBP limited by how much disease has already occurred before you start to lower LDL and SBP.</em></div> -->
             <div id="benefit-dial-boxes-box-page-explanation">
-              Turn the dial to <b>lower the risk of heart attack or stroke</b> 
+              Turn the dial to <b>
+              lower the risk of 
+              heart attack or stroke</b> 
               by as much as you wish <!--<br>-->
               and be provided with 
               <b><strong>PERSONALIZED GUIDANCE</strong></b> on how to achieve it 
@@ -2126,31 +2550,45 @@
               <!-- </div> -->
             </div>
             <div id="benefit-dial-boxes-col2-row2">
+              <span id="benefit-dial-bar">Current Lifetime Risk of Heart Attack or Stroke</span>
               <div id="benefit-matrix-l"></div>
+
               <div id="benefit-dial-box">
                   <!-- <img src="media/dial-v2-variant2.png" id="benefit-dial-image" alt="Dial"/> -->
-                  <img src="media/klotho/dial.png" id="benefit-dial-image" alt="Dial"/>
+                  <img src="media/klotho/dialnew.png" id="benefit-dial-image" alt="Dial"/>
                   <div class="benefit-label" id="benefit-dial-label">0</div>
-                  <div class="benefit-label-skin" id="benefit-dial-label-skin"><span>%</span>0.0<span>%</span></div>
+                  <div class="benefit-label-skin" id="benefit-dial-label-skin">
+                    <span>%</span>
+                    <span>0.0</span>
+                    <span>%</span>
+                  </div>
                   <!-- <span>%</span> -->
               </div>
-              <div id="benefit-matrix-r"></div>
+
+              <div id="benefit-matrix-r">
+                <img src="media/klotho/arrow-clock.png">
+              </div>
+            </div>
+
+            <div class="benefit-dial-boxes-bar-box">
+              <div id="benefit-dial-boxes-bar-title">Cardiovascular Health Score<div class="infocircle">i</div></div>
+              <div id="benefit-dial-boxes-bar"></div>
             </div>
 
             <div id="benefit-dial-boxes-col2-row2-5">
-              <span id="benefit-dial-bar">Current Lifetime Risk of Heart Attack or Stroke</span>
+              <!-- <span id="benefit-dial-bar">Current Lifetime Risk of Heart Attack or Stroke</span> -->
               <div id="benefit-dial-boxes-risk-transition-box">
-                <!-- <div id="benefit-dial-boxes-risk-transition-box-row1"> -->
+                <div id="benefit-dial-boxes-risk-transition-box-row1">
                   <div id="benefit-dial-boxes-risk-before-treatment-value">00.0%</div>   
                   <span><b>→</b></span>             
                   <div id="benefit-dial-boxes-risk-after-treatment-value">00.0%</div>   
-                <!-- </div> -->
+                </div>
                 
-                <!-- <div id="benefit-dial-boxes-risk-reduction-value">00.0% lower risk</div>     -->
+                <div id="benefit-dial-boxes-risk-reduction-value">00.0% lower risk</div>    
               </div>
             </div>
 
-            <div id="benefit-dial-boxes-col2-row3">
+            <!-- <div id="benefit-dial-boxes-col2-row3">
 
               <div id="benefit-dial-boxes-plaque-threshold-progress-bar-wrapper">
                 <div id="benefit-dial-boxes-plaque-threshold-progress-bar">
@@ -2175,34 +2613,57 @@
                 </div>
               </div>
 
-            </div>
+            </div> -->
           </div>
 
           <div class="benefit-dial-boxes-col3">
             <div class="benefit-dial-boxes-graph-box">
               <div id="benefit-dial-boxes-graph-box-title">Current Health Trajectory</div>
-              <span id="benefit-dial-boxes-graph-box-reduction">Current Lifetime Risk of Heart Attack or Stroke</span>
+              <!-- <span id="benefit-dial-boxes-graph-box-reduction">Current Lifetime Risk of Heart Attack or Stroke</span> -->
 
-              <div id="benefit-dial-boxes-graph-box-risk-transition-box">
+              <!-- <div id="benefit-dial-boxes-graph-box-risk-transition-box">
                   <div id="benefit-dial-boxes-graph-box-risk-before-treatment-value">00.0%</div>   
                   <span><b>→</b></span>             
                   <div id="benefit-dial-boxes-graph-box-risk-after-treatment-value">00.0%</div>   
-              </div>
+              </div> -->
 
               <div id="benefit-dial-boxes-graph-wrapper">
                 <div id="benefit-dial-boxes-Graph"></div>              
               </div>
             </div>
 
-            <div class="benefit-dial-boxes-healthy-years-box">
-              <div id="benefit-dial-boxes-healthy-years-title">Extra years of Healthspan</div>
-              <div id="benefit-dial-boxes-healthy-years">0</div>
+            <div id="benefit-dial-boxes-below-graph-box">
+              <div id="benefit-dial-boxes-below-graph-box-1">
+                <span id="benefit-dial-boxes-graph-box-reduction">
+                  <!-- Current  -->
+                  Lifetime Risk of Heart Attack or Stroke
+                </span>
+                <div id="benefit-dial-boxes-graph-box-risk-transition-box">
+                  <div id="benefit-dial-boxes-graph-box-risk-transition-box-row1">
+                      <div id="benefit-dial-boxes-graph-box-risk-before-treatment-value">00.0%</div>   
+                      <span><b>→</b></span>             
+                      <div id="benefit-dial-boxes-graph-box-risk-after-treatment-value">00.0%</div>   
+                  </div>
+
+                  <div id="benefit-dial-boxes-graph-box-risk-reduction-value">00.0% lower risk</div>    
+                </div>
+              </div>
+
+              <div id="benefit-dial-boxes-below-graph-box-2">
+                <div class="benefit-dial-boxes-healthy-years-box">
+                  <div id="benefit-dial-boxes-healthy-years-title">
+                    Extra years of Healthspan
+                  </div>
+                  <div id="benefit-dial-boxes-healthy-years">0</div>
+                </div>
+              </div>
+
             </div>
 
-            <div class="benefit-dial-boxes-bar-box">
+            <!-- <div class="benefit-dial-boxes-bar-box">
               <div id="benefit-dial-boxes-bar-title">Cardiovascular Health Score</div>
               <div id="benefit-dial-boxes-bar"></div>
-            </div>
+            </div> -->
           </div>
 
           <div class="benefit-dial-boxes-col1">
@@ -2224,7 +2685,7 @@
               </div>
               <!-- <dl id="current-levels-list"></dl> -->
             </div>
-            <div id="benefit-dial-boxes-bot-option">
+            <!-- <div id="benefit-dial-boxes-bot-option">
               <div id="benefit-dial-boxes-bot-1">Do you have any questions?</div>
 
               <div class="bot-input-box">
@@ -2232,7 +2693,7 @@
                 <img src="media/mic.png" class="mic">
               </div>
 
-              <div id="benefit-dial-boxes-bot-2"><!--<br>-->
+              <div id="benefit-dial-boxes-bot-2">
                 Because our Deep Causal AI is trained on the biology 
                 of how cardiometabolic disease develops, and is the 
                 first to encode this biological cause and effect, we 
@@ -2241,8 +2702,14 @@
                 and how much you can benefit from lowering LDL 
                 and blood pressure.
               </div>
-            </div>
+            </div> -->
             <div id="benefit-dial-boxes-plaque-threshold-box">
+
+              <div id="benefit-dial-boxes-plaque-threshold-wrapper">
+                <div id="benefit-dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
+                <div id="benefit-dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years<div class="infocircle">i</div></div>
+              </div>
+
               <div id="full-benefit-dial-boxes-gif-wrapper">
                 <video id="full-benefit-dial-boxes-plaque-gif" preload="auto">
                   <source src="media/slice_artery.webm" type="video/webm">
@@ -2327,10 +2794,82 @@
                 <div id="benefit-future-plaque-gauge-title">Personal Plaque Threshold</div>
               </div>
             </div>
+
+            <div id="benefit-dial-boxes-col2-row3">
+
+              <div id="benefit-dial-boxes-plaque-threshold-progress-bar-wrapper">
+                <div id="benefit-dial-boxes-plaque-threshold-progress-bar">
+                  <div id="benefit-dial-boxes-plaque-threshold-progress"></div>
+                  <div id="benefit-progress-tick"></div>
+                </div>
+              </div>
+
+              <!-- <div id="benefit-dial-boxes-plaque-threshold-wrapper">
+                <div id="benefit-dial-boxes-plaque-threshold-progress-value-a">Cumulative LDL at age 80</div>
+                <div id="benefit-dial-boxes-plaque-threshold-progress-value"><span>0</span>plaque-years</div>
+              </div> -->
+
+              <div id="benefit-dial-boxes-plaque-threshold-personalized-guidance-wrapper">
+                <div id="benefit-dial-boxes-plaque-threshold-personalized-guidance-title">
+                  Personalized Guidance:
+                </div>
+
+                <div id="benefit-dial-boxes-plaque-threshold-personalized-guidance">
+                  <p>
+                    <!-- <span>Personalized Guidance:</span><br> -->
+                    <!-- You can add <span>0</span> years to your Healthspan<br>
+                    if you start <span>once yearly</span> siRNA at age <span>30</span><br>
+                    to keep cumulative LDL below your target -->
+                    You can lower your lifetime risk 
+                    from <span>0%</span>
+                    to <span>0%</span>
+                    if you start 
+                    <span>once yearly</span> siRNA 
+                    at age <span>30</span>
+                    to keep cumulative LDL below your target
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
           </div>
 
         </div>
       </div>
+
+      <div class="outer-box-bot">
+        <div class="bot-box">
+
+          <div id="boxes-bot-option">
+            <div id="boxes-bot-blob">
+              <!-- <img src="media/klotho/botblob.png" id="botblob"> -->
+              <!-- <div id="botblob"></div> -->
+              <div id="botblob-1"></div>
+              <div id="botblob-2"></div>
+            </div>
+
+            <div id="boxes-bot-1">Do you have any questions?</div>
+
+            <div id="boxes-bot-2">
+              Because our Deep Causal AI is trained on the biology 
+              of how cardiometabolic disease develops, and is the 
+              first to encode this biological cause and effect, we 
+              can explain the biological and clinical reasoning for all 
+              our recommendations and explain why you are at risk 
+              and how much you can benefit from lowering LDL 
+              and blood pressure.
+            </div>
+
+            <div class="bot-input-box">
+              <input type="text" id="bot-input" placeholder="How can I help?" disabled>  
+              <img src="media/mic.png" class="mic">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
 
       <div id="WIP-message">
         <!-- <div id="WIP-message-block"> -->

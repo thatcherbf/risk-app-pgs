@@ -7,8 +7,8 @@
 
   --accentother: #1330da;
 
-  --graphblue: #0E0ED6;
-  --graphred: #D60E0E;
+  --graphblue: #70BAFC; /* #0E0ED6; */
+  --graphred: #D06A78; /* #D60E0E; */
 
   --graphnorx: #b4dcff;
   --graphwithrx: #ffffff;
@@ -54,9 +54,9 @@
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 5px var(--graphwithrx); }
-  50% { box-shadow: 0 0 20px var(--graphwithrx); }
-  100% { box-shadow: 0 0 5px var(--graphwithrx); }
+  0% { box-shadow: 0 0 5px var(--graphblue); }
+  50% { box-shadow: 0 0 20px var(--graphblue); }
+  100% { box-shadow: 0 0 5px var(--graphblue); }
 }
 
 /* #red-text {
@@ -451,6 +451,22 @@ select:focus {
   outline: none;
 }
 
+.infocircle {
+  height: 1.25em;
+  font-size: 0.7em;
+  font-weight: 400;
+  aspect-ratio: 1/1;
+  
+  margin-left: 0.5em;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid var(--klotho-offwhite) 1px;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
 /* --#------ OUTER LIFETIME BOX ------#-- */
 .outer-box-lifetime {
   user-select: none;
@@ -479,6 +495,8 @@ select:focus {
   /* border: solid white 1px; */
   /* border-radius: 20px; */
   box-sizing: border-box;
+
+  gap: 0 0.75rem;
 }
 
 #lifetime-box-page-title {
@@ -491,7 +509,7 @@ select:focus {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  /* border-bottom: solid white 1px; */
+  /* border: solid white 1px; */
   box-sizing: border-box;
 }
 
@@ -513,9 +531,35 @@ select:focus {
   color: var(--klotho-offwhite);
 }
 
+#lifetime-col-right {
+  height: 87.5%;
+  flex: 3; 
+  display: inline-flex;
+  flex-flow: column;
+  box-sizing: border-box;
+  gap: 0.75rem;
+}
+
+#lifetime-col-right-row-1 {
+  width: 100%;
+  flex: 3; 
+  display: flex;
+  /* border: solid white 1px; */
+  box-sizing: border-box;
+}
+
+#lifetime-col-right-row-2 {
+  width: 100%;
+  flex: 1.5; 
+  display: flex;
+  /* border: solid white 1px; */
+  box-sizing: border-box;
+  gap: 0.75rem;
+}
+
 .lifetime-col0 {
   height: 87.5%;
-  width: 27.5%;
+  flex: 1.25; /* width: 27.5%; */
 
   display: inline-flex;
 
@@ -526,7 +570,8 @@ select:focus {
 }
 
 #lifetime-col0-plaque-box {
-  background: var(--lgradient1);
+  background: var(--lgradient3);
+  /* background: var(--lgradient1); */
   backdrop-filter: blur(60px); 
   height: 100%;
   width: 100%;
@@ -537,33 +582,57 @@ select:focus {
   align-items: center;
 
   border-radius: 20px;
+  /* border: solid white 1px; */
   box-sizing: border-box;
 }
 
-#lifetime-col0-plaque-box p:nth-of-type(1) {
+#lifetime-col0-plaque-box-title {
+  height: 15%;
+  width: 100%;
+  display: flex;
+
+  justify-content: left; /* flex-start; */
+  padding-left: 1rem;
+
+  /* align-items: center; */
+  flex-flow: column;
+  gap: 1rem 0;
+  padding-top: 1rem;
+  box-sizing: border-box;
+  /* border: solid white 1px; */
+}
+
+#lifetime-col0-plaque-box-title p:nth-of-type(1) {
   /* border: solid white 1px; */
   color: white;
   font-size: calc(1rem * 20/14);
-  width: 100%;
-  text-align: left;
-  /* margin: 0; */
-  margin-bottom: 2.5%;
+  /* height: 7.5%; */
+  /* width: 100%; */
+  /* text-align: left; */
+  margin: 0;
+  /* margin-bottom: 2.5%; */
   /* padding: 0; */
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   box-sizing: border-box;
 }
 
-#lifetime-col0-plaque-box p:nth-of-type(2) {
+#lifetime-col0-plaque-box-title p:nth-of-type(2) {
   /* border: solid white 1px; */
   color: var(--klotho-offwhite);
   font-size: calc(1rem * 10/14);
-  width: 100%;
-  text-align: left;
-  /* margin: 0; */
-  margin-bottom: 2.5%;
+  /* width: 100%; */
+  /* text-align: left; */
+  margin: 0;
+  /* margin-bottom: 2.5%; */
   /* padding: 0; */
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   padding-right: 25%;
+  box-sizing: border-box;
+}
+
+.lifetime-col0-plaque-box-w {
+  height: 7.5%;
+  /* border: solid white 1px; */
   box-sizing: border-box;
 }
 
@@ -642,6 +711,7 @@ select:focus {
   align-items: center;
   box-sizing: border-box;
   /* border: solid white 1px; */
+  display: none;
 }
 
 #lifetime-exposureSlider {
@@ -686,24 +756,27 @@ select:focus {
   height: 87.5%;
   /* width: 62.5%; */
   /* width: 55%; */
-  width: 40%;
+  flex: 1.75; width: auto; /* 40%; */
+  
   display: inline-flex;
   /* flex-flow: wrap; */
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+
+  gap: 0.75rem;
 }
 
 .lifetime-graph-box {
   background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
   position: relative;
-  height: 67.5%;
+  flex: 7; height: auto; /* 67.5%; */
   width: 100%;
   display: flex;
   justify-content: center;
   /* background-color: rgba(255, 255, 255, 0.125); */
-  backdrop-filter: blur(60px); 
   border-radius: 20px;
   box-sizing: border-box;
 }
@@ -712,35 +785,71 @@ select:focus {
   position: absolute;
   font-size: calc(1rem * 12/14);
   z-index: 10;
-  top: 2.5%;
-  width: 85%;
+  top: 8.5%; /* 7.5%; */
+  /* top: 2.5%; */
+
+  left: 0; /* 2.5%; */
+  right: 0; /* 2.5%; */
+  padding-left: 1rem;
+
+  height: 5%;
+  /* width: 85%; */
+
+  display: flex;
+  justify-content: left; /* center; */
+  align-items: flex-start; /* center; */
+
   color: var(--klotho-offwhite);
-  text-align: center;
+  /* text-align: center; */
+  /* border: solid red 1px; */
+  box-sizing: border-box;
+}
+
+.Graph-above {
+  position: absolute;
+  /* top: 7.5%; */
+  top: 3%; /* 2.5%; */
+
+  left: 0; /* 2.5%; */
+  right: 0; /* 2.5%; */
+  padding-left: 1rem;
+
+  height: 5%;
+
+  color: white;
+  font-size: calc(1rem * 15/14);
+
+  display: flex;
+  justify-content: left; /* center; */
+  align-items: center;
+
   /* border: solid red 1px; */
   box-sizing: border-box;
 }
 
 #lifetime-Graph {
   position: absolute;
-  top: 5%;
-  bottom: 5%;
+  top: 7.5%;
+  bottom: 2.5%;
+  left: 2.5%;
+  right: 2.5%;
   /* height: 90%;  */
   /* margin-top: 5%; */
   /* margin-bottom: 5%; */
-  width: 90%;
+  /* width: 90%; */
   /* border: solid red 1px; */
   box-sizing: border-box;
 }
 
 .lifetime-risk-box {
   background: var(--lgradient3);
-  height: 30%;
-  width: 100%;
+  backdrop-filter: blur(60px); 
+  flex: 3; height: auto; /* 30%;  */
+  width: 100%; 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  backdrop-filter: blur(60px); 
   border-radius: 20px;
   box-sizing: border-box;
 }
@@ -759,9 +868,9 @@ select:focus {
   text-align: center;
   align-items: center;
 
-  /* padding-left: 1.5rem; */
   display: flex;
-  justify-content: center;
+  justify-content: left; /* center; */
+  padding-left: 1rem; 
   font-size: calc(1rem * 20/14);
   font-weight: 200;
   box-sizing: border-box;
@@ -769,18 +878,44 @@ select:focus {
 }
 
 #lifetime-risk-value-box {
-  /* padding-left: 1.5rem; */
+  position: relative;
+
   display: flex;
   align-items: center;
-  height: 45%;
+
+  justify-content: left; /* center; */
+  padding-left: 1rem; 
+
+  height: 35%;
   width: 100%;
   font-size: calc(1rem * 20/14);
   box-sizing: border-box;
   /* border: solid green 1px; */
 }
 
-#lifetime-risk-value {
+#lifetime-risk-value-box-80 {
+  color: white;
+  height: 20%;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left; /* center; */
+  padding-left: 1rem; 
+  align-items: center;
+  vertical-align: middle;
+  font-size: calc(1rem * 14/14);
+  box-sizing: border-box;
+  visibility: hidden;
+  gap: 1ch;
+  /* border: solid red 1px; */
+}
+
+#lifetime-risk-value-box-80 span {
+  color: var(--graphred);
+}
+
+#lifetime-risk-value {
+  /* width: 100%; */
 
   font-weight: 200;
   font-size: calc(1rem * 60/14);
@@ -788,12 +923,13 @@ select:focus {
   display: flex;
   text-align: center;
   align-items: center;
-  justify-content: center;
 
-  color: var(--graphnorx);
+  color: var(--graphred);
 
   box-sizing: border-box;
+  /* border: solid red 1px; */
   visibility: hidden;
+  /* transition: all 0.5s ease; */
 }
 
 #lifetime-risk-postamble {
@@ -802,11 +938,11 @@ select:focus {
   font-size: calc(1rem * 12/14);
   font-weight: 200;
 
-  /* padding-left: 1.5rem; */
   align-items: center;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: left; /* center; */
+  padding-left: 1rem; 
   color: var(--klotho-offwhite);
   box-sizing: border-box;
   /* border: solid orange 1px; */
@@ -828,40 +964,186 @@ select:focus {
 }
 
 .lifetime-col2 {
+  /* background: var(--lgradient1); */
   height: 87.5%;
-  width: 30%;
+  flex: 1.25; width: auto; /* 30%; */
+  
   display: inline-flex;
   /* flex-flow: wrap; */
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  box-sizing: border-box;
 
+  box-sizing: border-box;
+  gap: 0.75rem 0;
+}
+
+#lifetime-col2-row1 {
+  position: relative;
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
+  width: 100%;
+  flex: 3; height: auto;
+
+  display: inline-flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+#lifetime-matrix-l,
+#lifetime-matrix-r
+{
+  position: absolute;
+  top: 0%;
+  bottom: 10%;
+  width: 25%;
+
+  z-index: -1;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+
+  transition: all 0.5s ease;
+  /* border: solid orange 1px; */
+  box-sizing: border-box;
+}
+
+#lifetime-matrix-l {
+  justify-content: right;
+  left: 0;
+}
+
+#lifetime-matrix-l img {
+  /* opacity: 0.5; */
+  height: 80%;
+  /* border: solid red 1px; */
+  box-sizing: border-box;
+}
+
+#lifetime-matrix-r {
+  right: 0;
+}
+
+#lifetime-dial-bar {
+  position: absolute;
+  color: white;
+  font-size: calc(1rem * 14/14);
+  font-weight: 200;
+  bottom: 3.5%;
+}
+
+#lifetime-dial-box {
+  position: absolute;
+  /* height: 100%; */
+  top: 0%;
+  bottom: 10%;
+
+  aspect-ratio: 1/1;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  user-select: none;
+
+  /* border: solid red 1px; */
+}
+
+#lifetime-dial-image {
+  height: 95%;
+  aspect-ratio: 1 / 1;   
+  object-fit: contain;
+  transform: rotate(0deg);
+  pointer-events: none; 
+  user-drag: none;     
+  -webkit-user-drag: none; 
+
+  transition: filter 0.5s ease;
+}
+
+#lifetime-dial-label:hover {
+  cursor: grab;
+}
+
+#lifetime-dial-label {
+  height: 90%;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-family: monospace; */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: grab;
+}
+
+#lifetime-dial-unit-label {
+  color: white;
+  position: absolute;
+  bottom: 32.5%;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+#lifetime-col2-row2 {
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
+  width: 100%;
+  flex: 4; height: auto;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 20px;
+  box-sizing: border-box;
 }
 
 #lifetime-health-score-bar-box {
-  background: var(--lgradient3);
-  height: 67.5%;
+  /* background: var(--lgradient3); */
+  position: relative;
+  flex: 4; height: auto; /* 67.5%; */
   width: 100%;
   display: inline-flex;
   justify-content: center;
   flex-direction: column;
   /* background-color: rgba(255, 255, 255, 0.125); */
-  backdrop-filter: blur(60px); 
-  border-radius: 20px;
+  /* backdrop-filter: blur(60px);  */
+  /* border-radius: 20px; */
   box-sizing: border-box;
+  /* border: solid orange 1px; */
 }
 
 #lifetime-health-score-bar {
   background-color: transparent;
-  height: 90%;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
+  position: absolute;
+  top: 5%;
+  bottom: 0%;
+  left: 10%;
+  right: 10%;
+  /* height: 90%; */
+  /* width: 80%; */
+  /* margin-left: 10%; */
+  /* margin-right: 10%; */
   box-sizing: border-box;
+  /* border: solid orange 1px; */
 }
 
 #lifetime-health-score-postamble {
+  position: absolute;
   color: var(--klotho-offwhite);
   font-size: calc(1rem * 10/14);
   height: 5%;
@@ -869,20 +1151,24 @@ select:focus {
   text-align: center;
   box-sizing: border-box;
   visibility: hidden;
+  display: none;
 }
 
 .lifetime-health-box {
-  background: var(--lgradient4);
-  height: 30%;
+  /*background: var(--lgradient1); 4); */
+  flex: 3; height: auto; /* 30%;  */
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left; /* center; */
+  padding-left: 1rem; 
+
   align-items: flex-start;
   /* background-color: rgba(255, 255, 255, 0.125); */
-  backdrop-filter: blur(60px); 
-  border-radius: 20px;
+  /* backdrop-filter: blur(60px);  */
+  /* border-radius: 20px; */
   box-sizing: border-box;
+  /* border: solid orange 1px; */
 }
 
 .lifetime-health-score {
@@ -898,26 +1184,32 @@ select:focus {
   text-align: center;
   align-items: center;
 
-  /* padding-left: 1.5rem; */
+  /* padding-left: 1rem;  */
+
   display: flex;
-  justify-content: center;
+  justify-content: left; /* center; */
   font-size: calc(1rem * 20/14);
   font-weight: 200;
   box-sizing: border-box;
 }
 
 #lifetime-health-score-value-box {
+  position: relative;
   display: flex;
+  justify-content: left; /* center; */
+  /* padding-left: 1rem;  */
+
   height: 45%;
   width: 100%;
   /* width: 75%; */
-  /* padding-left: 1.5rem; */
+
   font-size: calc(1rem * 20/14);
   box-sizing: border-box;
+  /* border: solid red 1px; */
 }
 
 #lifetime-health-score-value {
-  width: 100%;
+  /* width: 100%; */
 
   font-weight: 200;
   font-size: calc(1rem * 60/14);
@@ -927,24 +1219,49 @@ select:focus {
   align-items: center;
   justify-content: center;
 
-  color: var(--graphnorx);
+  color: var(--graphred);
 
+  visibility: hidden;
+  /* transition: all 0.5s ease; */
+  box-sizing: border-box;
+}
+
+#lifetime-health-score-80 {
+  color: white;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left; /* center; */
+  /* padding-left: 1rem; */
+
+  align-items: center;
+  vertical-align: middle;
+  font-size: calc(1rem * 14/14);
   box-sizing: border-box;
   visibility: hidden;
+  gap: 1ch;
+  /* border: solid red 1px; */
+}
+
+#lifetime-health-score-80 span {
+  color: var(--graphred)
 }
 
 #lifetime-health-score-value-postamble {
-  height: 20%;
+  height: 15%;
   width: 100%;
   font-size: calc(1rem * 12/14);
   font-weight: 200;
 
-  /* padding-left: 1.5rem; */
+  /* padding-left: 1rem;  */
   align-items: center;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: left; /* center; */
   color: var(--klotho-offwhite);
+  box-sizing: border-box;
+  /* border: solid purple 1px; */
 }
 
 #lifetime-plaque-threshold-Graph {
@@ -1005,6 +1322,7 @@ select:focus {
   visibility: hidden;
   display: none;
 }
+
 /* --#------ OUTER LIFETIME BOX ------#-- */
 
 svg {
@@ -1083,7 +1401,7 @@ svg {
   width: 100%;
   /* padding-left: 2.5%;
   padding-right: 2.5%; */
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   padding-right: 50rem;
   font-size: calc(1rem * 12/14);
   align-items: flex-start;
@@ -1383,7 +1701,7 @@ svg {
 }
 
 .ref-line {
-  stroke: var(--graphwithrx);
+  stroke: var(--graphblue);
   stroke-width: 1;
   /* stroke-dasharray: 6 6; */
 }
@@ -1445,6 +1763,8 @@ svg {
   /* border: solid white 1px; */
   /* border-radius: 20px; */
   box-sizing: border-box;
+
+  gap: 0 0.75rem;
 }
 
 #treatment-box-page-title {
@@ -1496,6 +1816,7 @@ svg {
   flex-wrap: wrap;
   box-sizing: border-box;
   /* border: solid white 1px; */
+  display: none;
 }
 
 #start-medication-later {
@@ -1555,9 +1876,36 @@ svg {
   box-sizing: border-box;
 }
 
+#treatment-col-right {
+  height: 87.5%;
+  flex: 3; 
+  display: inline-flex;
+  flex-flow: column;
+  box-sizing: border-box;
+  gap: 0.75rem;
+}
+
+#treatment-col-right-row-1 {
+  width: 100%;
+  flex: 3; 
+  display: flex;
+  /* border: solid white 1px; */
+  box-sizing: border-box;
+}
+
+#treatment-col-right-row-2 {
+  width: 100%;
+  flex: 1.5; 
+  display: flex;
+  flex-flow: row;
+  /* border: solid white 1px; */
+  box-sizing: border-box;
+  gap: 0.75rem;
+}
+
 .treatment-col0 {
   height: 87.5%;
-  width: 27.5%;
+  flex: 1.25; /* 27.5%; */
 
   display: inline-flex;
 
@@ -1568,48 +1916,71 @@ svg {
 }
 
 #treatment-col0-plaque-box {
-  background: var(--lgradient1);
+  background: var(--lgradient3);
+  /* background: var(--lgradient1); */
   backdrop-filter: blur(60px); 
   height: 100%;
   width: 100%;
 
   display: inline-flex;
   flex-flow: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 
   border-radius: 20px;
   box-sizing: border-box;
 }
 
-#treatment-col0-plaque-box p:nth-of-type(1) {
+#treatment-col0-plaque-box-title {
+  height: 15%;
+  width: 100%;
+  display: flex;
+
+  justify-content: left; /* flex-start; */
+  padding-left: 1rem;
+
+  /* align-items: center; */
+  flex-flow: column;
+  gap: 1rem 0;
+  padding-top: 1rem;
+  box-sizing: border-box;
+  /* border: solid white 1px; */
+}
+
+#treatment-col0-plaque-box-title p:nth-of-type(1) {
   /* border: solid white 1px; */
   color: white;
   font-size: calc(1rem * 20/14);
-  height: 7.5%;
-  display: inline-flex;
-  align-items: center;
-  width: 100%;
-  text-align: left;
+  /* height: 7.5%; */
+  /* display: inline-flex; */
+  /* align-items: center; */
+  /* width: 100%; */
+  /* text-align: left; */
   margin: 0;
   /* margin-bottom: 0; */
   /* padding: 0; */
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   box-sizing: border-box;
 }
 
-#treatment-col0-plaque-box p:nth-of-type(2) {
+#treatment-col0-plaque-box-title p:nth-of-type(2) {
   /* border: solid white 1px; */
   color: var(--klotho-offwhite);
   font-size: calc(1rem * 10/14);
-  height: 7.5%;
-  width: 100%;
-  text-align: left;
+  /* height: 7.5%; */
+  /* width: 100%; */
+  /* text-align: left; */
   margin: 0;
   /* margin-bottom: 2.5%; */
   /* padding: 0; */
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
   padding-right: 25%;
+  box-sizing: border-box;
+}
+
+.treatment-col0-plaque-box-w {
+  height: 7.5%;
+  /* border: solid white 1px; */
   box-sizing: border-box;
 }
 
@@ -1630,8 +2001,8 @@ svg {
   padding: 0;
   top: 0;
   bottom: 0;
-  left: -3rem;
-  writing-mode: sideways-lr;
+  right: -3rem;
+  writing-mode: sideways-rl;
   text-orientation: mixed;
   text-align: center;
 }
@@ -1692,8 +2063,8 @@ svg {
   padding: 0;
   top: 0;
   bottom: 0;
-  left: -3rem;
-  writing-mode: sideways-lr;
+  right: -3rem;
+  writing-mode: sideways-rl;
   text-orientation: mixed;
   text-align: center;
 }
@@ -1731,6 +2102,7 @@ svg {
   align-items: center;
   box-sizing: border-box;
   /* border: solid white 1px; */
+  display: none;
 }
 
 #treatment-exposureSlider {
@@ -1775,36 +2147,52 @@ svg {
   height: 87.5%;
   /* width: 62.5%; */
   /* width: 55%; */
-  width: 40%;
+  flex: 1.75; width: auto; /* 40%; */
+
   display: inline-flex;
   /* flex-flow: wrap; */
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+
+  gap: 0.75rem;
 }
 
 .treatment-graph-box {
   background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
   position: relative;
-  height: 67.5%;
+  flex: 7; height: auto; /* 67.5%; */
   width: 100%;
   display: flex;
   justify-content: center;
   /* background-color: rgba(255, 255, 255, 0.125); */
-  backdrop-filter: blur(60px); 
   border-radius: 20px;
   box-sizing: border-box;
 }
 
 #treatment-Graph-tooltip {
   position: absolute;
-  font-size: calc(1rem * 10/14);
+  font-size: calc(1rem * 12/14); /* 0/14); */
+
   z-index: 10;
-  top: 2.5%;
-  width: 95%;
+  top: 8.5%; /* 7.5%; */
+  /* top: 2.5%; */
+
+  left: 0; /* 2.5%; */
+  right: 0; /* 2.5%; */
+  padding-left: 1rem;
+
+  /* height: 5%; */
+  /* width: 90%; */
+
+  display: flex;
+  justify-content: left; /* center; */
+  align-items: flex-start; /* center; */
+
   color: var(--klotho-offwhite);
-  text-align: center;
+  /* text-align: center; */
   /* border: solid red 1px; */
   box-sizing: border-box;
 }
@@ -1812,36 +2200,40 @@ svg {
 #treatment-Graph {
   position: absolute;
   top: 7.5%;
-  bottom: 5%;
+  bottom: 2.5%;
+  left: 2.5%;
+  right: 2.5%;
   /* height: 90%;  */
   /* margin-top: 5%; */
   /* margin-bottom: 5%; */
-  width: 90%;
+  /* width: 90%; */
   /* border: solid red 1px; */
   box-sizing: border-box;
 }
 
 .below-treatment-graph-box {
-  height: 30%;
-  width: 100%;
+  height: 100%; /* 30%; */
+  flex: 3; /*width: 100%; */
   display: flex;
   flex-flow: row;
-  box-sizing: border-box;
   justify-content: space-between;
+  box-sizing: border-box;
+
+  gap: 0.75rem;
 }
 
 .treatment-risks-box {
   background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
   /* height: 30%; */
   height: 100%;
-  /* width: 100%; */
-  width: 65%;
+  flex: 2; width: auto; /* 100%; */
+  /* width: 65%; */
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   justify-content: flex-start;
   align-items: flex-start;
-  backdrop-filter: blur(60px); 
   border-radius: 20px;
   box-sizing: border-box;
 }
@@ -1854,10 +2246,11 @@ svg {
   text-align: center;
   align-items: center;
 
-  /* padding-left: 1.5rem; */
+  padding-left: 1rem;
   display: flex;
-  justify-content: center;
-  font-size: calc(1rem * 20/14);
+  justify-content: left; /* center; */
+  /* font-size: calc(1rem * 20/14); */
+  font-size: calc(1rem * 17.5/14);
   font-weight: 200;
   box-sizing: border-box;
   /* border: solid red 1px; */
@@ -1865,21 +2258,23 @@ svg {
 
 #risk-transition-box {
   color: white;
-  height: 55%;
+  height: 35%;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left; /* center; */
+  padding-left: 1rem;
   align-items: center;
   vertical-align: middle;
   font-size: calc(1rem * 30/14);
-  box-sizing: border-box;
   visibility: hidden;
+  gap: 0.25ch;
+  box-sizing: border-box;
   /* border: solid red 1px; */
 }
 
 #risk-before-treatment-value {
-  color: var(--graphnorx);
+  color: var(--graphred);
 
   width: 42.5%;
 
@@ -1891,12 +2286,12 @@ svg {
   vertical-align: middle;
   font-size: calc(1rem * 45/14);
   font-weight: 200;
-  /* border: solid red 1px; */
   box-sizing: border-box;
+  /* border: solid var(--graphred) 1px; */
 }
 
 #risk-after-treatment-value {
-  color: var(--graphwithrx);
+  color: var(--graphblue);
 
   width: 42.5%;
 
@@ -1908,8 +2303,33 @@ svg {
   vertical-align: middle;
   font-size: calc(1rem * 45/14);
   font-weight: 200;
-  /* border: solid red 1px; */
   box-sizing: border-box;
+  /* border: solid var(--graphblue) 1px; */
+}
+
+#risk-transition-box-80 {
+  color: white;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left; /* center; */
+  padding-left: 1rem;
+  align-items: center;
+  vertical-align: middle;
+  font-size: calc(1rem * 14/14);
+  box-sizing: border-box;
+  visibility: hidden;
+  gap: 1ch;
+  /* border: solid red 1px; */
+}
+
+#risk-transition-box-80 span:first-of-type {
+  color: var(--graphred);
+}
+
+#risk-transition-box-80 span:last-of-type {
+  color: var(--graphblue);
 }
 
 #treatment-proportional-risk-reduction-value {
@@ -1932,12 +2352,15 @@ svg {
 
 #healthy-years-wrapper {
   background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
   height: 100%;
-  width: 32.5%;
+  flex: 1; /*width: 32.5%; */
   display: flex;
   flex-flow: column;
   /* justify-content: center; */
   justify-content: flex-start;
+  padding-left: 1rem;
+  padding-right: 1rem;
   align-items: center;
   border-radius: 20px;
   box-sizing: border-box;
@@ -1947,15 +2370,15 @@ svg {
   color: white;
   /* height: 40%; */
   height: 30%;
-  width: 90%;
+  /* width: 90%; */
   font-size: calc(1rem * 15/14);
   font-weight: 200;
   /* padding-left: 1.5rem; */
   /* padding-right: 1.5rem; */
   display: flex;
-  justify-content: center;
+  justify-content: left; /*center;*/
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
   vertical-align: middle;
   /* border: solid red 1px; */
   box-sizing: border-box;
@@ -1965,24 +2388,25 @@ svg {
   color: white;
   /* margin-top: 10%; */
   /* height: 60%; */
-  height: 55%;
+  /* height: 55%; */
+  flex-grow: 1;
   width: 100%;
   font-size: calc(1rem * 60/14);
   font-weight: 200;
   display: flex;
   /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
-  /* border: solid red 1px; */
+  /* align-items: center; */
+  justify-content: left; /* center; */
   box-sizing: border-box;
+  /* border: solid red 1px; */
 }
 
 #healthy-years-value {
   color: white;
   height: 65%;
   /* aspect-ratio: 1 / 1; */
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  /* padding-left: 1.5rem; */
+  /* padding-right: 1.5rem; */
   font-size: calc(1rem * 60/14);
   font-weight: 200;
   display: flex;
@@ -2096,26 +2520,164 @@ svg {
 
 .treatment-col2 {
   height: 87.5%;
-  width: 30%;
+  flex: 1.25; width: auto; /* 30%; */
+
   display: inline-flex;
   /* flex-flow: wrap; */
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  box-sizing: border-box;
+  gap: 0.75rem 0;
+}
+
+#treatment-col2-row1 {
+  position: relative;
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
+  width: 100%;
+  flex: 3; height: auto;
+
+  display: inline-flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
   box-sizing: border-box;
 }
 
-#below-treatment-bar-box {
-  height: 30%;
+#treatment-matrix-l,
+#treatment-matrix-r
+{
+  position: absolute;
+  top: 0%;
+  bottom: 10%;
+  width: 25%;
+
+  z-index: -1;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+
+  transition: all 0.5s ease;
+  /* border: solid orange 1px; */
+  box-sizing: border-box;
+}
+
+#treatment-matrix-l {
+  justify-content: right;
+  left: 0;
+}
+
+#treatment-matrix-l img {
+  height: 80%;
+  /* border: solid red 1px; */
+  box-sizing: border-box;
+}
+
+#treatment-matrix-r {
+  right: 0;
+}
+
+#treatment-dial-bar {
+  position: absolute;
+  color: white;
+  font-size: calc(1rem * 14/14);
+  font-weight: 200;
+  bottom: 3.5%;
+}
+
+#treatment-dial-box {
+  position: absolute;
+  /* height: 100%; */
+  top: 0%;
+  bottom: 10%;
+
+  aspect-ratio: 1/1;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  user-select: none;
+
+  /* border: solid red 1px; */
+}
+
+#treatment-dial-image {
+  height: 95%;
+  aspect-ratio: 1 / 1;   
+  object-fit: contain;
+  transform: rotate(0deg);
+  pointer-events: none; 
+  user-drag: none;     
+  -webkit-user-drag: none; 
+
+  transition: filter 0.5s ease;
+}
+
+#treatment-dial-label:hover {
+  cursor: grab;
+}
+
+#treatment-dial-label {
+  height: 90%;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-family: monospace; */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: grab;
+}
+
+#treatment-dial-unit-label {
+  color: white;
+  position: absolute;
+  bottom: 32.5%;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+#treatment-col2-row2 {
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
   width: 100%;
+  flex: 4; height: auto;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 20px;
+  box-sizing: border-box;
+  /* border: solid yellowgreen 1px; */
+}
+
+#below-treatment-bar-box {
+  width: 100%; /* 30%; */
+  flex: 3; /*width: 100%; */
   display: flex;
   flex-flow: row;
   justify-content: space-between;
   box-sizing: border-box;
+  /* border: solid green 1px; */
 }
 
 .treatment-treatments-box {
-  background: var(--lgradient4);
+  /* background: var(--lgradient4); */
   /* height: 30%; */
   height: 100%;
   width: 100%;
@@ -2126,52 +2688,102 @@ svg {
   justify-content: flex-start;
   align-items: center;
   /* background-color: rgba(255, 255, 255, 0.125); */
-  backdrop-filter: blur(60px); 
-  border-radius: 20px;
+  /* backdrop-filter: blur(60px);  */
+  /* border-radius: 20px; */
+  padding-left: 1rem;
   overflow: hidden;
   box-sizing: border-box;
+  /* border: solid blue 1px; */
 }
 
 #health-score-transition-title {
   color: white;
   /* height: 40%; */
-  height: 30%;
-  width: 85%;
-  text-align: center;
-  align-items: center;
+  height: 20%;
+  width: 100%;
+  /* text-align: center; */
 
   /* padding-left: 1.5rem; */
   /* padding-right: 1.5rem; */
+
+  /* padding-left: 1ch; */
+
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: left;
   align-items: center;
+  /* align-items: flex-start; */
+
   /* font-size: calc(1rem * 20/14); */
   font-size: calc(1rem * 17.5/14);
   font-weight: 200;
-  /* border: solid red 1px; */
   box-sizing: border-box;
+  /* border: solid red 1px; */
+}
+
+#treatment-health-score-value-postamble {
+  height: 15%;
+  width: 100%;
+  font-size: calc(1rem * 12/14);
+  font-weight: 200;
+
+  /* padding-left: 1rem; */
+  align-items: center;
+  /* text-align: center; */
+  display: flex;
+  justify-content: left; /* center; */
+  color: var(--klotho-offwhite);
+  box-sizing: border-box;
+  /* border: solid purple 1px; */
+}
+
+#treatment-health-score-80 {
+  color: white;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left; /* center; */
+  /* padding-left: 1rem; */
+
+  align-items: center;
+  vertical-align: middle;
+  font-size: calc(1rem * 14/14);
+  box-sizing: border-box;
+  visibility: hidden;
+  gap: 1ch;
+  /* border: solid red 1px; */
+}
+
+#treatment-health-score-80 span:first-of-type {
+  color: var(--graphred);
+}
+
+#treatment-health-score-80 span:last-of-type {
+  color: var(--graphblue);
 }
 
 #health-score-transition-box {
   color: white;
   align-items: center;
-  justify-content: center;
+  justify-content: left; /* center; */
   display: flex;
   /* height: 60%; */
-  height: 55%;
-  width: 90%;
+  height: 45%;
+  width: 100%;
   /* padding-left: 1.5rem; */
   /* padding-bottom: 2.5rem; */
   font-size: calc(1rem * 30/14);
-  /* border: solid red 1px; */
   box-sizing: border-box;
   visibility: hidden;
+  gap: 0.25ch;
+  /* border: solid red 1px; */
 }
 
 #health-score-before-treatment-value {
-  color: var(--graphnorx);
+  color: var(--graphred);
 
-  width: 30%;
+  /* width: 30%; */
 
   display: flex;
   vertical-align: middle;
@@ -2186,9 +2798,9 @@ svg {
 }
 
 #health-score-after-treatment-value {
-  color: var(--graphwithrx);
+  color: var(--graphblue);
 
-  width: 30%;
+  /* width: 30%; */
 
   display: flex;
   vertical-align: middle;
@@ -2203,25 +2815,33 @@ svg {
 }
 
 .treatment-health-score-bar-box {
-  background: var(--lgradient3);
-  height: 67.5%;
+  /* background: var(--lgradient3); */
+  position: relative;
+  flex: 4; height: auto; /* 67.5%; */
   width: 100%;
   display: inline-flex;
   justify-content: center;
   flex-direction: column;
   /* background-color: rgba(255, 255, 255, 0.125); */
-  backdrop-filter: blur(60px); 
-  border-radius: 20px;
+  /* backdrop-filter: blur(60px);  */
+  /* border-radius: 20px; */
   box-sizing: border-box;
+  /* border: solid orange 1px; */
 }
 
 #treatment-health-score-bar {
   background-color: transparent;
-  height: 90%;
-  width: 80%;
-  margin-left: 10%;
-  margin-right: 10%;
+  position: absolute;
+  top: 5%;
+  bottom: 0%;
+  left: 10%;
+  right: 10%;
+  /* height: 90%; */
+  /* width: 80%; */
+  /* margin-left: 10%; */
+  /* margin-right: 10%; */
   box-sizing: border-box;
+  /* border: solid orange 1px; */
 }
 
 .healthy-years-gained-title {
@@ -2894,7 +3514,7 @@ svg {
 }
 
 #personalization-risk-before-treatment-value {
-  color: var(--graphnorx);
+  color: var(--graphred);
   width: 30%;
   display: flex;
   vertical-align: middle;
@@ -2940,7 +3560,7 @@ svg {
 }
 
 #personalization-risk-after-treatment-value {
-  color: var(--graphwithrx);
+  color: var(--graphblue);
   width: 30%;
   display: flex;
   vertical-align: middle;
@@ -3079,6 +3699,8 @@ svg {
   /* border: solid white 1px; */
   /* border-radius: 20px; */
   box-sizing: border-box;
+
+  gap: 0 0.75rem;
 }
 
 #dial-boxes-box-page-title {
@@ -3143,18 +3765,478 @@ svg {
   font-size: calc(1rem * 10.5/14);
 }
 
+#dial-boxes-col-right {
+  position: relative;
+  height: 87.5%;
+  flex: 3;
+  display: flex;
+  flex-flow: column;
+  box-sizing: border-box;
+  gap: 0.75rem;
+}
+
+#dial-boxes-col-right-row-1 {
+  position: relative;
+  width: 100%;
+  flex: 3; 
+  display: flex;
+  box-sizing: border-box;
+}
+
+#dial-boxes-col-right-row-2 {
+  position: relative;
+  width: 100%;
+  flex: 2; 
+  display: flex;
+  flex-flow: row;
+  box-sizing: border-box;
+  gap: 0.75rem;
+}
+
+.dial-boxes-col2 {
+  /* background: var(--lgradient3); */
+  z-index: 1;
+  height: 87.5%;
+  flex: 1.25; /* width: 37.5%; */
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border-radius: 20px; */
+  box-sizing: border-box;
+
+  gap: 0.75rem;
+}
+
+#dial-boxes-col2-row1 {
+  /* flex: 1; height: auto; 15%; */
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  user-select: none;
+
+  /* border: solid red 1px; */
+}
+
+#dial-boxes-col2-row2 {
+  position: relative; 
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
+  width: 100%;
+  flex: 3; height: auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+/* #matrix-l,
+#matrix-r
+{
+  position: absolute;
+  z-index: -1;
+  user-select: none;
+  opacity: 0;
+
+  width: 20%;
+  top: 8.65%;
+  bottom: 8.65%;
+
+  display: block;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: hidden;
+  padding: 1.25% 1.25% 1.25% 1.25%;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  transition: all 0.5s ease;
+}
+
+#matrix-l {
+  left: 0;
+}
+
+#matrix-r {
+  right: 0;
+} */
+
+#matrix-l,
+#matrix-r
+{
+  position: absolute;
+  top: 0%;
+  bottom: 10%;
+  width: 25%;
+
+  z-index: -1;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+
+  transition: all 0.5s ease;
+  /* border: solid orange 1px; */
+  box-sizing: border-box;
+}
+
+#matrix-l {
+  left: 0;
+}
+
+#matrix-r {
+  justify-content: left;
+  right: 0;
+}
+
+#matrix-r img {
+  /* opacity: 0.5; */
+  height: 80%;
+  /* border: solid red 1px; */
+  box-sizing: border-box;
+}
+
+#dial-bar {
+  position: absolute;
+  color: white;
+  font-size: calc(1rem * 18/14);
+  font-weight: 200;
+  bottom: 3.5%;
+}
+
+#dial-box {
+  position: absolute;
+  /* height: 100%; */
+  top: 0%;
+  bottom: 10%;
+
+  aspect-ratio: 1/1;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-sizing: border-box;
+  user-select: none;
+
+  /* border: solid red 1px; */
+}
+
+#dial-image {
+  height: 95%;
+  aspect-ratio: 1 / 1;   /* keeps it square */
+  object-fit: contain;
+  transform: rotate(0deg);
+  pointer-events: none; /* so drag events go to container */
+  user-drag: none;      /* Safari */
+  -webkit-user-drag: none; /* Safari/WebKit */
+
+  transition: filter 0.5s ease;
+}
+
+#dial-label:hover {
+  cursor: grab;
+}
+
+#dial-label {
+  height: 90%;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-family: monospace; */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: grab;
+  /* border: solid yellowgreen 1px; */
+}
+
+.label {
+  position: absolute;
+  color: white; 
+  font-size: calc(1rem * 50/14);
+  font-weight: 200;
+  font-family: sans-serif;
+  z-index: 2;
+  cursor: grab;
+}
+
+#dial-boxes-col2-row3 {
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
+  width: 100%;
+  flex: 2.5; height: auto;
+  color: white;
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+
+  border-radius: 20px;
+  box-sizing: border-box;
+
+  user-select: none;
+}
+
+#dial-boxes-plaque-threshold-progress-bar-wrapper {
+  /* margin-top: 5%; */
+  position: absolute;
+  opacity: 0;
+  
+  height: 0%; /* 27.5%; */
+  width: 100%;
+
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: filter 0.5s ease;
+}
+
+#dial-boxes-plaque-threshold-progress-bar {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.0);
+  /* height: 80%; */
+  /* width: 60%; */
+
+  top: 60%;
+  bottom: 5%;
+  left: 15%;
+  right: 15%;
+
+  border: solid white 1px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#progress-tick {
+  position: absolute;
+  width: 1px;
+  background-color: white;/*var(--accentblue);*/
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  visibility: hidden;
+}
+
+#dial-boxes-plaque-threshold-progress {
+  position: relative;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  background-color: var(--klotho-accent); 
+    /* url('../media/progress-bar.png'); */
+  
+  /* background-size:  */
+    /* 110%; */
+
+  /* background-blend-mode: screen; */
+  /* background-position: center; */
+
+  clip-path: inset(0 0% 0 0);
+
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#dial-boxes-plaque-threshold-wrapper {
+  position: absolute;
+  top: 2.5%;
+  height: 20%; /* bottom: 80%; */
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-flow: column;
+
+  align-items: center;
+
+  justify-content: left;
+  padding-left: 1rem;
+  /* gap: 1ch; */
+
+  box-sizing: border-box;
+  /* border: solid green 1px; */
+}
+
+#dial-boxes-plaque-threshold-progress-value-a {
+  color: white;  
+  
+  /* height: 70%; */
+  width: 100%;
+
+  /* font-size: calc(1rem * 12.5/14); */
+  font-size: calc(1rem * 15/14);
+  display: inline-flex;
+
+  justify-content: left;
+  /* align-items: center; */
+  /* text-align: left; */
+
+  box-sizing: border-box;
+  /* border: solid yellowgreen 1px; */
+}
+
+#dial-boxes-plaque-threshold-progress-value {
+  color: var(--klotho-offwhite);  
+
+  /* height: 30%; */
+  width: 100%;
+  font-size: calc(1rem * 12.5/14);
+
+  display: inline-flex;
+
+  justify-content: left;
+  align-items: center;
+  flex-flow: row;
+
+  gap: 0.5ch;
+
+  box-sizing: border-box;
+  /* border: solid yellowgreen 1px; */
+}
+
+#dial-boxes-plaque-threshold-progress-value span {
+  width: auto; /* 100%; */
+  font-weight: 200;
+  font-size: calc(1rem * 15/14);
+  box-sizing: border-box;
+}
+
+#dial-boxes-plaque-threshold-personalized-guidance-wrapper{
+  position: relative;
+  /* height: 55%; */
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left; /* center; */
+  align-items: center;
+  box-sizing: border-box;
+
+  /* border: solid orange 1px; */
+}
+
+#dial-boxes-plaque-threshold-personalized-guidance-title {
+  position: absolute;
+  top: 0%;
+
+  height: 20%;
+  width: 100%; /* 90%; */
+
+  font-size: calc(1rem * 18/14);
+
+  display: flex;
+  justify-content: left; /*flex-start;*/
+  padding-left: 1rem;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+#dial-boxes-plaque-threshold-personalized-guidance {
+  color: var(--klotho-offwhite);
+
+  width: 100%;
+
+  flex-grow: 1;
+
+  font-size: calc(1rem * 15/14); 
+  /* padding-bottom: 1%; */
+  /* margin-top: 3%; */
+  display: flex;
+  flex-flow: row;
+  justify-content: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  align-items: center;
+  text-align: left; /* center; */
+  opacity: 0;
+
+  /* padding-left: 1.5rem; */
+
+  /* border-radius: 10px; */
+  box-sizing: border-box;
+  transition: opacity 0.5s ease;
+
+  /* border: solid red 1px; */
+
+  /* opacity: 1 !important;
+  visibility: visible !important; */
+}
+
+#dial-boxes-plaque-threshold-personalized-guidance::before {
+  content: "";
+  position: absolute;
+  inset: 0; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  border-radius: inherit; 
+  /* background:  */
+    /* radial-gradient( */
+      /* #57b4ff 25%, */
+      /* #0f9aff 75%, */
+      /* #005fff 100% */
+    /* ); */
+
+  opacity: 0.75;
+  z-index: 0;
+}
+
+#dial-boxes-plaque-threshold-personalized-guidance > * {
+  position: relative;
+  z-index: 1; /* Text/content stays above */
+}
+
+#dial-boxes-plaque-threshold-personalized-guidance span {
+  font-weight: 400;
+}
+
+#dial-boxes-plaque-threshold-personalized-guidance span:nth-of-type(1) {
+  font-size: calc(1rem * 16/14);
+}
+
 .dial-boxes-col1 {
   height: 87.5%;
-  width: 30%;
+  flex: 1.25; width: auto; /* 30%; */
+  
   display: inline-flex;
   flex-flow: column;
   justify-content: space-between;
 
   /* border: solid white 0.5px;  */
   box-sizing: border-box;
+
+  gap: 0.75rem;
 }
 
 #dial-boxes-current-levels {
+  position: absolute;
+  opacity: 0;
+  
   background: var(--lgradient1);
   height: 32.5%;
   width: 100%;
@@ -3272,8 +4354,10 @@ svg {
 
 #dial-boxes-bot-option {
   background: var(--lgradient2-2);
-  height: 30%;
+  /* height: 30%; */
+  height: 47.5%;
   width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -3302,7 +4386,7 @@ svg {
   box-sizing: border-box;
 }
 
-.bot-input-box {
+/* .bot-input-box {
   position: relative;
   height: 12.5%;
   width: 100%;
@@ -3310,9 +4394,9 @@ svg {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-}
+} */
 
-#bot-input,
+/* #bot-input,
 #healthscore-bot-input,
 #benefit-bot-input
 {
@@ -3330,14 +4414,14 @@ svg {
   border-radius: 20px;
   box-sizing: border-box;
   cursor: default;
-}
+} */
 
-#bot-input::placeholder,
+/* #bot-input::placeholder,
 #healthscore-bot-input::placeholder,
 #benefit-bot-input::placeholder
 {
   color: white;
-}
+} */
 
 #dial-boxes-bot-2 {
   /* border: solid white 1px;  */
@@ -3354,12 +4438,15 @@ svg {
 }
 
 #dial-boxes-plaque-threshold-box {
-  background: var(--lgradient2-2);
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
   position: relative;
   user-select: none;
 
-  height: 35%;
+  flex: 4; height: auto; /* 35%; */
   width: 100%;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -3371,11 +4458,14 @@ svg {
 }
 
 #full-dial-boxes-gif-wrapper {
-  position: relative;
+  position: absolute;
   background-color: rgba(255, 255, 255, 0.0625);
-  height: 90%;
+  /* height: 90%; */
   /* margin-top: 5%; */
   /* margin-bottom: 5%; */
+  top: 20%;
+  bottom: 5%;
+  
   aspect-ratio: 1/1 !important;
   border: solid var(--klotho-offwhite) 1px;
   border-radius: 50%;
@@ -3386,8 +4476,7 @@ svg {
   box-sizing: border-box;
 }
 
-#full-dial-boxes-gif-wrapper video,
-#full-dial-boxes-gif-wrapper img {
+#full-dial-boxes-gif-wrapper video {
   transform: translateX(10%) translateY(2%);
   width: 65%;
 }
@@ -3403,19 +4492,26 @@ svg {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+
+  height: 0px !important;
+  width: 0px !important;
+  font-size: 0px !important;
 }
 
 #future-plaque-gauge-wrapper {
   position: absolute;
   opacity: 0;
-  height: 100%;
-  width: 100%;
+  height: 100%; 
+  width: 100%; 
   display: flex;
   flex-flow: wrap;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
   visibility: hidden;
+
+  height: 0px !important;
+  width: 0px !important;
 }
 
 #future-plaque-gauge {
@@ -3433,6 +4529,9 @@ svg {
 
   box-sizing: border-box;
   /* border: solid red 1px; */
+
+  height: 0px !important;
+  width: 0px !important;
 }
 
 #future-plaque-gauge svg {
@@ -3443,6 +4542,9 @@ svg {
 
   margin: 0 auto;
   box-sizing: border-box;
+
+  height: 0px !important;
+  width: 0px !important;
 }
 
 .future-circle-border {
@@ -3453,7 +4555,7 @@ svg {
 
 .future-circle-outline {
   fill: none;
-  stroke: var(--graphwithrx);
+  stroke: var(--graphblue);
   stroke-width: 30px; 
 }
 
@@ -3503,387 +4605,35 @@ svg {
   font-size: calc(1rem * 20/14);
 }
 
-#dial-boxes-current-levels {
-  position: absolute;
-  opacity: 0;
-}
+/* #dial-boxes-plaque-threshold-box {
+  height: 50%; 
+} */
 
-#dial-boxes-bot-option {
-  height: 47.5%;
-}
-
-#dial-boxes-plaque-threshold-box {
-  height: 50%;
-}
-
-#dial-boxes-plaque-threshold-box div{
+/* #dial-boxes-plaque-threshold-box div{
   height: 75%;
-}
-
-.dial-boxes-col2 {
-  background: var(--lgradient3);
-  z-index: 1;
-  height: 87.5%;
-  width: 37.5%;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  border-radius: 20px;
-  box-sizing: border-box;
-}
-
-#dial-boxes-col2-row1 {
-  height: 15%;
-  width: 100%;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  user-select: none;
-
-  /* border: solid red 1px; */
-}
-
-#dial-boxes-col2-row2 {
-  position: relative; 
-  height: 55%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
-
-  /* border: solid red 1px; */
-}
-
-#matrix-l,
-#matrix-r
-{
-  position: absolute;
-  z-index: -1;
-  user-select: none;
-  /* height: fit-content; */
-  /* object-fit: cover; */
-  opacity: 0;
-
-  width: 20%;
-  /* height: 85%; */
-  top: 8.65%;
-  bottom: 8.65%;
-
-  display: block;
-  color: rgba(255, 255, 255, 0.5);
-  font-family: monospace;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow: hidden;
-  padding: 1.25% 1.25% 1.25% 1.25%;
-  text-align: center;
-  align-items: center;
-  box-sizing: border-box;
-
-  transition: all 0.5s ease;
-}
-
-#matrix-l {
-  left: 0;
-}
-
-#matrix-r {
-  right: 0;
-}
-
-#dial-box span {
-  position: absolute;
-  color: white;
-  font-size: calc(1rem * 20/14);
-  font-weight: 200;
-  top: 100%;
-}
-
-#dial-box {
-  position: relative;
-  height: 100%;
-
-  aspect-ratio: 1/1;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  box-sizing: border-box;
-  user-select: none;
-
-  /* border: solid red 1px; */
-}
-
-#dial-image {
-  height: 95%;
-  aspect-ratio: 1 / 1;   /* keeps it square */
-  object-fit: contain;
-  transform: rotate(0deg);
-  pointer-events: none; /* so drag events go to container */
-  user-drag: none;      /* Safari */
-  -webkit-user-drag: none; /* Safari/WebKit */
-
-  transition: filter 0.5s ease;
-}
-
-#dial-label:hover {
-  cursor: grab;
-}
-
-#dial-label {
-  height: 90%;
-  aspect-ratio: 1/1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* font-family: monospace; */
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  border-radius: 50%;
-  box-sizing: border-box;
-  cursor: grab;
-}
-
-.label {
-  position: absolute;
-  color: white; 
-  font-size: calc(1rem * 50/14);
-  font-weight: 200;
-  font-family: sans-serif;
-  z-index: 2;
-  cursor: grab;
-}
-
-#col2-receptacle {
-  width: 100%;
-  display: none;
-  flex-direction: column;
-}
-
-#dial-boxes-col2-row3 {
-  height: 45%;
-  width: 100%;
-  color: white;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  text-align: center;
-  box-sizing: border-box;
-  user-select: none;
-}
-
-#dial-boxes-plaque-threshold-progress-bar-wrapper {
-  /* margin-top: 5%; */
-  position: relative;
-  height: 27.5%;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  transition: filter 0.5s ease;
-}
-
-#dial-boxes-plaque-threshold-progress-bar {
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.0);
-  /* height: 80%; */
-  /* width: 60%; */
-
-  top: 60%;
-  bottom: 5%;
-  left: 15%;
-  right: 15%;
-
-  border: solid white 1px;
-  border-radius: 5px;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-#progress-tick {
-  position: absolute;
-  width: 1px;
-  background-color: white;/*var(--accentblue);*/
-  top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 2;
-  visibility: hidden;
-}
-
-#dial-boxes-plaque-threshold-progress{
-  position: relative;
-  left: 0;
-  height: 100%;
-  width: 100%;
-
-  background-color: var(--klotho-accent); 
-    /* url('../media/progress-bar.png'); */
-  
-  /* background-size:  */
-    /* 110%; */
-
-  /* background-blend-mode: screen; */
-  /* background-position: center; */
-
-  clip-path: inset(0 0% 0 0);
-
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-#dial-boxes-plaque-threshold-wrapper {
-  padding-top: 2%;
-  /* height: 25%; */
-  width: 100%;
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-
-  box-sizing: border-box;
-}
-
-#dial-boxes-plaque-threshold-progress-value-a {
-  /* height: 30%; */
-  width: 100%;
-
-  font-size: calc(1rem * 12.5/14);
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  box-sizing: border-box;
-}
-
-#dial-boxes-plaque-threshold-progress-value {
-  /* height: 70%; */
-  width: 100%;
-  font-size: calc(1rem * 12.5/14);
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-#dial-boxes-plaque-threshold-progress-value span {
-  width: 100%;
-  font-weight: 200;
-  font-size: calc(1rem * 20/14);
-  box-sizing: border-box;
-}
-
-#dial-boxes-plaque-threshold-personalized-guidance-wrapper{
-  position: relative;
-  /* height: 55%; */
-  flex: 1;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-sizing: border-box;
-
-  /* border: solid orange 1px; */
-}
-
-#dial-boxes-plaque-threshold-personalized-guidance {
-  position: absolute;
-  /* height: 90%; */
-  /* width: 80%; */
-  top: 12.5%;
-  bottom: 15%;
-  left: 7.5%;
-  right: 7.5%;
-  font-size: calc(1rem * 15/14);
-  /* padding-bottom: 1%; */
-  /* margin-top: 3%; */
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  opacity: 0;
-
-  /* padding-left: 1.5rem; */
-
-  border-radius: 10px;
-  box-sizing: border-box;
-  transition: opacity 0.5s ease;
-
-  /* border: solid red 1px; */
-
-  /* opacity: 1 !important;
-  visibility: visible !important; */
-}
-
-#dial-boxes-plaque-threshold-personalized-guidance::before {
-  content: "";
-  position: absolute;
-  inset: 0; 
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  border-radius: inherit; 
-  /* background:  */
-    /* radial-gradient( */
-      /* #57b4ff 25%, */
-      /* #0f9aff 75%, */
-      /* #005fff 100% */
-    /* ); */
-
-  opacity: 0.75;
-  z-index: 0;
-}
-
-#dial-boxes-plaque-threshold-personalized-guidance > * {
-  position: relative;
-  z-index: 1; /* Text/content stays above */
-}
-
-#dial-boxes-plaque-threshold-personalized-guidance span {
-  font-weight: 400;
-}
-
-#dial-boxes-plaque-threshold-personalized-guidance span:nth-of-type(1) {
-  font-size: calc(1rem * 16/14);
-}
+} */
 
 .dial-boxes-col3 {
   height: 87.5%;
-  width: 30%;
+  flex: 1.75; width: auto;/* 30%; */
+
   display: inline-flex;
-  flex-flow: wrap;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   /* border-left: solid white 0.5px;  */
   box-sizing: border-box;
   transition: all 0.5s ease;
-}
 
-#col3-receptacle {
-  width: 100%;
-  display: none;
-  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .dial-boxes-graph-box {
   background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
   position: relative;
-  height: 57.5%;
+  flex: 7; height: auto; /* 57.5%;  */
   width: 100%;
   display: flex;
 
@@ -3904,12 +4654,16 @@ svg {
   color: white;
 
   height: 11.5%;
+  width: 100%;
 
   /* padding-top: 1.75%; */
-  /* padding-left: 1.5rem; */
+
+  padding-left: 1.5rem; 
+
   display: flex;
-  flex-flow: row;
-  justify-content: center;
+  /* flex-flow: row; */
+  justify-content: left; /* center; */
+  
   align-items: center;
 
   font-size: calc(1rem * 20/14);
@@ -3918,27 +4672,94 @@ svg {
   transition: all 0.125s ease;
 }
 
+#dial-boxes-graph-wrapper {
+  position: absolute;
+
+  /* top: 25%; */
+  top: 5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /* height: 77.5%;
+  width: 100%; */
+
+  box-sizing: border-box;
+  display: flex;
+  /* align-items: end; */
+}
+
+#dial-boxes-Graph {
+  position: absolute;
+
+  /* height: 85%; */
+  /* width: 100%; */
+  /* top: 0; */
+  /* bottom: 0; */
+  /* left: 0; */
+  /* right: 0; */
+
+  top: 2.5%;
+  bottom: 2.5%;
+  left: 2.5%;
+  right: 2.5%;
+
+  box-sizing: border-box;
+  /* margin-bottom: 2.5%; */
+}
+
+#dial-boxes-below-graph-box {
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
+  position: relative;
+  flex: 3; height: auto; /* 57.5%;  */
+  width: 100%;
+  display: flex;
+
+  justify-content: start;
+  flex-direction: column;
+
+  padding-left: 1rem;
+
+  user-select: none;
+
+  /* border-bottom: solid white 0.5px;  */
+  
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
 #dial-boxes-graph-title {
   color: white;
-  height: 5%; 
-  font-size: calc(1rem * 13.5/14);
-  font-weight: 200;
-  display: flex;
+  /* height: 15%;  */
+  height: 30%;
+  width: 100%;
+
+  /* text-align: center; */
   align-items: center;
-  text-align: center;
-  justify-content: center;
+
+  display: flex;
+  justify-content: left; /* center; */
+
+  /* font-size: calc(1rem * 13.5/14); */
+  font-size: calc(1rem * 17.5/14);
+  font-weight: 200;
+
   box-sizing: border-box;
-  transition: all 0.125s ease;
+  /* border: solid white 1px;  */
 }
 
 #dial-boxes-risk-transition-box {
-  position:absolute;
+  /* position:absolute; */
   color: white;
-  height: 15%;
+  /* height: 15%; */
+  flex-grow:1; height: auto; /* 55%; */
+  width: 100%;
 
-  top: 17.5%;
-  left: 0;
-  right: 0;
+  /* top: 17.5%; */
+  /* left: 0; */
+  /* right: 0; */
 
   display: flex;
   flex-direction: column;       /* stack children vertically */
@@ -3946,15 +4767,19 @@ svg {
   
   visibility: hidden;
   box-sizing: border-box;
+
+  /* border: solid red 1px; */
 }
 
 #dial-boxes-risk-transition-box-row1 {
   display: flex;
-  gap: 0.5rem;
-  justify-content: center;
+  gap: 1ch; /* 0.5rem; */
+  justify-content: left; /* center; */
   align-items: center;
   height: calc(100% * 2/3);
   width: 100%;
+
+  /* border: solid red 1px; */
 }
 
 #dial-boxes-risk-transition-box span {
@@ -3967,67 +4792,72 @@ svg {
 }
 
 #dial-boxes-risk-before-treatment-value {
-  color: white;
-  font-size: calc(1rem * 24/14);
+  /* color: white; */
+  color: var(--graphred);
+  /* font-size: calc(1rem * 24/14); */
+  font-size: calc(1rem * 45/14);
   font-weight: 200;
 
-  justify-content: left;
+  /* justify-content: left; */
+  justify-content: center;
   vertical-align: middle;
   display: flex;
 
   line-height: 1;  /* helps avoid extra spacing from default line-height */
-  width: 5ch;        /* set width to fit the widest possible value, e.g. "100.0%" */
-  text-align: right;
+  /* width: 5ch;        set width to fit the widest possible value, e.g. "100.0%" */
+  /* width: 42.5%; */
+  /* text-align: right; */
+  align-items: center;
   box-sizing: border-box;
 }
 
 #dial-boxes-risk-after-treatment-value {
-  color: white;
-  font-size: calc(1rem * 24/14);
+  /* color: white; */
+  color: var(--graphblue);
+  /* font-size: calc(1rem * 24/14); */
+  font-size: calc(1rem * 45/14);
   font-weight: 200;
 
-  justify-content: right;
+  /* justify-content: right; */
+  justify-content: center;
   vertical-align: middle;
   display: flex;
 
   line-height: 1;  /* helps avoid extra spacing from default line-height */
-  width: 5ch;        /* set width to fit the widest possible value, e.g. "100.0%" */
-  text-align: left;
+  /* width: 5ch;        set width to fit the widest possible value, e.g. "100.0%" */
+  /* width: 42.5%; */
+  /* text-align: left; */
+  align-items: center;
   box-sizing: border-box;
 }
 
 #dial-boxes-risk-reduction-value {
-  font-size: calc(1rem * 17/14);
+  /* font-size: calc(1rem * 17/14); */
+  font-size: calc(1rem * 15/14);
   font-weight: 200;
-  height: calc(100% * 1/3);
-  width: 100%;
-  text-align: center;
-  align-items: flex-start;
-}
-
-#dial-boxes-graph-wrapper {
-  position: relative;
-
-  height: 77.5%;
+  /* height: calc(100% * 1/3); */
+  height: 15%;
   width: 100%;
 
-  box-sizing: border-box;
+  /* padding-bottom: 1%; */
   display: flex;
-  align-items: end;
-}
+  justify-content: left; /* center; */
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;  
 
-#dial-boxes-Graph {
-  height: 85%;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 2.5%;
+  /* border: solid red 1px; */
 }
 
 .dial-boxes-bar-box {
   background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
   position: relative;
-  height: 40%;
+  /* flex: 1; height: auto; 40%; */
+  flex: 4; height: auto;
   width: 100%;
+  
   display: inline-flex;
   justify-content: center;
   vertical-align: middle;
@@ -4046,10 +4876,12 @@ svg {
   font-size: calc(1rem * 15/14);
   font-weight: 200;
   display: flex;
-  /* padding-left: 1.5rem; */
-  justify-content: center;
+
+  padding-left: 1rem;
+  justify-content: left; /* center; */
+
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
   vertical-align: middle;
   box-sizing: border-box;
   /* border: solid white 0.5px;  */
@@ -4069,7 +4901,7 @@ svg {
 }
 
 #bar-no-rx {
-  background-color: var(--graphnorx);
+  background-color: var(--graphred);
 
   display: flex;
 
@@ -4083,7 +4915,7 @@ svg {
 }
 
 #bar-with-rx {
-  background-color: var(--graphwithrx);
+  background-color: var(--graphblue);
 
   display: flex;
 
@@ -4162,17 +4994,6 @@ svg {
   visibility: hidden;
 }
 
-.dial-boxes-col1 {
-  width: 30%; 
-}
-
-.dial-boxes-col2 {
-  width: 30%; 
-}
-
-.dial-boxes-col3 {
-  width: 37.5%; 
-}
 /* --#--- OUTER HEALTHSPAN DIAL BOX ---#-- */
 
 /* --#-- OUTER HEALTH SCORE DIAL BOX --#-- */
@@ -4202,6 +5023,8 @@ svg {
   /* border: solid white 1px; */
   /* border-radius: 20px; */
   box-sizing: border-box;
+
+  gap: 0 0.75rem;
 }
 
 #healthscore-dial-boxes-box-page-title {
@@ -4268,16 +5091,22 @@ svg {
 
 .healthscore-dial-boxes-col1 {
   height: 87.5%;
-  width: 30%;
+  flex: 1.25; width: auto; /* 30%; */
+
   display: inline-flex;
   flex-flow: column;
   justify-content: space-between;
 
   /* border: solid white 0.5px;  */
   box-sizing: border-box;
+
+  gap: 0.75rem;
 }
 
 #healthscore-dial-boxes-current-levels {
+  position: absolute;
+  opacity: 0;
+
   background: var(--lgradient1);
   height: 32.5%;
   width: 100%;
@@ -4435,12 +5264,15 @@ svg {
 }
 
 #healthscore-dial-boxes-plaque-threshold-box {
-  background: var(--lgradient2-2);
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
   position: relative;
   user-select: none;
 
-  height: 35%;
+  flex: 4; height: auto; /* 35%; */
   width: 100%;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -4452,11 +5284,14 @@ svg {
 }
 
 #full-healthscore-dial-boxes-gif-wrapper {
-  position: relative;
+  position: absolute;
   background-color: rgba(255, 255, 255, 0.0625);
-  height: 90%;
+  /* height: 90%; */
   /* margin-top: 5%; */
   /* margin-bottom: 5%; */
+  top: 20%;
+  bottom: 5%;
+  
   aspect-ratio: 1/1 !important;
   border: solid var(--klotho-offwhite) 1px;
   border-radius: 50%;
@@ -4467,8 +5302,7 @@ svg {
   box-sizing: border-box;
 }
 
-#full-healthscore-dial-boxes-gif-wrapper video,
-#full-healthscore-dial-boxes-gif-wrapper img {
+#full-healthscore-dial-boxes-gif-wrapper video {
   transform: translateX(10%) translateY(2%);
   width: 65%;
 }
@@ -4484,6 +5318,10 @@ svg {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+
+  height: 0px !important;
+  width: 0px !important;
+  font-size: 0px !important;
 }
 
 #healthscore-future-plaque-gauge-wrapper {
@@ -4497,6 +5335,9 @@ svg {
   align-items: center;
   box-sizing: border-box;
   visibility: hidden;
+
+  height: 0px !important;
+  width: 0px !important;
 }
 
 #healthscore-future-plaque-gauge {
@@ -4514,6 +5355,9 @@ svg {
 
   box-sizing: border-box;
   /* border: solid red 1px; */
+
+  height: 0px !important;
+  width: 0px !important;
 }
 
 #healthscore-future-plaque-gauge svg {
@@ -4524,6 +5368,9 @@ svg {
 
   margin: 0 auto;
   box-sizing: border-box;
+
+  height: 0px !important;
+  width: 0px !important;
 }
 
 #healthscore-future-plaque-gauge svg text {
@@ -4531,38 +5378,25 @@ svg {
   font-size: calc(1rem * 20/14);
 }
 
-#healthscore-dial-boxes-current-levels {
-  position: absolute;
-  opacity: 0;
-}
-
-#healthscore-dial-boxes-bot-option {
-  height: 47.5%;
-}
-
-#healthscore-dial-boxes-plaque-threshold-box {
-  height: 50%;
-}
-
-#healthscore-dial-boxes-plaque-threshold-box div{
-  height: 75%;
-}
-
 .healthscore-dial-boxes-col2 {
-  background: var(--lgradient3);
+  /* background: var(--lgradient3); */
   z-index: 1;
   height: 87.5%;
-  width: 37.5%;
+  flex: 1.25; /* width: 37.5%; */
+
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   box-sizing: border-box;
+
+  gap: 0.75rem;
 }
 
 #healthscore-dial-boxes-col2-row1 {
-  height: 15%;
+  /* flex: 1; height: auto; 15%; */
   width: 100%;
+
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -4575,27 +5409,30 @@ svg {
 
 #healthscore-dial-boxes-col2-row2 {
   position: relative; 
-  height: 55%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
 
-  /* border: solid red 1px; */
+  /* height: 55%; */
+  width: 100%;
+  flex: 3; height: auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+  box-sizing: border-box;
 }
 
-#healthscore-matrix-l,
+/* #healthscore-matrix-l,
 #healthscore-matrix-r
 {
   position: absolute;
   z-index: -1;
   user-select: none;
-  /* height: fit-content; */
-  /* object-fit: cover; */
   opacity: 0;
 
   width: 20%;
-  /* height: 85%; */
   top: 8.65%;
   bottom: 8.65%;
 
@@ -4619,19 +5456,72 @@ svg {
 
 #healthscore-matrix-r {
   right: 0;
+} */
+
+#healthscore-matrix-l,
+#healthscore-matrix-r
+{
+  position: absolute;
+  top: 0%;
+  bottom: 10%;
+  width: 25%;
+
+  z-index: -1;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+
+  transition: all 0.5s ease;
+  /* border: solid orange 1px; */
+  box-sizing: border-box;
+}
+
+#healthscore-matrix-l {
+  left: 0;
+}
+
+#healthscore-matrix-r {
+  justify-content: left;
+  right: 0;
+}
+
+#healthscore-matrix-r img {
+  /* opacity: 0.5; */
+  height: 80%;
+  /* border: solid red 1px; */
+  box-sizing: border-box;
 }
 
 #healthscore-dial-box span {
   position: absolute;
   color: white;
-  font-size: calc(1rem * 20/14);
+  font-size: calc(1rem * 18/14);
   font-weight: 200;
-  top: 100%;
+  bottom: 3.5%;
+}
+
+#healthscore-dial-bar {
+  position: absolute;
+  color: white;
+  font-size: calc(1rem * 18/14);
+  font-weight: 200;
+  bottom: 3.5%;
+  /* border: solid white 1px; */
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 #healthscore-dial-box {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  /* height: 100%; */
+  top: 0%;
+  bottom: 10%;
 
   aspect-ratio: 1/1;
   margin: auto;
@@ -4663,10 +5553,10 @@ svg {
 }
 
 #healthscore-dial-label {
-  height: 95%;
+  height: 90%;
   aspect-ratio: 1/1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-family: monospace;
@@ -4678,7 +5568,7 @@ svg {
 }
 
 #healthscore-dial-label-skin {
-  height: 15%;
+  height: 25%; /* 15%; */
   aspect-ratio: 1/1;
   display: flex;
   flex-direction: row;
@@ -4713,24 +5603,34 @@ svg {
 }
 
 #healthscore-dial-boxes-col2-row3 {
-  height: 45%;
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
+  /* height: 45%; */
   width: 100%;
+  flex: 2.5; height: auto;
   color: white;
 
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  justify-content: start;
   align-items: center;
   text-align: center;
+  justify-content: space-between;
+
+  border-radius: 20px;
   box-sizing: border-box;
+
   user-select: none;
 }
 
 #healthscore-dial-boxes-plaque-threshold-progress-bar-wrapper {
   /* margin-top: 5%; */
-  position: relative;
-  height: 27.5%;
+  position: absolute;
+  opacity: 0;
+  
+  height: 0%; /* 27.5%; */
   width: 100%;
+
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -4789,47 +5689,66 @@ svg {
 }
 
 #healthscore-dial-boxes-plaque-threshold-wrapper {
-  padding-top: 2%;
-  /* height: 25%; */
-  width: 100%;
+  position: absolute;
+  top: 2.5%;
+  height: 20%; /* bottom: 80%; */
+  left: 0;
+  right: 0;
+
   display: flex;
+  flex-flow: column;
 
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+
+  justify-content: left;
+  padding-left: 1rem;
+  /* gap: 1ch; */
 
   box-sizing: border-box;
+  /* border: solid green 1px; */
 }
 
 #healthscore-dial-boxes-plaque-threshold-progress-value-a {
-  /* height: 30%; */
+  color: white;  
+  
+  /* height: 70%; */
   width: 100%;
 
-  font-size: calc(1rem * 12.5/14);
-  display: flex;
+  /* font-size: calc(1rem * 12.5/14); */
+  font-size: calc(1rem * 15/14);
+  display: inline-flex;
 
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: left;
+  /* align-items: center; */
+  /* text-align: left; */
 
   box-sizing: border-box;
+  /* border: solid yellowgreen 1px; */
 }
 
 #healthscore-dial-boxes-plaque-threshold-progress-value {
-  /* height: 70%; */
+  color: var(--klotho-offwhite);  
+
+  /* height: 30%; */
   width: 100%;
   font-size: calc(1rem * 12.5/14);
-  display: flex;
-  justify-content: start;
+
+  display: inline-flex;
+
+  justify-content: left;
   align-items: center;
-  flex-direction: column;
+  flex-flow: row;
+
+  gap: 0.5ch;
+
   box-sizing: border-box;
+  /* border: solid yellowgreen 1px; */
 }
 
 #healthscore-dial-boxes-plaque-threshold-progress-value span {
-  width: 100%;
+  width: auto; /* 100%; */
   font-weight: 200;
-  font-size: calc(1rem * 20/14);
+  font-size: calc(1rem * 15/14);
   box-sizing: border-box;
 }
 
@@ -4840,34 +5759,53 @@ svg {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left; /* center; */
   align-items: center;
   box-sizing: border-box;
 
   /* border: solid orange 1px; */
 }
 
-#healthscore-dial-boxes-plaque-threshold-personalized-guidance {
+#healthscore-dial-boxes-plaque-threshold-personalized-guidance-title {
   position: absolute;
-  /* height: 90%; */
-  /* width: 80%; */
-  top: 12.5%;
-  bottom: 15%;
-  left: 7.5%;
-  right: 7.5%;
-  font-size: calc(1rem * 15/14);
+  top: 0%;
+
+  height: 20%;
+  width: 100%; /* 90%; */
+
+  font-size: calc(1rem * 18/14);
+
+  display: flex;
+  justify-content: left; /*flex-start;*/
+  padding-left: 1rem;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+#healthscore-dial-boxes-plaque-threshold-personalized-guidance {
+  color: var(--klotho-offwhite);
+
+  width: 100%;
+
+  flex-grow: 1;
+
+  font-size: calc(1rem * 15/14); 
   /* padding-bottom: 1%; */
   /* margin-top: 3%; */
   display: flex;
   flex-flow: row;
-  justify-content: center;
+  justify-content: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
   align-items: center;
-  text-align: center;
+  text-align: left; /* center; */
   opacity: 0;
 
   /* padding-left: 1.5rem; */
 
-  border-radius: 10px;
+  /* border-radius: 10px; */
   box-sizing: border-box;
   transition: opacity 0.5s ease;
 
@@ -4912,23 +5850,26 @@ svg {
 
 .healthscore-dial-boxes-col3 {
   height: 87.5%;
-  width: 30%;
+  flex: 1.75; width: auto;/* 30%; */
+
   display: inline-flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
 
   /* border-left: solid white 0.5px;  */
-  gap: 0.5rem;
   box-sizing: border-box;
   transition: all 0.5s ease;
+
+  gap: 0.75rem;
 }
 
 .healthscore-dial-boxes-graph-box {
   background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
   position: relative;
-  /* height: 60%; */
-  flex: 3;
+  flex: 7; height: auto; /* 57.5%;  */
   width: 100%;
   display: flex;
 
@@ -4947,46 +5888,132 @@ svg {
 }
 
 #healthscore-dial-boxes-graph-box-title {
+  /* border: solid white 0.5px;  */
   color: white;
 
-  /* height: 20%; */
-  height: 13.5%;
+  height: 11.5%;
+  width: 100%;
 
-  padding-top: 5px;
+  /* padding-top: 1.75%; */
+
+  padding-left: 1.5rem; 
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-flow: row; */
+  justify-content: left; /* center; */
+  
   align-items: center;
 
   font-size: calc(1rem * 20/14);
   font-weight: 200;
   box-sizing: border-box;  
   transition: all 0.125s ease;
+}
 
-  /* border: solid red 1px; */
+#healthscore-dial-boxes-graph-wrapper {
+  position: absolute;
+
+  /* top: 25%; */
+  top: 5%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /* height: 77.5%;
+  width: 100%; */
+
+  box-sizing: border-box;
+  display: flex;
+  /* align-items: end; */
+}
+
+#healthscore-dial-boxes-Graph {
+  position: absolute;
+
+  /* height: 85%; */
+  /* width: 100%; */
+  /* top: 0; */
+  /* bottom: 0; */
+  /* left: 0; */
+  /* right: 0; */
+
+  top: 2.5%;
+  bottom: 2.5%;
+  left: 2.5%;
+  right: 2.5%;
+
+  box-sizing: border-box;
+  /* margin-bottom: 2.5%; */
+}
+
+#healthscore-dial-boxes-below-graph-box {
+  /* background: var(--lgradient3); */
+  /* backdrop-filter: blur(60px);  */
+
+  position: relative;
+  flex: 3; height: auto; /* 57.5%;  */
+  width: 100%;
+  display: flex;
+
+  /* justify-content: center; */
+  flex-flow: row; /* column; */
+
+  user-select: none;
+
+  /* border-bottom: solid white 0.5px;  */
+  
+  /* border-radius: 20px; */
+  box-sizing: border-box;
+  gap: 0 0.75rem;
+}
+
+#healthscore-dial-boxes-below-graph-box-1 {
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
+  height: 100%;
+  flex: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding-left: 1rem;
+  align-items: flex-start;
+
+  border-radius: 20px;
+  box-sizing: border-box;
 }
 
 #healthscore-dial-boxes-graph-title {
   color: white;
-  height: 3.5%; 
-  font-size: calc(1rem * 13.5/14);
-  font-weight: 200;
-  display: flex;
-  align-items: center;
+  /* height: 3.5%;  */
+  height: 30%;
+  width: 100%;
+
   text-align: center;
-  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  justify-content: left;
+
+  /* font-size: calc(1rem * 13.5/14); */
+  font-size: calc(1rem * 17.5/14);
+  font-weight: 200;
+
   box-sizing: border-box;
-  transition: all 0.125s ease;
+  /* transition: all 0.125s ease; */
 }
 
 #healthscore-dial-boxes-risk-transition-box {
-  position: absolute;
+  /* position: absolute; */
   color: white;
-  height: 16.5%;
+  /* height: 16.5%; */
+  flex-grow:1; height: auto; /* 55%; */
+  width: 100%;
 
-  top: 17.5%;
-  left: 0;
-  right: 0;
+  /* top: 17.5%; */
+  /* left: 0; */
+  /* right: 0; */
 
   display: flex;
   flex-direction: column;       /* stack children vertically */
@@ -5000,11 +6027,13 @@ svg {
 
 #healthscore-dial-boxes-risk-transition-box-row1 {
   display: flex;
-  gap: 0.5rem;
-  justify-content: center;
+  gap: 1ch;
+  justify-content: left;
   align-items: center;
   height: calc(100% * 2/3);
   width: 100%;
+
+  /* border: solid red 1px; */
 }
 
 #healthscore-dial-boxes-risk-transition-box span {
@@ -5017,81 +6046,89 @@ svg {
 }
 
 #healthscore-dial-boxes-risk-before-treatment-value {
-  color: white;
-  font-size: calc(1rem * 24/14);
+  /* color: white; */
+  color: var(--graphred);
+  /* font-size: calc(1rem * 24/14); */
+  font-size: calc(1rem * 45/14);
   font-weight: 200;
 
-  justify-content: left;
+  /* justify-content: left; */
+  justify-content: center;
   vertical-align: middle;
   display: flex;
 
   line-height: 1;  /* helps avoid extra spacing from default line-height */
-  width: 5ch;        /* set width to fit the widest possible value, e.g. "100.0%" */
-  text-align: right;
+  /* width: 5ch;        set width to fit the widest possible value, e.g. "100.0%" */
+  /* width: 40%; 2.5%; */
+  /* text-align: right; */
+  align-items: center;
   box-sizing: border-box;
 }
 
 #healthscore-dial-boxes-risk-after-treatment-value {
-  color: white;
-  font-size: calc(1rem * 24/14);
+  /* color: white; */
+  color: var(--graphblue);
+  /* font-size: calc(1rem * 24/14); */
+  font-size: calc(1rem * 45/14);
   font-weight: 200;
 
-  justify-content: right;
+  /* justify-content: right; */
+  justify-content: center;
   vertical-align: middle;
   display: flex;
 
   line-height: 1;  /* helps avoid extra spacing from default line-height */
-  width: 5ch;        /* set width to fit the widest possible value, e.g. "100.0%" */
-  text-align: left;
+  /* width: 5ch;        set width to fit the widest possible value, e.g. "100.0%" */
+  /* width: 40%; 2.5%; */
+  /* text-align: left; */
+  align-items: center;
   box-sizing: border-box;
 }
 
 #healthscore-dial-boxes-risk-reduction-value {
-  font-size: calc(1rem * 17/14);
+  /* font-size: calc(1rem * 17/14); */
+  font-size: calc(1rem * 15/14);
   font-weight: 200;
-  height: calc(100% * 1/3);
+  /* height: calc(100% * 1/3); */
+  height: 15%;
   width: 100%;
-  text-align: center;
-  align-items: flex-start;
-}
 
-#healthscore-dial-boxes-graph-wrapper {
-  position: absolute;
-
-  top: 25%;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  /* height: 77.5%;
-  width: 100%; */
-
-  box-sizing: border-box;
+  /* padding-bottom: 1%; */
   display: flex;
-  align-items: end;
-}
+  justify-content: left;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;  
 
-#healthscore-dial-boxes-Graph {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  /* height: 85%; */
-  /* width: 100%; */
-  box-sizing: border-box;
-  /* margin-bottom: 2.5%; */
   /* border: solid red 1px; */
 }
 
+#healthscore-dial-boxes-below-graph-box-2 {
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
+  height: 100%;  
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: left;
+  padding-left: 1rem;
+  align-items: center;
+
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
 .healthscore-dial-boxes-healthy-years-box {
-  background: var(--lgradient1);
+  /* background: var(--lgradient1); */
   position: relative;
   /* height: 44%; */
   flex: 1;
   width: 100%;
   display: inline-flex;
-  justify-content: start;
+  justify-content: left;
   vertical-align: middle;
   align-items: center;
 
@@ -5109,13 +6146,13 @@ svg {
 #healthscore-dial-boxes-healthy-years-title {
   color: white;
   height: 30%;
-  width: 95%;
+  width: 100%;
   font-size: calc(1rem * 15/14);
   font-weight: 200;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  justify-content: left;
+  align-items: flex-end;
+  /* text-align: center; */
   vertical-align: middle;
   box-sizing: border-box;
 }
@@ -5130,15 +6167,21 @@ svg {
     /* ); */
   /* backdrop-filter: blur(5px);  */
   color: white;
-  height: 62.5%;
-  /* aspect-ratio: 1 / 1; */
-  font-size: calc(1rem * 40/14);
+  /* height: 50%; 62.5%; */
+  flex-grow: 1;
+
+  aspect-ratio: 1 / 1;
+  font-size: calc(1rem * 60/14);
   font-weight: 200;
   display: flex;
-  align-items: center;
+
+  padding-top: 0.75rem;
+
+  /* align-items: center; */
   text-align: center;
-  justify-content: center;
+  justify-content: left; 
   vertical-align: middle;
+
   border-radius: 50%;
   box-sizing: border-box;
   user-select: none;
@@ -5147,18 +6190,19 @@ svg {
 
 .healthscore-dial-boxes-bar-box {
   background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
   position: relative;
-  /* height: 40%; */
-  flex: 2;
+  /* flex: 1; height: auto; 40%; */
+  flex: 4; height: auto;
   width: 100%;
+
   display: inline-flex;
   justify-content: center;
   vertical-align: middle;
-  align-items: flex-start;
+  /* align-items: flex-start; */
 
-  /* border-style: solid; */
-  /* border-color: white; */
-  /* border-width: 0.5px 0 0 0;  */
+  /* border: solid white 0.5px;  */
   
   border-radius: 20px;
   box-sizing: border-box;
@@ -5167,15 +6211,19 @@ svg {
 #healthscore-dial-boxes-bar-title {
   color: white;
   height: 15%;
-  width: 95%;
+  width: 100%;
   font-size: calc(1rem * 15/14);
   font-weight: 200;
   display: flex;
-  justify-content: center;
+
+  padding-left: 1rem;
+  justify-content: left; /* center; */
+
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
   vertical-align: middle;
   box-sizing: border-box;
+  /* border: solid white 0.5px;  */
 }
 
 #healthscore-dial-boxes-bar {
@@ -5191,18 +6239,6 @@ svg {
   left: 2.5%;
   right: 2.5%;
   box-sizing: border-box;
-}
-
-.healthscore-dial-boxes-col1 {
-  width: 30%; 
-}
-
-.healthscore-dial-boxes-col2 {
-  width: 30%; 
-}
-
-.healthscore-dial-boxes-col3 {
-  width: 37.5%; 
 }
 /* --#-- OUTER HEALTH SCORE DIAL BOX --#-- */
 
@@ -5233,6 +6269,8 @@ svg {
   /* border: solid white 1px; */
   /* border-radius: 20px; */
   box-sizing: border-box;
+
+  gap: 0 0.75rem;
 }
 
 #benefit-dial-boxes-box-page-title {
@@ -5299,16 +6337,21 @@ svg {
 
 .benefit-dial-boxes-col1 {
   height: 87.5%;
-  width: 30%;
+  flex: 1.25; width: auto; /* 30%; */
   display: inline-flex;
   flex-flow: column;
   justify-content: space-between;
 
   /* border: solid white 0.5px;  */
   box-sizing: border-box;
+
+  gap: 0.75rem;
 }
 
 #benefit-dial-boxes-current-levels {
+  position: absolute;
+  opacity: 0;
+
   background: var(--lgradient1);
   height: 32.5%;
   width: 100%;
@@ -5451,11 +6494,11 @@ svg {
   box-sizing: border-box;
 }
 
-.mic {
+/* .mic {
   position: absolute;
   right: 10%;
   width: 2.5%;
-}
+} */
 
 #benefit-dial-boxes-bot-2 {
   /* border: solid white 1px;  */
@@ -5472,12 +6515,15 @@ svg {
 }
 
 #benefit-dial-boxes-plaque-threshold-box {
-  background: var(--lgradient2-2);
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
   position: relative;
   user-select: none;
 
-  height: 35%;
+  flex: 4; height: auto; /* 35%; */
   width: 100%;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -5489,11 +6535,14 @@ svg {
 }
 
 #full-benefit-dial-boxes-gif-wrapper {
-  position: relative;
+  position: absolute;
   background-color: rgba(255, 255, 255, 0.0625);
-  height: 90%;
+  /* height: 90%; */
   /* margin-top: 5%; */
   /* margin-bottom: 5%; */
+  top: 20%;
+  bottom: 5%;
+  
   aspect-ratio: 1/1 !important;
   border: solid var(--klotho-offwhite) 1px;
   border-radius: 50%;
@@ -5504,8 +6553,7 @@ svg {
   box-sizing: border-box;
 }
 
-#full-benefit-dial-boxes-gif-wrapper video,
-#full-benefit-dial-boxes-gif-wrapper img {
+#full-benefit-dial-boxes-gif-wrapper video {
   transform: translateX(10%) translateY(2%);
   width: 65%;
 }
@@ -5521,6 +6569,10 @@ svg {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+
+  height: 0px !important;
+  width: 0px !important;
+  font-size: 0px !important;
 }
 
 #benefit-future-plaque-gauge-wrapper {
@@ -5534,6 +6586,9 @@ svg {
   align-items: center;
   box-sizing: border-box;
   visibility: hidden;
+
+  height: 0px !important;
+  width: 0px !important;
 }
 
 #benefit-future-plaque-gauge {
@@ -5551,6 +6606,9 @@ svg {
 
   box-sizing: border-box;
   /* border: solid red 1px; */
+
+  height: 0px !important;
+  width: 0px !important;
 }
 
 #benefit-future-plaque-gauge svg {
@@ -5561,6 +6619,9 @@ svg {
 
   margin: 0 auto;
   box-sizing: border-box;
+
+  height: 0px !important;
+  width: 0px !important;
 }
 
 /* #benefit-future-refLabels text { */
@@ -5569,38 +6630,25 @@ svg {
   font-size: calc(1rem * 20/14);
 }
 
-#benefit-dial-boxes-current-levels {
-  position: absolute;
-  opacity: 0;
-}
-
-#benefit-dial-boxes-bot-option {
-  height: 47.5%;
-}
-
-#benefit-dial-boxes-plaque-threshold-box {
-  height: 50%;
-}
-
-#benefit-dial-boxes-plaque-threshold-box div{
-  height: 75%;
-}
-
 .benefit-dial-boxes-col2 {
-  background: var(--lgradient3);
+  /* background: var(--lgradient3); */
   z-index: 1;
   height: 87.5%;
-  width: 37.5%;
+  flex: 1.25; /* width: 37.5%; */
+
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   box-sizing: border-box;
+
+  gap: 0.75rem;
 }
 
 #benefit-dial-boxes-col2-row1 {
-  height: 15%;
+  /* flex: 1; height: auto; 15%; */
   width: 100%;
+
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -5613,31 +6661,32 @@ svg {
 
 #benefit-dial-boxes-col2-row2 {
   position: relative; 
-  height: 45%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  box-sizing: border-box;
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
 
-  /* border: solid red 1px; */
+  /* height: 45%; */
+  width: 100%;
+  flex: 3; height: auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+  box-sizing: border-box;
 }
 
-#benefit-matrix-l,
+/* #benefit-matrix-l,
 #benefit-matrix-r
 {
   position: absolute;
   z-index: -1;
   user-select: none;
-  /* height: fit-content; */
-  /* object-fit: cover; */
   opacity: 0;
 
   width: 20%;
-  /* height: 85%; */
   top: 9.5%;
   bottom: 9.5%;
-
-  /* font-size: calc(1rem * 12/14); */
 
   display: block;
   color: rgba(255, 255, 255, 0.5);
@@ -5665,11 +6714,65 @@ svg {
 #benefit-matrix-r span
 {
   color: rgba(255, 255, 255, 1);
+} */
+
+#benefit-matrix-l,
+#benefit-matrix-r
+{
+  position: absolute;
+  top: 0%;
+  bottom: 10%;
+  width: 25%;
+
+  z-index: -1;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+
+  transition: all 0.5s ease;
+  /* border: solid orange 1px; */
+  box-sizing: border-box;
+}
+
+#benefit-matrix-l {
+  left: 0;
+}
+
+#benefit-matrix-r {
+  justify-content: left;
+  right: 0;
+}
+
+#benefit-matrix-r img {
+  /* opacity: 0.5; */
+  height: 80%;
+  /* border: solid red 1px; */
+  box-sizing: border-box;
+}
+
+#benefit-dial-box span {
+  position: absolute;
+  color: white;
+  font-size: calc(1rem * 18/14);
+  font-weight: 200;
+  bottom: 3.5%;
+}
+
+#benefit-dial-bar {
+  position: absolute;
+  color: white;
+  font-size: calc(1rem * 14/14); /* 8/14); */
+  font-weight: 200;
+  bottom: 3.5%;
 }
 
 #benefit-dial-box {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  /* height: 100%; */
+  top: 0%;
+  bottom: 10%;
 
   aspect-ratio: 1/1;
   margin: auto;
@@ -5684,9 +6787,9 @@ svg {
 }
 
 #benefit-dial-image {
-  width: 100%;
+  height: 95%;
   aspect-ratio: 1 / 1;   /* keeps it square */
-  object-fit: cover;
+  object-fit: contain;
   transform: rotate(0deg);
   pointer-events: none; /* so drag events go to container */
   user-drag: none;      /* Safari */
@@ -5700,7 +6803,7 @@ svg {
 }
 
 #benefit-dial-label {
-  height: 95%;
+  height: 90%;
   aspect-ratio: 1/1;
   display: flex;
   flex-direction: row;
@@ -5715,10 +6818,14 @@ svg {
 }
 
 #benefit-dial-label-skin {
-  height: 15%;
-  aspect-ratio: 1/1;
-  display: flex;
-  flex-direction: row;
+  /* height: 25%; 15%; */
+  /* aspect-ratio: 1/1; */
+
+  height: 25%;
+  width: 50%;
+
+  display: inline-flex;
+  flex-flow: row;
   align-items: center;
   justify-content: center;
   /* font-family: monospace; */
@@ -5726,7 +6833,7 @@ svg {
   font-size: calc(1rem * 32/14);
   white-space: pre-wrap;
   word-wrap: break-word;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   box-sizing: border-box;
 
   /* border: solid red 1px; */
@@ -5735,7 +6842,7 @@ svg {
 .benefit-label {
   position: absolute;
   color: transparent; 
-  /* font-size: calc(1rem * 37.5/14); */
+  font-size: calc(1rem * 37.5/14);
   font-weight: 200;
   font-family: sans-serif;
   z-index: 2;
@@ -5744,36 +6851,53 @@ svg {
 .benefit-label-skin {
   position: absolute;
   color: white; 
-  font-size: calc(1rem * 25/14);
+  /* font-size: calc(1rem * 25/14); */
   font-weight: 200;
   font-family: sans-serif;
   z-index: 2;
 }
 
 #benefit-dial-label-skin span {
+  position: relative;
   color: white; 
-  height: 100%;
+  /* height: 100%; */
+
   display: flex;
   align-items: center;
   padding-top: 5px;
   /* margin-top: 4px; */
   font-size: calc(1rem * 15/14);
   z-index: -1;
+  box-sizing: border-box;
+
+  /* border: solid red 1px; */
 }
 
-#benefit-dial-label-skin span:first-of-type {
+#benefit-dial-label-skin span:nth-of-type(1) {
+  height: 100%;
+  /* width: 15%; */
   /* margin-right: 1px; */
   visibility: hidden;
   font-size: calc(1rem * 6/14);
   /* display: none; */
+  box-sizing: border-box;
 }
 
-#benefit-dial-label-skin span:last-of-type {
+#benefit-dial-label-skin span:nth-of-type(2) {
+  font-size: calc(1rem * 32/14);
+  box-sizing: border-box;
+}
+
+#benefit-dial-label-skin span:nth-of-type(3) {
+  /* width: 15%; */
   /* margin-left: 1px; */
+  box-sizing: border-box;
 }
 
 #benefit-dial-boxes-col2-row2-5 {
-  height: 5%;
+  position: absolute;
+  height: 5%; 
+  visibility: hidden;
   width: 100%;
   color: white;
 
@@ -5785,20 +6909,17 @@ svg {
   box-sizing: border-box;
   user-select: none;
   /* border: solid red 1px; */
-}
 
-#benefit-dial-bar {
-  margin-top: 12px;
-  height: 25%;
-  width: 100%;
-  font-size: calc(1rem * 17/14);
-  font-weight: 200;
-  margin-bottom: 20px;
+  height: 0% !important;
+  font-size: 0 !important;
+  color: transparent;
 }
 
 #benefit-dial-boxes-risk-transition-box {
+  /* position: absolute; */
   color: white;
-  height: 75%;
+  /* height: 75%; */
+  flex-grow:1; height: auto; 
   width: 100%;
 
   display: flex;
@@ -5811,14 +6932,34 @@ svg {
 
   /* border: solid black 1px; */
   /* visibility: visible !important; */
+  height: 0% !important;
+  font-size: 0 !important;
+  color: transparent;
+}
+
+#benefit-dial-boxes-risk-transition-box-row1 {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% * 2/3);
+  width: 100%;
+
+  /* border: solid red 1px; */
+  height: 0% !important;
+  font-size: 0 !important;
+  color: transparent;
 }
 
 #benefit-dial-boxes-risk-transition-box span {
-  font-size: calc(1rem * 14/14);
-  font-weight: 200;
+  /* font-size: calc(1rem * 14/14); */
+  /* font-weight: 200; */
+  font-weight: 100;
+  font-size: calc(1rem * 25/14);
 
   line-height: 1;           /* reset to avoid weird baselines */
   flex: 0 0 auto;
+  transform: translateY(-0.1em); /* tiny tweak if needed */
 }
 
 #benefit-dial-boxes-risk-before-treatment-value {
@@ -5834,6 +6975,10 @@ svg {
   width: 5ch;        /* set width to fit the widest possible value, e.g. "100.0%" */
   text-align: right;
   box-sizing: border-box;
+
+  height: 0% !important;
+  font-size: 0 !important;
+  color: transparent;
 }
 
 #benefit-dial-boxes-risk-after-treatment-value {
@@ -5849,6 +6994,10 @@ svg {
   width: 5ch;        /* set width to fit the widest possible value, e.g. "100.0%" */
   text-align: left;
   box-sizing: border-box;
+
+  height: 0% !important;
+  font-size: 0 !important;
+  color: transparent;
 }
 
 #benefit-dial-boxes-risk-reduction-value {
@@ -5864,25 +7013,34 @@ svg {
 }
 
 #benefit-dial-boxes-col2-row3 {
-  height: 50%;
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
+  /* height: 50%; */
   width: 100%;
+  flex: 2.5; height: auto;
   color: white;
 
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  justify-content: start;
   align-items: center;
   text-align: center;
+  justify-content: space-between;
+
+  border-radius: 20px;
   box-sizing: border-box;
+
   user-select: none;
-  /* border: solid red 1px; */
 }
 
 #benefit-dial-boxes-plaque-threshold-progress-bar-wrapper {
   /* margin-top: 5%; */
-  position: relative;
-  height: 27.5%;
+  position: absolute;
+  opacity: 0;
+  
+  height: 0%; /* 27.5%; */
   width: 100%;
+
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -5941,48 +7099,69 @@ svg {
 }
 
 #benefit-dial-boxes-plaque-threshold-wrapper {
-  padding-top: 2%;
-  /* height: 25%; */
-  width: 100%;
+  position: absolute;
+  top: 2.5%;
+  height: 20%; /* bottom: 80%; */
+  left: 0;
+  right: 0;
+
   display: flex;
+  flex-flow: column;
 
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+
+  justify-content: left;
+  padding-left: 1rem;
+  /* gap: 1ch; */
 
   box-sizing: border-box;
+  /* border: solid green 1px; */
 }
 
 #benefit-dial-boxes-plaque-threshold-progress-value-a {
-  /* height: 30%; */
+  color: white;  
+  
+  /* height: 70%; */
   width: 100%;
 
-  font-size: calc(1rem * 12.5/14);
-  display: flex;
+  /* font-size: calc(1rem * 12.5/14); */
+  font-size: calc(1rem * 15/14);
+  display: inline-flex;
 
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: left;
+  /* align-items: center; */
+  /* text-align: left; */
 
   box-sizing: border-box;
+  /* border: solid yellowgreen 1px; */
 }
 
 #benefit-dial-boxes-plaque-threshold-progress-value {
-  /* height: 70%; */
+  color: var(--klotho-offwhite);  
+
+  /* height: 30%; */
   width: 100%;
   font-size: calc(1rem * 12.5/14);
-  display: flex;
-  justify-content: start;
+
+  display: inline-flex;
+
+  justify-content: left;
   align-items: center;
-  flex-direction: column;
+  flex-flow: row;
+
+  gap: 0.5ch;
+
   box-sizing: border-box;
+  /* border: solid yellowgreen 1px; */
 }
 
 #benefit-dial-boxes-plaque-threshold-progress-value span {
-  width: 100%;
+  width: auto; /* 100%; */
   font-weight: 200;
-  font-size: calc(1rem * 20/14);
+  /* font-size: calc(1rem * 20/14); */
+  font-size: calc(1rem * 15/14);
   box-sizing: border-box;
+  /* border: solid yellowgreen 1px; */
 }
 
 #benefit-dial-boxes-plaque-threshold-personalized-guidance-wrapper{
@@ -5992,33 +7171,57 @@ svg {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left; /* center; */
   align-items: center;
   box-sizing: border-box;
 
   /* border: solid orange 1px; */
 }
 
-#benefit-dial-boxes-plaque-threshold-personalized-guidance {
+#benefit-dial-boxes-plaque-threshold-personalized-guidance-title {
   position: absolute;
-  /* height: 90%; */
-  /* width: 80%; */
-  top: 12.5%;
-  bottom: 15%;
-  left: 7.5%;
-  right: 7.5%;
-  font-size: calc(1rem * 15/14);
+  top: 0%;
+
+  height: 20%;
+  width: 100%; /* 90%; */
+
+  font-size: calc(1rem * 18/14);
+
+  display: flex;
+  justify-content: left; /*flex-start;*/
+  padding-left: 1rem;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+#benefit-dial-boxes-plaque-threshold-personalized-guidance {
+  color: var(--klotho-offwhite);
+
+  width: 100%;
+
+  flex-grow: 1;
+
+  font-size: calc(1rem * 15/14); 
   /* padding-bottom: 1%; */
   /* margin-top: 3%; */
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-flow: row;
+  justify-content: left;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
   align-items: center;
+  text-align: left; /* center; */
   opacity: 0;
 
-  border-radius: 10px;
+  /* padding-left: 1.5rem; */
+
+  /* border-radius: 10px; */
   box-sizing: border-box;
   transition: opacity 0.5s ease;
+
+  /* border: solid red 1px; */
 
   /* opacity: 1 !important;
   visibility: visible !important; */
@@ -6059,23 +7262,26 @@ svg {
 
 .benefit-dial-boxes-col3 {
   height: 87.5%;
-  width: 30%;
+  flex: 1.75; width: auto;/* 30%; */
+
   display: inline-flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
 
   /* border-left: solid white 0.5px;  */
-  gap: 0.5rem;
   box-sizing: border-box;
   transition: all 0.5s ease;
+
+  gap: 0.75rem;
 }
 
 .benefit-dial-boxes-graph-box {
   background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
   position: relative;
-  /* height: 60%; */
-  flex: 3;
+  flex: 7; height: auto; /* height: 60%; */
   width: 100%;
   display: flex;
 
@@ -6094,114 +7300,33 @@ svg {
 }
 
 #benefit-dial-boxes-graph-box-title {
+  /* border: solid white 0.5px;  */
   color: white;
 
-  /* height: 20%; */
-  height: 17%;
+  height: 11.5%;
+  width: 100%;
 
-  padding-top: 5px;
+  /* padding-top: 1.75%; */
+
+  padding-left: 1.5rem; 
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-flow: row; */
+  justify-content: left; /* center; */
+  
   align-items: center;
 
   font-size: calc(1rem * 20/14);
   font-weight: 200;
   box-sizing: border-box;  
   transition: all 0.125s ease;
-
-  /* border: solid red 1px; */
-}
-
-#benefit-dial-boxes-graph-box-reduction {
-  color: white;
-  height: 7.5%;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  font-size: calc(1rem * 13.5/14);
-  font-weight: 200;
-  box-sizing: border-box;  
-  transition: all 0.125s ease;
-
-  /* border:solid blue 1px; */
-}
-
-
-#benefit-dial-boxes-graph-box-risk-transition-box {
-  color: white;
-  /* height: 12.5%;  */
-  height: 10%; 
-  font-size: calc(1rem * 15/14);
-  font-weight: 200;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  box-sizing: border-box;
-  /* opacity: 0; */
-  transition: all 0.125s ease;
-
-  /* border: solid red 1px; */
-}
-
-#benefit-dial-boxes-graph-box-risk-transition-box span {
-  font-size: calc(1rem * 14/14);
-  font-weight: 200;
-
-  line-height: 1;           /* reset to avoid weird baselines */
-  flex: 0 0 auto;
-}
-
-#benefit-dial-boxes-graph-box-risk-before-treatment-value {
-  color: white;
-  font-size: calc(1rem * 18/14);
-  font-weight: 200;
-
-  justify-content: left;
-  vertical-align: middle;
-  display: flex;
-
-  line-height: 1;  /* helps avoid extra spacing from default line-height */
-  width: 5ch;        /* set width to fit the widest possible value, e.g. "100.0%" */
-  text-align: right;
-  box-sizing: border-box;
-}
-
-#benefit-dial-boxes-graph-box-risk-after-treatment-value {
-  color: white;
-  font-size: calc(1rem * 18/14);
-  font-weight: 200;
-
-  justify-content: right;
-  vertical-align: middle;
-  display: flex;
-
-  line-height: 1;  /* helps avoid extra spacing from default line-height */
-  width: 5ch;        /* set width to fit the widest possible value, e.g. "100.0%" */
-  text-align: left;
-  box-sizing: border-box;
-}
-
-#benefit-dial-boxes-graph-box-risk-reduction-value {
-  font-size: calc(1rem * 17/14);
-  font-weight: 200;
-  height: calc(100% * 1/3);
-  width: 100%;
-  text-align: center;
-  align-items: flex-start;
-  width: 0%;
-  height: 0%;
-  visibility: hidden;
 }
 
 #benefit-dial-boxes-graph-wrapper {
   position: absolute;
 
-  top: 25%;
+  /* top: 25%; */
+  top: 5%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -6211,38 +7336,221 @@ svg {
 
   box-sizing: border-box;
   display: flex;
-  align-items: end;
+  /* align-items: end; */
 }
 
 #benefit-dial-boxes-Graph {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+
   /* height: 85%; */
   /* width: 100%; */
+  /* top: 0; */
+  /* bottom: 0; */
+  /* left: 0; */
+  /* right: 0; */
+
+  top: 2.5%;
+  bottom: 2.5%;
+  left: 2.5%;
+  right: 2.5%;
+
   box-sizing: border-box;
   /* margin-bottom: 2.5%; */
+}
+
+#benefit-dial-boxes-below-graph-box {
+  /* background: var(--lgradient3); */
+  /* backdrop-filter: blur(60px);  */
+
+  position: relative;
+  flex: 3; height: auto; /* 57.5%;  */
+  width: 100%;
+  display: flex;
+
+  /* justify-content: center; */
+  flex-flow: row; /* column; */
+
+  user-select: none;
+
+  /* border-bottom: solid white 0.5px;  */
+  
+  /* border-radius: 20px; */
+  box-sizing: border-box;
+  gap: 0 0.75rem;
+}
+
+#benefit-dial-boxes-below-graph-box-1 {
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
+  height: 100%;
+  flex: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding-left: 1rem;
+  align-items: flex-start;
+
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+#benefit-dial-boxes-graph-box-reduction {
+  color: white;
+  /* height: 3.5%;  */
+  height: 30%;
+  width: 100%;
+
+  text-align: center;
+  align-items: center;
+
+  display: flex;
+  justify-content: left;
+
+  /* font-size: calc(1rem * 13.5/14); */
+  font-size: calc(1rem * 17.5/14);
+  font-weight: 200;
+
+  box-sizing: border-box;
+  /* transition: all 0.125s ease; */
+}
+
+
+#benefit-dial-boxes-graph-box-risk-transition-box {
+  /* position: absolute; */
+  color: white;
+  /* height: 16.5%; */
+  flex-grow:1; height: auto; /* 55%; */
+  width: 100%;
+
+  /* top: 17.5%; */
+  /* left: 0; */
+  /* right: 0; */
+
+  display: flex;
+  flex-direction: column;       /* stack children vertically */
+  align-items: center;          /* center top row horizontally */
+  
+  visibility: hidden;
+  box-sizing: border-box;
+
   /* border: solid red 1px; */
 }
 
+#benefit-dial-boxes-graph-box-risk-transition-box-row1 {
+  display: flex;
+  gap: 1ch;
+  justify-content: left;
+  align-items: center;
+  height: calc(100% * 2/3);
+  width: 100%;
+
+  /* border: solid red 1px; */
+}
+
+#benefit-dial-boxes-graph-box-risk-transition-box span {
+  font-weight: 100;
+  font-size: calc(1rem * 25/14);
+
+  line-height: 1;           /* reset to avoid weird baselines */
+  flex: 0 0 auto;
+  transform: translateY(-0.1em); /* tiny tweak if needed */
+}
+
+#benefit-dial-boxes-graph-box-risk-before-treatment-value {
+  /* color: white; */
+  color: var(--graphred);
+  /* font-size: calc(1rem * 24/14); */
+  font-size: calc(1rem * 45/14);
+  font-weight: 200;
+
+  /* justify-content: left; */
+  justify-content: center;
+  vertical-align: middle;
+  display: flex;
+
+  line-height: 1;  /* helps avoid extra spacing from default line-height */
+  /* width: 5ch;        set width to fit the widest possible value, e.g. "100.0%" */
+  /* width: 40%; 2.5%; */
+  /* text-align: right; */
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#benefit-dial-boxes-graph-box-risk-after-treatment-value {
+  /* color: white; */
+  color: var(--graphblue);
+  /* font-size: calc(1rem * 24/14); */
+  font-size: calc(1rem * 45/14);
+  font-weight: 200;
+
+  /* justify-content: right; */
+  justify-content: center;
+  vertical-align: middle;
+  display: flex;
+
+  line-height: 1;  /* helps avoid extra spacing from default line-height */
+  /* width: 5ch;        set width to fit the widest possible value, e.g. "100.0%" */
+  /* width: 40%; 2.5%; */
+  /* text-align: left; */
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#benefit-dial-boxes-graph-box-risk-reduction-value {
+  /* font-size: calc(1rem * 17/14); */
+  font-weight: 200;
+  font-size: calc(1rem * 15/14);
+  /* height: calc(100% * 1/3); */
+  height: 15%;
+  width: 100%;
+
+  display: flex;
+  justify-content: left;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;  
+
+  /* width: 0%; */
+  /* height: 0%; */
+  visibility: hidden;
+}
+
+#benefit-dial-boxes-below-graph-box-2 {
+  background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
+  height: 100%;  
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: left;
+  padding-left: 1rem;
+  align-items: center;
+
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
 .benefit-dial-boxes-healthy-years-box {
-  background: var(--lgradient1);
+  /* background: var(--lgradient1); */
   position: relative;
   /* height: 44%; */
   flex: 1;
   width: 100%;
   display: inline-flex;
-  justify-content: start;
+  justify-content: left;
   vertical-align: middle;
   align-items: center;
 
   flex-direction: column;
 
-  /* border-style: solid;
-  border-color: white;
-  border-width: 0.5px 0 0.5px 0;  */
+  /* border-style: solid; */
+  /* border-color: white; */
+  /* border-width: 0.5px 0 0.5px 0;  */
   
   border-radius: 20px;
   box-sizing: border-box;
@@ -6252,13 +7560,13 @@ svg {
 #benefit-dial-boxes-healthy-years-title {
   color: white;
   height: 30%;
-  width: 95%;
+  width: 100%;
   font-size: calc(1rem * 15/14);
   font-weight: 200;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  justify-content: left;
+  align-items: flex-end;
+  /* text-align: center; */
   vertical-align: middle;
   box-sizing: border-box;
 }
@@ -6273,15 +7581,21 @@ svg {
     /* ); */
   /* backdrop-filter: blur(5px);  */
   color: white;
-  height: 62.5%;
-  /* aspect-ratio: 1 / 1; */
-  font-size: calc(1rem * 40/14);
+  /* height: 50%; 62.5%; */
+  flex-grow: 1;
+
+  aspect-ratio: 1 / 1;
+  font-size: calc(1rem * 60/14);
   font-weight: 200;
   display: flex;
-  align-items: center;
+
+  padding-top: 0.75rem;
+
+  /* align-items: center; */
   text-align: center;
-  justify-content: center;
+  justify-content: left; 
   vertical-align: middle;
+
   border-radius: 50%;
   box-sizing: border-box;
   user-select: none;
@@ -6290,14 +7604,17 @@ svg {
 
 .benefit-dial-boxes-bar-box {
   background: var(--lgradient3);
+  backdrop-filter: blur(60px); 
+
   position: relative;
   /* height: 40%; */
-  flex: 2;
+  flex: 4; height: auto;
   width: 100%;
+
   display: inline-flex;
   justify-content: center;
   vertical-align: middle;
-  align-items: flex-start;
+  /* align-items: flex-start; */
 
   /* border-style: solid;
   border-color: white;
@@ -6310,15 +7627,19 @@ svg {
 #benefit-dial-boxes-bar-title {
   color: white;
   height: 15%;
-  width: 95%;
+  width: 100%;
   font-size: calc(1rem * 15/14);
   font-weight: 200;
   display: flex;
-  justify-content: center;
+
+  padding-left: 1rem;
+  justify-content: left; /* center; */
+
   align-items: center;
-  text-align: center;
+  /* text-align: center; */
   vertical-align: middle;
   box-sizing: border-box;
+  /* border: solid white 0.5px;  */
 }
 
 #benefit-dial-boxes-bar-shape {
@@ -6335,7 +7656,7 @@ svg {
 }
 
 #bar-no-rx {
-  background-color: var(--graphnorx);
+  background-color: var(--graphred);
 
   display: flex;
 
@@ -6349,7 +7670,7 @@ svg {
 }
 
 #bar-with-rx {
-  background-color: var(--graphwithrx);
+  background-color: var(--graphblue);
 
   display: flex;
 
@@ -6376,19 +7697,169 @@ svg {
   right: 2.5%;
   box-sizing: border-box;
 }
-
-.benefit-dial-boxes-col1 {
-  width: 30%; 
-}
-
-.benefit-dial-boxes-col2 {
-  width: 30%; 
-}
-
-.benefit-dial-boxes-col3 {
-  width: 37.5%; 
-}
 /* --#---- OUTER BENEFIT DIAL BOX ----#-- */
+
+/* --#----------- BOT BOX -----------#-- */
+.outer-box-bot {
+  user-select: none;
+  height: 92.5vh;
+  width: 100vw;
+  display: inline-flex;
+  box-sizing: border-box;
+  justify-content: center;
+  align-content: center;
+  display: none;
+}
+
+.bot-box {
+  position: absolute;
+  
+  height: 87%;
+  width: 85%;
+
+  /* margin-top: 0.5%; */
+  margin-bottom: 0.5%;
+
+  display: inline-flex;
+  flex-flow: wrap;
+  justify-content: center; /* space-between; */
+  overflow: hidden;
+  /* border: solid white 1px; */
+  /* border-radius: 20px; */
+  box-sizing: border-box;
+
+  align-items: center;
+}
+
+#boxes-bot-option {
+  /* background: var(--lgradient2-2); */
+  height: 80%; /* 30%; */
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; 
+  align-items: center;
+
+  /* border-top: solid white 1px; 
+  border-bottom: solid white 1px;  */
+  border-radius: 20px;
+  box-sizing: border-box;
+  /* border: solid white 1px;  */
+}
+
+#boxes-bot-blob {
+  position: relative;
+  background-color: var(--klotho-offwhite);
+  box-shadow: 0 4px 10px -4px var(--klotho-offwhite);
+  height: 15%;
+  aspect-ratio: 1/1;
+  border-radius: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+#botblob-1 {
+  position: absolute;
+  inset: 0;
+  background-image: url("../media/klotho/botblob.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(175%) blur(15px);
+}
+
+#botblob-2 {
+  position: absolute;
+  inset: 0;
+  background-image: url("../media/klotho/botblob.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: brightness(175%) blur(0.5px);
+}
+
+#boxes-bot-1 {
+  color: white;
+
+  /* height: 22.5%; */
+  width: 100%;
+  /* padding: 0 5% 0 5%; */
+
+  font-size: calc(1rem * 45/14);
+  font-weight: 200;
+  user-select: none;
+  display: flex;
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  /* border: solid white 1px; */
+  box-sizing: border-box;
+}
+
+#boxes-bot-2 {
+  /* border: solid white 1px;  */
+  font-size: calc(1rem * 12/14);
+  user-select: none;
+  color: white;
+  /* height: 60%; */
+  width: 75%;
+  display: flex;
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  /* padding: 0 5% 0 5%; */
+  box-sizing: border-box;
+}
+
+.bot-input-box {
+  position: relative;
+  height: 10%;
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#bot-input {
+  color: white;
+  position: relative;
+  background-color: transparent;
+  font-size: calc(1rem * 12/14);
+  height: 100%;
+  width: 90%;
+  display: flex;
+  vertical-align: middle;
+  flex-direction: column;
+
+  padding-left: 2.5%;
+
+  border: solid white 1px; 
+  border-radius: 20px;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+#bot-input::placeholder,
+#healthscore-bot-input::placeholder,
+#benefit-bot-input::placeholder
+{
+  color: var(--klotho-offwhite);
+}
+
+.mic {
+  position: absolute;
+  right: 7.5%;
+  width: 1.75%;
+}
+/* --#----------- BOT BOX -----------#-- */
 
 /* --#------ OUTER LANDING BOX ------#-- */
 .outer-box-landing {
