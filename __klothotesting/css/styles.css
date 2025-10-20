@@ -1025,10 +1025,19 @@ select:focus {
   height: 80%;
   /* border: solid red 1px; */
   box-sizing: border-box;
+  visibility: hidden;
 }
 
 #lifetime-matrix-r {
+  justify-content: left;
   right: 0;
+}
+
+#lifetime-matrix-r img {
+  /* opacity: 0.5; */
+  height: 80%;
+  /* border: solid red 1px; */
+  box-sizing: border-box;
 }
 
 #lifetime-dial-bar {
@@ -2575,13 +2584,23 @@ svg {
 }
 
 #treatment-matrix-l img {
+  /* opacity: 0.5; */
   height: 80%;
   /* border: solid red 1px; */
   box-sizing: border-box;
+  visibility: hidden;
 }
 
 #treatment-matrix-r {
+  justify-content: left;
   right: 0;
+}
+
+#treatment-matrix-r img {
+  /* opacity: 0.5; */
+  height: 80%;
+  /* border: solid red 1px; */
+  box-sizing: border-box;
 }
 
 #treatment-dial-bar {
