@@ -4157,10 +4157,12 @@ svg {
 }
 
 #dial-boxes-plaque-threshold-personalized-guidance-title {
-  position: absolute;
-  top: 0%;
+  /* position: absolute; */
+  /* top: 0%; */
 
-  height: 20%;
+  /* height: 15%; */
+
+  flex: 15;
   width: 100%; /* 90%; */
 
   font-size: calc(1rem * 18/14);
@@ -4173,23 +4175,39 @@ svg {
   box-sizing: border-box;
 }
 
-#dial-boxes-plaque-threshold-personalized-guidance {
+.threshold-value-age {
   color: var(--klotho-offwhite);
+  font-size: calc(1rem * 14/14); 
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 0.5rem;
+}
+
+.threshold-value-age p {
+  margin: 0;
+  color: white;
+  font-size: calc(1rem * 40/14); 
+  /* width: 100%; */
+  /* box-sizing: border-box; */
+  /* border: solid red 1px; */
+}
+
+#dial-boxes-plaque-threshold-personalized-guidance {
+  color: var(--klotho-offwhite); 
 
   width: 100%;
-
-  flex-grow: 1;
+  flex: 85;
 
   font-size: calc(1rem * 15/14); 
   /* padding-bottom: 1%; */
   /* margin-top: 3%; */
   display: flex;
-  flex-flow: row;
-  justify-content: left;
+  flex-flow: column;
+  justify-content: space-between; /* left; */
   padding-left: 1rem;
   padding-right: 1rem;
 
-  align-items: center;
+  align-items: flex-start;
   text-align: left; /* center; */
   opacity: 0;
 
@@ -4231,6 +4249,7 @@ svg {
 }
 
 #dial-boxes-plaque-threshold-personalized-guidance span {
+  color: white;
   font-weight: 400;
 }
 
@@ -5786,10 +5805,12 @@ svg {
 }
 
 #healthscore-dial-boxes-plaque-threshold-personalized-guidance-title {
-  position: absolute;
-  top: 0%;
+  /* position: absolute; */
+  /* top: 0%; */
 
-  height: 20%;
+  /* height: 15%; */
+
+  flex: 15;
   width: 100%; /* 90%; */
 
   font-size: calc(1rem * 18/14);
@@ -5803,22 +5824,21 @@ svg {
 }
 
 #healthscore-dial-boxes-plaque-threshold-personalized-guidance {
-  color: var(--klotho-offwhite);
+  color: var(--klotho-offwhite); 
 
   width: 100%;
-
-  flex-grow: 1;
+  flex: 85;
 
   font-size: calc(1rem * 15/14); 
   /* padding-bottom: 1%; */
   /* margin-top: 3%; */
   display: flex;
-  flex-flow: row;
-  justify-content: left;
+  flex-flow: column;
+  justify-content: space-between; /* left; */
   padding-left: 1rem;
   padding-right: 1rem;
 
-  align-items: center;
+  align-items: flex-start;
   text-align: left; /* center; */
   opacity: 0;
 
@@ -5860,6 +5880,7 @@ svg {
 }
 
 #healthscore-dial-boxes-plaque-threshold-personalized-guidance span {
+  color: white;
   font-weight: 400;
 }
 
@@ -7198,10 +7219,12 @@ svg {
 }
 
 #benefit-dial-boxes-plaque-threshold-personalized-guidance-title {
-  position: absolute;
-  top: 0%;
+  /* position: absolute; */
+  /* top: 0%; */
 
-  height: 20%;
+  /* height: 15%; */
+
+  flex: 15;
   width: 100%; /* 90%; */
 
   font-size: calc(1rem * 18/14);
@@ -7214,23 +7237,23 @@ svg {
   box-sizing: border-box;
 }
 
+
 #benefit-dial-boxes-plaque-threshold-personalized-guidance {
-  color: var(--klotho-offwhite);
+  color: var(--klotho-offwhite); 
 
   width: 100%;
-
-  flex-grow: 1;
+  flex: 85;
 
   font-size: calc(1rem * 15/14); 
   /* padding-bottom: 1%; */
   /* margin-top: 3%; */
   display: flex;
-  flex-flow: row;
-  justify-content: left;
+  flex-flow: column;
+  justify-content: space-between; /* left; */
   padding-left: 1rem;
   padding-right: 1rem;
 
-  align-items: center;
+  align-items: flex-start;
   text-align: left; /* center; */
   opacity: 0;
 
@@ -7272,6 +7295,7 @@ svg {
 }
 
 #benefit-dial-boxes-plaque-threshold-personalized-guidance span {
+  color: white;
   font-weight: 400;
 }
 
