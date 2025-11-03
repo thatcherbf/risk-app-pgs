@@ -9284,7 +9284,7 @@ input[type=text] {
   padding: 10px;
 }
 
-#login-box {
+#login-box { 
   background-color: white;
   position: absolute;
   z-index: 5;
