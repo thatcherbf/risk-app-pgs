@@ -8473,6 +8473,11 @@ svg {
   box-sizing: border-box;
 }
 
+.landing-unit-label.outofbounds {
+  /* border: solid red 1px; */
+  background-color: rgba(255, 0, 0, 0.125)
+}
+
 #landing-slide-2,
 #landing-slide-3,
 #landing-slide-4,
