@@ -191,6 +191,7 @@ select {
 }
 
 .top-bar {
+  position: relative;
   background: rgba(0, 0, 0, 0.50);
   height: 7.5vh;
   width: 100vw;
@@ -200,6 +201,7 @@ select {
   align-content: center;
   align-items: center;
   /* border: solid red 1px; */
+  z-index: 20;
 }
 
 .top-box {
@@ -219,7 +221,7 @@ select {
   /* border-color: white; */
   /* border-width: 0px 1px 1px 1px; */
   box-sizing: border-box;
-  z-index: 2;
+  /* z-index: 2; */
   /* transition: all 0.0625s ease; */
 }
 
@@ -305,10 +307,10 @@ select {
   flex-grow: 1;
   flex-shrink: 0;
   height: 100%;
-  transition: all 0.0625s ease;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: color 0.0625s ease, background-color 0.0625s ease;
 }
 
 .navbar-button.dropdown {
@@ -338,7 +340,7 @@ select {
 }
 
 .navbar-button-wrapper.dropdown:hover > .navbar-button.dropdown {
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .navbar-button-wrapper.dropdown:hover > .navbar-button.dropdown > #pointer-dropdown {
@@ -417,7 +419,7 @@ select {
 }
 
 .navbar-button:hover {
-  text-decoration: underline !important;
+  text-decoration: underline;
 }
 
 .navbar-button.active {
@@ -565,8 +567,10 @@ select:focus {
 
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   box-sizing: border-box;
+
+  z-index: -1;
 }
 
 #lifetime-col0-plaque-box {
@@ -636,12 +640,23 @@ select:focus {
   box-sizing: border-box;
 }
 
+#outer-lifetime-gif {
+  position: relative;
+  height: 35%;
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
 #lifetime-gif-wrapper {
   position: relative;
   background-color: rgba(255, 255, 255, 0.0625);
-  width: 75%;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  height: 95%;
+  /* width: 60%; width: 75%; */
+  /* margin-top: 5%; */
+  /* margin-bottom: 5%; */
   aspect-ratio: 1/1 !important;
   border: solid var(--klotho-offwhite) 1px;
   border-radius: 50%;
@@ -685,8 +700,8 @@ select:focus {
 #full-lifetime-gif-wrapper {
   position: relative;
   background-color: rgba(255, 255, 255, 0.0625);
-  height: 15%;
-  width: 90%;
+  height: 20%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -700,6 +715,8 @@ select:focus {
   width: 87.5%;
   transform: translateY(1.5%);
   object-fit: contain;
+  margin: 0;
+  padding: 0;
 }
 
 #lifetime-slider-row {
@@ -1996,10 +2013,16 @@ svg {
 #outer-treatment-gif-1 {
   position: relative;
   height: 35%;
-  /* width: 60%; */
-  margin-top: 1.25%;
-  margin-bottom: 1.25%;
-  aspect-ratio: 1/1 !important;
+  width: 55%;
+  /* margin-top: 1.25%; */
+  /* margin-bottom: 1.25%; */
+  margin-bottom: 0.25%;
+  /* aspect-ratio: 1/1 !important; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  /* border: solid white 1px; */
 }
 
 #outer-treatment-gif-1 span {
@@ -2019,7 +2042,7 @@ svg {
 #treatment-gif-wrapper {
   position: relative;
   background-color: rgba(255, 255, 255, 0.0625);
-  height: 100%;
+  height: 95%;
   /* height: 35%; */
   /* width: 60%; */
   /* margin-top: 1.25%; */
@@ -2059,13 +2082,20 @@ svg {
 #outer-treatment-gif-2 {
   position: relative;
   height: 35%;
-  /* width: 60%; */
-  margin-top: 1.25%;
-  margin-bottom: 1.25%;
-  aspect-ratio: 1/1 !important;
+  width: 55%;
+  margin-top: 0.25%;
+  /* margin-top: 1.25%; */
+  /* margin-bottom: 1.25%; */
+  /* aspect-ratio: 1/1 !important; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  /* border: solid white 1px; */
 }
 
 #outer-treatment-gif-2 span {
+  /* border: solid white 1px; */
   position: absolute;
   color: var(--klotho-offwhite);
   margin: 0;
@@ -2081,7 +2111,7 @@ svg {
 #treatment-gif-wrapper-2 {
   position: relative;
   background-color: rgba(255, 255, 255, 0.0625);
-  height: 100%;
+  height: 95%;
   /* height: 35%; */
   /* width: 60%; */
   /* margin-top: 1.25%; */
@@ -3817,6 +3847,7 @@ svg {
   z-index: 1;
   height: 87.5%;
   flex: 1.25; /* width: 37.5%; */
+
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -4269,6 +4300,7 @@ svg {
   box-sizing: border-box;
 
   gap: 0.75rem;
+  z-index: -1;
 }
 
 #dial-boxes-current-levels {
@@ -5139,6 +5171,7 @@ svg {
   box-sizing: border-box;
 
   gap: 0.75rem;
+  z-index: -1;
 }
 
 #healthscore-dial-boxes-current-levels {
@@ -6386,6 +6419,7 @@ svg {
   box-sizing: border-box;
 
   gap: 0.75rem;
+  z-index: -1;
 }
 
 #benefit-dial-boxes-current-levels {
@@ -9284,10 +9318,10 @@ input[type=text] {
   padding: 10px;
 }
 
-#login-box { 
+#login-box {
   background-color: white;
   position: absolute;
-  z-index: 5;
+  z-index: 500;
   top: 0;
   bottom: 0;
   left: 0;
