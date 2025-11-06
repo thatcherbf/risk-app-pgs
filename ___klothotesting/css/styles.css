@@ -1365,6 +1365,9 @@ svg {
   justify-content: center;
   align-content: center;
   display: none;
+  
+  user-select: none;
+  pointer-events: none;
 }
 /* --#------- OUTER PLAQUE BOX -------#-- */
 
