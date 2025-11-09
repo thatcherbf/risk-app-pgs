@@ -6103,7 +6103,7 @@ input[type=text] {
   width: 100vw;
   box-sizing: border-box;
   display: inline-flex;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 #branding-box {
@@ -6229,8 +6229,8 @@ input[type=text] {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* visibility: hidden; */
-  /* display:none; */
+  visibility: hidden;
+  display:none;
 }
 
 #WIP-text-1 {
