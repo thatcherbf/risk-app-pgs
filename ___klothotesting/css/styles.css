@@ -9181,3 +9181,20 @@ input[type=text] {
   visibility: visible !important;
   opacity: 1 !important;
 } */
+
+#passcode-enter-box {
+  display: none;
+}
+
+#WIPMESSAGE {
+  color: var(--logintext);
+  width: 100%;
+  font-size: calc(1rem * 25/14);
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
